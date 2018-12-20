@@ -1,0 +1,98 @@
+html, body {
+  height: 100%;
+    font-size:90%;
+}
+
+/* hide the horizontal scrollbar */
+html {
+    overflow-x: hidden;
+}
+
+/* make all parent containers 100% height */
+html, body, .wrapper {
+    height: 100%;
+}
+
+/* move the toggle button to the left and give it
+   some breathing room */
+.navbar-toggle {
+    float: left;
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 767px) {
+
+    /* outer div */
+    .row-offcanvas {
+        position: relative;
+        left: 0;
+        -webkit-transition: left .3s ease-in;
+        -most-transition: left .3s ease-in;
+        transition: left .3s ease-in;
+    }
+
+    /* sidebar */
+    .sidebar-offcanvas {
+        left: -80%;
+        width: 80%;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        background-color: #F7F7F7;
+        padding: 0px;
+    }
+
+    /* content */
+    .row-offcanvas.active {
+        left: 80%;
+    }
+
+    /* Make the menu headers the same size as the
+       bootstrap navbar */
+    [data-role='panelbar'] .k-header {
+        min-height: 50px;
+    }
+}
+
+
+.navmenu-default .navmenu-brand, .navbar-default .navbar-offcanvas .navmenu-brand {
+    color: #000;
+}
+
+.navmenu-default .navmenu-nav>li>a:hover, .navbar-default .navbar-offcanvas .navmenu-nav>li>a:hover, .navmenu-default .navmenu-nav>li>a:focus, .navbar-default .navbar-offcanvas .navmenu-nav>li>a:focus {
+    color: #000;
+    background-color: transparent;
+}
+
+.navmenu-default .navmenu-nav>li>a, .navbar-default .navbar-offcanvas .navmenu-nav>li>a, .navmenu-default .navmenu-nav>li>a, .navbar-default .navbar-offcanvas .navmenu-nav>li>a {
+    color: #333;
+    background-color: transparent;
+}
+
+.nav {
+    font-size:80%;
+}
+
+.nav>li>a {
+    position: relative;
+    /*display: block;*/
+    padding-top:0px;
+    padding-bottom:0px;
+    border-top-style: dotted;
+    border-top-width: 1px;
+    border-top-color: #888;    
+    border-bottom-width:0px;
+}
+
+.navmenu h3 {
+    /*font-weight: bold;*/
+}
+
+.nav h4 {
+    font-weight: bold;
+    /*padding-left: 15px;*/
+}
+
+.acitem a {
+    border-bottom-width:0px;
+}

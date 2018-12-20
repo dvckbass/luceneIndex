@@ -1,0 +1,1290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link rel="stylesheet" href="httphtmlunit.10904.n7.nabble.comsetUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-td28326/nabble.css" type="text/css"/>
+    <link rel="stylesheet" href="httphtmlunit.10904.n7.nabble.comsetUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-td28326/NamlServlet.jtp.css" type="text/css"/>
+    <style type="text/css">
+    </style>
+    <style>
+    </style>
+    <style type="text/css">
+    </style>
+    <style type="text/css">
+    </style>
+    <title>
+HtmlUnit - General - setUseInsecureSSL(true) ==> javax.net.ssl.SSLPeerUnverifiedException: peer not authenticated    </title>
+    <meta name="description" content="setUseInsecureSSL(true) ==> javax.net.ssl.SSLPeerUnverifiedException: peer not authenticated.  I am using the snapshot 2.8 with my application that it's working with the current version 2.7 and I..."/>
+    <meta name="keywords" content="setuseinsecuressl, true, gt, javax, net, ssl, sslpeerunverifiedexception, peer, not, authenticated, using, snapshot, 2, 8, with, my, application, s, working, current, version, 7, getting, exception, only, happens, past, when, do, htmlunit, -, general"/>
+    <style type="text/css">
+    </style>
+    <style type="text/css">
+    </style>
+<!-- Start Google Analytics --><!-- End Google Analytics -->  </head>
+  <body>
+    <div id="notice" class="notice rounded-bottom">
+    </div>
+    <div class="nabble macro_classic_forum_topic" id="nabble">
+      <div class="top-bar">
+        <div class="breadcrumbs" style="float:left">
+          <span id="breadcrumbs" class="weak-color">
+            <a href="/">
+HtmlUnit            </a>
+            <span>
+?            </span>
+            <a href="/HtmlUnit-General-f20847.html">
+HtmlUnit - General            </a>
+          </span>
+        </div>
+        <div style="text-align:right;">
+          <span style="white-space:nowrap;" id="nabble-user-header">
+          </span>
+        </div>
+      </div>
+      <div class="ad-responsive-top" style="margin-top:10px;margin-bottom:10px;text-align:center">
+<!-- responsive-top -->        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1691702211255830" data-ad-slot="8608207209" data-ad-format="horizontal" data-full-width-responsive="true"/>
+      </div>
+      <table width="100%" cellpadding="0" style="border-collapse:collapse">
+        <tbody>
+          <tr>
+            <td/>
+            <td>
+              <div id="nabble-newsflash" class="info-message" style="display:none;padding:.5em;margin-bottom:.5em">
+              </div>
+              <div id="topic-search-box" class="search-box float-right" style="padding:.5em 0">
+                <form action="/template/NamlServlet.jtp">
+                  <input type="hidden" name="macro" value="search_page"/>
+                  <input type="hidden" name="node" value="28326"/>
+                  <input id="search-input" name="query" size="18" class="medium-border-color"/>
+                  <div id="search-box-dropdown" class="search-box-dropdown light-bg-color drop-shadow border1 medium-border-color rounded-bottom">
+                    <div style="margin:.5em .5em 0 .5em">
+                      <b>
+                      </b>
+                      <br/>
+                      <input id="search-root-node" type="radio" name="n" value="2" checked="true"/>
+                      <label for="search-root-node">
+                      </label>
+                      <br/>
+                      <input id="search-this-node" type="radio" name="n" value="28326"/>
+                      <label for="search-this-node">
+                      </label>
+                    </div>
+                    <div style="margin:.5em;line-height:2em">
+                      <input class="toolbar action-button float-right" type="submit" value="Search"/>
+                      <a href="/template/NamlServlet.jtp?macro=adv_search_page&amp;node=28326" rel="nofollow" style="font-size:80%">
+                      </a>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <h1 id="post-title" class="adbayes-content" style="margin:0.25em 0 .8em">
+setUseInsecureSSL(true) ==> javax.net.ssl.SSLPeerUnverifie                <wbr/>
+dException: peer not authenticated              </h1>
+              <div style="margin:-1em 0 2em">
+                <span style="float:left;white-space:nowrap">
+                  <sub class="weak-color" style="font-size:180%">
+?                  </sub>
+                  <a href="http://htmlunit.10904.n7.nabble.com/Re-Configuration-file-not-found-for-BrowserVersion-IE6-tp28757.html">
+Previous Topic                  </a>
+                </span>
+                <span style="float:right;white-space:nowrap">
+                  <a href="http://htmlunit.10904.n7.nabble.com/Javascript-Processing-Problem-tp27926.html">
+Next Topic                  </a>
+                  <sub class="weak-color" style="font-size:180%">
+?                  </sub>
+                </span>
+                <div style="clear:both;height:0">
+                 </div>
+              </div>
+              <div class="topics-controls-wrapper" style="margin:1.2em 0 5em">
+                <div id="topics-controls-left" class="float-left nowrap">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td style="padding-right:.1em">
+                          <img width="18" alt="classic" style="border:none" src="httphtmlunit.10904.n7.nabble.comsetUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-td28326/view-classic.gif" height="18"/>
+                        </td>
+                        <td style="padding-right:1.1em">
+Classic                        </td>
+                        <td style="padding-right:.1em">
+                          <a href="javascript:void(0)" onclick="Nabble.setView('list', '/setUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-tc28326.html',null)">
+                            <img width="18" alt="list" style="border:none" src="httphtmlunit.10904.n7.nabble.comsetUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-td28326/view-list.gif" height="18"/>
+                          </a>
+                        </td>
+                        <td style="padding-right:1.1em">
+                          <a href="javascript:void(0)" onclick="Nabble.setView('list', '/setUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-tc28326.html',null)">
+List                          </a>
+                        </td>
+                        <td style="padding-right:.1em">
+                          <a href="javascript:void(0)" onclick="Nabble.setView('threaded', '/setUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-tt28326.html',null)">
+                            <img width="18" alt="threaded" style="border:none" src="httphtmlunit.10904.n7.nabble.comsetUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-td28326/view-threaded.gif" height="18"/>
+                          </a>
+                        </td>
+                        <td style="padding-right:1.1em">
+                          <a href="javascript:void(0)" onclick="Nabble.setView('threaded', '/setUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-tt28326.html',null)">
+Threaded                          </a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div id="topics-controls-right" class="float-right nowrap" style="padding-top:.3em">
+                  <span style="padding-right:1em;height:21px">
+                    <img src="httphtmlunit.10904.n7.nabble.comsetUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-td28326/pin.png" width="20" style="vertical-align:middle;display:none;" id="pin-icon" title="This topic has been pinned in HtmlUnit - General." height="21"/>
+                    <div id="tooltip75579" class="nabble-tooltip" use_title="true">
+                      <div class="nabble-tooltip-arrow">
+                        <div class="d1">
+                        </div>
+                        <div class="d2">
+                        </div>
+                      </div>
+                    </div>
+                  </span>
+                  <span id="lock-icon" class="weak-color" style="padding:0 .5em;margin-right:.5em;display:none;">
+                    <img width="10" style="vertical-align:middle" src="httphtmlunit.10904.n7.nabble.comsetUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-td28326/lock_sm.png" height="15"/>
+                  </span>
+                  <span style="padding-right:1em">
+6 messages                  </span>
+                  <img alt="Options" src="httphtmlunit.10904.n7.nabble.comsetUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-td28326/gear.png" class="image16"/>
+                  <span id="dd_topicdropdown">
+                  </span>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td class="vertical-ad" width="170px" style="padding-top:1em">
+<!-- wide skyscraper -->              <ins class="adsbygoogle" style="display:block;width:160px;height:600px" data-ad-client="ca-pub-1691702211255830" data-ad-slot="4171118808"/>
+            </td>
+            <td>
+              <div id="topic-contents" style="margin-top:1em;clear:both">
+                <div id="classic-contents">
+                  <div class="classic-row">
+                    <div class="classic-header">
+                      <div class="classic-bar shaded-bg-color rounded-top">
+                        <div class="classic-author-name nowrap">
+                          <a href="/template/NamlServlet.jtp?macro=user_nodes&amp;user=759">
+Jorge Ventura-2                          </a>
+                        </div>
+                        <div class="classic-right-menu shaded-bg-color weak-color">
+                          <a href="/template/NamlServlet.jtp?macro=reply&amp;node=28326" rel="nofollow">
+Reply                          </a>
+|                          <a href="javascript:void(0)" onclick="Nabble.setView('threaded', '/setUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-tt28326.html',28326)">
+Threaded                          </a>
+                          <div id="tooltip31660" class="nabble-tooltip" use_title="false">
+                            <div class="nabble-tooltip-arrow">
+                              <div class="d1">
+                              </div>
+                              <div class="d2">
+                              </div>
+                            </div>
+                          </div>
+|                          <span id="dd_postdropdown28326">
+                          </span>
+                        </div>
+                        <div class="classic-subject-line">
+                          <span id="red-arrow28326" class="float-left invisible" style="margin-top:.2em">
+                            <img width="15" alt="Selected post" title="Selected post" src="httphtmlunit.10904.n7.nabble.comsetUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-td28326/arrow.png" height="15"/>
+                          </span>
+                          <span class="post-date float-left">
+                            <span id="d1278683417000-378">
+                            </span>
+                          </span>
+                          <h2 class="post-subject float-left adbayes-content" style="width:30%;overflow:visible;font-family:inherit">
+setUseInsecureSSL(true) ==> javax.net.ssl.SSLPeerUnverifie                            <wbr/>
+dException: peer not authenticated                          </h2>
+                        </div>
+                      </div>
+                    </div>
+                    <table class="classic-body">
+                      <tbody>
+                        <tr>
+                          <td class="classic-author shaded-bg-color rounded-bottom">
+                            <div class="avatar-outer">
+                              <div class="avatar-inner">
+                                <a href="http://htmlunit.10904.n7.nabble.com/template/NamlServlet.jtp?macro=user_nodes&amp;user=759" rel="nofollow" title="View profile of Jorge Ventura-2" class="nowrap no-decoration">
+                                  <img src="httphtmlunit.10904.n7.nabble.comsetUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-td28326/avatar100.png" width="100" alt="Jorge Ventura-2" title="Jorge Ventura-2" class="avatar medium-border-color" height="100"/>
+                                  <img alt="online" title="User is online" src="httphtmlunit.10904.n7.nabble.comsetUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-td28326/online.png" class="online759 online invisible"/>
+                                </a>
+                              </div>
+                            </div>
+                            <div class="post-count759 avatar-label weak-color">
+                            </div>
+                          </td>
+                          <td class="classic-message">
+                            <div id="message28326" class="message-text adbayes-content">
+  I am using the snapshot 2.8 with my application that it's working with                              <br/>
+the current version                              <br/>
+2.7 and I am getting an exception that only happens in the past when I                              <br/>
+do not set                              <br/>
+setUseInsecureSSL(true).                              <br/>
+                              <br/>
+Ventura                              <br/>
+                              <br/>
+------------------------------------------------------------------------------                              <br/>
+This SF.net email is sponsored by Sprint                              <br/>
+What will you do first with EVO, the first 4G phone?                              <br/>
+Visit sprint.com/first --                              <a href="http://p.sf.net/sfu/sprint-com-first" target="_top" rel="nofollow" link="external">
+http://p.sf.net/sfu/sprint-com-first                              </a>
+                              <br/>
+_______________________________________________                              <br/>
+Htmlunit-user mailing list                              <br/>
+                              <a href="/user/SendEmail.jtp?type=node&amp;node=28326&amp;i=0" target="_top" rel="nofollow" link="external">
+[hidden email]                              </a>
+                              <br/>
+                              <a href="https://lists.sourceforge.net/lists/listinfo/htmlunit-user" target="_top" rel="nofollow" link="external">
+https://lists.sourceforge.net/lists/listinfo/htmlunit-user                              </a>
+                              <br/>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="classic-row">
+                    <div class="classic-header">
+                      <div class="classic-bar shaded-bg-color rounded-top">
+                        <div class="classic-author-name nowrap">
+                          <a href="/template/NamlServlet.jtp?macro=user_nodes&amp;user=13">
+Marc Guillemot                          </a>
+                        </div>
+                        <div class="classic-right-menu shaded-bg-color weak-color">
+                          <a href="/template/NamlServlet.jtp?macro=reply&amp;node=28331" rel="nofollow">
+Reply                          </a>
+|                          <a href="javascript:void(0)" onclick="Nabble.setView('threaded', '/setUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-tt28326.html#a28331',28331)">
+Threaded                          </a>
+                          <div id="tooltip64547" class="nabble-tooltip" use_title="false">
+                            <div class="nabble-tooltip-arrow">
+                              <div class="d1">
+                              </div>
+                              <div class="d2">
+                              </div>
+                            </div>
+                          </div>
+|                          <span id="dd_postdropdown28331">
+                          </span>
+                        </div>
+                        <div class="classic-subject-line">
+                          <span id="red-arrow28331" class="float-left invisible" style="margin-top:.2em">
+                            <img width="15" alt="Selected post" title="Selected post" src="httphtmlunit.10904.n7.nabble.comsetUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-td28326/arrow_1.png" height="15"/>
+                          </span>
+                          <span class="post-date float-left">
+                            <span id="d1278684068000-672">
+                            </span>
+                          </span>
+                          <h2 class="post-subject float-left adbayes-content" style="width:30%;overflow:visible;font-family:inherit">
+Re: setUseInsecureSSL(true) ==> javax.net.ssl.SSLPeerUnverifie                            <wbr/>
+dException: peer not authenticated                          </h2>
+                        </div>
+                      </div>
+                    </div>
+                    <table class="classic-body">
+                      <tbody>
+                        <tr>
+                          <td class="classic-author shaded-bg-color rounded-bottom">
+                            <div class="avatar-outer">
+                              <div class="avatar-inner">
+                                <a href="http://htmlunit.10904.n7.nabble.com/template/NamlServlet.jtp?macro=user_nodes&amp;user=13" rel="nofollow" title="View profile of Marc Guillemot" class="nowrap no-decoration">
+                                  <img src="httphtmlunit.10904.n7.nabble.comsetUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-td28326/avatar100_1.png" width="100" alt="Marc Guillemot" title="Marc Guillemot" class="avatar medium-border-color" height="100"/>
+                                  <img alt="online" title="User is online" src="httphtmlunit.10904.n7.nabble.comsetUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-td28326/online_1.png" class="online13 online invisible"/>
+                                </a>
+                              </div>
+                            </div>
+                            <div class="post-count13 avatar-label weak-color">
+                            </div>
+                          </td>
+                          <td class="classic-message">
+                            <div id="message28331" class="message-text adbayes-content">
+Hi,                              <br/>
+                              <br/>
+can you provide the stack trace?                              <br/>
+                              <br/>
+Cheers,                              <br/>
+Marc.                              <br/>
+--                              <br/>
+Blog:                              <a href="http://mguillem.wordpress.com" target="_top" rel="nofollow" link="external">
+http://mguillem.wordpress.com                              </a>
+                              <br/>
+                              <br/>
+Jorge Ventura wrote:                              <br/>
+>   I am using the snapshot 2.8 with my application that it's working with                              <br/>
+> the current version                              <br/>
+> 2.7 and I am getting an exception that only happens in the past when I                              <br/>
+> do not set                              <br/>
+> setUseInsecureSSL(true).                              <br/>
+>                              <br/>
+> Ventura                              <br/>
+                              <br/>
+                              <br/>
+                              <br/>
+------------------------------------------------------------------------------                              <br/>
+This SF.net email is sponsored by Sprint                              <br/>
+What will you do first with EVO, the first 4G phone?                              <br/>
+Visit sprint.com/first --                              <a href="http://p.sf.net/sfu/sprint-com-first" target="_top" rel="nofollow" link="external">
+http://p.sf.net/sfu/sprint-com-first                              </a>
+                              <br/>
+_______________________________________________                              <br/>
+Htmlunit-user mailing list                              <br/>
+                              <a href="/user/SendEmail.jtp?type=node&amp;node=28331&amp;i=0" target="_top" rel="nofollow" link="external">
+[hidden email]                              </a>
+                              <br/>
+                              <a href="https://lists.sourceforge.net/lists/listinfo/htmlunit-user" target="_top" rel="nofollow" link="external">
+https://lists.sourceforge.net/lists/listinfo/htmlunit-user                              </a>
+                              <br/>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="classic-row">
+                    <div class="classic-header">
+                      <div class="classic-bar shaded-bg-color rounded-top">
+                        <div class="classic-author-name nowrap">
+                          <a href="/template/NamlServlet.jtp?macro=user_nodes&amp;user=9">
+asashour                          </a>
+                        </div>
+                        <div class="classic-right-menu shaded-bg-color weak-color">
+                          <a href="/template/NamlServlet.jtp?macro=reply&amp;node=28327" rel="nofollow">
+Reply                          </a>
+|                          <a href="javascript:void(0)" onclick="Nabble.setView('threaded', '/setUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-tt28326.html#a28327',28327)">
+Threaded                          </a>
+                          <div id="tooltip8157" class="nabble-tooltip" use_title="false">
+                            <div class="nabble-tooltip-arrow">
+                              <div class="d1">
+                              </div>
+                              <div class="d2">
+                              </div>
+                            </div>
+                          </div>
+|                          <span id="dd_postdropdown28327">
+                          </span>
+                        </div>
+                        <div class="classic-subject-line">
+                          <span id="red-arrow28327" class="float-left invisible" style="margin-top:.2em">
+                            <img width="15" alt="Selected post" title="Selected post" src="httphtmlunit.10904.n7.nabble.comsetUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-td28326/arrow_2.png" height="15"/>
+                          </span>
+                          <span class="post-date float-left">
+                            <span id="d1278687055000-595">
+                            </span>
+                          </span>
+                          <h2 class="post-subject float-left adbayes-content" style="width:30%;overflow:visible;font-family:inherit">
+Re: setUseInsecureSSL(true) ==> javax.net.ssl.SSLPeerUnverifie                            <wbr/>
+dException: peer not authenticated                          </h2>
+                        </div>
+                      </div>
+                    </div>
+                    <table class="classic-body">
+                      <tbody>
+                        <tr>
+                          <td class="classic-author shaded-bg-color rounded-bottom">
+                            <div class="avatar-outer">
+                              <div class="avatar-inner">
+                                <a href="http://htmlunit.10904.n7.nabble.com/template/NamlServlet.jtp?macro=user_nodes&amp;user=9" rel="nofollow" title="View profile of asashour" class="nowrap no-decoration">
+                                  <img src="httphtmlunit.10904.n7.nabble.comsetUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-td28326/avatar100_2.png" width="100" alt="asashour" title="asashour" class="avatar medium-border-color" height="100"/>
+                                  <img alt="online" title="User is online" src="httphtmlunit.10904.n7.nabble.comsetUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-td28326/online_2.png" class="online9 online invisible"/>
+                                </a>
+                              </div>
+                            </div>
+                            <div class="post-count9 avatar-label weak-color">
+                            </div>
+                          </td>
+                          <td class="classic-message">
+                            <div class="weak-color" style="font-size:80%;padding-bottom:1em">
+In reply to                              <a href="http://htmlunit.10904.n7.nabble.com/setUseInsecureSSL-true-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-tp28326.html" rel="nofollow">
+this post                              </a>
+by Jorge Ventura-2                            </div>
+                            <div id="message28327" class="message-text adbayes-content">
+                              <div style="font-family:times new roman,new york,times,serif;font-size:12pt">
+Hi Ventura,                                <br/>
+                                <br/>
+You have to still use .usetInsecureSSL(true), could you provide a public website to test against?                                <br/>
+                                <br/>
+Ahmed                                <br/>
+----                                <br/>
+                                <span>
+Blog:                                  <a target="_blank" href="http://asashour.blogspot.com" rel="nofollow" link="external">
+http://asashour.blogspot.com                                  </a>
+                                </span>
+                                <div style="font-family: times new roman,new york,times,serif; font-size: 12pt;">
+                                  <br/>
+                                  <div style="font-family: arial,helvetica,sans-serif; font-size: 10pt;">
+                                    <font size="2" face="Tahoma">
+                                      <hr size="1"/>
+                                      <b>
+                                        <span style="font-weight: bold;">
+From:                                        </span>
+                                      </b>
+Jorge Ventura <                                      <a href="/user/SendEmail.jtp?type=node&amp;node=28327&amp;i=0" target="_top" rel="nofollow" link="external">
+[hidden email]                                      </a>
+>                                      <br/>
+                                      <b>
+                                        <span style="font-weight: bold;">
+To:                                        </span>
+                                      </b>
+                                      <a href="/user/SendEmail.jtp?type=node&amp;node=28327&amp;i=1" target="_top" rel="nofollow" link="external">
+[hidden email]                                      </a>
+                                      <br/>
+                                      <b>
+                                        <span style="font-weight: bold;">
+Sent:                                        </span>
+                                      </b>
+Fri, July 9, 2010 4:50:17 PM                                      <br/>
+                                      <b>
+                                        <span style="font-weight: bold;">
+Subject:                                        </span>
+                                      </b>
+[Htmlunit-user] setUseInsecureSSL(true) ==> javax.net.ssl.SSLPeerUnverifiedException: peer not authenticated                                      <br/>
+                                    </font>
+                                    <br/>
+  I am using the snapshot 2.8 with my application that it's working with                                    <br/>
+the current version                                    <br/>
+2.7 and I am getting an exception that only happens in the past when I                                    <br/>
+do not set                                    <br/>
+setUseInsecureSSL(true).                                    <br/>
+                                    <br/>
+Ventura                                    <br/>
+                                    <br/>
+------------------------------------------------------------------------------                                    <br/>
+This                                    <a target="_blank" href="http://SF.net" rel="nofollow" link="external">
+SF.net                                    </a>
+email is sponsored by Sprint                                    <br/>
+What will you do first with EVO, the first 4G phone?                                    <br/>
+Visit                                    <a target="_blank" href="http://sprint.com/first" rel="nofollow" link="external">
+sprint.com/first                                    </a>
+                                    <span>
+--                                      <a target="_blank" href="http://p.sf.net/sfu/sprint-com-first" rel="nofollow" link="external">
+http://p.sf.net/sfu/sprint-com-first                                      </a>
+                                    </span>
+                                    <br/>
+_______________________________________________                                    <br/>
+Htmlunit-user mailing list                                    <br/>
+                                    <a href="/user/SendEmail.jtp?type=node&amp;node=28327&amp;i=2" target="_top" rel="nofollow" link="external">
+[hidden email]                                    </a>
+                                    <br/>
+                                    <a href="https://lists.sourceforge.net/lists/listinfo/htmlunit-user" target="_blank" rel="nofollow" link="external">
+https://lists.sourceforge.net/lists/listinfo/htmlunit-user                                    </a>
+                                    <br/>
+                                  </div>
+                                </div>
+                              </div>
+                              <br/>
+                              <br/>
+------------------------------------------------------------------------------                              <br/>
+This SF.net email is sponsored by Sprint                              <br/>
+What will you do first with EVO, the first 4G phone?                              <br/>
+Visit sprint.com/first --                              <a href="http://p.sf.net/sfu/sprint-com-first" target="_top" rel="nofollow" link="external">
+http://p.sf.net/sfu/sprint-com-first                              </a>
+                              <br/>
+_______________________________________________                              <br/>
+Htmlunit-user mailing list                              <br/>
+                              <a href="/user/SendEmail.jtp?type=node&amp;node=28327&amp;i=3" target="_top" rel="nofollow" link="external">
+[hidden email]                              </a>
+                              <br/>
+                              <a href="https://lists.sourceforge.net/lists/listinfo/htmlunit-user" target="_top" rel="nofollow" link="external">
+https://lists.sourceforge.net/lists/listinfo/htmlunit-user                              </a>
+                              <br/>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="classic-row">
+                    <div class="classic-header">
+                      <div class="classic-bar shaded-bg-color rounded-top">
+                        <div class="classic-author-name nowrap">
+                          <a href="/template/NamlServlet.jtp?macro=user_nodes&amp;user=759">
+Jorge Ventura-2                          </a>
+                        </div>
+                        <div class="classic-right-menu shaded-bg-color weak-color">
+                          <a href="/template/NamlServlet.jtp?macro=reply&amp;node=28328" rel="nofollow">
+Reply                          </a>
+|                          <a href="javascript:void(0)" onclick="Nabble.setView('threaded', '/setUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-tt28326.html#a28328',28328)">
+Threaded                          </a>
+                          <div id="tooltip87972" class="nabble-tooltip" use_title="false">
+                            <div class="nabble-tooltip-arrow">
+                              <div class="d1">
+                              </div>
+                              <div class="d2">
+                              </div>
+                            </div>
+                          </div>
+|                          <span id="dd_postdropdown28328">
+                          </span>
+                        </div>
+                        <div class="classic-subject-line">
+                          <span id="red-arrow28328" class="float-left invisible" style="margin-top:.2em">
+                            <img width="15" alt="Selected post" title="Selected post" src="httphtmlunit.10904.n7.nabble.comsetUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-td28326/arrow_3.png" height="15"/>
+                          </span>
+                          <span class="post-date float-left">
+                            <span id="d1278690222000-10">
+                            </span>
+                          </span>
+                          <h2 class="post-subject float-left adbayes-content" style="width:30%;overflow:visible;font-family:inherit">
+Re: setUseInsecureSSL(true) ==> javax.net.ssl.SSLPeerUnverifie                            <wbr/>
+dException: peer not authenticated                          </h2>
+                        </div>
+                      </div>
+                    </div>
+                    <table class="classic-body">
+                      <tbody>
+                        <tr>
+                          <td class="classic-author shaded-bg-color rounded-bottom">
+                            <div class="avatar-outer">
+                              <div class="avatar-inner">
+                                <a href="http://htmlunit.10904.n7.nabble.com/template/NamlServlet.jtp?macro=user_nodes&amp;user=759" rel="nofollow" title="View profile of Jorge Ventura-2" class="nowrap no-decoration">
+                                  <img src="httphtmlunit.10904.n7.nabble.comsetUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-td28326/avatar100_3.png" width="100" alt="Jorge Ventura-2" title="Jorge Ventura-2" class="avatar medium-border-color" height="100"/>
+                                  <img alt="online" title="User is online" src="httphtmlunit.10904.n7.nabble.comsetUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-td28326/online_3.png" class="online759 online invisible"/>
+                                </a>
+                              </div>
+                            </div>
+                            <div class="post-count759 avatar-label weak-color">
+                            </div>
+                          </td>
+                          <td class="classic-message">
+                            <div id="message28328" class="message-text adbayes-content">
+I understand and I am using with setUseInsecureSSL(true). Unfortunately I am using HtmUnit to scrape an application in our local office. This application uses a self signed certificate, for that reason I have to set HtmlUnit for insecure SSL connection.                              <br/>
+                              <br/>
+Ventura                              <br/>
+                              <br/>
+                              <div class="gmail_quote">
+On Fri, Jul 9, 2010 at 9:50 AM, Ahmed Ashour                                <span dir="ltr">
+<                                  <a href="/user/SendEmail.jtp?type=node&amp;node=28328&amp;i=0" target="_top" rel="nofollow" link="external">
+[hidden email]                                  </a>
+>                                </span>
+wrote:                                <br/>
+                                <blockquote class="gmail_quote" style="margin: 0pt 0pt 0pt 0.8ex; border-left: 1px solid rgb(204, 204, 204); padding-left: 1ex;">
+                                  <div>
+                                    <div style="font-family: times new roman,new york,times,serif; font-size: 12pt;">
+Hi Ventura,                                      <br/>
+                                      <br/>
+You have to still use .usetInsecureSSL(true), could you provide a public website to test against?                                      <br/>
+                                      <br/>
+Ahmed                                      <br/>
+----                                      <br/>
+                                      <span>
+Blog:                                        <a href="http://asashour.blogspot.com" target="_blank" rel="nofollow" link="external">
+http://asashour.blogspot.com                                        </a>
+                                      </span>
+                                      <div style="font-family: times new roman,new york,times,serif; font-size: 12pt;">
+                                        <br/>
+                                        <div style="font-family: arial,helvetica,sans-serif; font-size: 10pt;">
+                                          <font size="2" face="Tahoma">
+                                            <hr size="1"/>
+                                            <b>
+                                              <span style="font-weight: bold;">
+From:                                              </span>
+                                            </b>
+Jorge Ventura <                                            <a href="/user/SendEmail.jtp?type=node&amp;node=28328&amp;i=1" target="_top" rel="nofollow" link="external">
+[hidden email]                                            </a>
+>                                            <br/>
+                                            <b>
+                                              <span style="font-weight: bold;">
+To:                                              </span>
+                                            </b>
+                                            <a href="/user/SendEmail.jtp?type=node&amp;node=28328&amp;i=2" target="_top" rel="nofollow" link="external">
+[hidden email]                                            </a>
+                                            <br/>
+                                            <b>
+                                              <span style="font-weight: bold;">
+Sent:                                              </span>
+                                            </b>
+Fri, July 9, 2010 4:50:17 PM                                            <br/>
+                                            <b>
+                                              <span style="font-weight: bold;">
+Subject:                                              </span>
+                                            </b>
+[Htmlunit-user] setUseInsecureSSL(true) ==> javax.net.ssl.SSLPeerUnverifiedException: peer not authenticated                                            <br/>
+                                          </font>
+                                          <div>
+                                            <div>
+                                            </div>
+                                            <div class="h5">
+                                              <br/>
+  I am using the snapshot 2.8 with my application that it's working with                                              <br/>
+the current version                                              <br/>
+2.7 and I am getting an exception that only happens in the past when I                                              <br/>
+do not set                                              <br/>
+setUseInsecureSSL(true).                                              <br/>
+                                              <br/>
+Ventura                                              <br/>
+                                              <br/>
+                                            </div>
+                                          </div>
+------------------------------------------------------------------------------                                          <br/>
+This                                          <a href="http://SF.net" target="_blank" rel="nofollow" link="external">
+SF.net                                          </a>
+email is sponsored by Sprint                                          <br/>
+What will you do first with EVO, the first 4G phone?                                          <br/>
+Visit                                          <a href="http://sprint.com/first" target="_blank" rel="nofollow" link="external">
+sprint.com/first                                          </a>
+                                          <span>
+--                                            <a href="http://p.sf.net/sfu/sprint-com-first" target="_blank" rel="nofollow" link="external">
+http://p.sf.net/sfu/sprint-com-first                                            </a>
+                                          </span>
+                                          <br/>
+_______________________________________________                                          <br/>
+Htmlunit-user mailing list                                          <br/>
+                                          <a href="/user/SendEmail.jtp?type=node&amp;node=28328&amp;i=3" target="_top" rel="nofollow" link="external">
+[hidden email]                                          </a>
+                                          <br/>
+                                          <a href="https://lists.sourceforge.net/lists/listinfo/htmlunit-user" target="_blank" rel="nofollow" link="external">
+https://lists.sourceforge.net/lists/listinfo/htmlunit-user                                          </a>
+                                          <br/>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <br/>
+                                  </div>
+                                  <br/>
+------------------------------------------------------------------------------                                  <br/>
+This SF.net email is sponsored by Sprint                                  <br/>
+What will you do first with EVO, the first 4G phone?                                  <br/>
+Visit                                  <a href="http://sprint.com/first" target="_blank" rel="nofollow" link="external">
+sprint.com/first                                  </a>
+--                                  <a href="http://p.sf.net/sfu/sprint-com-first" target="_blank" rel="nofollow" link="external">
+http://p.sf.net/sfu/sprint-com-first                                  </a>
+                                  <br/>
+_______________________________________________                                  <br/>
+Htmlunit-user mailing list                                  <br/>
+                                  <a href="/user/SendEmail.jtp?type=node&amp;node=28328&amp;i=4" target="_top" rel="nofollow" link="external">
+[hidden email]                                  </a>
+                                  <br/>
+                                  <a href="https://lists.sourceforge.net/lists/listinfo/htmlunit-user" target="_blank" rel="nofollow" link="external">
+https://lists.sourceforge.net/lists/listinfo/htmlunit-user                                  </a>
+                                  <br/>
+                                  <br/>
+                                </blockquote>
+                              </div>
+                              <br/>
+                              <br clear="all"/>
+                              <br/>
+--                              <br/>
+Top Gun Technology                              <br/>
+Software Engineer III                              <br/>
+5500 Cottonwood Lane SE                              <br/>
+Prior Lake, MN 55372                              <br/>
+Tel: 952.226.9700 ext. 126                              <br/>
+Cell: 952.681.8613                              <br/>
+                              <br/>
+------------------------------------------------------------------------------                              <br/>
+This SF.net email is sponsored by Sprint                              <br/>
+What will you do first with EVO, the first 4G phone?                              <br/>
+Visit sprint.com/first --                              <a href="http://p.sf.net/sfu/sprint-com-first" target="_top" rel="nofollow" link="external">
+http://p.sf.net/sfu/sprint-com-first                              </a>
+                              <br/>
+_______________________________________________                              <br/>
+Htmlunit-user mailing list                              <br/>
+                              <a href="/user/SendEmail.jtp?type=node&amp;node=28328&amp;i=5" target="_top" rel="nofollow" link="external">
+[hidden email]                              </a>
+                              <br/>
+                              <a href="https://lists.sourceforge.net/lists/listinfo/htmlunit-user" target="_top" rel="nofollow" link="external">
+https://lists.sourceforge.net/lists/listinfo/htmlunit-user                              </a>
+                              <br/>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="classic-row">
+                    <div class="classic-header">
+                      <div class="classic-bar shaded-bg-color rounded-top">
+                        <div class="classic-author-name nowrap">
+                          <a href="/template/NamlServlet.jtp?macro=user_nodes&amp;user=9">
+asashour                          </a>
+                        </div>
+                        <div class="classic-right-menu shaded-bg-color weak-color">
+                          <a href="/template/NamlServlet.jtp?macro=reply&amp;node=28329" rel="nofollow">
+Reply                          </a>
+|                          <a href="javascript:void(0)" onclick="Nabble.setView('threaded', '/setUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-tt28326.html#a28329',28329)">
+Threaded                          </a>
+                          <div id="tooltip44262" class="nabble-tooltip" use_title="false">
+                            <div class="nabble-tooltip-arrow">
+                              <div class="d1">
+                              </div>
+                              <div class="d2">
+                              </div>
+                            </div>
+                          </div>
+|                          <span id="dd_postdropdown28329">
+                          </span>
+                        </div>
+                        <div class="classic-subject-line">
+                          <span id="red-arrow28329" class="float-left invisible" style="margin-top:.2em">
+                            <img width="15" alt="Selected post" title="Selected post" src="httphtmlunit.10904.n7.nabble.comsetUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-td28326/arrow_4.png" height="15"/>
+                          </span>
+                          <span class="post-date float-left">
+                            <span id="d1278693312000-920">
+                            </span>
+                          </span>
+                          <h2 class="post-subject float-left adbayes-content" style="width:30%;overflow:visible;font-family:inherit">
+Re: setUseInsecureSSL(true) ==> javax.net.ssl.SSLPeerUnverifie                            <wbr/>
+dException: peer not authenticated                          </h2>
+                        </div>
+                      </div>
+                    </div>
+                    <table class="classic-body">
+                      <tbody>
+                        <tr>
+                          <td class="classic-author shaded-bg-color rounded-bottom">
+                            <div class="avatar-outer">
+                              <div class="avatar-inner">
+                                <a href="http://htmlunit.10904.n7.nabble.com/template/NamlServlet.jtp?macro=user_nodes&amp;user=9" rel="nofollow" title="View profile of asashour" class="nowrap no-decoration">
+                                  <img src="httphtmlunit.10904.n7.nabble.comsetUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-td28326/avatar100_4.png" width="100" alt="asashour" title="asashour" class="avatar medium-border-color" height="100"/>
+                                  <img alt="online" title="User is online" src="httphtmlunit.10904.n7.nabble.comsetUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-td28326/online_4.png" class="online9 online invisible"/>
+                                </a>
+                              </div>
+                            </div>
+                            <div class="post-count9 avatar-label weak-color">
+                            </div>
+                          </td>
+                          <td class="classic-message">
+                            <div id="message28329" class="message-text adbayes-content">
+                              <div style="font-family:times new roman,new york,times,serif;font-size:12pt">
+Can you provide how the self-signed certificate was installed?                                <br/>
+                                <br/>
+                                <span>
+I tested HtmlUnit with Tomcat 6.0.14 with the "Quick Start" of                                  <a target="_blank" href="http://tomcat.apache.org/tomcat-6.0-doc/ssl-howto.html" rel="nofollow" link="external">
+http://tomcat.apache.org/tomcat-6.0-doc/ssl-howto.html                                  </a>
+                                </span>
+                                <br/>
+                                <br/>
+Yours,                                <br/>
+Ahmed                                <br/>
+----                                <br/>
+                                <span>
+Blog:                                  <a target="_blank" href="http://asashour.blogspot.com" rel="nofollow" link="external">
+http://asashour.blogspot.com                                  </a>
+                                </span>
+                                <br/>
+                                <div style="font-family: times new roman,new york,times,serif; font-size: 12pt;">
+                                  <div style="font-family: times new roman,new york,times,serif; font-size: 12pt;">
+                                    <font size="2" face="Tahoma">
+                                      <hr size="1"/>
+                                      <b>
+                                        <span style="font-weight: bold;">
+From:                                        </span>
+                                      </b>
+Jorge Ventura <                                      <a href="/user/SendEmail.jtp?type=node&amp;node=28329&amp;i=0" target="_top" rel="nofollow" link="external">
+[hidden email]                                      </a>
+>                                      <br/>
+                                      <b>
+                                        <span style="font-weight: bold;">
+To:                                        </span>
+                                      </b>
+                                      <a href="/user/SendEmail.jtp?type=node&amp;node=28329&amp;i=1" target="_top" rel="nofollow" link="external">
+[hidden email]                                      </a>
+                                      <br/>
+                                      <b>
+                                        <span style="font-weight: bold;">
+Sent:                                        </span>
+                                      </b>
+Fri, July 9, 2010 6:43:42 PM                                      <br/>
+                                      <b>
+                                        <span style="font-weight: bold;">
+Subject:                                        </span>
+                                      </b>
+Re: [Htmlunit-user] setUseInsecureSSL(true) ==> javax.net.ssl.SSLPeerUnverifiedException: peer not authenticated                                      <br/>
+                                    </font>
+                                    <br/>
+I understand and I am using with setUseInsecureSSL(true). Unfortunately I am using HtmUnit to scrape an application in our local office. This application uses a self signed certificate, for that reason I have to set HtmlUnit for insecure SSL connection.                                    <br/>
+                                    <br/>
+Ventura                                    <br/>
+                                    <br/>
+                                    <div class="gmail_quote">
+On Fri, Jul 9, 2010 at 9:50 AM, Ahmed Ashour                                      <span dir="ltr">
+<                                        <a href="/user/SendEmail.jtp?type=node&amp;node=28329&amp;i=2" target="_top" rel="nofollow" link="external">
+[hidden email]                                        </a>
+>                                      </span>
+wrote:                                      <br/>
+                                      <blockquote class="gmail_quote" style="margin: 0pt 0pt 0pt 0.8ex; border-left: 1px solid rgb(204, 204, 204); padding-left: 1ex;">
+                                        <div>
+                                          <div style="font-family: times new roman,new york,times,serif; font-size: 12pt;">
+Hi Ventura,                                            <br/>
+                                            <br/>
+You have to still use .usetInsecureSSL(true), could you provide a public website to test against?                                            <br/>
+                                            <br/>
+Ahmed                                            <br/>
+----                                            <br/>
+                                            <span>
+                                              <span>
+Blog:                                                <a target="_blank" href="http://asashour.blogspot.com" rel="nofollow" link="external">
+http://asashour.blogspot.com                                                </a>
+                                              </span>
+                                            </span>
+                                            <div style="font-family: times new roman,new york,times,serif; font-size: 12pt;">
+                                              <br/>
+                                              <div style="font-family: arial,helvetica,sans-serif; font-size: 10pt;">
+                                                <font size="2" face="Tahoma">
+                                                  <hr size="1"/>
+                                                  <b>
+                                                    <span style="font-weight: bold;">
+From:                                                    </span>
+                                                  </b>
+Jorge Ventura <                                                  <a href="/user/SendEmail.jtp?type=node&amp;node=28329&amp;i=3" target="_top" rel="nofollow" link="external">
+[hidden email]                                                  </a>
+>                                                  <br/>
+                                                  <b>
+                                                    <span style="font-weight: bold;">
+To:                                                    </span>
+                                                  </b>
+                                                  <a href="/user/SendEmail.jtp?type=node&amp;node=28329&amp;i=4" target="_top" rel="nofollow" link="external">
+[hidden email]                                                  </a>
+                                                  <br/>
+                                                  <b>
+                                                    <span style="font-weight: bold;">
+Sent:                                                    </span>
+                                                  </b>
+Fri, July 9, 2010 4:50:17 PM                                                  <br/>
+                                                  <b>
+                                                    <span style="font-weight: bold;">
+Subject:                                                    </span>
+                                                  </b>
+[Htmlunit-user] setUseInsecureSSL(true) ==>                                                  <a target="_blank" href="http://javax.net" rel="nofollow" link="external">
+javax.net                                                  </a>
+.ssl.SSLPeerUnverifiedException: peer not authenticated                                                  <br/>
+                                                </font>
+                                                <div>
+                                                  <div>
+                                                  </div>
+                                                  <div class="h5">
+                                                    <br/>
+  I am using the snapshot 2.8 with my application that it's working with                                                    <br/>
+the current version                                                    <br/>
+2.7 and I am getting an exception that only happens in the past when I                                                    <br/>
+do not set                                                    <br/>
+setUseInsecureSSL(true).                                                    <br/>
+                                                    <br/>
+Ventura                                                    <br/>
+                                                    <br/>
+                                                  </div>
+                                                </div>
+------------------------------------------------------------------------------                                                <br/>
+This                                                <a rel="nofollow" target="_blank" href="http://SF.net" link="external">
+SF.net                                                </a>
+email is sponsored by Sprint                                                <br/>
+What will you do first with EVO, the first 4G phone?                                                <br/>
+Visit                                                <a rel="nofollow" target="_blank" href="http://sprint.com/first" link="external">
+sprint.com/first                                                </a>
+                                                <span>
+                                                  <span>
+--                                                    <a target="_blank" href="http://p.sf.net/sfu/sprint-com-first" rel="nofollow" link="external">
+http://p.sf.net/sfu/sprint-com-first                                                    </a>
+                                                  </span>
+                                                </span>
+                                                <br/>
+_______________________________________________                                                <br/>
+Htmlunit-user mailing list                                                <br/>
+                                                <a href="/user/SendEmail.jtp?type=node&amp;node=28329&amp;i=5" target="_top" rel="nofollow" link="external">
+[hidden email]                                                </a>
+                                                <br/>
+                                                <a rel="nofollow" target="_blank" href="https://lists.sourceforge.net/lists/listinfo/htmlunit-user" link="external">
+https://lists.sourceforge.net/lists/listinfo/htmlunit-user                                                </a>
+                                                <br/>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <br/>
+                                        </div>
+                                        <br/>
+------------------------------------------------------------------------------                                        <br/>
+This SF.net email is sponsored by Sprint                                        <br/>
+What will you do first with EVO, the first 4G phone?                                        <br/>
+Visit                                        <a rel="nofollow" target="_blank" href="http://sprint.com/first" link="external">
+sprint.com/first                                        </a>
+--                                        <a rel="nofollow" target="_blank" href="http://p.sf.net/sfu/sprint-com-first" link="external">
+http://p.sf.net/sfu/sprint-com-first                                        </a>
+                                        <br/>
+_______________________________________________                                        <br/>
+Htmlunit-user mailing list                                        <br/>
+                                        <a href="/user/SendEmail.jtp?type=node&amp;node=28329&amp;i=6" target="_top" rel="nofollow" link="external">
+[hidden email]                                        </a>
+                                        <br/>
+                                        <a rel="nofollow" target="_blank" href="https://lists.sourceforge.net/lists/listinfo/htmlunit-user" link="external">
+https://lists.sourceforge.net/lists/listinfo/htmlunit-user                                        </a>
+                                        <br/>
+                                        <br/>
+                                      </blockquote>
+                                    </div>
+                                    <br/>
+                                    <br clear="all"/>
+                                    <br/>
+--                                    <br/>
+Top Gun Technology                                    <br/>
+Software Engineer III                                    <br/>
+5500 Cottonwood Lane SE                                    <br/>
+Prior Lake, MN 55372                                    <br/>
+Tel: 952.226.9700 ext. 126                                    <br/>
+Cell: 952.681.8613                                    <br/>
+                                  </div>
+                                </div>
+                              </div>
+                              <br/>
+                              <br/>
+------------------------------------------------------------------------------                              <br/>
+This SF.net email is sponsored by Sprint                              <br/>
+What will you do first with EVO, the first 4G phone?                              <br/>
+Visit sprint.com/first --                              <a href="http://p.sf.net/sfu/sprint-com-first" target="_top" rel="nofollow" link="external">
+http://p.sf.net/sfu/sprint-com-first                              </a>
+                              <br/>
+_______________________________________________                              <br/>
+Htmlunit-user mailing list                              <br/>
+                              <a href="/user/SendEmail.jtp?type=node&amp;node=28329&amp;i=7" target="_top" rel="nofollow" link="external">
+[hidden email]                              </a>
+                              <br/>
+                              <a href="https://lists.sourceforge.net/lists/listinfo/htmlunit-user" target="_top" rel="nofollow" link="external">
+https://lists.sourceforge.net/lists/listinfo/htmlunit-user                              </a>
+                              <br/>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="classic-row">
+                    <div class="classic-header">
+                      <div class="classic-bar shaded-bg-color rounded-top">
+                        <div class="classic-author-name nowrap">
+                          <a href="/template/NamlServlet.jtp?macro=user_nodes&amp;user=759">
+Jorge Ventura-2                          </a>
+                        </div>
+                        <div class="classic-right-menu shaded-bg-color weak-color">
+                          <a href="/template/NamlServlet.jtp?macro=reply&amp;node=28330" rel="nofollow">
+Reply                          </a>
+|                          <a href="javascript:void(0)" onclick="Nabble.setView('threaded', '/setUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-tt28326.html#a28330',28330)">
+Threaded                          </a>
+                          <div id="tooltip91432" class="nabble-tooltip" use_title="false">
+                            <div class="nabble-tooltip-arrow">
+                              <div class="d1">
+                              </div>
+                              <div class="d2">
+                              </div>
+                            </div>
+                          </div>
+|                          <span id="dd_postdropdown28330">
+                          </span>
+                        </div>
+                        <div class="classic-subject-line">
+                          <span id="red-arrow28330" class="float-left invisible" style="margin-top:.2em">
+                            <img width="15" alt="Selected post" title="Selected post" src="httphtmlunit.10904.n7.nabble.comsetUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-td28326/arrow_5.png" height="15"/>
+                          </span>
+                          <span class="post-date float-left">
+                            <span id="d1278694912000-795">
+                            </span>
+                          </span>
+                          <h2 class="post-subject float-left adbayes-content" style="width:30%;overflow:visible;font-family:inherit">
+Re: setUseInsecureSSL(true) ==> javax.net.ssl.SSLPeerUnverifie                            <wbr/>
+dException: peer not authenticated                          </h2>
+                        </div>
+                      </div>
+                    </div>
+                    <table class="classic-body">
+                      <tbody>
+                        <tr>
+                          <td class="classic-author shaded-bg-color rounded-bottom">
+                            <div class="avatar-outer">
+                              <div class="avatar-inner">
+                                <a href="http://htmlunit.10904.n7.nabble.com/template/NamlServlet.jtp?macro=user_nodes&amp;user=759" rel="nofollow" title="View profile of Jorge Ventura-2" class="nowrap no-decoration">
+                                  <img src="httphtmlunit.10904.n7.nabble.comsetUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-td28326/avatar100_5.png" width="100" alt="Jorge Ventura-2" title="Jorge Ventura-2" class="avatar medium-border-color" height="100"/>
+                                  <img alt="online" title="User is online" src="httphtmlunit.10904.n7.nabble.comsetUseInsecureSSL-true-gt-javax-net-ssl-SSLPeerUnverifiedException-peer-not-authenticated-td28326/online_5.png" class="online759 online invisible"/>
+                                </a>
+                              </div>
+                            </div>
+                            <div class="post-count759 avatar-label weak-color">
+                            </div>
+                          </td>
+                          <td class="classic-message">
+                            <div id="message28330" class="message-text adbayes-content">
+Ahmed,                              <br/>
+Thank you for your attention with the problem.                              <br/>
+The application I am scraping is proprietary and I have no access to such information.                              <br/>
+                              <br/>
+I am trying to find at internet one site with certificate self signed to test. Some times                              <br/>
+my browser shows a message complaining for some https urls. I will test and inform you                              <br/>
+when I get one.                              <br/>
+                              <br/>
+Thank you,                              <br/>
+Ventura                              <br/>
+                              <br/>
+                              <div class="gmail_quote">
+On Fri, Jul 9, 2010 at 11:35 AM, Ahmed Ashour                                <span dir="ltr">
+<                                  <a href="/user/SendEmail.jtp?type=node&amp;node=28330&amp;i=0" target="_top" rel="nofollow" link="external">
+[hidden email]                                  </a>
+>                                </span>
+wrote:                                <br/>
+                                <blockquote class="gmail_quote" style="margin: 0pt 0pt 0pt 0.8ex; border-left: 1px solid rgb(204, 204, 204); padding-left: 1ex;">
+                                  <div>
+                                    <div style="font-family: times new roman,new york,times,serif; font-size: 12pt;">
+Can you provide how the self-signed certificate was installed?                                      <br/>
+                                      <br/>
+                                      <span>
+I tested HtmlUnit with Tomcat 6.0.14 with the "Quick Start" of                                        <a href="http://tomcat.apache.org/tomcat-6.0-doc/ssl-howto.html" target="_blank" rel="nofollow" link="external">
+http://tomcat.apache.org/tomcat-6.0-doc/ssl-howto.html                                        </a>
+                                      </span>
+                                      <br/>
+                                      <br/>
+Yours,                                      <div class="im">
+                                        <br/>
+Ahmed                                        <br/>
+----                                        <br/>
+                                        <span>
+Blog:                                          <a href="http://asashour.blogspot.com" target="_blank" rel="nofollow" link="external">
+http://asashour.blogspot.com                                          </a>
+                                        </span>
+                                        <br/>
+                                      </div>
+                                      <div style="font-family: times new roman,new york,times,serif; font-size: 12pt;">
+                                        <div style="font-family: times new roman,new york,times,serif; font-size: 12pt;">
+                                          <font size="2" face="Tahoma">
+                                            <div class="im">
+                                              <hr size="1"/>
+                                              <b>
+                                                <span style="font-weight: bold;">
+From:                                                </span>
+                                              </b>
+Jorge Ventura <                                              <a href="/user/SendEmail.jtp?type=node&amp;node=28330&amp;i=1" target="_top" rel="nofollow" link="external">
+[hidden email]                                              </a>
+>                                              <br/>
+                                              <b>
+                                                <span style="font-weight: bold;">
+To:                                                </span>
+                                              </b>
+                                              <a href="/user/SendEmail.jtp?type=node&amp;node=28330&amp;i=2" target="_top" rel="nofollow" link="external">
+[hidden email]                                              </a>
+                                              <br/>
+                                            </div>
+                                            <b>
+                                              <span style="font-weight: bold;">
+Sent:                                              </span>
+                                            </b>
+Fri, July 9, 2010 6:43:42 PM                                            <br/>
+                                            <b>
+                                              <span style="font-weight: bold;">
+Subject:                                              </span>
+                                            </b>
+Re: [Htmlunit-user] setUseInsecureSSL(true) ==> javax.net.ssl.SSLPeerUnverifiedException: peer not authenticated                                            <br/>
+                                          </font>
+                                          <div>
+                                            <div>
+                                            </div>
+                                            <div class="h5">
+                                              <br/>
+I understand and I am using with setUseInsecureSSL(true). Unfortunately I am using HtmUnit to scrape an application in our local office. This application uses a self signed certificate, for that reason I have to set HtmlUnit for insecure SSL connection.                                              <br/>
+                                              <br/>
+Ventura                                              <br/>
+                                              <br/>
+                                              <div class="gmail_quote">
+On Fri, Jul 9, 2010 at 9:50 AM, Ahmed Ashour                                                <span dir="ltr">
+<                                                  <a href="/user/SendEmail.jtp?type=node&amp;node=28330&amp;i=3" target="_top" rel="nofollow" link="external">
+[hidden email]                                                  </a>
+>                                                </span>
+wrote:                                                <br/>
+                                                <blockquote class="gmail_quote" style="margin: 0pt 0pt 0pt 0.8ex; border-left: 1px solid rgb(204, 204, 204); padding-left: 1ex;">
+                                                  <div>
+                                                    <div style="font-family: times new roman,new york,times,serif; font-size: 12pt;">
+Hi Ventura,                                                      <br/>
+                                                      <br/>
+You have to still use .usetInsecureSSL(true), could you provide a public website to test against?                                                      <br/>
+                                                      <br/>
+Ahmed                                                      <br/>
+----                                                      <br/>
+                                                      <span>
+                                                        <span>
+Blog:                                                          <a href="http://asashour.blogspot.com" target="_blank" rel="nofollow" link="external">
+http://asashour.blogspot.com                                                          </a>
+                                                        </span>
+                                                      </span>
+                                                      <div style="font-family: times new roman,new york,times,serif; font-size: 12pt;">
+                                                        <br/>
+                                                        <div style="font-family: arial,helvetica,sans-serif; font-size: 10pt;">
+                                                          <font size="2" face="Tahoma">
+                                                            <hr size="1"/>
+                                                            <b>
+                                                              <span style="font-weight: bold;">
+From:                                                              </span>
+                                                            </b>
+Jorge Ventura <                                                            <a href="/user/SendEmail.jtp?type=node&amp;node=28330&amp;i=4" target="_top" rel="nofollow" link="external">
+[hidden email]                                                            </a>
+>                                                            <br/>
+                                                            <b>
+                                                              <span style="font-weight: bold;">
+To:                                                              </span>
+                                                            </b>
+                                                            <a href="/user/SendEmail.jtp?type=node&amp;node=28330&amp;i=5" target="_top" rel="nofollow" link="external">
+[hidden email]                                                            </a>
+                                                            <br/>
+                                                            <b>
+                                                              <span style="font-weight: bold;">
+Sent:                                                              </span>
+                                                            </b>
+Fri, July 9, 2010 4:50:17 PM                                                            <br/>
+                                                            <b>
+                                                              <span style="font-weight: bold;">
+Subject:                                                              </span>
+                                                            </b>
+[Htmlunit-user] setUseInsecureSSL(true) ==>                                                            <a href="http://javax.net" target="_blank" rel="nofollow" link="external">
+javax.net                                                            </a>
+.ssl.SSLPeerUnverifiedException: peer not authenticated                                                            <br/>
+                                                          </font>
+                                                          <div>
+                                                            <div>
+                                                            </div>
+                                                            <div>
+                                                              <br/>
+  I am using the snapshot 2.8 with my application that it's working with                                                              <br/>
+the current version                                                              <br/>
+2.7 and I am getting an exception that only happens in the past when I                                                              <br/>
+do not set                                                              <br/>
+setUseInsecureSSL(true).                                                              <br/>
+                                                              <br/>
+Ventura                                                              <br/>
+                                                              <br/>
+                                                            </div>
+                                                          </div>
+------------------------------------------------------------------------------                                                          <br/>
+This                                                          <a rel="nofollow" href="http://SF.net" target="_blank" link="external">
+SF.net                                                          </a>
+email is sponsored by Sprint                                                          <br/>
+What will you do first with EVO, the first 4G phone?                                                          <br/>
+Visit                                                          <a rel="nofollow" href="http://sprint.com/first" target="_blank" link="external">
+sprint.com/first                                                          </a>
+                                                          <span>
+                                                            <span>
+--                                                              <a href="http://p.sf.net/sfu/sprint-com-first" target="_blank" rel="nofollow" link="external">
+http://p.sf.net/sfu/sprint-com-first                                                              </a>
+                                                            </span>
+                                                          </span>
+                                                          <br/>
+_______________________________________________                                                          <br/>
+Htmlunit-user mailing list                                                          <br/>
+                                                          <a href="/user/SendEmail.jtp?type=node&amp;node=28330&amp;i=6" target="_top" rel="nofollow" link="external">
+[hidden email]                                                          </a>
+                                                          <br/>
+                                                          <a rel="nofollow" href="https://lists.sourceforge.net/lists/listinfo/htmlunit-user" target="_blank" link="external">
+https://lists.sourceforge.net/lists/listinfo/htmlunit-user                                                          </a>
+                                                          <br/>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <br/>
+                                                  </div>
+                                                  <br/>
+------------------------------------------------------------------------------                                                  <br/>
+This SF.net email is sponsored by Sprint                                                  <br/>
+What will you do first with EVO, the first 4G phone?                                                  <br/>
+Visit                                                  <a rel="nofollow" href="http://sprint.com/first" target="_blank" link="external">
+sprint.com/first                                                  </a>
+--                                                  <a rel="nofollow" href="http://p.sf.net/sfu/sprint-com-first" target="_blank" link="external">
+http://p.sf.net/sfu/sprint-com-first                                                  </a>
+                                                  <br/>
+_______________________________________________                                                  <br/>
+Htmlunit-user mailing list                                                  <br/>
+                                                  <a href="/user/SendEmail.jtp?type=node&amp;node=28330&amp;i=7" target="_top" rel="nofollow" link="external">
+[hidden email]                                                  </a>
+                                                  <br/>
+                                                  <a rel="nofollow" href="https://lists.sourceforge.net/lists/listinfo/htmlunit-user" target="_blank" link="external">
+https://lists.sourceforge.net/lists/listinfo/htmlunit-user                                                  </a>
+                                                  <br/>
+                                                  <br/>
+                                                </blockquote>
+                                              </div>
+                                              <br/>
+                                              <br clear="all"/>
+                                              <br/>
+--                                              <br/>
+Top Gun Technology                                              <br/>
+Software Engineer III                                              <br/>
+5500 Cottonwood Lane SE                                              <br/>
+Prior Lake, MN 55372                                              <br/>
+Tel: 952.226.9700 ext. 126                                              <br/>
+Cell: 952.681.8613                                              <br/>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <br/>
+                                  </div>
+                                  <br/>
+------------------------------------------------------------------------------                                  <br/>
+This SF.net email is sponsored by Sprint                                  <br/>
+What will you do first with EVO, the first 4G phone?                                  <br/>
+Visit                                  <a href="http://sprint.com/first" target="_blank" rel="nofollow" link="external">
+sprint.com/first                                  </a>
+--                                  <a href="http://p.sf.net/sfu/sprint-com-first" target="_blank" rel="nofollow" link="external">
+http://p.sf.net/sfu/sprint-com-first                                  </a>
+                                  <br/>
+_______________________________________________                                  <br/>
+Htmlunit-user mailing list                                  <br/>
+                                  <a href="/user/SendEmail.jtp?type=node&amp;node=28330&amp;i=8" target="_top" rel="nofollow" link="external">
+[hidden email]                                  </a>
+                                  <br/>
+                                  <a href="https://lists.sourceforge.net/lists/listinfo/htmlunit-user" target="_blank" rel="nofollow" link="external">
+https://lists.sourceforge.net/lists/listinfo/htmlunit-user                                  </a>
+                                  <br/>
+                                  <br/>
+                                </blockquote>
+                              </div>
+                              <br/>
+                              <br clear="all"/>
+                              <br/>
+--                              <br/>
+Top Gun Technology                              <br/>
+Software Engineer III                              <br/>
+5500 Cottonwood Lane SE                              <br/>
+Prior Lake, MN 55372                              <br/>
+Tel: 952.226.9700 ext. 126                              <br/>
+Cell: 952.681.8613                              <br/>
+                              <br/>
+------------------------------------------------------------------------------                              <br/>
+This SF.net email is sponsored by Sprint                              <br/>
+What will you do first with EVO, the first 4G phone?                              <br/>
+Visit sprint.com/first --                              <a href="http://p.sf.net/sfu/sprint-com-first" target="_top" rel="nofollow" link="external">
+http://p.sf.net/sfu/sprint-com-first                              </a>
+                              <br/>
+_______________________________________________                              <br/>
+Htmlunit-user mailing list                              <br/>
+                              <a href="/user/SendEmail.jtp?type=node&amp;node=28330&amp;i=9" target="_top" rel="nofollow" link="external">
+[hidden email]                              </a>
+                              <br/>
+                              <a href="https://lists.sourceforge.net/lists/listinfo/htmlunit-user" target="_top" rel="nofollow" link="external">
+https://lists.sourceforge.net/lists/listinfo/htmlunit-user                              </a>
+                              <br/>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div id="topic-footer" class="weak-color" style="padding-top:1em">
+«                <a href="/HtmlUnit-General-f20847.html">
+Return to HtmlUnit - General                </a>
+ |                 <span id="v28326" style="display:none">
+                </span>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="footer-table shaded-bg-color">
+        <tbody>
+          <tr>
+            <td class="footer-left weak-color">
+              <a href="https://www.nabble.com/" target="_top">
+Free forum by Nabble              </a>
+            </td>
+            <td class="footer-right">
+              <a href="/template/NamlServlet.jtp?macro=macro_viewer&amp;id=classic_forum_topic%21nabble%3Atopic.naml&amp;base=nabble.view.web.template.ServletNamespace" rel="nofollow">
+Edit this page              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- n7.nabble.com | Site ID = 10904 -->  </body>
+</html>

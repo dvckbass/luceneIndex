@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>JournalDev</title>
+	<atom:link href="https://www.journaldev.com/feed" rel="self" type="application/rss+xml" />
+	<link>https://www.journaldev.com</link>
+	<description>Java, Java EE, Android, Python, Web Development Tutorials</description>
+	<lastBuildDate>Mon, 10 Dec 2018 09:59:45 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.8</generator>
+
+<image>
+	<url>https://cdn.journaldev.com/wp-content/uploads/2018/12/cropped-512x512-transparent-32x32.png</url>
+	<title>JournalDev</title>
+	<link>https://www.journaldev.com</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Python String isnumeric()</title>
+		<link>https://www.journaldev.com/24122/python-string-isnumeric</link>
+		<comments>https://www.journaldev.com/24122/python-string-isnumeric#respond</comments>
+		<pubDate>Mon, 10 Dec 2018 09:59:45 +0000</pubDate>
+		<dc:creator><![CDATA[Pankaj]]></dc:creator>
+				<category><![CDATA[Python]]></category>
+
+		<guid isPermaLink="false">https://www.journaldev.com/?p=24122</guid>
+		<description><![CDATA[<p>Python String isnumeric() function returns True if all the characters in the string are numeric, otherwise False. If the string is empty, then this function returns False. Python String isnumeric() Numeric characters include digit characters, and all characters that have the Unicode numeric value property. Formally, numeric characters are those with the property value Numeric_Type=Digit, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://www.journaldev.com/24122/python-string-isnumeric">Python String isnumeric()</a> appeared first on <a rel="nofollow" href="https://www.journaldev.com">JournalDev</a>.</p>
+]]></description>
+		<wfw:commentRss>https://www.journaldev.com/24122/python-string-isnumeric/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Python String islower()</title>
+		<link>https://www.journaldev.com/24117/python-string-islower</link>
+		<comments>https://www.journaldev.com/24117/python-string-islower#respond</comments>
+		<pubDate>Mon, 10 Dec 2018 07:33:06 +0000</pubDate>
+		<dc:creator><![CDATA[Pankaj]]></dc:creator>
+				<category><![CDATA[Python]]></category>
+
+		<guid isPermaLink="false">https://www.journaldev.com/?p=24117</guid>
+		<description><![CDATA[<p>Python String islower() returns True if all cased characters in the string are lowercase and there is at least one cased character, otherwise it returns False. Python String islower() Cased characters are those with general Unicode category property being one of &#8220;Lu&#8221; (Letter, uppercase), &#8220;Ll&#8221; (Letter, lowercase), or &#8220;Lt&#8221; (Letter, titlecase). Let&#8217;s look at some [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://www.journaldev.com/24117/python-string-islower">Python String islower()</a> appeared first on <a rel="nofollow" href="https://www.journaldev.com">JournalDev</a>.</p>
+]]></description>
+		<wfw:commentRss>https://www.journaldev.com/24117/python-string-islower/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>SQL Subquery &#8211; Nested Query in SQL</title>
+		<link>https://www.journaldev.com/23945/sql-subquery-nested-query-sql</link>
+		<comments>https://www.journaldev.com/23945/sql-subquery-nested-query-sql#respond</comments>
+		<pubDate>Mon, 10 Dec 2018 06:09:17 +0000</pubDate>
+		<dc:creator><![CDATA[Anand Kumar]]></dc:creator>
+				<category><![CDATA[SQL]]></category>
+
+		<guid isPermaLink="false">https://www.journaldev.com/?p=23945</guid>
+		<description><![CDATA[<p>In the real world, there are times when we need a particular set of data but we don&#8217;t have the exact details for getting the data set. In such cases, we try to get the information from the available set of information that we have. To achieve such target we use SQL subquery. SQL Subquery [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://www.journaldev.com/23945/sql-subquery-nested-query-sql">SQL Subquery &#8211; Nested Query in SQL</a> appeared first on <a rel="nofollow" href="https://www.journaldev.com">JournalDev</a>.</p>
+]]></description>
+		<wfw:commentRss>https://www.journaldev.com/23945/sql-subquery-nested-query-sql/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Android RecyclerView Layout Animations</title>
+		<link>https://www.journaldev.com/24088/android-recyclerview-layout-animations</link>
+		<comments>https://www.journaldev.com/24088/android-recyclerview-layout-animations#respond</comments>
+		<pubDate>Mon, 10 Dec 2018 05:54:30 +0000</pubDate>
+		<dc:creator><![CDATA[Anupam Chugh]]></dc:creator>
+				<category><![CDATA[Android]]></category>
+
+		<guid isPermaLink="false">https://www.journaldev.com/?p=24088</guid>
+		<description><![CDATA[<p>In this tutorial, we&#8217;ll be discussing and implementing RecyclerView Layout Animations in our Android Application. Android RecyclerView Layout Animations There are many ways to Animate rows in a RecyclerView. Two commonly tried and tested ways are : Using ItemAnimators. &#8211; Read this tutorial. Setting animation on each row in the onBindViewHolder in the Adapter class [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://www.journaldev.com/24088/android-recyclerview-layout-animations">Android RecyclerView Layout Animations</a> appeared first on <a rel="nofollow" href="https://www.journaldev.com">JournalDev</a>.</p>
+]]></description>
+		<wfw:commentRss>https://www.journaldev.com/24088/android-recyclerview-layout-animations/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Android RecyclerView Load More, Endless Scrolling</title>
+		<link>https://www.journaldev.com/24041/android-recyclerview-load-more-endless-scrolling</link>
+		<comments>https://www.journaldev.com/24041/android-recyclerview-load-more-endless-scrolling#respond</comments>
+		<pubDate>Mon, 10 Dec 2018 05:50:53 +0000</pubDate>
+		<dc:creator><![CDATA[Anupam Chugh]]></dc:creator>
+				<category><![CDATA[Android]]></category>
+
+		<guid isPermaLink="false">https://www.journaldev.com/?p=24041</guid>
+		<description><![CDATA[<p>In this tutorial, we&#8217;ll be discussing and implementing Endless Scrolling or Infinite Scroll on RecyclerView in our Android Application. The infinite scrolling in which the next set of rows are fetched from the DB/Server while showing a loading icon is commonly seen in many applications such as Facebook, Twitter. It&#8217;s recommended to go through this [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://www.journaldev.com/24041/android-recyclerview-load-more-endless-scrolling">Android RecyclerView Load More, Endless Scrolling</a> appeared first on <a rel="nofollow" href="https://www.journaldev.com">JournalDev</a>.</p>
+]]></description>
+		<wfw:commentRss>https://www.journaldev.com/24041/android-recyclerview-load-more-endless-scrolling/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Python String isidentifier()</title>
+		<link>https://www.journaldev.com/24059/python-string-isidentifier</link>
+		<comments>https://www.journaldev.com/24059/python-string-isidentifier#respond</comments>
+		<pubDate>Thu, 06 Dec 2018 10:22:30 +0000</pubDate>
+		<dc:creator><![CDATA[Pankaj]]></dc:creator>
+				<category><![CDATA[Python]]></category>
+
+		<guid isPermaLink="false">https://www.journaldev.com/?p=24059</guid>
+		<description><![CDATA[<p>Python String isidentifier() function returns True if the string is a valid identifier according to the Python language definition. Python String isidentifier() A valid identifier string can be of any length. Prior to Python 3.0, a valid identifier can contain uppercase and lowercase letters A through Z, the underscore _ and, except for the first [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://www.journaldev.com/24059/python-string-isidentifier">Python String isidentifier()</a> appeared first on <a rel="nofollow" href="https://www.journaldev.com">JournalDev</a>.</p>
+]]></description>
+		<wfw:commentRss>https://www.journaldev.com/24059/python-string-isidentifier/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Python String isdigit()</title>
+		<link>https://www.journaldev.com/24049/python-string-isdigit</link>
+		<comments>https://www.journaldev.com/24049/python-string-isdigit#respond</comments>
+		<pubDate>Thu, 06 Dec 2018 08:29:05 +0000</pubDate>
+		<dc:creator><![CDATA[Pankaj]]></dc:creator>
+				<category><![CDATA[Python]]></category>
+
+		<guid isPermaLink="false">https://www.journaldev.com/?p=24049</guid>
+		<description><![CDATA[<p>Python String isdigit() function returns True if all the characters in the string are digits, otherwise False. If the string is empty then this function returns False. Python String isdigit() Unicode digits include decimal characters and digits that need special handling, such as the compatibility superscript digits. This covers digits which cannot be used to [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://www.journaldev.com/24049/python-string-isdigit">Python String isdigit()</a> appeared first on <a rel="nofollow" href="https://www.journaldev.com">JournalDev</a>.</p>
+]]></description>
+		<wfw:commentRss>https://www.journaldev.com/24049/python-string-isdigit/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Python String isdecimal()</title>
+		<link>https://www.journaldev.com/24032/python-string-isdecimal</link>
+		<comments>https://www.journaldev.com/24032/python-string-isdecimal#respond</comments>
+		<pubDate>Tue, 04 Dec 2018 09:46:00 +0000</pubDate>
+		<dc:creator><![CDATA[Pankaj]]></dc:creator>
+				<category><![CDATA[Python]]></category>
+
+		<guid isPermaLink="false">https://www.journaldev.com/?p=24032</guid>
+		<description><![CDATA[<p>Python String isdecimal() function returns True if all the characters in the string are decimal characters, otherwise False. If the string is empty then this function returns False. Python String isdecimal() If a character can be used to form a number in base 10, then it&#8217;s considered as decimal character. For example, ? (U+0660, ARABIC-INDIC [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://www.journaldev.com/24032/python-string-isdecimal">Python String isdecimal()</a> appeared first on <a rel="nofollow" href="https://www.journaldev.com">JournalDev</a>.</p>
+]]></description>
+		<wfw:commentRss>https://www.journaldev.com/24032/python-string-isdecimal/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Python String isalpha()</title>
+		<link>https://www.journaldev.com/24026/python-string-isalpha</link>
+		<comments>https://www.journaldev.com/24026/python-string-isalpha#respond</comments>
+		<pubDate>Mon, 03 Dec 2018 10:10:38 +0000</pubDate>
+		<dc:creator><![CDATA[Pankaj]]></dc:creator>
+				<category><![CDATA[Python]]></category>
+
+		<guid isPermaLink="false">https://www.journaldev.com/?p=24026</guid>
+		<description><![CDATA[<p>Python String isalpha() function returns True if all the characters in the string are alphabets, otherwise False. If the string is empty then this function returns False. Python String isalpha() Alphabetic characters are those characters defined in the Unicode character database as &#8220;Letter&#8221;, i.e., those with general category property being one of &#8220;Lm&#8221;, &#8220;Lt&#8221;, &#8220;Lu&#8221;, [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://www.journaldev.com/24026/python-string-isalpha">Python String isalpha()</a> appeared first on <a rel="nofollow" href="https://www.journaldev.com">JournalDev</a>.</p>
+]]></description>
+		<wfw:commentRss>https://www.journaldev.com/24026/python-string-isalpha/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Python String isalnum()</title>
+		<link>https://www.journaldev.com/24017/python-string-isalnum</link>
+		<comments>https://www.journaldev.com/24017/python-string-isalnum#respond</comments>
+		<pubDate>Mon, 03 Dec 2018 08:33:15 +0000</pubDate>
+		<dc:creator><![CDATA[Pankaj]]></dc:creator>
+				<category><![CDATA[Python]]></category>
+
+		<guid isPermaLink="false">https://www.journaldev.com/?p=24017</guid>
+		<description><![CDATA[<p>Python string isalnum() function returns True if it&#8217;s made of alphanumeric characters only. A character is alphanumeric if it&#8217;s either an alpha or a number. If the string is empty, then isalnum() returns False. Python string isalnum() example s = 'HelloWorld2019' print(s.isalnum()) Output: True s = 'Hello World 2019' print(s.isalnum()) Output: False because whitespace is [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://www.journaldev.com/24017/python-string-isalnum">Python String isalnum()</a> appeared first on <a rel="nofollow" href="https://www.journaldev.com">JournalDev</a>.</p>
+]]></description>
+		<wfw:commentRss>https://www.journaldev.com/24017/python-string-isalnum/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

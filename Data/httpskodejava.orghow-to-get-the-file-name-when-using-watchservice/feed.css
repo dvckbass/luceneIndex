@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+xmlns:georss="http://www.georss.org/georss" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+>
+
+<channel>
+	<title>Kode Java</title>
+	<atom:link href="https://kodejava.org/feed/" rel="self" type="application/rss+xml" />
+	<link>https://kodejava.org</link>
+	<description>Learn Java by Examples</description>
+	<lastBuildDate>Fri, 07 Dec 2018 12:10:25 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0</generator>
+
+<image>
+	<url>https://i2.wp.com/kodejava.org/wp-content/uploads/2017/01/cropped-icon.png?fit=32%2C32&#038;ssl=1</url>
+	<title>Kode Java</title>
+	<link>https://kodejava.org</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+<site xmlns="com-wordpress:feed-additions:1">120714166</site>	<item>
+		<title>How do I write JSON string using JSON-Java (org.json) library?</title>
+		<link>https://kodejava.org/how-do-i-write-json-string-using-json-java-org-json-library/</link>
+		<comments>https://kodejava.org/how-do-i-write-json-string-using-json-java-org-json-library/#respond</comments>
+		<pubDate>Fri, 31 Aug 2018 07:40:24 +0000</pubDate>
+		<dc:creator><![CDATA[Wayan Saryada]]></dc:creator>
+				<category><![CDATA[JSON-Java]]></category>
+		<category><![CDATA[JSON]]></category>
+		<category><![CDATA[JSONArray]]></category>
+		<category><![CDATA[JSONObject]]></category>
+
+		<guid isPermaLink="false">https://kodejava.org/?p=7571</guid>
+		<description><![CDATA[The following code snippet show you how to create JSON string using JSON-Java library. Create an instance of JSONObject and use the put() method to create a key-value pair for the JSON string. The JSONArray object can be used to create an array of list of values to the JSON string, we also use the [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>The following code snippet show you how to create JSON string using JSON-Java library. Create an instance of <code>JSONObject</code> and use the <code>put()</code> method to create a key-value pair for the JSON string. The <code>JSONArray</code> object can be used to create an array of list of values to the JSON string, we also use the <code>put()</code> method to add value to the list.</p>
+<p>The <code>JSONObject.toString()</code> method accept parameter called <code>indentFactor</code>, this set the indentation level of the generated string, which also make the JSON string generated easier to read and look prettier.</p>
+<pre><code>package org.kodejava.example.json;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+public class WriteJSONString {
+    public static void main(String[] args) {
+        JSONObject object = new JSONObject();
+        object.put("id", 1L);
+        object.put("name", "Alice");
+        object.put("age", 20);
+
+        JSONArray courses = new JSONArray();
+        courses.put("Engineering");
+        courses.put("Finance");
+        courses.put("Chemistry");
+
+        object.put("courses", courses);
+
+        String jsonString = object.toString(2);
+        System.out.println(jsonString);
+    }
+}
+</code></pre>
+<p>The result of the code snippet above is:</p>
+<pre>
+{
+  "courses": [
+    "Engineering",
+    "Finance",
+    "Chemistry"
+  ],
+  "name": "Alice",
+  "id": 1,
+  "age": 20
+}
+</pre>
+<p><strong>Maven Dependencies</strong></p>
+<pre><code>&lt;!-- https://repo1.maven.org/maven2/org/json/json/20180813/json-20180813.jar --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.json&lt;/groupId&gt;
+    &lt;artifactId&gt;json&lt;/artifactId&gt;
+    &lt;version&gt;20180813&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+]]></content:encoded>
+			<wfw:commentRss>https://kodejava.org/how-do-i-write-json-string-using-json-java-org-json-library/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">7571</post-id>	</item>
+		<item>
+		<title>How do I read JSON file using JSON-Java (org.json) library?</title>
+		<link>https://kodejava.org/how-do-i-read-json-file-using-json-java-org-json-library/</link>
+		<comments>https://kodejava.org/how-do-i-read-json-file-using-json-java-org-json-library/#respond</comments>
+		<pubDate>Fri, 31 Aug 2018 03:02:38 +0000</pubDate>
+		<dc:creator><![CDATA[Wayan Saryada]]></dc:creator>
+				<category><![CDATA[JSON-Java]]></category>
+		<category><![CDATA[JSON]]></category>
+		<category><![CDATA[JSONArray]]></category>
+		<category><![CDATA[JSONObject]]></category>
+		<category><![CDATA[JSONTokener]]></category>
+
+		<guid isPermaLink="false">https://kodejava.org/?p=7564</guid>
+		<description><![CDATA[In this example we are going to use the JSON-Java (org.json) library to read or parse JSON file. First we start by getting the InputStream of the JSON file to be read using getResourceAsStream() method. Next we construct a JSONTokener from the input stream and create an instance of JSONObject to read the JSON entries. [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>In this example we are going to use the JSON-Java (org.json) library to read or parse JSON file. First we start by getting the <code>InputStream</code> of the JSON file to be read using <code>getResourceAsStream()</code> method. Next we construct a <code>JSONTokener</code> from the input stream and create an instance of <code>JSONObject</code> to read the JSON entries.</p>
+<p>We can use method like <code>getString()</code>, <code>getInt()</code>, <code>getLong()</code>, etc to read a key-value from the JSON file. The <code>getJSONArray()</code> method allow us to read an list of values returned in <code>JSONArray</code> object. Which can be iterated to get each values represented by the key. Let&#8217;s see the detail code snippet below.</p>
+<pre><code>package org.kodejava.example.json;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.json.JSONTokener;
+
+import java.io.InputStream;
+
+public class ReadJSONString {
+    public static void main(String[] args) {
+        // info.json
+        // {
+        //  "id": "1",
+        //  "name": "Alice",
+        //  "age": "20",
+        //  "courses": [
+        //    "Engineering",
+        //    "Finance",
+        //    "Chemistry"
+        //  ]
+        //}
+        String resourceName = "/info.json";
+        InputStream is = ReadJSONString.class.getResourceAsStream(resourceName);
+        if (is == null) {
+            throw new NullPointerException("Cannot find resource file " + resourceName);
+        }
+
+        JSONTokener tokener = new JSONTokener(is);
+        JSONObject object = new JSONObject(tokener);
+        System.out.println("Id  : " + object.getLong("id"));
+        System.out.println("Name: " + object.getString("name"));
+        System.out.println("Age : " + object.getInt("age"));
+
+        System.out.println("Courses: ");
+        JSONArray courses = object.getJSONArray("courses");
+        for (int i = 0; i &lt; courses.length(); i++) {
+            System.out.println("  - " + courses.get(i));
+        }
+    }
+}
+</code></pre>
+<p>The result of the code snippet above is:</p>
+<pre>
+Id  : 1
+Name: Alice
+Age : 20
+Courses: 
+  - Engineering
+  - Finance
+  - Chemistry
+</pre>
+<p><strong>Maven Dependencies</strong></p>
+<pre><code>&lt;!-- https://repo1.maven.org/maven2/org/json/json/20180813/json-20180813.jar --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.json&lt;/groupId&gt;
+    &lt;artifactId&gt;json&lt;/artifactId&gt;
+    &lt;version&gt;20180813&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+]]></content:encoded>
+			<wfw:commentRss>https://kodejava.org/how-do-i-read-json-file-using-json-java-org-json-library/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">7564</post-id>	</item>
+		<item>
+		<title>Install IntelliJ IDEA Community Edition and Write Hello Kotlin Program</title>
+		<link>https://kodejava.org/install-intellij-idea-community-edition-and-write-hello-kotlin-program/</link>
+		<comments>https://kodejava.org/install-intellij-idea-community-edition-and-write-hello-kotlin-program/#respond</comments>
+		<pubDate>Sun, 13 May 2018 11:39:17 +0000</pubDate>
+		<dc:creator><![CDATA[Wayan Saryada]]></dc:creator>
+				<category><![CDATA[Kotlin]]></category>
+		<category><![CDATA[HelloWorld]]></category>
+		<category><![CDATA[IntelliJ IDEA CE]]></category>
+
+		<guid isPermaLink="false">https://kodejava.org/?p=7279</guid>
+		<description><![CDATA[To write Kotlin program you will need an IDE (Integrated Development Environment). One of the IDE that you can use is the IntelliJ IDEA CE (Community Edition). It comes with Kotlin Java Runtime Library so you don&#8217;t need to install it separately. To run Kotlin program you will need to install the latest JDK (Java [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p><img data-attachment-id="7268" data-permalink="https://kodejava.org/how-do-i-write-hello-world-in-kotlin/200px-kotlin-logo/" data-orig-file="https://i0.wp.com/kodejava.org/wp-content/uploads/2018/05/200px-kotlin-logo.png?fit=200%2C200&amp;ssl=1" data-orig-size="200,200" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Kotlin Logo" data-image-description="&lt;p&gt;Kotlin Logo&lt;/p&gt;
+" data-medium-file="https://i0.wp.com/kodejava.org/wp-content/uploads/2018/05/200px-kotlin-logo.png?fit=200%2C200&amp;ssl=1" data-large-file="https://i0.wp.com/kodejava.org/wp-content/uploads/2018/05/200px-kotlin-logo.png?fit=200%2C200&amp;ssl=1" src="https://i0.wp.com/kodejava.org/wp-content/uploads/2018/05/200px-kotlin-logo.png?resize=200%2C200&#038;ssl=1" alt="" width="200" height="200" class="alignleft size-full wp-image-7268" srcset="https://i0.wp.com/kodejava.org/wp-content/uploads/2018/05/200px-kotlin-logo.png?w=200&amp;ssl=1 200w, https://i0.wp.com/kodejava.org/wp-content/uploads/2018/05/200px-kotlin-logo.png?resize=150%2C150&amp;ssl=1 150w" sizes="(max-width: 200px) 100vw, 200px" data-recalc-dims="1" /></p>
+<p>To write Kotlin program you will need an IDE (Integrated Development Environment). One of the IDE that you can use is the IntelliJ IDEA CE (Community Edition). It comes with Kotlin Java Runtime Library so you don&#8217;t need to install it separately.</p>
+<p>To run Kotlin program you will need to install the latest JDK (Java Development Kit) which can be downloaded freely from the <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java Download Website</a>. Download version for your operating system and run the installer.</p>
+<p>To check if Java successfully installed you can type the following command in your terminal or command prompt:</p>
+<pre><code>java -version
+</code></pre>
+<p>If you see something this then Java Development Kit is installed in your system.</p>
+<pre>
+java version "10" 2018-03-20
+Java(TM) SE Runtime Environment 18.3 (build 10+46)
+Java HotSpot(TM) 64-Bit Server VM 18.3 (build 10+46, mixed mode)
+</pre>
+<p>After installing the JDK you can download the <a href="https://www.jetbrains.com/idea/download/index.html">IntelliJ IDEA CE</a>. Double click the installer to install it. For more details on installation and setup you can checkout this <a href="https://www.jetbrains.com/help/idea/install-and-set-up-product.html">website</a>.</p>
+<p>Now let&#8217;s create our first simple Kotlin program in IntelliJ IDEA.</p>
+<ul>
+<li>Open the IntelliJ IDEA CE and click the <strong>Create New Project</strong> from the Welcome Screen dialog.</li>
+</ul>
+<div id="attachment_7287" style="width: 310px" class="wp-caption aligncenter"><a href="https://kodejava.org/install-intellij-idea-community-edition-and-write-hello-kotlin-program/create-new-kotlin-project/" rel="attachment wp-att-7287"><img data-attachment-id="7287" data-permalink="https://kodejava.org/install-intellij-idea-community-edition-and-write-hello-kotlin-program/create-new-kotlin-project/" data-orig-file="https://i0.wp.com/kodejava.org/wp-content/uploads/2018/05/create-new-kotlin-project.png?fit=777%2C482&amp;ssl=1" data-orig-size="777,482" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Create New Kotlin Project" data-image-description="&lt;p&gt;Create New Kotlin Project&lt;/p&gt;
+" data-medium-file="https://i0.wp.com/kodejava.org/wp-content/uploads/2018/05/create-new-kotlin-project.png?fit=300%2C186&amp;ssl=1" data-large-file="https://i0.wp.com/kodejava.org/wp-content/uploads/2018/05/create-new-kotlin-project.png?fit=620%2C385&amp;ssl=1" src="https://i0.wp.com/kodejava.org/wp-content/uploads/2018/05/create-new-kotlin-project.png?resize=300%2C186&#038;ssl=1" alt="Create New Kotlin Project" width="300" height="186" class="size-medium wp-image-7287" srcset="https://i0.wp.com/kodejava.org/wp-content/uploads/2018/05/create-new-kotlin-project.png?resize=300%2C186&amp;ssl=1 300w, https://i0.wp.com/kodejava.org/wp-content/uploads/2018/05/create-new-kotlin-project.png?resize=768%2C476&amp;ssl=1 768w, https://i0.wp.com/kodejava.org/wp-content/uploads/2018/05/create-new-kotlin-project.png?w=777&amp;ssl=1 777w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" /></a><p class="wp-caption-text">Create New Kotlin Project</p></div>
+<ul>
+<li>On the New Project dialog choose <strong>Kotlin</strong> from the left sidebar and then choose <strong>Kotlin/JVM</strong> in the selection on the right sidebar. Press the <strong>Next</strong> button.</li>
+</ul>
+<div id="attachment_7291" style="width: 310px" class="wp-caption aligncenter"><a href="https://kodejava.org/install-intellij-idea-community-edition-and-write-hello-kotlin-program/new-kotlin-project-setup/" rel="attachment wp-att-7291"><img data-attachment-id="7291" data-permalink="https://kodejava.org/install-intellij-idea-community-edition-and-write-hello-kotlin-program/new-kotlin-project-setup/" data-orig-file="https://i2.wp.com/kodejava.org/wp-content/uploads/2018/05/new-kotlin-project-setup.png?fit=750%2C545&amp;ssl=1" data-orig-size="750,545" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="New Kotlin Project Setup" data-image-description="&lt;p&gt;New Kotlin Project Setup&lt;/p&gt;
+" data-medium-file="https://i2.wp.com/kodejava.org/wp-content/uploads/2018/05/new-kotlin-project-setup.png?fit=300%2C218&amp;ssl=1" data-large-file="https://i2.wp.com/kodejava.org/wp-content/uploads/2018/05/new-kotlin-project-setup.png?fit=620%2C451&amp;ssl=1" src="https://i2.wp.com/kodejava.org/wp-content/uploads/2018/05/new-kotlin-project-setup.png?resize=300%2C218&#038;ssl=1" alt="New Kotlin Project Setup" width="300" height="218" class="size-medium wp-image-7291" srcset="https://i2.wp.com/kodejava.org/wp-content/uploads/2018/05/new-kotlin-project-setup.png?resize=300%2C218&amp;ssl=1 300w, https://i2.wp.com/kodejava.org/wp-content/uploads/2018/05/new-kotlin-project-setup.png?w=750&amp;ssl=1 750w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" /></a><p class="wp-caption-text">New Kotlin Project Setup</p></div>
+<ul>
+<li>Enter the project name <strong>Hello Kotlin</strong>, the project location path and the JDK will be used in the project.</li>
+</ul>
+<div id="attachment_7290" style="width: 310px" class="wp-caption aligncenter"><a href="https://kodejava.org/install-intellij-idea-community-edition-and-write-hello-kotlin-program/new-kotlin-project-configuration/" rel="attachment wp-att-7290"><img data-attachment-id="7290" data-permalink="https://kodejava.org/install-intellij-idea-community-edition-and-write-hello-kotlin-program/new-kotlin-project-configuration/" data-orig-file="https://i0.wp.com/kodejava.org/wp-content/uploads/2018/05/new-kotlin-project-configuration.png?fit=750%2C545&amp;ssl=1" data-orig-size="750,545" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="New Kotlin Project Configurations" data-image-description="&lt;p&gt;New Kotlin Project Configurations&lt;/p&gt;
+" data-medium-file="https://i0.wp.com/kodejava.org/wp-content/uploads/2018/05/new-kotlin-project-configuration.png?fit=300%2C218&amp;ssl=1" data-large-file="https://i0.wp.com/kodejava.org/wp-content/uploads/2018/05/new-kotlin-project-configuration.png?fit=620%2C451&amp;ssl=1" src="https://i0.wp.com/kodejava.org/wp-content/uploads/2018/05/new-kotlin-project-configuration.png?resize=300%2C218&#038;ssl=1" alt="New Kotlin Project Configurations" width="300" height="218" class="size-medium wp-image-7290" srcset="https://i0.wp.com/kodejava.org/wp-content/uploads/2018/05/new-kotlin-project-configuration.png?resize=300%2C218&amp;ssl=1 300w, https://i0.wp.com/kodejava.org/wp-content/uploads/2018/05/new-kotlin-project-configuration.png?w=750&amp;ssl=1 750w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" /></a><p class="wp-caption-text">New Kotlin Project Configurations</p></div>
+<ul>
+<li>Click the <strong>Finish</strong> button to create the project. It will bring you to the following screen.</li>
+</ul>
+<div id="attachment_7288" style="width: 310px" class="wp-caption aligncenter"><a href="https://kodejava.org/install-intellij-idea-community-edition-and-write-hello-kotlin-program/hello-kotlin-project-in-intellij-idea-ce/" rel="attachment wp-att-7288"><img data-attachment-id="7288" data-permalink="https://kodejava.org/install-intellij-idea-community-edition-and-write-hello-kotlin-program/hello-kotlin-project-in-intellij-idea-ce/" data-orig-file="https://i1.wp.com/kodejava.org/wp-content/uploads/2018/05/hello-kotlin-project-in-intellij-idea-ce.png?fit=1280%2C1058&amp;ssl=1" data-orig-size="1280,1058" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="HelloKotlin Project in IntelliJ IDEA CE" data-image-description="&lt;p&gt;HelloKotlin Project in IntelliJ IDEA CE&lt;/p&gt;
+" data-medium-file="https://i1.wp.com/kodejava.org/wp-content/uploads/2018/05/hello-kotlin-project-in-intellij-idea-ce.png?fit=300%2C248&amp;ssl=1" data-large-file="https://i1.wp.com/kodejava.org/wp-content/uploads/2018/05/hello-kotlin-project-in-intellij-idea-ce.png?fit=620%2C512&amp;ssl=1" src="https://i1.wp.com/kodejava.org/wp-content/uploads/2018/05/hello-kotlin-project-in-intellij-idea-ce.png?resize=300%2C248&#038;ssl=1" alt="HelloKotlin Project in IntelliJ IDEA CE" width="300" height="248" class="size-medium wp-image-7288" srcset="https://i1.wp.com/kodejava.org/wp-content/uploads/2018/05/hello-kotlin-project-in-intellij-idea-ce.png?resize=300%2C248&amp;ssl=1 300w, https://i1.wp.com/kodejava.org/wp-content/uploads/2018/05/hello-kotlin-project-in-intellij-idea-ce.png?resize=768%2C635&amp;ssl=1 768w, https://i1.wp.com/kodejava.org/wp-content/uploads/2018/05/hello-kotlin-project-in-intellij-idea-ce.png?resize=1024%2C846&amp;ssl=1 1024w, https://i1.wp.com/kodejava.org/wp-content/uploads/2018/05/hello-kotlin-project-in-intellij-idea-ce.png?w=1280&amp;ssl=1 1280w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" /></a><p class="wp-caption-text">HelloKotlin Project in IntelliJ IDEA CE</p></div>
+<ul>
+<li>Right click on the <strong><code>src</code></strong> directory and choose <strong>New</strong> &#9654; <strong>Kotlin File/Class</strong> from the menu. Enter <strong><code>HelloKotlin</code></strong> in the File/Class name.</li>
+</ul>
+<div id="attachment_7289" style="width: 310px" class="wp-caption aligncenter"><a href="https://kodejava.org/install-intellij-idea-community-edition-and-write-hello-kotlin-program/new-kotlin-file-class-dialog/" rel="attachment wp-att-7289"><img data-attachment-id="7289" data-permalink="https://kodejava.org/install-intellij-idea-community-edition-and-write-hello-kotlin-program/new-kotlin-file-class-dialog/" data-orig-file="https://i1.wp.com/kodejava.org/wp-content/uploads/2018/05/new-kotlin-file-class-dialog.png?fit=349%2C141&amp;ssl=1" data-orig-size="349,141" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="New Kotlin File/Class Dialog" data-image-description="&lt;p&gt;New Kotlin File/Class Dialog&lt;/p&gt;
+" data-medium-file="https://i1.wp.com/kodejava.org/wp-content/uploads/2018/05/new-kotlin-file-class-dialog.png?fit=300%2C121&amp;ssl=1" data-large-file="https://i1.wp.com/kodejava.org/wp-content/uploads/2018/05/new-kotlin-file-class-dialog.png?fit=349%2C141&amp;ssl=1" src="https://i1.wp.com/kodejava.org/wp-content/uploads/2018/05/new-kotlin-file-class-dialog.png?resize=300%2C121&#038;ssl=1" alt="New Kotlin File/Class Dialog" width="300" height="121" class="size-medium wp-image-7289" srcset="https://i1.wp.com/kodejava.org/wp-content/uploads/2018/05/new-kotlin-file-class-dialog.png?resize=300%2C121&amp;ssl=1 300w, https://i1.wp.com/kodejava.org/wp-content/uploads/2018/05/new-kotlin-file-class-dialog.png?w=349&amp;ssl=1 349w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" /></a><p class="wp-caption-text">New Kotlin File/Class Dialog</p></div>
+<ul>
+<li>In the <strong><code>HelloKotlin.kt</code></strong> type in the following code snippet.</li>
+</ul>
+<pre><code>fun main(args: Array&lt;String&gt;) {
+    if (args.isEmpty()) {
+        println("Hello, World!")
+        return
+    } else {
+        println("Hi, hello ${args[0]}!")
+    }
+}
+</code></pre>
+<ul>
+<li>To run it, right click on the editor and choose the <strong>Run HelloKotlinKt</strong> from the menu.</li>
+<li>If you want to run it with an argument you can set it in the <strong>Run/Debug Configurations</strong> dialog.</li>
+<li>To open the Run/Debug Configurations click the down-arrow button next to HelloKotlinKt in the navigation bar on the top-right and choose <strong>Edit Configurations&#8230;</strong></li>
+<li>Type in the arguments in the <strong>Program arguments</strong> textbox. </li>
+</ul>
+<div id="attachment_7292" style="width: 310px" class="wp-caption aligncenter"><a href="https://kodejava.org/install-intellij-idea-community-edition-and-write-hello-kotlin-program/run-debug-configuration/" rel="attachment wp-att-7292"><img data-attachment-id="7292" data-permalink="https://kodejava.org/install-intellij-idea-community-edition-and-write-hello-kotlin-program/run-debug-configuration/" data-orig-file="https://i1.wp.com/kodejava.org/wp-content/uploads/2018/05/run-debug-configuration.png?fit=1071%2C676&amp;ssl=1" data-orig-size="1071,676" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Run/Debug Configurations" data-image-description="&lt;p&gt;Run/Debug Configurations&lt;/p&gt;
+" data-medium-file="https://i1.wp.com/kodejava.org/wp-content/uploads/2018/05/run-debug-configuration.png?fit=300%2C189&amp;ssl=1" data-large-file="https://i1.wp.com/kodejava.org/wp-content/uploads/2018/05/run-debug-configuration.png?fit=620%2C391&amp;ssl=1" src="https://i1.wp.com/kodejava.org/wp-content/uploads/2018/05/run-debug-configuration.png?resize=300%2C189&#038;ssl=1" alt="Run/Debug Configurations" width="300" height="189" class="size-medium wp-image-7292" srcset="https://i1.wp.com/kodejava.org/wp-content/uploads/2018/05/run-debug-configuration.png?resize=300%2C189&amp;ssl=1 300w, https://i1.wp.com/kodejava.org/wp-content/uploads/2018/05/run-debug-configuration.png?resize=768%2C485&amp;ssl=1 768w, https://i1.wp.com/kodejava.org/wp-content/uploads/2018/05/run-debug-configuration.png?resize=1024%2C646&amp;ssl=1 1024w, https://i1.wp.com/kodejava.org/wp-content/uploads/2018/05/run-debug-configuration.png?w=1071&amp;ssl=1 1071w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" /></a><p class="wp-caption-text">Run/Debug Configurations</p></div>
+<p>That&#8217;s all. Now you have your JDK, IntelliJ IDEA CE installed and created your first Kotlin program. If you have any questions please post it in the comments section below. Thank you and have <strong>fun</strong> with Kotlin.</p>
+]]></content:encoded>
+			<wfw:commentRss>https://kodejava.org/install-intellij-idea-community-edition-and-write-hello-kotlin-program/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">7279</post-id>	</item>
+		<item>
+		<title>How do I write Hello World in Kotlin?</title>
+		<link>https://kodejava.org/how-do-i-write-hello-world-in-kotlin/</link>
+		<comments>https://kodejava.org/how-do-i-write-hello-world-in-kotlin/#respond</comments>
+		<pubDate>Sun, 13 May 2018 03:32:57 +0000</pubDate>
+		<dc:creator><![CDATA[Wayan Saryada]]></dc:creator>
+				<category><![CDATA[Kotlin]]></category>
+		<category><![CDATA[HelloWorld]]></category>
+
+		<guid isPermaLink="false">https://kodejava.org/?p=7262</guid>
+		<description><![CDATA[In Kotlin, the HelloWorld.kt program can be written as a simple function like the following snippet. fun main(args: Array&#60;String&#62;) { println("Hello, World!") } From this little code snippet we can learn the following features of the Kotlin programming language: Kotlin program saved in a file with .kt extension. The fun keyword to declare a function [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p><img data-attachment-id="7268" data-permalink="https://kodejava.org/how-do-i-write-hello-world-in-kotlin/200px-kotlin-logo/" data-orig-file="https://i0.wp.com/kodejava.org/wp-content/uploads/2018/05/200px-kotlin-logo.png?fit=200%2C200&amp;ssl=1" data-orig-size="200,200" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Kotlin Logo" data-image-description="&lt;p&gt;Kotlin Logo&lt;/p&gt;
+" data-medium-file="https://i0.wp.com/kodejava.org/wp-content/uploads/2018/05/200px-kotlin-logo.png?fit=200%2C200&amp;ssl=1" data-large-file="https://i0.wp.com/kodejava.org/wp-content/uploads/2018/05/200px-kotlin-logo.png?fit=200%2C200&amp;ssl=1" src="https://i0.wp.com/kodejava.org/wp-content/uploads/2018/05/200px-kotlin-logo.png?resize=200%2C200&#038;ssl=1" alt="" width="200" height="200" class="alignleft size-full wp-image-7268" srcset="https://i0.wp.com/kodejava.org/wp-content/uploads/2018/05/200px-kotlin-logo.png?w=200&amp;ssl=1 200w, https://i0.wp.com/kodejava.org/wp-content/uploads/2018/05/200px-kotlin-logo.png?resize=150%2C150&amp;ssl=1 150w" sizes="(max-width: 200px) 100vw, 200px" data-recalc-dims="1" /> In <a href="https://kotlinlang.org/">Kotlin</a>, the <code>HelloWorld.kt</code> program can be written as a simple function like the following snippet.</p>
+<pre><code>fun main(args: Array&lt;String&gt;) {
+    println("Hello, World!")
+}
+</code></pre>
+<p>From this little code snippet we can learn the following features of the Kotlin programming language:</p>
+<ul>
+<li>Kotlin program saved in a file with <code>.kt</code> extension.</li>
+<li>The <code>fun</code> keyword to declare a function to show you that programming can be fun again <img src="https://s.w.org/images/core/emoji/11/72x72/1f609.png" alt="?" class="wp-smiley" style="height: 1em; max-height: 1em;" /></li>
+<li>To declare variables we start with the variable name followed by its type separated by a colon.</li>
+<li>We don&#8217;t have to end a statement with a semicolons.</li>
+<li>To print we can use the <code>println</code> function, which is a wrapper to Java <code>System.out.println</code>.</li>
+<li>The <code>main</code> function is the execution entry point of our HelloWorld program.</li>
+<li>We can create functions at the top level file without creating a class.</li>
+</ul>
+<p>To compile the <code>HelloWorld.kt</code> program we run the following command:</p>
+<pre><code>kotlinc HelloWorld.kt
+</code></pre>
+<p>The compiler creates a class file called <code>HelloWorldKt.class</code>. To run it type the following command, assumed that you&#8217;ve setup the <code>$KOTLIN_LIB</code> environment variable. In my case the variable is set to <code>/usr/local/Cellar/kotlin/1.2.40/libexec/lib</code>.</p>
+<pre><code>java -cp $KOTLIN_LIB/kotlin-stdlib.jar:. HelloWorldKt
+</code></pre>
+]]></content:encoded>
+			<wfw:commentRss>https://kodejava.org/how-do-i-write-hello-world-in-kotlin/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">7262</post-id>	</item>
+		<item>
+		<title>How do I set the default Java (JDK) version on Mac OS X?</title>
+		<link>https://kodejava.org/how-do-i-set-the-default-java-jdk-version-on-mac-os-x/</link>
+		<comments>https://kodejava.org/how-do-i-set-the-default-java-jdk-version-on-mac-os-x/#comments</comments>
+		<pubDate>Tue, 14 Nov 2017 02:25:12 +0000</pubDate>
+		<dc:creator><![CDATA[Wayan Saryada]]></dc:creator>
+				<category><![CDATA[OS X]]></category>
+		<category><![CDATA[JAVA_HOME]]></category>
+		<category><![CDATA[Mac]]></category>
+
+		<guid isPermaLink="false">https://kodejava.org/?p=6854</guid>
+		<description><![CDATA[In this post you will learn how to set the default JAVA_HOME in OS X when you have more than one JDK installed in your computer. First you need to run /usr/libexec/java_home -V command to get the list of installed JDK. The command will print out something like the following depending on the available JDK [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>In this post you will learn how to set the default <code>JAVA_HOME</code> in OS X when you have more than one JDK installed in your computer. First you need to run <em><code>/usr/libexec/java_home -V</code></em> command to get the list of installed JDK. The command will print out something like the following depending on the available JDK in your computer.</p>
+<p>On my machine I have the following version of Java.</p>
+<pre>
+Matching Java Virtual Machines (3):
+    9, x86_64:  "Java SE 9"     /Library/Java/JavaVirtualMachines/jdk-9.jdk/Contents/Home
+    1.8.0_121, x86_64:  "Java SE 8"     /Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home
+    1.7.0_80, x86_64:   "Java SE 7"     /Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home
+</pre>
+<p>From the list above pick which version you want to be the default JDK. For example I will choose the <code>1.8.0_121</code> version to be my default JDK. To set it run the command below.</p>
+<pre>
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_121`
+</pre>
+<p>If the major version of the available JDK is unique you can just use the major version, like:</p>
+<pre>
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+</pre>
+<p>After setting the JAVA_HOME and you run the <code>java -version</code> command you will see that JDK 1.8 is the new default JDK in your computer.</p>
+<pre>
+java version "1.8.0_121"
+Java(TM) SE Runtime Environment (build 1.8.0_121-b13)
+Java HotSpot(TM) 64-Bit Server VM (build 25.121-b13, mixed mode)
+</pre>
+<p>The change above will only active in the current running shell. If you close or terminate the shell, next time you open the shell you will need to set it again. To make this change permanent you need to set it in your shell init file. For example if you are using <code>bash</code> then you can set the command in the <code>.bash_profile</code>. Add the following lines at the end of the file.</p>
+<pre>
+# Setting default JDK to version 1.8.
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+</pre>
+<p>To activate this configuration right away your can run <code>source .bash_profile</code>. This command reads and executes the <code>.bash_profile</code> in the current shell.</p>
+<p><img data-attachment-id="6861" data-permalink="https://kodejava.org/how-do-i-set-the-default-java-jdk-version-on-mac-os-x/java_duke/" data-orig-file="https://i2.wp.com/kodejava.org/wp-content/uploads/2017/11/Java_Duke.png?fit=226%2C407&amp;ssl=1" data-orig-size="226,407" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Java Duke" data-image-description="" data-medium-file="https://i2.wp.com/kodejava.org/wp-content/uploads/2017/11/Java_Duke.png?fit=167%2C300&amp;ssl=1" data-large-file="https://i2.wp.com/kodejava.org/wp-content/uploads/2017/11/Java_Duke.png?fit=226%2C407&amp;ssl=1" src="https://i2.wp.com/kodejava.org/wp-content/uploads/2017/11/Java_Duke.png?resize=167%2C300&#038;ssl=1" alt="" width="167" height="300" class="aligncenter size-medium wp-image-6861" srcset="https://i2.wp.com/kodejava.org/wp-content/uploads/2017/11/Java_Duke.png?resize=167%2C300&amp;ssl=1 167w, https://i2.wp.com/kodejava.org/wp-content/uploads/2017/11/Java_Duke.png?w=226&amp;ssl=1 226w" sizes="(max-width: 167px) 100vw, 167px" data-recalc-dims="1" /></p>
+]]></content:encoded>
+			<wfw:commentRss>https://kodejava.org/how-do-i-set-the-default-java-jdk-version-on-mac-os-x/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">6854</post-id>	</item>
+		<item>
+		<title>How do I pass password to sudo commands?</title>
+		<link>https://kodejava.org/how-do-i-pass-password-to-sudo-commands/</link>
+		<comments>https://kodejava.org/how-do-i-pass-password-to-sudo-commands/#respond</comments>
+		<pubDate>Tue, 17 Oct 2017 06:13:57 +0000</pubDate>
+		<dc:creator><![CDATA[Wayan Saryada]]></dc:creator>
+				<category><![CDATA[Ubuntu]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Password]]></category>
+		<category><![CDATA[sudo]]></category>
+
+		<guid isPermaLink="false">https://kodejava.org/?p=6541</guid>
+		<description><![CDATA[If you want to run a sudo command without being prompted to input the password you can do the following command. echo password &#124; sudo -S rm -rf /opt/jetty/ In the command above we are trying to remove the /opt/jetty directory using the rm -rf command. The -S (stdin) option allow the sudo command to [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>If you want to run a <code>sudo</code> command without being prompted to input the password you can do the following command.</p>
+<pre>
+echo password | sudo -S rm -rf /opt/jetty/
+</pre>
+<p>In the command above we are trying to remove the <code>/opt/jetty</code> directory using the <code>rm -rf</code> command. The <code>-S</code> (stdin) option allow the <code>sudo</code> command to read password from a standard input instead of a terminal device.</p>
+<p>If  you want to store the password in a file you can use the <code>cat</code> command instead of <code>echo</code> like the following example.</p>
+<pre>
+cat password.txt | sudo -S rm -rf /opt/jetty/
+</pre>
+]]></content:encoded>
+			<wfw:commentRss>https://kodejava.org/how-do-i-pass-password-to-sudo-commands/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">6541</post-id>	</item>
+		<item>
+		<title>How to pretty print JSON string using Jackson?</title>
+		<link>https://kodejava.org/how-to-pretty-print-json-string-using-jackson/</link>
+		<comments>https://kodejava.org/how-to-pretty-print-json-string-using-jackson/#comments</comments>
+		<pubDate>Wed, 15 Feb 2017 00:00:52 +0000</pubDate>
+		<dc:creator><![CDATA[Wayan Saryada]]></dc:creator>
+				<category><![CDATA[Jackson]]></category>
+		<category><![CDATA[JSON]]></category>
+		<category><![CDATA[ObjectMapper]]></category>
+		<category><![CDATA[SerializationFeature]]></category>
+
+		<guid isPermaLink="false">https://kodejava.org/?p=6016</guid>
+		<description><![CDATA[The following example demonstrates how to pretty print the JSON string produces by Jackson library. To produce well formatted JSON string we create the ObjectMapper instance and enable the SerializationFeature.INDENT_OUTPUT feature. To enable this feature we need to call the enable() method of the ObjectMapper and provide the feature to be enabled. ObjectMapper mapper = [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>The following example demonstrates <strong>how to pretty print the JSON string produces by Jackson library</strong>. To produce well formatted JSON string we create the <code>ObjectMapper</code> instance and enable the <code>SerializationFeature.INDENT_OUTPUT</code> feature. To enable this feature we need to call the <code>enable()</code> method of the <code>ObjectMapper</code> and provide the feature to be enabled.</p>
+<pre><code>ObjectMapper mapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
+String json = mapper.writeValueAsString(recording);
+System.out.println(json);
+</code></pre>
+<p>On the second example below we format unformatted JSON string. To do this we use the <code>ObjectMapper</code>&#8216;s <code>readValue(String, Class&lt;T&gt;)</code> method which accept the JSON string and <code>Object.class</code> as the value type. The <code>readValue()</code> method return an <code>Object</code>. To format the JSON object we call <code>mapper.writerWithDefaultPrettyPrinter().writeValueAsString(Object)</code>. This will produce a pretty formatted JSON.</p>
+<pre><code>ObjectMapper mapper = new ObjectMapper();
+Object jsonObject = mapper.readValue(json, Object.class);
+String prettyJson = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(jsonObject);
+System.out.println(prettyJson);
+</code></pre>
+<p>Below is the complete code snippets.</p>
+<pre><code>package org.kodejava.example.jackson;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.Month;
+
+public class JsonIndentOutput {
+    public static void main(String[] args) {
+        JsonIndentOutput.formatObjectToJsonString();
+        JsonIndentOutput.formatJsonString();
+    }
+
+    private static void formatObjectToJsonString() {
+        Recording recording = new Recording();
+        recording.setId(1L);
+        recording.setTitle("Yellow Submarine");
+        recording.setReleaseDate(LocalDate.of(1969, Month.JANUARY, 17));
+        recording.setArtist(new Artist(1L, "The Beatles"));
+        recording.setLabel(new Label(1L, "Apple"));
+
+        ObjectMapper mapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
+        try {
+            String json = mapper.writeValueAsString(recording);
+            System.out.println(json);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void formatJsonString() {
+        String json = "{\"id\":1,\"title\":\"Yellow Submarine\",\"releaseDate\":\"1969-01-17\",\"artist\":{\"id\":1,\"name\":\"The Beatles\"},\"label\":{\"id\":1,\"name\":\"Apple\"}}";
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            Object jsonObject = mapper.readValue(json, Object.class);
+            String prettyJson = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(jsonObject);
+            System.out.println(prettyJson);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+<p>The code snippet above will pretty print the following JSON string:</p>
+<pre><code>{
+  "id" : 1,
+  "title" : "Yellow Submarine",
+  "releaseDate" : "1969-01-17",
+  "artist" : {
+    "id" : 1,
+    "name" : "The Beatles"
+  },
+  "label" : {
+    "id" : 1,
+    "name" : "Apple"
+  }
+}
+</code></pre>
+<p>Here are the structure of <code>Recording</code> class.</p>
+<pre><code>package org.kodejava.example.jackson;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+import java.time.LocalDate;
+import java.util.Objects;
+
+public class Recording {
+    private Long id;
+    private String title;
+
+    @JsonDeserialize(using = LocalDateDeserializer.class)
+    @JsonSerialize(using = LocalDateSerializer.class)
+    private LocalDate releaseDate;
+
+    private Artist artist;
+    private Label label;
+
+    public Recording() {
+    }
+
+    public Recording(Long id, String title, LocalDate releaseDate) {
+        this.id = id;
+        this.title = title;
+        this.releaseDate = releaseDate;
+    }
+
+    // Getters and Setters
+}
+</code></pre>
+<p><em>Maven Dependencies</em></p>
+<pre><code>&lt;!-- http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.8.6/jackson-databind-2.8.6.jar --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;
+    &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;
+    &lt;version&gt;2.8.6&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+]]></content:encoded>
+			<wfw:commentRss>https://kodejava.org/how-to-pretty-print-json-string-using-jackson/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">6016</post-id>	</item>
+		<item>
+		<title>How to convert java.time.LocalDate to java.util.Date?</title>
+		<link>https://kodejava.org/how-to-convert-java-time-localdate-to-java-util-date/</link>
+		<comments>https://kodejava.org/how-to-convert-java-time-localdate-to-java-util-date/#comments</comments>
+		<pubDate>Tue, 14 Feb 2017 03:14:03 +0000</pubDate>
+		<dc:creator><![CDATA[Wayan Saryada]]></dc:creator>
+				<category><![CDATA[Date Time]]></category>
+		<category><![CDATA[Convert]]></category>
+		<category><![CDATA[Date]]></category>
+		<category><![CDATA[Java 8]]></category>
+		<category><![CDATA[JDK]]></category>
+		<category><![CDATA[LocalDate]]></category>
+		<category><![CDATA[LocalDateTime]]></category>
+
+		<guid isPermaLink="false">https://kodejava.org/?p=6012</guid>
+		<description><![CDATA[The following code snippet demonstrate how to convert java.time.LocalDate to java.util.Date and vice versa. In the first part of the code snippet we convert LocalDate to Date and back to LocalDate object. On the second part we convert LocalDateTime to Date and back to LocalDateTime object. package org.kodejava.example.datetime; import java.time.*; import java.util.Date; public class LocalDateToDate [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>The following code snippet demonstrate how to convert <code>java.time.LocalDate</code> to <code>java.util.Date</code> and vice versa. In the first part of the code snippet we convert <code>LocalDate</code> to <code>Date</code> and back to <code>LocalDate</code> object. On the second part we convert <code>LocalDateTime</code> to <code>Date</code> and back to <code>LocalDateTime</code> object.</p>
+<pre><code>package org.kodejava.example.datetime;
+
+import java.time.*;
+import java.util.Date;
+
+public class LocalDateToDate {
+    public static void main(String[] args) {
+        // Convert java.time.LocalDate to java.util.Date and back to
+        // java.time.LocalDate
+        LocalDate localDate = LocalDate.now();
+        System.out.println("LocalDate = " + localDate);
+
+        Date date1 = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+        System.out.println("Date      = " + date1);
+
+        localDate = date1.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        System.out.println("LocalDate = " + localDate);
+        System.out.println();
+
+        // Convert java.time.LocalDateTime to java.util.Date and back to
+        // java.time.LocalDateTime
+        LocalDateTime localDateTime = LocalDateTime.now();
+        System.out.println("LocalDateTime = " + localDateTime);
+
+        Date date2 = Date.from(localDateTime.atZone(ZoneId.systemDefault()).toInstant());
+        System.out.println("Date          = " + date2);
+
+        localDateTime = date2.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
+        System.out.println("LocalDateTime = " + localDateTime);
+    }
+}
+</code></pre>
+<p>The result of the code snippet:</p>
+<pre>
+LocalDate = 2017-02-14
+Date      = Tue Feb 14 00:00:00 WITA 2017
+LocalDate = 2017-02-14
+
+LocalDateTime = 2017-02-14T10:34:49.562
+Date          = Tue Feb 14 10:34:49 WITA 2017
+LocalDateTime = 2017-02-14T10:34:49.562
+</pre>
+]]></content:encoded>
+			<wfw:commentRss>https://kodejava.org/how-to-convert-java-time-localdate-to-java-util-date/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">6012</post-id>	</item>
+		<item>
+		<title>How to format LocalDate object using Jackson?</title>
+		<link>https://kodejava.org/how-to-format-localdate-object-using-jackson/</link>
+		<comments>https://kodejava.org/how-to-format-localdate-object-using-jackson/#comments</comments>
+		<pubDate>Tue, 14 Feb 2017 00:00:17 +0000</pubDate>
+		<dc:creator><![CDATA[Wayan Saryada]]></dc:creator>
+				<category><![CDATA[Jackson]]></category>
+		<category><![CDATA[JSON]]></category>
+		<category><![CDATA[JsonDeserialize]]></category>
+		<category><![CDATA[JsonSerialize]]></category>
+		<category><![CDATA[LocalDate]]></category>
+
+		<guid isPermaLink="false">https://kodejava.org/?p=6023</guid>
+		<description><![CDATA[We have a Recording class which has a Java 8 java.time.LocalDate property. We need to deserialize and serialize this property from and to JSON string. To do this we can use the @JsonDeserialize and @JsonSerialize annotations to annotate the LocalDate property of the Recording class. @JsonDeserialize(using = LocalDateDeserializer.class) @JsonSerialize(using = LocalDateSerializer.class) private LocalDate releaseDate; To [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>We have a <code>Recording</code> class which has a Java 8 <code>java.time.LocalDate</code> property. We need to <strong>deserialize and serialize</strong> this property from and to JSON string. To do this we can use the <code>@JsonDeserialize</code> and <code>@JsonSerialize</code> annotations to annotate the <code>LocalDate</code> property of the <code>Recording</code> class.</p>
+<pre><code>@JsonDeserialize(using = LocalDateDeserializer.class)
+@JsonSerialize(using = LocalDateSerializer.class)
+private LocalDate releaseDate;
+</code></pre>
+<p>To use the annotation we need to create a class to deserialize and serialize the value. To create a deserializer class we create a class that extends <code>StdDeserializer</code>. The serializer class extends the <code>StdSerializer</code> class. Below is the definition of the <code>LocalDateSerializer</code> and <code>LocalDateDeserializer</code> class.</p>
+<pre><code>package org.kodejava.example.jackson;
+
+import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.databind.SerializerProvider;
+import com.fasterxml.jackson.databind.ser.std.StdSerializer;
+
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+public class LocalDateSerializer extends StdSerializer&lt;LocalDate&gt; {
+
+    public LocalDateSerializer() {
+        super(LocalDate.class);
+    }
+
+    @Override
+    public void serialize(LocalDate value, JsonGenerator generator, SerializerProvider provider) throws IOException {
+        generator.writeString(value.format(DateTimeFormatter.ISO_LOCAL_DATE));
+    }
+}
+</code></pre>
+<pre><code>package org.kodejava.example.jackson;
+
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
+
+import java.io.IOException;
+import java.time.LocalDate;
+
+public class LocalDateDeserializer extends StdDeserializer&lt;LocalDate&gt; {
+
+    protected LocalDateDeserializer() {
+        super(LocalDate.class);
+    }
+
+    @Override
+    public LocalDate deserialize(JsonParser parser, DeserializationContext context) throws IOException {
+        return LocalDate.parse(parser.readValueAs(String.class));
+    }
+}
+</code></pre>
+<p>Let&#8217;s create a simple class that convert <code>Recording</code> object into JSON string and apply the date formatter defined in the <code>LocalDateSerializer</code> class.</p>
+<pre><code>package org.kodejava.example.jackson;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.time.LocalDate;
+import java.time.Month;
+
+public class RecordingToJson {
+    public static void main(String[] args) {
+        Recording recording = new Recording();
+        recording.setId(1L);
+        recording.setTitle("Twist and Shout");
+        recording.setReleaseDate(LocalDate.of(1964, Month.FEBRUARY, 3));
+
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            String json = mapper.writeValueAsString(recording);
+            System.out.println("JSON = " + json);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+
+    }
+}
+</code></pre>
+<p>The output of the code snippet above is:</p>
+<pre><code>JSON = {"id":1,"title":"Twist and Shout","releaseDate":"1964-02-03","artist":null,"label":null}
+</code></pre>
+<p>And here is the complete definition of the <code>Recording</code> class.</p>
+<pre><code>package org.kodejava.example.jackson;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+import java.time.LocalDate;
+import java.util.Objects;
+
+public class Recording {
+    private Long id;
+    private String title;
+
+    @JsonDeserialize(using = LocalDateDeserializer.class)
+    @JsonSerialize(using = LocalDateSerializer.class)
+    private LocalDate releaseDate;
+
+    private Artist artist;
+    private Label label;
+
+    public Recording() {
+    }
+
+    public Recording(Long id, String title, LocalDate releaseDate) {
+        this.id = id;
+        this.title = title;
+        this.releaseDate = releaseDate;
+    }
+
+    // Getters and Setters
+}
+</code></pre>
+<p><em>Maven Dependencies</em></p>
+<pre><code>&lt;!-- http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.8.6/jackson-databind-2.8.6.jar --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;
+    &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;
+    &lt;version&gt;2.8.6&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+]]></content:encoded>
+			<wfw:commentRss>https://kodejava.org/how-to-format-localdate-object-using-jackson/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">6023</post-id>	</item>
+		<item>
+		<title>How to read and write Java object to JSON file?</title>
+		<link>https://kodejava.org/how-to-read-and-write-java-object-to-json-file/</link>
+		<comments>https://kodejava.org/how-to-read-and-write-java-object-to-json-file/#respond</comments>
+		<pubDate>Mon, 13 Feb 2017 08:55:07 +0000</pubDate>
+		<dc:creator><![CDATA[Wayan Saryada]]></dc:creator>
+				<category><![CDATA[Jackson]]></category>
+		<category><![CDATA[JSON]]></category>
+		<category><![CDATA[ObjectMapper]]></category>
+
+		<guid isPermaLink="false">https://kodejava.org/?p=6008</guid>
+		<description><![CDATA[The following example demonstrate how to serialize and deserialize Java object to JSON file. The Jackson&#8217;s ObjectMapper class provides writeValue(File, Object) and readValue(File, Class&#60;T&#62;) methods which allow us to write an object into JSON file and read JSON file into an object respectively. package org.kodejava.example.jackson; import com.fasterxml.jackson.databind.ObjectMapper; import java.io.File; import java.io.IOException; public class ObjectToJsonFile { [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>The following example demonstrate how to serialize and deserialize Java object to JSON file. The Jackson&#8217;s <code>ObjectMapper</code> class provides <code>writeValue(File, Object)</code> and <code>readValue(File, Class&lt;T&gt;)</code> methods which allow us to write an object into JSON file and read JSON file into an object respectively.</p>
+<pre><code>package org.kodejava.example.jackson;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.File;
+import java.io.IOException;
+
+public class ObjectToJsonFile {
+    public static void main(String[] args) {
+        Artist artist = new Artist();
+        artist.setId(1L);
+        artist.setName("The Beatles");
+
+        ObjectMapper mapper = new ObjectMapper();
+
+        File file = new File("artist.json");
+        try {
+            // Serialize Java object info JSON file.
+            mapper.writeValue(file, artist);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            // Deserialize JSON file into Java object.
+            Artist newArtist = mapper.readValue(file, Artist.class);
+            System.out.println("newArtist.getId() = " + newArtist.getId());
+            System.out.println("newArtist.getName() = " + newArtist.getName());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+<p>The result of the code snippet are:</p>
+<pre>
+newArtist.getId() = 1
+newArtist.getName() = The Beatles
+</pre>
+<p><em>Maven Dependencies</em></p>
+<pre><code>&lt;!-- http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.8.6/jackson-databind-2.8.6.jar --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;
+    &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;
+    &lt;version&gt;2.8.6&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+]]></content:encoded>
+			<wfw:commentRss>https://kodejava.org/how-to-read-and-write-java-object-to-json-file/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	<post-id xmlns="com-wordpress:feed-additions:1">6008</post-id>	</item>
+	</channel>
+</rss>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path=""/>
+	<classpathentry kind="lib" path="C:/jar/lucene-core-7.5.0.jar"/>
+	<classpathentry kind="lib" path="C:/jar/lucene-queryparser-7.5.0.jar"/>
+	<classpathentry kind="lib" path="C:/jar/jsoup-1.11.3.jar"/>
+	<classpathentry kind="lib" path="C:/jar/commons-io-2.6.jar"/>
+	<classpathentry kind="output" path=""/>
+</classpath>

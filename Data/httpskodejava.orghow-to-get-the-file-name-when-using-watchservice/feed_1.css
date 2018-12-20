@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+xmlns:georss="http://www.georss.org/georss" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+
+	>
+<channel>
+	<title>Comments for Kode Java</title>
+	<atom:link href="https://kodejava.org/comments/feed/" rel="self" type="application/rss+xml" />
+	<link>https://kodejava.org</link>
+	<description>Learn Java by Examples</description>
+	<lastBuildDate>Mon, 10 Dec 2018 00:40:45 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0</generator>
+	<item>
+		<title>Comment on How to create a digital signature and sign data? by Krishna</title>
+		<link>https://kodejava.org/how-to-create-a-digital-signature-and-sign-data/#comment-3971</link>
+		<dc:creator><![CDATA[Krishna]]></dc:creator>
+		<pubDate>Mon, 10 Dec 2018 00:40:45 +0000</pubDate>
+		<guid isPermaLink="false">http://kodejava.org/?p=970#comment-3971</guid>
+		<description><![CDATA[Hi All,
+Can you please provide any java example for generating digestValue and SignatureValue elements using Certificate(SSL) . certificate is in .cer format.]]></description>
+		<content:encoded><![CDATA[<p>Hi All,<br />
+Can you please provide any java example for generating digestValue and SignatureValue elements using Certificate(SSL) . certificate is in .cer format.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Comment on How do I count number of online users? by deshpasheeto</title>
+		<link>https://kodejava.org/how-do-i-count-number-of-online-users/#comment-2648</link>
+		<dc:creator><![CDATA[deshpasheeto]]></dc:creator>
+		<pubDate>Wed, 28 Nov 2018 11:00:29 +0000</pubDate>
+		<guid isPermaLink="false">http://kodejava.org/?p=30#comment-2648</guid>
+		<description><![CDATA[Hi Wayan. While the code works when we log into the application, the count increases by 1, when logged out/ window closed it decreases the count and again calls the sessionCreated(...) thereby increasing the count and not maintaining the accuracy. Any idea why this is happening? Thank you.]]></description>
+		<content:encoded><![CDATA[<p>Hi Wayan. While the code works when we log into the application, the count increases by 1, when logged out/ window closed it decreases the count and again calls the sessionCreated(&#8230;) thereby increasing the count and not maintaining the accuracy. Any idea why this is happening? Thank you.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Comment on How do I move focus from JTextArea using TAB key? by Abhijeet Ghodke</title>
+		<link>https://kodejava.org/how-do-i-move-focus-from-jtextarea-using-tab-key/#comment-2647</link>
+		<dc:creator><![CDATA[Abhijeet Ghodke]]></dc:creator>
+		<pubDate>Wed, 28 Nov 2018 10:26:02 +0000</pubDate>
+		<guid isPermaLink="false">http://kodejava.org/?p=875#comment-2647</guid>
+		<description><![CDATA[Thanks, it working very smoothly]]></description>
+		<content:encoded><![CDATA[<p>Thanks, it working very smoothly</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Comment on How do I know if an ArrayList contains a specified item? by Wayan Saryada</title>
+		<link>https://kodejava.org/how-do-i-know-if-an-arraylist-contains-a-specified-item/#comment-2219</link>
+		<dc:creator><![CDATA[Wayan Saryada]]></dc:creator>
+		<pubDate>Wed, 21 Nov 2018 07:06:58 +0000</pubDate>
+		<guid isPermaLink="false">http://kodejava.org/?p=8#comment-2219</guid>
+		<description><![CDATA[Hi Amrendra,
+
+You need to implements the &lt;code&gt;equals()&lt;/code&gt; method in your pojo so that the &lt;code&gt;list.contains()&lt;/code&gt; method knows if the list already contains the same pojo. And when you implement the &lt;code&gt;equals()&lt;/code&gt; method you will also need to implement the &lt;code&gt;hashCode()&lt;/code&gt; method.]]></description>
+		<content:encoded><![CDATA[<p>Hi Amrendra,</p>
+<p>You need to implements the <code>equals()</code> method in your pojo so that the <code>list.contains()</code> method knows if the list already contains the same pojo. And when you implement the <code>equals()</code> method you will also need to implement the <code>hashCode()</code> method.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Comment on How do I know if an ArrayList contains a specified item? by Amrendra Kumar</title>
+		<link>https://kodejava.org/how-do-i-know-if-an-arraylist-contains-a-specified-item/#comment-2202</link>
+		<dc:creator><![CDATA[Amrendra Kumar]]></dc:creator>
+		<pubDate>Tue, 20 Nov 2018 10:49:54 +0000</pubDate>
+		<guid isPermaLink="false">http://kodejava.org/?p=8#comment-2202</guid>
+		<description><![CDATA[If we take pojo in list then how to check the existing particular element of list.]]></description>
+		<content:encoded><![CDATA[<p>If we take pojo in list then how to check the existing particular element of list.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Comment on How do I create JTree with different icons for each node? by Paidi Ramesh</title>
+		<link>https://kodejava.org/how-do-i-create-jtree-with-different-icons-for-each-node/#comment-2182</link>
+		<dc:creator><![CDATA[Paidi Ramesh]]></dc:creator>
+		<pubDate>Mon, 19 Nov 2018 13:10:34 +0000</pubDate>
+		<guid isPermaLink="false">http://kodejava.org/?p=566#comment-2182</guid>
+		<description><![CDATA[I need total project zip file.]]></description>
+		<content:encoded><![CDATA[<p>I need total project zip file.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Comment on How do I create an encrypted string for password? by Prabakaran</title>
+		<link>https://kodejava.org/how-do-i-create-an-encrypted-string-for-password/#comment-2053</link>
+		<dc:creator><![CDATA[Prabakaran]]></dc:creator>
+		<pubDate>Wed, 14 Nov 2018 10:41:49 +0000</pubDate>
+		<guid isPermaLink="false">http://kodejava.org/?p=122#comment-2053</guid>
+		<description><![CDATA[I have encrypted my password in this method. Now I need to use this on my automation script of bat file.
+
+How will I use encrypted password in windows batch file?
+
+Advance Thanks!!]]></description>
+		<content:encoded><![CDATA[<p>I have encrypted my password in this method. Now I need to use this on my automation script of bat file.</p>
+<p>How will I use encrypted password in windows batch file?</p>
+<p>Advance Thanks!!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Comment on How do I create zip file in Servlet for download? by david</title>
+		<link>https://kodejava.org/how-do-i-create-zip-file-in-servlet-for-download/#comment-2035</link>
+		<dc:creator><![CDATA[david]]></dc:creator>
+		<pubDate>Tue, 13 Nov 2018 13:48:18 +0000</pubDate>
+		<guid isPermaLink="false">http://kodejava.org/?p=590#comment-2035</guid>
+		<description><![CDATA[Thank you, but how do you write the javascript codes? thanks]]></description>
+		<content:encoded><![CDATA[<p>Thank you, but how do you write the javascript codes? thanks</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Comment on How to format LocalDate object using Jackson? by Wayan Saryada</title>
+		<link>https://kodejava.org/how-to-format-localdate-object-using-jackson/#comment-2030</link>
+		<dc:creator><![CDATA[Wayan Saryada]]></dc:creator>
+		<pubDate>Tue, 13 Nov 2018 00:57:16 +0000</pubDate>
+		<guid isPermaLink="false">https://kodejava.org/?p=6023#comment-2030</guid>
+		<description><![CDATA[Hi Savani,
+
+You can use &lt;code&gt;DateTimeFormatter.ofPattern(...)&lt;/code&gt; method and pass the date and time pattern that you want, like &lt;code&gt;yyyy-MM-dd HH:mm:ss&lt;/code&gt; in your case. If you want to use date and time you might need the change the &lt;code&gt;LocalDate&lt;/code&gt; in the code snippet above and use the &lt;code&gt;LocalDateTime&lt;/code&gt; instead.]]></description>
+		<content:encoded><![CDATA[<p>Hi Savani,</p>
+<p>You can use <code>DateTimeFormatter.ofPattern(...)</code> method and pass the date and time pattern that you want, like <code>yyyy-MM-dd HH:mm:ss</code> in your case. If you want to use date and time you might need the change the <code>LocalDate</code> in the code snippet above and use the <code>LocalDateTime</code> instead.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Comment on How to format LocalDate object using Jackson? by Savani</title>
+		<link>https://kodejava.org/how-to-format-localdate-object-using-jackson/#comment-2027</link>
+		<dc:creator><![CDATA[Savani]]></dc:creator>
+		<pubDate>Mon, 12 Nov 2018 17:55:31 +0000</pubDate>
+		<guid isPermaLink="false">https://kodejava.org/?p=6023#comment-2027</guid>
+		<description><![CDATA[Could you please guide how we can format date like yyyy-MM-dd HH:mm:ss ?]]></description>
+		<content:encoded><![CDATA[<p>Could you please guide how we can format date like yyyy-MM-dd HH:mm:ss ?</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

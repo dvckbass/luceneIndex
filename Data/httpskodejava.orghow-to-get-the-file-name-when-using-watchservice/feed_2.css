@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+xmlns:georss="http://www.georss.org/georss" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+
+	>
+<channel>
+	<title>Comments on: How to get the file name when using WatchService?</title>
+	<atom:link href="https://kodejava.org/how-to-get-the-file-name-when-using-watchservice/feed/" rel="self" type="application/rss+xml" />
+	<link>https://kodejava.org/how-to-get-the-file-name-when-using-watchservice/</link>
+	<description>Learn Java by Examples</description>
+	<lastBuildDate>Mon, 10 Dec 2018 00:40:45 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0</generator>
+	<item>
+		<title>By: Wayan</title>
+		<link>https://kodejava.org/how-to-get-the-file-name-when-using-watchservice/#comment-858</link>
+		<dc:creator><![CDATA[Wayan]]></dc:creator>
+		<pubDate>Thu, 04 Jan 2018 03:02:43 +0000</pubDate>
+		<guid isPermaLink="false">http://kodejava.org/?p=980#comment-858</guid>
+		<description><![CDATA[Hello Amrita,
+
+Use the following snippet to get the full location of the file name.
+
+&lt;pre&gt;&lt;code&gt;Path directory = (Path) key.watchable();
+Path fullPath = directory.resolve(ev.context());
+System.out.printf(&quot;A new file %s was created.%n&quot;, fullPath);
+&lt;/code&gt;&lt;/pre&gt;]]></description>
+		<content:encoded><![CDATA[<p>Hello Amrita,</p>
+<p>Use the following snippet to get the full location of the file name.</p>
+<pre><code>Path directory = (Path) key.watchable();
+Path fullPath = directory.resolve(ev.context());
+System.out.printf("A new file %s was created.%n", fullPath);
+</code></pre>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Amrita</title>
+		<link>https://kodejava.org/how-to-get-the-file-name-when-using-watchservice/#comment-856</link>
+		<dc:creator><![CDATA[Amrita]]></dc:creator>
+		<pubDate>Wed, 03 Jan 2018 20:02:15 +0000</pubDate>
+		<guid isPermaLink="false">http://kodejava.org/?p=980#comment-856</guid>
+		<description><![CDATA[How to get the location of the filename when monitoring a folder and its subfolders. Please help with sample code to do the same.]]></description>
+		<content:encoded><![CDATA[<p>How to get the location of the filename when monitoring a folder and its subfolders. Please help with sample code to do the same.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

@@ -1,0 +1,1701 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html itemscope="" itemtype="http://schema.org/QAPage" class="html__responsive">
+  <head>
+    <title>
+java - how to retrieve a url from a link on a website using Jsoup? - Stack Overflow    </title>
+    <link rel="shortcut icon" href="httpsstackoverflow.comquestions40769548how-to-retrieve-a-url-from-a-link-on-a-website-using-jsoup/favicon.ico.css"/>
+    <link rel="apple-touch-icon image_src" href="httpsstackoverflow.comquestions40769548how-to-retrieve-a-url-from-a-link-on-a-website-using-jsoup/apple-touch-icon.png.css"/>
+    <link rel="search" href="httpsstackoverflow.comquestions40769548how-to-retrieve-a-url-from-a-link-on-a-website-using-jsoup/opensearch.xml.css" type="application/opensearchdescription+xml" title="Stack Overflow"/>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://stackoverflow.com/questions/40769548/how-to-retrieve-a-url-from-a-link-on-a-website-using-jsoup"/>
+    <meta property="og:site_name" content="Stack Overflow"/>
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded"/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:domain" content="stackoverflow.com"/>
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="how to retrieve a url from a link on a website using Jsoup?"/>
+    <meta name="twitter:description" property="og:description" itemprop="description" content="Alright so I finished my Yelp scanner, and everything is running great. What I want to do now is have the program retrieve the url for each link to each business, go to that page, and scan for whet..."/>
+    <link rel="stylesheet" href="httpsstackoverflow.comquestions40769548how-to-retrieve-a-url-from-a-link-on-a-website-using-jsoup/stacks.css" type="text/css"/>
+    <link rel="stylesheet" href="httpsstackoverflow.comquestions40769548how-to-retrieve-a-url-from-a-link-on-a-website-using-jsoup/primary-unified.css" type="text/css"/>
+    <link rel="alternate" href="httpsstackoverflow.comquestions40769548how-to-retrieve-a-url-from-a-link-on-a-website-using-jsoup/40769548.css" type="application/atom+xml" title="Feed for question 'how to retrieve a url from a link on a website using Jsoup?'"/>
+    <meta name="twitter:app:country" content="US"/>
+    <meta name="twitter:app:name:iphone" content="Stack Exchange iOS"/>
+    <meta name="twitter:app:id:iphone" content="871299723"/>
+    <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/40769548/how-to-retrieve-a-url-from-a-link-on-a-website-using-jsoup"/>
+    <meta name="twitter:app:name:ipad" content="Stack Exchange iOS"/>
+    <meta name="twitter:app:id:ipad" content="871299723"/>
+    <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/40769548/how-to-retrieve-a-url-from-a-link-on-a-website-using-jsoup"/>
+    <meta name="twitter:app:name:googleplay" content="Stack Exchange Android"/>
+    <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/40769548/how-to-retrieve-a-url-from-a-link-on-a-website-using-jsoup"/>
+    <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin"/>
+  </head>
+  <body class="question-page unified-theme">
+    <noscript id="noscript-css">
+      <style>
+      </style>
+    </noscript>
+    <div id="notify-container">
+    </div>
+    <div id="custom-header">
+    </div>
+    <header class="top-bar js-top-bar _fixed top-bar__network">
+      <div class="-container">
+        <div class="-main">
+          <a href="#" class="left-sidebar-toggle p0 ai-center jc-center js-left-sidebar-toggle">
+            <span class="ps-relative">
+            </span>
+          </a>
+          <a href="https://stackoverflow.com" class="-logo js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:8})">
+            <span class="-img _glyph">
+Stack Overflow            </span>
+          </a>
+        </div>
+        <form id="search" action="/search" method="get" class="searchbar js-searchbar " autocomplete="off" role="search">
+          <div class="ps-relative">
+            <input name="q" type="text" placeholder="Search?" value="" autocomplete="off" maxlength="240" class="f-input js-search-field "/>
+            <button type="submit" aria-label="Search..." class="s-btn s-btn__primary btn-topbar-primary js-search-submit">
+              <svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewbox="0 0 18 18">
+                <path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"/>
+              </svg>
+            </button>
+          </div>
+        </form>
+        <ol class="-secondary js-secondary-topbar-links drop-icons-responsively">
+          <li class="-item searchbar-trigger js-searchbar-trigger">
+            <a href="#" class="-link">
+              <svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewbox="0 0 18 18">
+                <path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"/>
+              </svg>
+            </a>
+          </li>
+          <li class="-item">
+            <a href="https://stackexchange.com/users/?tab=inbox" class="-link js-inbox-button" title="Recent inbox messages">
+              <svg aria-hidden="true" class="svg-icon iconInbox" width="20" height="18" viewbox="0 0 20 18">
+                <path d="M15.19 1H4.63c-.85 0-1.6.54-1.85 1.35L0 10.79V15c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2v-4.21l-2.87-8.44A2 2 0 0 0 15.19 1zm-.28 10l-2 2h-6l-2-2H1.96L4.4 3.68A1 1 0 0 1 5.35 3h9.12a1 1 0 0 1 .95.68L17.86 11h-2.95z"/>
+              </svg>
+              <span class="indicator-badge js-unread-count _important" style="display: none;">
+              </span>
+            </a>
+          </li>
+          <li class="-item">
+            <a href="https://stackexchange.com/users/?tab=reputation" class="-link js-achievements-button" title="Recent achievements: reputation, badges, and privileges earned" data-unread-class="_highlighted-positive">
+              <svg aria-hidden="true" class="svg-icon iconAchievements" width="18" height="18" viewbox="0 0 18 18">
+                <path d="M15 2V1H3v1H0v4c0 1.6 1.4 3 3 3v1c.4 1.5 3 2.6 5 3v2H5s-1 1.5-1 2h10c0-.4-1-2-1-2h-3v-2c2-.4 4.6-1.5 5-3V9c1.6-.2 3-1.4 3-3V2h-3zM3 7c-.5 0-1-.5-1-1V4h1v3zm8.4 2.5L9 8 6.6 9.4l1-2.7L5 5h3l1-2.7L10 5h2.8l-2.3 1.8 1 2.7h-.1zM16 6c0 .5-.5 1-1 1V4h1v2z"/>
+              </svg>
+              <span class="indicator-badge js-unread-count _positive" style="display: none;">
+              </span>
+            </a>
+          </li>
+          <li class="-item help-button-item" data-remove-order="1">
+            <a href="#" class="-link js-help-button" title="Help Center and other resources">
+              <svg aria-hidden="true" class="svg-icon iconHelp" width="18" height="18" viewbox="0 0 18 18">
+                <path d="M9 1a8 8 0 1 0 0 16A8 8 0 0 0 9 1zm.81 12.13c-.02.71-.55 1.15-1.24 1.13-.66-.02-1.17-.49-1.15-1.2.02-.72.56-1.18 1.22-1.16.7.03 1.2.51 1.17 1.23zM11.77 8a5.8 5.8 0 0 1-1.02.91l-.53.37c-.26.2-.42.43-.5.69a4 4 0 0 0-.09.75c0 .05-.03.16-.18.16H7.88c-.16 0-.18-.1-.18-.15.03-.66.12-1.21.4-1.66a5.29 5.29 0 0 1 1.43-1.22c.16-.12.28-.25.38-.39a1.34 1.34 0 0 0 .02-1.71c-.24-.31-.51-.46-1.03-.46-.51 0-.8.26-1.02.6-.21.33-.18.73-.18 1.1H5.75c0-1.38.35-2.25 1.1-2.76.52-.35 1.17-.5 1.93-.5 1 0 1.79.18 2.49.71.64.5.98 1.18.98 2.12 0 .57-.2 1.05-.48 1.44z"/>
+              </svg>
+            </a>
+          </li>
+          <li class="-item">
+            <a href="https://stackexchange.com" class="-link js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 174 Stack Exchange sites">
+              <svg aria-hidden="true" class="svg-icon iconStackExchange" width="18" height="18" viewbox="0 0 18 18">
+                <path d="M1 13c0 1.1.9 2 2 2h8v3l3-3h1a2 2 0 0 0 2-2v-2H1v2zM15 1H3a2 2 0 0 0-2 2v2h16V3a2 2 0 0 0-2-2zM1 6h16v4H1V6z"/>
+              </svg>
+            </a>
+          </li>
+          <li class="-ctas">
+            <a href="https://stackoverflow.com/users/login?ssrc=head&amp;returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f40769548%2fhow-to-retrieve-a-url-from-a-link-on-a-website-using-jsoup" class="login-link s-btn btn-topbar-clear py8" rel="nofollow">
+Log In            </a>
+            <a href="https://stackoverflow.com/users/signup?ssrc=head&amp;returnurl=%2fusers%2fstory%2fcurrent" class="login-link s-btn s-btn__primary py8 btn-topbar-primary" rel="nofollow" data-ga="[&quot;sign up&quot;,&quot;Sign Up Navigation&quot;,&quot;Header&quot;,null,null]">
+Sign Up            </a>
+          </li>
+          <li class="-dialog-container js-topbar-dialog-corral">
+            <div class="topbar-dialog siteSwitcher-dialog dno">
+              <div class="header">
+                <h3>
+                  <a href="https://stackoverflow.com">
+                  </a>
+                </h3>
+              </div>
+              <div class="modal-content current-site-container">
+                <ul class="current-site">
+                  <li class="grid">
+                    <div class="fl1">
+                      <a href="https://stackoverflow.com" class="current-site-link site-link js-gps-track grid gs8 gsx" data-id="1" data-gps-track="site_switcher.click({ item_type:3 })">
+                        <div class="favicon favicon-stackoverflow site-icon grid--cell" title="Stack Overflow">
+                        </div>
+                        <span class="grid--cell fl1">
+                        </span>
+                      </a>
+                    </div>
+                    <div class="related-links">
+                      <a href="https://stackoverflow.com/help" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:14 })">
+                      </a>
+                      <a href="https://chat.stackoverflow.com" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">
+                      </a>
+                    </div>
+                  </li>
+                  <li class="related-site grid">
+                    <div class="L-shaped-icon-container">
+                      <span class="L-shaped-icon">
+                      </span>
+                    </div>
+                    <a href="https://meta.stackoverflow.com" class="site-link js-gps-track grid gs8 gsx" data-id="552" data-gps-track="site.switch({ target_site:552, item_type:3 }),site_switcher.click({ item_type:4 })">
+                      <div class="favicon favicon-stackoverflowmeta site-icon grid--cell" title="Meta Stack Overflow">
+                      </div>
+                      <span class="grid--cell fl1">
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="header" id="your-communities-header">
+                <h3>
+                </h3>
+              </div>
+              <div class="modal-content" id="your-communities-section">
+                <div class="call-to-login">
+                  <a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=%2fusers%2fstory%2fcurrent" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">
+                  </a>
+                  <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f40769548%2fhow-to-retrieve-a-url-from-a-link-on-a-website-using-jsoup" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">
+                  </a>
+                </div>
+              </div>
+              <div class="header">
+                <h3>
+                  <a href="https://stackexchange.com/sites">
+                  </a>
+                </h3>
+                <a href="https://stackoverflow.blog" class="fr">
+                </a>
+              </div>
+              <div class="modal-content">
+                <div class="child-content">
+                </div>
+              </div>
+            </div>
+            <div class="topbar-dialog help-dialog js-help-dialog dno">
+              <div class="modal-content">
+                <ul>
+                  <li>
+                    <a href="/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                      <span class="item-summary">
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                      <span class="item-summary">
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://meta.stackoverflow.com" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                      <span class="item-summary">
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                      <span class="item-summary">
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.stackoverflowbusiness.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                      <span class="item-summary">
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="topbar-dialog leftnav-dialog js-leftnav-dialog dno">
+              <div class="left-sidebar js-unpinned-left-sidebar" data-can-be="left-sidebar" data-is-here-when="sm">
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </header>
+    <div id="js-gdpr-consent-banner" class="p16 bg-black-700 ff-sans fc-white ps-fixed b0 l0 r0 z-banner" role="banner" aria-hidden="false">
+      <div class="wmx8 mx-auto grid jc-center" role="alertdialog" aria-describedby="notice-message">
+        <div class="grid--cell mr12" aria-label="notice-message">
+          <p class="mb0 lh-lg">
+By using our site, you acknowledge that you have read and understand our            <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="https://stackoverflow.com/legal/cookie-policy">
+Cookie Policy            </a>
+,            <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="https://stackoverflow.com/legal/privacy-policy">
+Privacy Policy            </a>
+, and our            <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="https://stackoverflow.com/legal/terms-of-service/public">
+Terms of Service            </a>
+.          </p>
+        </div>
+        <a class="grid--cell fc-white js-notice-close" aria-label="notice-dismiss">
+          <svg aria-hidden="true" class="svg-icon m0 iconClear" width="18" height="18" viewbox="0 0 18 18">
+            <path d="M15 4.41L13.59 3 9 7.59 4.41 3 3 4.41 7.59 9 3 13.59 4.41 15 9 10.41 13.59 15 15 13.59 10.41 9z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="container  ">
+      <div id="left-sidebar" data-is-here-when="md lg" class="left-sidebar js-pinned-left-sidebar">
+        <div class="left-sidebar--sticky-container js-sticky-leftnav">
+          <nav role="navigation">
+            <ol class="nav-links">
+              <li>
+              </li>
+              <li>
+                <a href="/" class="pl8 js-gps-track nav-links--link" data-gps-track="top_nav.click({is_current:false, location:2, destination:8})">
+Home                </a>
+              </li>
+              <li>
+                <ol class="nav-links">
+                  <li class="fs-fine tt-uppercase ml8 mt16 mb4 fc-light">
+Public                  </li>
+                  <li class=" youarehere">
+                    <a id="nav-questions" href="/questions" class="pl8 js-gps-track nav-links--link -link__with-icon" data-gps-track="top_nav.click({is_current:true, location:2, destination:1})">
+                      <svg aria-hidden="true" class="svg-icon iconGlobe" width="18" height="18" viewbox="0 0 18 18">
+                        <path d="M9 1a8 8 0 1 0 0 16A8 8 0 0 0 9 1zM8 15.32a6.4 6.4 0 0 1-5.23-7.75L7 11.68v.8c0 .88.12 1.32 1 1.32v1.52zm5.72-2c-.2-.66-1-1.32-1.72-1.32h-1v-2c0-.44-.56-1-1-1H6V7h1c.44 0 1-.56 1-1V5h2c.88 0 1.4-.72 1.4-1.6v-.33a6.4 6.4 0 0 1 2.32 10.24z"/>
+                      </svg>
+                      <span class="-link--channel-name">
+Stack Overflow                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a id="nav-tags" href="/tags" class=" js-gps-track nav-links--link" data-gps-track="top_nav.click({is_current:false, location:2, destination:2})">
+Tags                    </a>
+                  </li>
+                  <li>
+                    <a id="nav-users" href="/users" class=" js-gps-track nav-links--link" data-gps-track="top_nav.click({is_current:false, location:2, destination:3})">
+Users                    </a>
+                  </li>
+                  <li>
+                    <a id="nav-jobs" href="/jobs?med=site-ui&amp;ref=jobs-tab" class=" js-gps-track nav-links--link" data-gps-track="top_nav.click({is_current:false, location:2, destination:6})">
+Jobs                    </a>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <ol class="nav-links">
+                  <li class="fs-fine tt-uppercase ml8 mt24 mb4 fc-light">
+Teams                  </li>
+                  <li class="ps-relative">
+                    <a href="https://stackoverflow.com/teams" class="pl8 js-gps-track nav-links--link -link__with-icon" title="A private, secure home for your team's questions and answers. Starts at $10/month" data-gps-track="teams.create.left-sidenav.click" data-ga="[&quot;teams traffic&quot;,&quot;left nav cta&quot;,&quot;stackoverflow.com/teams&quot;,null,{&quot;dimension4&quot;:&quot;teams&quot;}]">
+                      <svg aria-hidden="true" class="svg-icon iconPlus" width="18" height="18" viewbox="0 0 18 18">
+                        <path d="M10 2H8v6H2v2h6v6h2v-6h6V8h-6z"/>
+                      </svg>
+                      <span class="js-create-team-btn-with-tooltip -link--channel-name">
+Create Team                      </span>
+                    </a>
+                    <div class="d-none create-team-tooltip js-create-team-tooltip bar-sm bg-blue-500 fc-white l100 md:d-none mln24 new-feature-wrapper p16 pr32 t0 ws2" data-cookie="notice-ctt" data-expire-date="1860060963500">
+                      <svg aria-hidden="true" class="svg-icon ps-absolute r12 c-pointer iconClearSm" width="14" height="14" viewbox="0 0 14 14">
+                        <path d="M12 3.41L10.59 2 7 5.59 3.41 2 2 3.41 5.59 7 2 10.59 3.41 12 7 8.41 10.59 12 12 10.59 8.41 7z"/>
+                      </svg>
+                      <p class="mb0">
+                      </p>
+                    </div>
+                  </li>
+                </ol>
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <div id="content" class="snippet-hidden">
+        <div itemscope="" itemtype="http://schema.org/Question">
+          <link itemprop="image" href="httpsstackoverflow.comquestions40769548how-to-retrieve-a-url-from-a-link-on-a-website-using-jsoup/apple-touch-icon.png_1.css"/>
+          <div class="inner-content clearfix">
+            <style>
+            </style>
+            <div id="dfp-tlb" class="everyonelovesstackoverflow everyoneloves__top-leaderboard">
+            </div>
+            <div id="question-header" class="grid">
+              <h1 itemprop="name" class="grid--cell fs-headline1 fl1 wb-break-word">
+                <a href="/questions/40769548/how-to-retrieve-a-url-from-a-link-on-a-website-using-jsoup" class="question-hyperlink">
+how to retrieve a url from a link on a website using Jsoup?                </a>
+              </h1>
+              <div class="pl8 aside-cta grid--cell" role="navigation" aria-label="ask new question">
+                <a href="/questions/ask" class="d-inline-flex ai-center ws-nowrap s-btn s-btn__primary">
+Ask Question                </a>
+              </div>
+            </div>
+            <div id="mainbar" role="main" aria-label="question and answers">
+              <div class="question" data-questionid="40769548" id="question">
+                <div class="post-layout">
+                  <div class="votecell post-layout--left">
+                    <div class="vote">
+                      <input type="hidden" name="_id_" value="40769548"/>
+                      <a class="vote-up-off" title="This question shows research effort; it is useful and clear">
+up vote                      </a>
+                      <span itemprop="upvoteCount" class="vote-count-post ">
+0                      </span>
+                      <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">
+down vote                      </a>
+                      <a class="star-off" href="#">
+favorite                      </a>
+                      <div class="favoritecount">
+                        <b/>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="postcell post-layout--right">
+                    <div class="post-text" itemprop="text">
+                      <p>
+Alright so I finished my Yelp scanner, and everything is running great. What I want to do now is have the program retrieve the url for each link to each business, go to that page, and scan for whether it contains:                      </p>
+                      <p>
+                      </p>
+                      <div class="snippet" data-lang="js" data-hide="false" data-console="true" data-babel="false">
+                        <div class="snippet-code">
+                          <pre class="snippet-code-html lang-html prettyprint-override">
+                            <code>
+xlink:href="#30x30_bullhorn"></use>                            </code>
+                          </pre>
+                        </div>
+                      </div>
+                      <p>
+                      </p>
+                      <p>
+I pretty much have a good idea of how I'm going to go about doing that, however, I can't seem to find a jSoup method that would retrieve a link's url. Is there somewhere in the page's HTML that would have the url? I'm not very proficient with HTML at all, so 90% of what I'm looking at is gibbering. Here's an example link if you want to check out what I'm referring to.                      </p>
+                      <p>
+                        <a href="https://www.yelp.com/search?find_loc=nj&amp;start=10" rel="nofollow noreferrer">
+https://www.yelp.com/search?find_loc=nj&start=10                        </a>
+is the main page, that I need to obtain the url for the page                        <a href="https://www.yelp.com/biz/la-cocina-newark" rel="nofollow noreferrer">
+https://www.yelp.com/biz/la-cocina-newark                        </a>
+. The orange bullhorn is what I am trying to get it to retrieve. Here's my code btw:                      </p>
+                      <pre>
+                        <code>
+import java.util.ArrayList; import org.jsoup.Jsoup; import org.jsoup.nodes.Document; import org.jsoup.nodes.Element; import org.jsoup.select.Elements; import java.io.IOException; import java.util.Scanner; public class YelpScrapper { public static void main(String[] args) throws IOException, Exception { //Variables String description; String location; int pages; int parseCount = 0; Document document; Scanner keyboard = new Scanner(System.in); //Perform a Search System.out.print("Enter a description: "); description = keyboard.nextLine(); System.out.print("Enter a state: "); location = keyboard.nextLine(); System.out.print("How many pages should we scan? "); pages = keyboard.nextInt(); String descString = "find_desc=" + description.replace(' ', '+') + "&"; String locString = "find_loc=" + location.replace(' ', '+') + "&"; int number = 0; String url = "https://www.yelp.com/search?" + descString + locString + "start=" + number; ArrayList<String> names = new ArrayList<String>(); ArrayList<String> address = new ArrayList<String>(); ArrayList<String> phone = new ArrayList<String>(); //Fetch Data From Yelp for (int i = 0 ; i <= pages ; i++) { document = Jsoup.connect(url).get(); Elements nameElements = document.select(".indexed-biz-name span"); Elements addressElements = document.select(".secondary-attributes address"); Elements phoneElements = document.select(".biz-phone"); for (Element element : nameElements) { names.add(element.text()); } for (Element element : addressElements) { address.add(element.text()); } for (Element element : phoneElements) { phone.add(element.text()); } for (int index = 0 ; index < 10 ; index++) { System.out.println("\nLead " + parseCount); System.out.println("Company Name: " + names.get(parseCount)); System.out.println("Address: " + address.get(parseCount)); System.out.println("Phone Number: " + phone.get(parseCount)); parseCount = parseCount + 1; } number = number + 10; } } }                        </code>
+                      </pre>
+                    </div>
+                    <div class="post-taglist grid gs4 gsy fd-column">
+                      <div class="grid ps-relative d-block">
+                        <a href="/questions/tagged/java" class="post-tag" title="show questions tagged 'java'" rel="tag">
+java                        </a>
+                        <a href="/questions/tagged/html" class="post-tag" title="show questions tagged 'html'" rel="tag">
+html                        </a>
+                        <a href="/questions/tagged/url" class="post-tag" title="show questions tagged 'url'" rel="tag">
+url                        </a>
+                        <a href="/questions/tagged/jsoup" class="post-tag" title="show questions tagged 'jsoup'" rel="tag">
+jsoup                        </a>
+                        <a href="/questions/tagged/yelp" class="post-tag" title="show questions tagged 'yelp'" rel="tag">
+yelp                        </a>
+                      </div>
+                    </div>
+                    <div class="mb0 ">
+                      <div class="mt16 pt4 grid gs8 gsy fw-wrap jc-end ai-start">
+                        <div class="grid--cell mr16" style="flex: 1 1 100px;">
+                          <div class="post-menu">
+                            <a href="/q/40769548" title="short permalink to this question" class="short-link" id="link-post-40769548">
+share                            </a>
+                            <span class="lsep">
+                            </span>
+                            <a href="/posts/40769548/edit" class="suggest-edit-post" title="">
+improve this question                            </a>
+                          </div>
+                        </div>
+                        <div class="post-signature owner grid--cell">
+                          <div class="user-info ">
+                            <div class="user-action-time">
+asked                              <span title="2016-11-23 16:26:05Z" class="relativetime">
+Nov 23 '16 at 16:26                              </span>
+                            </div>
+                            <div class="user-gravatar32">
+                              <a href="/users/7195902/brandon-woodruff">
+                                <div class="gravatar-wrapper-32">
+                                  <img alt="" width="32" src="httpsstackoverflow.comquestions40769548how-to-retrieve-a-url-from-a-link-on-a-website-using-jsoup/picture.jpeg" height="32"/>
+                                </div>
+                              </a>
+                            </div>
+                            <div class="user-details">
+                              <a href="/users/7195902/brandon-woodruff">
+Brandon Woodruff                              </a>
+                              <div class="-flair">
+                                <span class="reputation-score" title="reputation score " dir="ltr">
+6                                </span>
+                                <span title="3 bronze badges">
+                                  <span class="badge3">
+                                  </span>
+                                  <span class="badgecount">
+3                                  </span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="post-layout--right">
+                    <div id="comments-40769548" class="comments js-comments-container  dno">
+                      <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+                      </ul>
+                    </div>
+                    <div id="comments-link-40769548" data-rep="50" data-anon="true">
+                      <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">
+add a comment                      </a>
+                      <span class="js-link-separator dno">
+                      </span>
+                      <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick="">
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="dfp-isb" class="everyonelovesstackoverflow everyoneloves__inline-sidebar">
+              </div>
+              <div id="answers">
+                <a name="tab-top">
+                </a>
+                <div id="answers-header">
+                  <div class="subheader answers-subheader">
+                    <h2 data-answercount="1">
+1 Answer                      <span style="display:none;" itemprop="answerCount">
+                      </span>
+                    </h2>
+                    <div>
+                      <div id="tabs">
+                        <a href="/questions/40769548/how-to-retrieve-a-url-from-a-link-on-a-website-using-jsoup?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active" data-shortcut="A">
+active                        </a>
+                        <a href="/questions/40769548/how-to-retrieve-a-url-from-a-link-on-a-website-using-jsoup?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest" data-shortcut="O">
+oldest                        </a>
+                        <a class="youarehere is-selected " href="/questions/40769548/how-to-retrieve-a-url-from-a-link-on-a-website-using-jsoup?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes" data-shortcut="V">
+votes                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a name="40770024">
+                </a>
+                <div id="answer-40770024" class="answer" data-answerid="40770024" itemscope="" itemtype="http://schema.org/Answer">
+                  <div class="post-layout">
+                    <div class="votecell post-layout--left">
+                      <div class="vote">
+                        <input type="hidden" name="_id_" value="40770024"/>
+                        <a class="vote-up-off" title="This answer is useful">
+up vote                        </a>
+                        <span itemprop="upvoteCount" class="vote-count-post ">
+0                        </span>
+                        <a class="vote-down-off" title="This answer is not useful">
+down vote                        </a>
+                      </div>
+                    </div>
+                    <div class="answercell post-layout--right">
+                      <div class="post-text" itemprop="text">
+                        <p>
+Learn how to use the Inspect element of Chrome Developer tools, as it makes it incredibly easy to locate elements in the DOM (you said you aren't comfortable with HTML, well you certainly will be after this and using Inspect is a great learning tool). Focusing the inspector on the "View Now" button, you'll get to this:                        </p>
+                        <p>
+                          <code>
+<a href="https://www.yelp.com/biz_redir?cachebuster=1479918865&amp;s=1c73b4bdc9110f6e6dc72fff48cd6379d6eaac0cd6d15794a9414e546ad5a927&amp;src_bizid=U2eO8yFSc9YTf_SPnog8cw&amp;url=http%3A%2F%2Fwww.lacocinanewark.com%2F%23%21menu%2Fcl69&amp;website_link_type=cta" rel="nofollow" target="_blank" class="ybtn ybtn--primary ybtn--small ybtn-cta" data-component-bound="true">View Now</a>                          </code>
+.                        </p>
+                        <p>
+You'll have to figure out how to traverse down to this, and                          <code>
+childNodes()                          </code>
+will be helpful in traversing down. Then you can use                          <code>
+getElementsByClass("ybtn ybtn--primary ybtn--small ybtn-cta")                          </code>
+to get to that specific class where the link is, and then use the                          <code>
+.attr()                          </code>
+method of the                          <code>
+Element                          </code>
+class to get the href:                          <code>
+.attr("href");                          </code>
+.                        </p>
+                      </div>
+                      <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+                        <div class="grid--cell mr16" style="flex: 1 1 100px;">
+                          <div class="post-menu">
+                            <a href="/a/40770024" title="short permalink to this answer" class="short-link" id="link-post-40770024">
+share                            </a>
+                            <span class="lsep">
+                            </span>
+                            <a href="/posts/40770024/edit" class="suggest-edit-post" title="">
+improve this answer                            </a>
+                          </div>
+                        </div>
+                        <div class="post-signature grid--cell fl0">
+                          <div class="user-info ">
+                            <div class="user-action-time">
+answered                              <span title="2016-11-23 16:47:50Z" class="relativetime">
+Nov 23 '16 at 16:47                              </span>
+                            </div>
+                            <div class="user-gravatar32">
+                              <a href="/users/6610036/trevor-bye">
+                                <div class="gravatar-wrapper-32">
+                                  <img alt="" width="32" src="httpsstackoverflow.comquestions40769548how-to-retrieve-a-url-from-a-link-on-a-website-using-jsoup/0469947022a1bdbb4422f3570da7dd.png" height="32"/>
+                                </div>
+                              </a>
+                            </div>
+                            <div class="user-details">
+                              <a href="/users/6610036/trevor-bye">
+Trevor Bye                              </a>
+                              <div class="-flair">
+                                <span class="reputation-score" title="reputation score " dir="ltr">
+359                                </span>
+                                <span title="3 silver badges">
+                                  <span class="badge2">
+                                  </span>
+                                  <span class="badgecount">
+3                                  </span>
+                                </span>
+                                <span title="18 bronze badges">
+                                  <span class="badge3">
+                                  </span>
+                                  <span class="badgecount">
+18                                  </span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="post-layout--right">
+                      <div id="comments-40770024" class="comments js-comments-container ">
+                        <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+                          <li id="comment-68766035" class="comment js-comment " data-comment-id="68766035">
+                            <div class="js-comment-actions comment-actions">
+                              <div class="comment-score">
+                              </div>
+                            </div>
+                            <div class="comment-text js-comment-text-and-form">
+                              <div class="comment-body" style="display: block;">
+                                <span class="comment-copy">
+The inspector tool has been tons of help! It's nice that it highlights exactly where it is on the page, so I know exactly where to look.                                </span>
+?                                 <a href="/users/7195902/brandon-woodruff" title="6 reputation" class="comment-user owner">
+Brandon Woodruff                                </a>
+                                <span class="comment-date" dir="ltr">
+                                  <span title="2016-11-23 17:47:48Z" class="relativetime-clean">
+Nov 23 '16 at 17:47                                  </span>
+                                </span>
+                              </div>
+                            </div>
+                          </li>
+                          <li id="comment-68766870" class="comment js-comment " data-comment-id="68766870">
+                            <div class="js-comment-actions comment-actions">
+                              <div class="comment-score">
+                              </div>
+                            </div>
+                            <div class="comment-text js-comment-text-and-form">
+                              <div class="comment-body" style="display: block;">
+                                <span class="comment-copy">
+@BrandonWoodruff exactly. Modern web pages are so complex that it would be terrifying to build any sort of scraper without something like the inspector.                                </span>
+?                                 <a href="/users/6610036/trevor-bye" title="359 reputation" class="comment-user">
+Trevor Bye                                </a>
+                                <span class="comment-date" dir="ltr">
+                                  <span title="2016-11-23 18:10:56Z" class="relativetime-clean">
+Nov 23 '16 at 18:10                                  </span>
+                                </span>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <div id="comments-link-40770024" data-rep="50" data-anon="true">
+                        <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like ?+1? or ?thanks?.">
+add a comment                        </a>
+                        <span class="js-link-separator dno">
+                        </span>
+                        <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick="">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a name="new-answer">
+                </a>
+                <form id="post-form" action="/questions/40769548/answer/submit" method="post" class="post-form">
+                  <input type="hidden" id="post-id" value="40769548"/>
+                  <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false"/>
+                  <input type="hidden" name="referrer" value=""/>
+                  <h2 class="space">
+Your Answer                  </h2>
+                  <div id="post-editor" class="post-editor js-post-editor wz-element" data-wz-state="3,4,5,6,7,8">
+                    <div class="ps-relative">
+                      <div class="wmd-container mb8">
+                        <div id="wmd-button-bar" class="wmd-button-bar btr-sm">
+                        </div>
+                        <div class="js-stacks-validation">
+                          <div class="ps-relative">
+                            <textarea id="wmd-input" class="wmd-input wz-element s-input bar0" name="post-text" cols="92" rows="15" tabindex="101" data-wz-state="8" data-min-length="">
+                            </textarea>
+                          </div>
+                          <div class="s-input-message mt4 d-none js-stacks-validation-message">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <aside class="grid ai-start jc-space-between js-answer-help s-notice s-notice__warning pb0 pr4 pt4 mb8 d-none" role="status" aria-hidden="true">
+                      <div class="grid--cell pt8">
+                        <p>
+                        </p>
+                        <ul>
+                          <li>
+                            <em>
+                            </em>
+                          </li>
+                        </ul>
+                        <p>
+                          <em>
+                          </em>
+                        </p>
+                        <ul>
+                          <li>
+                          </li>
+                          <li>
+                          </li>
+                        </ul>
+                        <p>
+                          <a href="/help/how-to-answer">
+                          </a>
+                        </p>
+                      </div>
+                      <button class="grid--cell js-answer-help-close-btn s-btn s-btn__muted fc-dark">
+                        <svg aria-hidden="true" class="svg-icon iconClear" width="18" height="18" viewbox="0 0 18 18">
+                          <path d="M15 4.41L13.59 3 9 7.59 4.41 3 3 4.41 7.59 9 3 13.59 4.41 15 9 10.41 13.59 15 15 13.59 10.41 9z"/>
+                        </svg>
+                      </button>
+                    </aside>
+                    <aside class="grid ai-start jc-space-between js-answer-ban s-notice s-notice__danger pb0 pr4 pt4 mb8 d-none" role="status" aria-hidden="true">
+                      <div class="grid--cell pt8">
+                        <p>
+                          <a href="/help/answer-bans">
+                          </a>
+                        </p>
+                        <p>
+                        </p>
+                        <ul>
+                          <li>
+                            <em>
+                            </em>
+                          </li>
+                        </ul>
+                        <p>
+                          <em>
+                          </em>
+                        </p>
+                        <ul>
+                          <li>
+                          </li>
+                          <li>
+                          </li>
+                        </ul>
+                        <p>
+                          <a href="/help/how-to-answer">
+                          </a>
+                        </p>
+                      </div>
+                      <button class="grid--cell js-answer-ban-close-btn s-btn s-btn__muted fc-dark">
+                        <svg aria-hidden="true" class="svg-icon iconClear" width="18" height="18" viewbox="0 0 18 18">
+                          <path d="M15 4.41L13.59 3 9 7.59 4.41 3 3 4.41 7.59 9 3 13.59 4.41 15 9 10.41 13.59 15 15 13.59 10.41 9z"/>
+                        </svg>
+                      </button>
+                    </aside>
+                    <div id="draft-saved" class="draft-saved community-option fl" style="height:24px; display:none;">
+                    </div>
+                    <div id="draft-discarded" class="draft-discarded community-option fl" style="height:24px; display:none;">
+                    </div>
+                    <div id="wmd-preview" class="wmd-preview">
+                    </div>
+                    <div>
+                    </div>
+                    <div class="edit-block">
+                      <input id="fkey" name="fkey" type="hidden" value="ed78ed68edf4b1bf9978ce1616763f314683e3a3eea42a6574c1ece9ee2b0536"/>
+                      <input id="author" name="author" type="text"/>
+                    </div>
+                  </div>
+                  <div class="ps-relative">
+                    <div class="form-item dno new-post-login p0 my16">
+                      <div class="grid gs16 md:fd-column new-login-form">
+                        <div class="grid fd-column w50 md:w-auto gsy gs8 jc-space-between new-login-left">
+                          <h3 class="grid--cell fs-title">
+                            <a id="login-link" href="/users/login?ssrc=question_page&amp;returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f40769548%2fhow-to-retrieve-a-url-from-a-link-on-a-website-using-jsoup%23new-answer">
+                            </a>
+                          </h3>
+                          <div class="grid--cell ta-center s-btn s-btn__muted s-btn__outlined s-btn__icon google-login" data-ga="[&quot;sign up&quot;,&quot;Sign Up Started - Google&quot;,&quot;New Post&quot;,null,null]">
+                            <svg aria-hidden="true" class="svg-icon native iconGoogle" width="18" height="18" viewbox="0 0 18 18">
+                              <g>
+                                <path d="M16.51 8H8.98v3h4.3c-.18 1-.74 1.48-1.6 2.04v2.01h2.6a7.8 7.8 0 0 0 2.38-5.88c0-.57-.05-.66-.15-1.18z" fill="#4285F4"/>
+                                <path d="M8.98 17c2.16 0 3.97-.72 5.3-1.94l-2.6-2a4.8 4.8 0 0 1-7.18-2.54H1.83v2.07A8 8 0 0 0 8.98 17z" fill="#34A853"/>
+                                <path d="M4.5 10.52a4.8 4.8 0 0 1 0-3.04V5.41H1.83a8 8 0 0 0 0 7.18l2.67-2.07z" fill="#FBBC05"/>
+                                <path d="M8.98 4.18c1.17 0 2.23.4 3.06 1.2l2.3-2.3A8 8 0 0 0 1.83 5.4L4.5 7.49a4.77 4.77 0 0 1 4.48-3.3z" fill="#EA4335"/>
+                              </g>
+                            </svg>
+                          </div>
+                          <div class="grid--cell ta-center s-btn s-btn__muted s-btn__icon facebook-login" data-ga="[&quot;sign up&quot;,&quot;Sign Up Started - Facebook&quot;,&quot;New Post&quot;,null,null]">
+                            <svg aria-hidden="true" class="svg-icon iconFacebook" width="18" height="18" viewbox="0 0 18 18">
+                              <path d="M1.88 1C1.4 1 1 1.4 1 1.88v14.24c0 .48.4.88.88.88h7.67v-6.2H7.46V8.4h2.09V6.61c0-2.07 1.26-3.2 3.1-3.2.88 0 1.64.07 1.87.1v2.16h-1.29c-1 0-1.19.48-1.19 1.18V8.4h2.39l-.31 2.42h-2.08V17h4.08c.48 0 .88-.4.88-.88V1.88c0-.48-.4-.88-.88-.88H1.88z" fill="#3C5A96"/>
+                            </svg>
+                          </div>
+                          <div class="grid--cell ta-center s-btn s-btn__muted s-btn__outlined s-btn__icon stackexchange-login" data-ga="[&quot;sign up&quot;,&quot;Sign Up Navigation&quot;,&quot;New Post&quot;,null,null]">
+                            <svg aria-hidden="true" class="svg-icon native iconLogoGlyphXSm" width="18" height="18" viewbox="0 0 18 18">
+                              <g>
+                                <path fill="#BCBBBB" d="M14 16v-5h2v7H2v-7h2v5z"/>
+                                <path d="M5 15v-2h8v2H5zM12.09.72l4.5 6.06-1.2.9-4.51-6.06 1.21-.9zM8.34 4.3l.97-1.16 5.8 4.83-.96 1.16-5.8-4.83zm-1.9 3.36l.64-1.37 6.85 3.19-.63 1.37-6.85-3.2zM5.4 11.39l.38-1.67 7.42 1.48-.22 1.46-7.58-1.27z" fill="#F48024"/>
+                              </g>
+                            </svg>
+                          </div>
+                        </div>
+                        <input type="hidden" name="manual-openid" class="manual-openid"/>
+                        <input type="hidden" name="use-facebook" class="use-facebook" value="false"/>
+                        <input type="hidden" name="use-google" class="use-google" value="false"/>
+                        <input type="button" class="submit-openid" value="Submit" style="display:none"/>
+                        <div class="grid gsy gs8 fd-column w50 md:w-auto new-login-right form-item p0">
+                          <h3 class="grid--cell fs-title">
+                          </h3>
+                          <div class="grid--cell">
+                            <div class="grid gs4 gsy fd-column">
+                              <label class="s-label" for="display-name">
+                              </label>
+                              <div class="grid ps-relative">
+                                <input class="s-input" id="display-name" name="display-name" maxlength="30" type="text" value="" tabindex="105" placeholder=""/>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="grid--cell">
+                            <div class="grid gs4 gsy fd-column">
+                              <div class="grid--cell">
+                                <div class="grid gs2 gsy fd-column">
+                                  <label class="grid--cell s-label" for="m-address">
+                                  </label>
+                                  <p class="grid--cell s-description">
+                                  </p>
+                                </div>
+                              </div>
+                              <div class="grid ps-relative">
+                                <input class="s-input" id="m-address" name="m-address" type="text" value="" size="40" tabindex="106" placeholder=""/>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <noscript>
+                      <h3 class="grid--cell fs-title">
+Post as a guest                      </h3>
+                      <div class="grid--cell">
+                        <div class="grid gs4 gsy fd-column">
+                          <label class="s-label" for="display-name">
+Name                          </label>
+                          <div class="grid ps-relative">
+                            <input class="s-input" id="display-name" name="display-name" maxlength="30" type="text" value="" tabindex="105" placeholder=""/>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="grid--cell">
+                        <div class="grid gs4 gsy fd-column">
+                          <div class="grid--cell">
+                            <div class="grid gs2 gsy fd-column">
+                              <label class="grid--cell s-label" for="m-address">
+Email                              </label>
+                              <p class="grid--cell s-description">
+Required, but never shown                              </p>
+                            </div>
+                          </div>
+                          <div class="grid ps-relative">
+                            <input class="s-input" id="m-address" name="m-address" type="text" value="" size="40" tabindex="106" placeholder=""/>
+                          </div>
+                        </div>
+                      </div>
+                    </noscript>
+                  </div>
+                  <div class="form-submit cbt grid gsx gs4">
+                    <button id="submit-button" class="grid--cell s-btn s-btn__primary s-btn__icon" type="submit" tabindex="120" autocomplete="off">
+Post Your Answer                    </button>
+                    <button class="grid--cell s-btn s-btn__danger discard-answer dno">
+                    </button>
+                    <p class="privacy-policy-agreement">
+By clicking "Post Your Answer", you acknowledge that you have read our updated                      <a href="https://stackoverflow.com/legal/terms-of-service/public" name="tos" target="_blank" class="-link">
+terms of service                      </a>
+,                      <a href="https://stackoverflow.com/legal/privacy-policy" name="privacy" target="_blank" class="-link">
+privacy policy                      </a>
+and                      <a href="https://stackoverflow.com/legal/cookie-policy" name="cookie" target="_blank" class="-link">
+cookie policy                      </a>
+, and that your continued use of the website is subject to these policies.                      <input type="hidden" name="legalLinksShown" value="1"/>
+                    </p>
+                  </div>
+                </form>
+                <h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for? Browse other questions tagged                  <a href="/questions/tagged/java" class="post-tag" title="show questions tagged 'java'" rel="tag">
+java                  </a>
+                  <a href="/questions/tagged/html" class="post-tag" title="show questions tagged 'html'" rel="tag">
+html                  </a>
+                  <a href="/questions/tagged/url" class="post-tag" title="show questions tagged 'url'" rel="tag">
+url                  </a>
+                  <a href="/questions/tagged/jsoup" class="post-tag" title="show questions tagged 'jsoup'" rel="tag">
+jsoup                  </a>
+                  <a href="/questions/tagged/yelp" class="post-tag" title="show questions tagged 'yelp'" rel="tag">
+yelp                  </a>
+or                  <a href="/questions/ask">
+ask your own question                  </a>
+.                </h2>
+              </div>
+            </div>
+            <div id="sidebar" class="show-votes" role="complementary" aria-label="sidebar">
+              <div class="module question-stats">
+                <table id="qinfo">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <p class="label-key">
+asked                        </p>
+                      </td>
+                      <td style="padding-left: 10px">
+                        <p class="label-key" title="2016-11-23 16:26:05Z">
+                          <b>
+2 years ago                          </b>
+                        </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p class="label-key">
+viewed                        </p>
+                      </td>
+                      <td style="padding-left: 10px">
+                        <p class="label-key">
+                          <b>
+392 times                          </b>
+                        </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p class="label-key">
+active                        </p>
+                      </td>
+                      <td style="padding-left: 10px">
+                        <p class="label-key">
+                          <b>
+                            <a href="?lastactivity" class="lastactivity-link" title="2016-11-23 16:47:50Z">
+2 years ago                            </a>
+                          </b>
+                        </p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div id="dfp-tsb" class="everyonelovesstackoverflow everyoneloves__top-sidebar">
+              </div>
+              <div id="hireme">
+              </div>
+              <div class="module sidebar-related">
+                <h4 id="h-related">
+Related                </h4>
+                <div class="related js-gps-related-questions" data-tracker="rq=1">
+                  <div class="spacer">
+                    <a href="/q/285177" title="Vote score (upvotes - downvotes)">
+                      <div class="answer-votes answered-accepted extra-large">
+1927                      </div>
+                    </a>
+                    <a href="/questions/285177/how-do-i-call-one-constructor-from-another-in-java" class="question-hyperlink">
+How do I call one constructor from another in Java?                    </a>
+                  </div>
+                  <div class="spacer">
+                    <a href="/q/294250" title="Vote score (upvotes - downvotes)">
+                      <div class="answer-votes answered-accepted large">
+684                      </div>
+                    </a>
+                    <a href="/questions/294250/how-do-i-retrieve-an-html-elements-actual-width-and-height" class="question-hyperlink">
+How do I retrieve an HTML element's actual width and height?                    </a>
+                  </div>
+                  <div class="spacer">
+                    <a href="/q/326390" title="Vote score (upvotes - downvotes)">
+                      <div class="answer-votes extra-large">
+1290                      </div>
+                    </a>
+                    <a href="/questions/326390/how-do-i-create-a-java-string-from-the-contents-of-a-file" class="question-hyperlink">
+How do I create a Java string from the contents of a file?                    </a>
+                  </div>
+                  <div class="spacer">
+                    <a href="/q/742013" title="Vote score (upvotes - downvotes)">
+                      <div class="answer-votes answered-accepted large">
+599                      </div>
+                    </a>
+                    <a href="/questions/742013/how-do-i-create-a-url-shortener" class="question-hyperlink">
+How do I create a URL shortener?                    </a>
+                  </div>
+                  <div class="spacer">
+                    <a href="/q/979975" title="Vote score (upvotes - downvotes)">
+                      <div class="answer-votes answered-accepted extra-large">
+1018                      </div>
+                    </a>
+                    <a href="/questions/979975/how-to-get-the-value-from-the-get-parameters" class="question-hyperlink">
+How to get the value from the GET parameters?                    </a>
+                  </div>
+                  <div class="spacer">
+                    <a href="/q/1082050" title="Vote score (upvotes - downvotes)">
+                      <div class="answer-votes answered-accepted large">
+652                      </div>
+                    </a>
+                    <a href="/questions/1082050/linking-to-an-external-url-in-javadoc" class="question-hyperlink">
+Linking to an external URL in Javadoc?                    </a>
+                  </div>
+                  <div class="spacer">
+                    <a href="/q/2091168" title="Vote score (upvotes - downvotes)">
+                      <div class="answer-votes answered-accepted large">
+774                      </div>
+                    </a>
+                    <a href="/questions/2091168/how-to-disable-a-link-using-only-css" class="question-hyperlink">
+How to disable a link using only CSS?                    </a>
+                  </div>
+                  <div class="spacer">
+                    <a href="/q/2165665" title="Vote score (upvotes - downvotes)">
+                      <div class="answer-votes answered-accepted large">
+966                      </div>
+                    </a>
+                    <a href="/questions/2165665/how-do-i-get-the-current-absolute-url-in-ruby-on-rails" class="question-hyperlink">
+How do I get the current absolute URL in Ruby on Rails?                    </a>
+                  </div>
+                  <div class="spacer">
+                    <a href="/q/2201917" title="Vote score (upvotes - downvotes)">
+                      <div class="answer-votes answered-accepted extra-large">
+1139                      </div>
+                    </a>
+                    <a href="/questions/2201917/how-can-i-open-a-url-in-androids-web-browser-from-my-application" class="question-hyperlink">
+How can I open a URL in Android's web browser from my application?                    </a>
+                  </div>
+                  <div class="spacer">
+                    <a href="/q/2906582" title="Vote score (upvotes - downvotes)">
+                      <div class="answer-votes answered-accepted extra-large">
+1495                      </div>
+                    </a>
+                    <a href="/questions/2906582/how-to-create-an-html-button-that-acts-like-a-link" class="question-hyperlink">
+How to create an HTML button that acts like a link?                    </a>
+                  </div>
+                </div>
+              </div>
+              <div id="hot-network-questions" class="module tex2jax_ignore">
+                <h4>
+                  <a href="https://stackexchange.com/questions?tab=hot" class="js-gps-track s-link s-link__inherit" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+Hot Network Questions                  </a>
+                </h4>
+                <ul>
+                  <li>
+                    <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange">
+                    </div>
+                    <a href="https://scifi.stackexchange.com/questions/200018/why-did-j-k-rowling-choose-to-downplay-dragons" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+Why did J. K. Rowling choose to downplay dragons?                    </a>
+                  </li>
+                  <li>
+                    <div class="favicon favicon-german" title="German Language Stack Exchange">
+                    </div>
+                    <a href="https://german.stackexchange.com/questions/48285/what-does-genau-mean-in-colloquial-language" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:253 }); posts_hot_network.click({ item_type:2, location:11 })">
+What does 'genau' mean in colloquial language?                    </a>
+                  </li>
+                  <li>
+                    <div class="favicon favicon-academia" title="Academia Stack Exchange">
+                    </div>
+                    <a href="https://academia.stackexchange.com/questions/120926/as-a-course-lecturer-should-i-excuse-late-assignment-submissions-if-i-wrote-the" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+As a course lecturer, should I excuse late assignment submissions if I wrote the assignment deadline slightly wrong?                    </a>
+                  </li>
+                  <li>
+                    <div class="favicon favicon-superuser" title="Super User">
+                    </div>
+                    <a href="https://superuser.com/questions/1382160/connecting-switches-between-two-buildings-each-building-has-it-own-mains-electr" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+Connecting switches between two buildings, each building has it own mains electrical supply                    </a>
+                  </li>
+                  <li>
+                    <div class="favicon favicon-mathoverflow" title="MathOverflow">
+                    </div>
+                    <a href="https://mathoverflow.net/questions/317256/what-to-do-if-you-notice-a-substantial-improvement-to-a-result-in-a-paper-whilst" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:504 }); posts_hot_network.click({ item_type:2, location:11 })">
+What to do if you notice a substantial improvement to a result in a paper whilst refereeing it?                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-gis" title="Geographic Information Systems Stack Exchange">
+                    </div>
+                    <a href="https://gis.stackexchange.com/questions/305513/how-can-i-use-line-vectors-to-alter-my-dem" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:79 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-stats" title="Cross Validated">
+                    </div>
+                    <a href="https://stats.stackexchange.com/questions/380789/shouldnt-the-joint-probability-of-2-independent-events-be-equal-to-zero" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:65 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange">
+                    </div>
+                    <a href="https://tex.stackexchange.com/questions/464092/how-to-divide-arc-line-and-angle-with-a-certain-ratio" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-apple" title="Ask Different">
+                    </div>
+                    <a href="https://apple.stackexchange.com/questions/345070/can-i-re-format-os-x-drive-without-removing-it-from-my-macbook-pro" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:118 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-math" title="Mathematics Stack Exchange">
+                    </div>
+                    <a href="https://math.stackexchange.com/questions/3033715/function-holomorphic-in-the-units-disk-with-different-bound" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange">
+                    </div>
+                    <a href="https://english.stackexchange.com/questions/476271/a-word-that-means-small-gift" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange">
+                    </div>
+                    <a href="https://english.stackexchange.com/questions/476372/difference-between-%c9%99%ca%b3-and-%c9%9a" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-security" title="Information Security Stack Exchange">
+                    </div>
+                    <a href="https://security.stackexchange.com/questions/198951/why-would-an-attacker-ever-want-to-sit-on-a-zero-day-exploit" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-pets" title="Pets Stack Exchange">
+                    </div>
+                    <a href="https://pets.stackexchange.com/questions/22040/can-someone-help-me-with-my-cats-behavioror-maybe-mine" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:518 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-math" title="Mathematics Stack Exchange">
+                    </div>
+                    <a href="https://math.stackexchange.com/questions/3030191/the-math-behind-warren-buffets-famous-rule-never-lose-money" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-skeptics" title="Skeptics Stack Exchange">
+                    </div>
+                    <a href="https://skeptics.stackexchange.com/questions/42941/are-these-french-children-held-at-gun-point" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:212 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange">
+                    </div>
+                    <a href="https://worldbuilding.stackexchange.com/questions/132443/how-long-could-a-nuclear-war-head-remain-functioning-underground" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange">
+                    </div>
+                    <a href="https://worldbuilding.stackexchange.com/questions/132403/50-o%e2%82%82-25-neon-23-nitrogen-and-3-trace-gasses" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-diy" title="Home Improvement Stack Exchange">
+                    </div>
+                    <a href="https://diy.stackexchange.com/questions/152033/how-do-i-make-around-the-room-shelves-for-a-seriously-skewed-room" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:73 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange">
+                    </div>
+                    <a href="https://mathematica.stackexchange.com/questions/187608/can-this-be-solved-even-faster" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-cooking" title="Seasoned Advice">
+                    </div>
+                    <a href="https://cooking.stackexchange.com/questions/94600/what-happens-if-i-add-more-lemon-juice-than-recommended-to-my-lemon-sugar-cookie" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:49 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-academia" title="Academia Stack Exchange">
+                    </div>
+                    <a href="https://academia.stackexchange.com/questions/121166/whats-wrong-with-my-e-mail-to-potential-phd-supervisors" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange">
+                    </div>
+                    <a href="https://rpg.stackexchange.com/questions/137063/is-it-possible-for-a-multiclassed-monk-rogue-to-use-stunning-strike-and-sneak-at" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-stackoverflow" title="Stack Overflow">
+                    </div>
+                    <a href="https://stackoverflow.com/questions/53699012/performant-cartesian-product-cross-join-with-pandas" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                </ul>
+                <a href="#" class="show-more js-show-more js-gps-track" data-gps-track="posts_hot_network.click({ item_type:3, location:11 })">
+more hot questions                </a>
+              </div>
+              <div id="feed-link">
+                <a href="/feeds/question/40769548" title="feed of this question and its answers">
+                  <svg aria-hidden="true" class="svg-icon fc-orange-400 iconRss" width="18" height="18" viewbox="0 0 18 18">
+                    <path d="M1 3c0-1.1.9-2 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3zm14.5 12C15.5 8.1 9.9 2.5 3 2.5V5a10 10 0 0 1 10 10h2.5zm-5 0A7.5 7.5 0 0 0 3 7.5V10a5 5 0 0 1 5 5h2.5zm-5 0A2.5 2.5 0 0 0 3 12.5V15h2.5z"/>
+                  </svg>
+question feed                </a>
+              </div>
+            </div>
+          </div>
+          <noscript>
+            <div>
+              <img alt="" width="0" src="httpsstackoverflow.comquestions40769548how-to-retrieve-a-url-from-a-link-on-a-website-using-jsoup/4a77.txt" class="dno" height="0"/>
+            </div>
+          </noscript>
+          <div style="display:none" id="prettify-lang">
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer id="footer" class="site-footer js-footer" role="contentinfo">
+      <div class="site-footer--container">
+        <div class="site-footer--logo">
+          <a href="https://stackoverflow.com">
+            <svg aria-hidden="true" class="svg-icon native iconLogoGlyphMd" width="32" height="37" viewbox="0 0 32 37">
+              <g>
+                <path fill="#BCBBBB" d="M26 33v-9h4v13H0V24h4v9z"/>
+                <path d="M23.1 25.99l.68-2.95-16.1-3.35L7 23l16.1 2.99zM9.1 15.2l15 7 1.4-3-15-7-1.4 3zm4.2-7.4L26 18.4l2.1-2.5L15.4 5.3l-2.1 2.5zM21.5 0l-2.7 2 9.9 13.3 2.7-2L21.5 0zM7 30h16v-3H7v3z" fill="#F48024"/>
+              </g>
+            </svg>
+          </a>
+        </div>
+        <nav class="site-footer--nav">
+          <div class="site-footer--col site-footer--col__visible js-footer-col" data-name="default">
+            <h5 class="-title">
+              <a href="https://stackoverflow.com" class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 15})">
+Stack Overflow              </a>
+            </h5>
+            <ul class="-list js-primary-footer-links">
+              <li class="-item">
+                <a href="/questions" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 16})">
+Questions                </a>
+              </li>
+              <li class="-item">
+                <a href="https://stackoverflow.com/jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 17})">
+Jobs                </a>
+              </li>
+              <li class="-item">
+                <a href="https://stackoverflow.com/jobs/directory/developer-jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 11})">
+Developer Jobs Directory                </a>
+              </li>
+              <li class="-item">
+                <a href="https://stackoverflow.com/jobs/salary" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 28})">
+Salary Calculator                </a>
+              </li>
+              <li class="-item">
+                <a href="/help" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 3 })">
+Help                </a>
+              </li>
+              <li class="-item">
+                <a onclick="StackExchange.switchMobile(&quot;on&quot;)" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 12 })">
+Mobile                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="site-footer--col site-footer--col__visible js-footer-col" data-name="default">
+            <h5 class="-title">
+              <a href="https://www.stackoverflowbusiness.com" class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 19 })">
+Products              </a>
+            </h5>
+            <ul class="-list">
+              <li class="-item">
+                <a href="https://stackoverflow.com/teams" class="js-gps-track -link" data-ga="[&quot;teams traffic&quot;,&quot;footer - site nav&quot;,&quot;stackoverflow.com/teams&quot;,null,{&quot;dimension4&quot;:&quot;teams&quot;}]" data-gps-track="footer.click({ location: 2, link: 29 })">
+Teams                </a>
+              </li>
+              <li class="-item">
+                <a href="https://www.stackoverflowbusiness.com/talent" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 20 })">
+Talent                </a>
+              </li>
+              <li class="-item">
+                <a href="https://www.stackoverflowbusiness.com/advertise" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 21 })">
+Engagement                </a>
+              </li>
+              <li class="-item">
+                <a href="https://stackoverflow.com/enterprise" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 22 })">
+Enterprise                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="site-footer--col site-footer--col__visible js-footer-col" data-name="default">
+            <h5 class="-title">
+              <a class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">
+Company              </a>
+            </h5>
+            <ul class="-list">
+              <li class="-item">
+                <a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">
+About                </a>
+              </li>
+              <li class="-item">
+                <a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 27 })" href="https://stackoverflow.com/company/press">
+Press                </a>
+              </li>
+              <li class="-item">
+                <a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 9 })" href="https://stackoverflow.com/company/work-here">
+Work Here                </a>
+              </li>
+              <li class="-item">
+                <a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 7 })" href="https://stackoverflow.com/legal">
+Legal                </a>
+              </li>
+              <li class="-item">
+                <a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 8 })" href="https://stackoverflow.com/legal/privacy-policy">
+Privacy Policy                </a>
+              </li>
+              <li class="-item">
+                <a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 13 })" href="https://stackoverflow.com/company/contact">
+Contact Us                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="site-footer--col site-footer--categories-nav site-footer--col__visible">
+            <a href="#" class="site-footer--back js-footer-back">
+              <svg aria-hidden="true" class="svg-icon iconArrowLeftAlt" width="18" height="18" viewbox="0 0 18 18">
+                <path d="M10.58 16L12 14.59 6.4 9 12 3.41 10.57 2l-7 7z"/>
+              </svg>
+            </a>
+            <div>
+              <h5 class="-title">
+                <a href="https://stackexchange.com">
+Stack Exchange                  <br/>
+Network                </a>
+              </h5>
+              <ul class="-list">
+                <li class="-item">
+                  <a href="#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Technology">
+Technology                  </a>
+                </li>
+                <li class="-item">
+                  <a href="#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Life / Arts">
+Life / Arts                  </a>
+                </li>
+                <li class="-item">
+                  <a href="#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Culture / Recreation">
+Culture / Recreation                  </a>
+                </li>
+                <li class="-item">
+                  <a href="#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Science">
+Science                  </a>
+                </li>
+                <li class="-item">
+                  <a href="#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Other">
+Other                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="site-footer--categories">
+            <div class="site-footer--col site-footer--category js-footer-col" data-name="Technology">
+              <ul class="-list">
+                <li class="-item">
+                  <a href="https://stackoverflow.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and enthusiast programmers">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://serverfault.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="system and network administrators">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://superuser.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="computer enthusiasts and power users">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://webapps.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="power users of web applications">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://askubuntu.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Ubuntu users and developers">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://webmasters.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="pro webmasters">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://gamedev.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and independent game developers">
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-footer--col site-footer--category js-footer-col" data-name="Technology">
+              <ul class="-list">
+                <li class="-item">
+                  <a href="https://tex.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://softwareengineering.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professionals, academics, and students working within the systems development life cycle">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://unix.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Linux, FreeBSD and other Un*x-like operating systems">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://apple.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="power users of Apple hardware and software">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://wordpress.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="WordPress developers and administrators">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://gis.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="cartographers, geographers and GIS professionals">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://electronics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="electronics and electrical engineering professionals, students, and enthusiasts">
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-footer--col site-footer--category js-footer-col" data-name="Technology">
+              <ul class="-list">
+                <li class="-item">
+                  <a href="https://android.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="enthusiasts and power users of the Android operating system">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://security.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="information security professionals">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://dba.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="database professionals who wish to improve their database skills and learn from others in the community">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://drupal.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Drupal developers and administrators">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://sharepoint.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="SharePoint enthusiasts">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://ux.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="user experience researchers and experts">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://mathematica.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Wolfram Mathematica">
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-footer--col site-footer--category js-footer-col" data-name="Technology">
+              <ul class="-list">
+                <li class="-item">
+                  <a href="https://salesforce.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Salesforce administrators, implementation experts, developers and anybody in-between">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://expressionengine.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="administrators, end users, developers and designers for ExpressionEngine® CMS">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://pt.stackoverflow.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programadores profissionais e entusiastas">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://blender.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who use Blender to create 3D graphics, animations, or games">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://networkengineering.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="network engineers">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://crypto.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="software developers, mathematicians and others interested in cryptography">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://codereview.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="peer programmer code reviews">
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-footer--col site-footer--category js-footer-col" data-name="Technology">
+              <ul class="-list">
+                <li class="-item">
+                  <a href="https://magento.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of the Magento e-Commerce platform">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://softwarerecs.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people seeking specific software recommendations">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://dsp.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="practitioners of the art and science of signal, image and video processing">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://emacs.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those using, extending or developing Emacs">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://raspberrypi.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users and developers of hardware and software for Raspberry Pi">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://ru.stackoverflow.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="?????????????">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://codegolf.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programming puzzle enthusiasts and code golfers">
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-footer--col site-footer--category js-footer-col" data-name="Technology">
+              <ul class="-list">
+                <li class="-item">
+                  <a href="https://es.stackoverflow.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programadores y profesionales de la informática">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://ethereum.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Ethereum, the decentralized application platform and smart contract enabled blockchain">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://datascience.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Data science professionals, Machine Learning specialists, and those interested in learning more about the field">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://arduino.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="developers of open-source hardware and software that is compatible with Arduino">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://bitcoin.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Bitcoin crypto-currency enthusiasts">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://stackexchange.com/sites#technology" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                    <strong>
+                    </strong>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-footer--col site-footer--category js-footer-col" data-name="Life / Arts">
+              <ul class="-list">
+                <li class="-item">
+                  <a href="https://photo.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional, enthusiast and amateur photographers">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://scifi.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="science fiction and fantasy enthusiasts">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://graphicdesign.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Graphic Design professionals, students, and enthusiasts">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://movies.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="movie and tv enthusiasts">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://music.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="musicians, students, and enthusiasts">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://worldbuilding.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="writers/artists using science, geography and culture to construct imaginary worlds and settings">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://cooking.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and amateur chefs">
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-footer--col site-footer--category js-footer-col" data-name="Life / Arts">
+              <ul class="-list">
+                <li class="-item">
+                  <a href="https://diy.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="contractors and serious DIYers">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://money.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who want to be financially literate">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://academia.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="academics and those enrolled in higher education">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://law.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="legal professionals, students, and others with experience or interest in law">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://stackexchange.com/sites#lifearts" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                    <strong>
+                    </strong>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-footer--col site-footer--category js-footer-col" data-name="Culture / Recreation">
+              <ul class="-list">
+                <li class="-item">
+                  <a href="https://english.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="linguists, etymologists, and serious English language enthusiasts">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://skeptics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="scientific skepticism">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://judaism.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://travel.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="road warriors and seasoned travelers">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://christianity.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="committed Christians, experts in Christianity and those interested in learning more">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://ell.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="speakers of other languages learning English">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://japanese.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, teachers, and linguists wanting to discuss the finer points of the Japanese language">
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-footer--col site-footer--category js-footer-col" data-name="Culture / Recreation">
+              <ul class="-list">
+                <li class="-item">
+                  <a href="https://gaming.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="passionate videogamers on all platforms">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://bicycles.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://rpg.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://anime.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="anime and manga fans">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://puzzling.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those who create, solve, and study puzzles">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://mechanics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="mechanics and DIY enthusiast owners of cars, trucks, and motorcycles">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://stackexchange.com/sites#culturerecreation" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                    <strong>
+                    </strong>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-footer--col site-footer--category js-footer-col" data-name="Science">
+              <ul class="-list">
+                <li class="-item">
+                  <a href="https://mathoverflow.net" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional mathematicians">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://math.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people studying math at any level and professionals in related fields">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://stats.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://cstheory.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="theoretical computer scientists and researchers in related fields">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://physics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="active researchers, academics and students of physics">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://chemistry.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="scientists, academics, teachers, and students in the field of chemistry">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://biology.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="biology researchers, academics, and students">
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-footer--col site-footer--category js-footer-col" data-name="Science">
+              <ul class="-list">
+                <li class="-item">
+                  <a href="https://cs.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, researchers and practitioners of computer science">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://philosophy.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those interested in the study of the fundamental nature of knowledge, reality, and existence">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://stackexchange.com/sites#science" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                    <strong>
+                    </strong>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-footer--col site-footer--category js-footer-col" data-name="Other">
+              <ul class="-list">
+                <li class="-item">
+                  <a href="https://meta.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://stackapps.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="apps, scripts, and development with the Stack Exchange API">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://api.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programmatic interaction with Stack Exchange sites">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://data.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="querying Stack Exchange data using SQL">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://area51.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="proposing new sites in the Stack Exchange network">
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="site-footer--copyright fs-fine">
+          <ul class="-list">
+            <li class="-item">
+              <a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link:4 })" href="https://stackoverflow.blog?blb=1">
+Blog              </a>
+            </li>
+            <li class="-item">
+              <a href="https://www.facebook.com/officialstackoverflow/" class="-link">
+Facebook              </a>
+            </li>
+            <li class="-item">
+              <a href="https://twitter.com/stackoverflow" class="-link">
+Twitter              </a>
+            </li>
+            <li class="-item">
+              <a href="https://linkedin.com/company/stack-overflow" class="-link">
+LinkedIn              </a>
+            </li>
+          </ul>
+          <p class="mt-auto mb24">
+site design / logo © 2018 Stack Exchange Inc; user contributions licensed under            <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">
+cc by-sa 3.0            </a>
+with            <a href="https://stackoverflow.blog/2009/06/25/attribution-required/" rel="license">
+attribution required            </a>
+.            <span id="svnrev">
+rev 2018.12.7.32344            </span>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <noscript>
+      <div id="noscript-warning">
+Stack Overflow works best with JavaScript enabled        <img alt="" src="httpsstackoverflow.comquestions40769548how-to-retrieve-a-url-from-a-link-on-a-website-using-jsoup/p-c1rF4kxgLUzNc.gif" class="dno"/>
+      </div>
+    </noscript>
+  </body>
+</html>
