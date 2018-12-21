@@ -1,0 +1,2290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html itemscope="" itemtype="http://schema.org/QAPage" class="html__responsive">
+  <head>
+    <title>
+java - How to get key and value of a TreeMap at particular index - Stack Overflow    </title>
+    <link rel="shortcut icon" href="httpsstackoverflow.comquestions11156939how-to-get-key-and-value-of-a-treemap-at-particular-index/favicon.ico.css"/>
+    <link rel="apple-touch-icon image_src" href="httpsstackoverflow.comquestions11156939how-to-get-key-and-value-of-a-treemap-at-particular-index/apple-touch-icon.png.css"/>
+    <link rel="search" href="httpsstackoverflow.comquestions11156939how-to-get-key-and-value-of-a-treemap-at-particular-index/opensearch.xml.css" type="application/opensearchdescription+xml" title="Stack Overflow"/>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://stackoverflow.com/questions/11156939/how-to-get-key-and-value-of-a-treemap-at-particular-index"/>
+    <meta property="og:site_name" content="Stack Overflow"/>
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded"/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:domain" content="stackoverflow.com"/>
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="How to get key and value of a TreeMap at particular index"/>
+    <meta name="twitter:description" property="og:description" itemprop="description" content="I have a TreeMap with a set of 'Key and Value' pairs. How can I get both Key and Value at a particular Index of the TreeMap?
+
+EDIT : @TO-ALL : Thanks. But I know how to implement it by using an extra "/>
+    <link rel="stylesheet" href="httpsstackoverflow.comquestions11156939how-to-get-key-and-value-of-a-treemap-at-particular-index/stacks.css" type="text/css"/>
+    <link rel="stylesheet" href="httpsstackoverflow.comquestions11156939how-to-get-key-and-value-of-a-treemap-at-particular-index/primary-unified.css" type="text/css"/>
+    <link rel="alternate" href="httpsstackoverflow.comquestions11156939how-to-get-key-and-value-of-a-treemap-at-particular-index/11156939.css" type="application/atom+xml" title="Feed for question 'How to get key and value of a TreeMap at particular index'"/>
+    <meta name="twitter:app:country" content="US"/>
+    <meta name="twitter:app:name:iphone" content="Stack Exchange iOS"/>
+    <meta name="twitter:app:id:iphone" content="871299723"/>
+    <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/11156939/how-to-get-key-and-value-of-a-treemap-at-particular-index"/>
+    <meta name="twitter:app:name:ipad" content="Stack Exchange iOS"/>
+    <meta name="twitter:app:id:ipad" content="871299723"/>
+    <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/11156939/how-to-get-key-and-value-of-a-treemap-at-particular-index"/>
+    <meta name="twitter:app:name:googleplay" content="Stack Exchange Android"/>
+    <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/11156939/how-to-get-key-and-value-of-a-treemap-at-particular-index"/>
+    <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin"/>
+  </head>
+  <body class="question-page unified-theme">
+    <noscript id="noscript-css">
+      <style>
+      </style>
+    </noscript>
+    <div id="notify-container">
+    </div>
+    <div id="custom-header">
+    </div>
+    <header class="top-bar js-top-bar _fixed top-bar__network">
+      <div class="-container">
+        <div class="-main">
+          <a href="#" class="left-sidebar-toggle p0 ai-center jc-center js-left-sidebar-toggle">
+            <span class="ps-relative">
+            </span>
+          </a>
+          <a href="https://stackoverflow.com" class="-logo js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:8})">
+            <span class="-img _glyph">
+Stack Overflow            </span>
+          </a>
+        </div>
+        <form id="search" action="/search" method="get" class="searchbar js-searchbar " autocomplete="off" role="search">
+          <div class="ps-relative">
+            <input name="q" type="text" placeholder="Search?" value="" autocomplete="off" maxlength="240" class="f-input js-search-field "/>
+            <button type="submit" aria-label="Search..." class="s-btn s-btn__primary btn-topbar-primary js-search-submit">
+              <svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewbox="0 0 18 18">
+                <path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"/>
+              </svg>
+            </button>
+          </div>
+        </form>
+        <ol class="-secondary js-secondary-topbar-links drop-icons-responsively">
+          <li class="-item searchbar-trigger js-searchbar-trigger">
+            <a href="#" class="-link">
+              <svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewbox="0 0 18 18">
+                <path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"/>
+              </svg>
+            </a>
+          </li>
+          <li class="-item">
+            <a href="https://stackexchange.com/users/?tab=inbox" class="-link js-inbox-button" title="Recent inbox messages">
+              <svg aria-hidden="true" class="svg-icon iconInbox" width="20" height="18" viewbox="0 0 20 18">
+                <path d="M15.19 1H4.63c-.85 0-1.6.54-1.85 1.35L0 10.79V15c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2v-4.21l-2.87-8.44A2 2 0 0 0 15.19 1zm-.28 10l-2 2h-6l-2-2H1.96L4.4 3.68A1 1 0 0 1 5.35 3h9.12a1 1 0 0 1 .95.68L17.86 11h-2.95z"/>
+              </svg>
+              <span class="indicator-badge js-unread-count _important" style="display: none;">
+              </span>
+            </a>
+          </li>
+          <li class="-item">
+            <a href="https://stackexchange.com/users/?tab=reputation" class="-link js-achievements-button" title="Recent achievements: reputation, badges, and privileges earned" data-unread-class="_highlighted-positive">
+              <svg aria-hidden="true" class="svg-icon iconAchievements" width="18" height="18" viewbox="0 0 18 18">
+                <path d="M15 2V1H3v1H0v4c0 1.6 1.4 3 3 3v1c.4 1.5 3 2.6 5 3v2H5s-1 1.5-1 2h10c0-.4-1-2-1-2h-3v-2c2-.4 4.6-1.5 5-3V9c1.6-.2 3-1.4 3-3V2h-3zM3 7c-.5 0-1-.5-1-1V4h1v3zm8.4 2.5L9 8 6.6 9.4l1-2.7L5 5h3l1-2.7L10 5h2.8l-2.3 1.8 1 2.7h-.1zM16 6c0 .5-.5 1-1 1V4h1v2z"/>
+              </svg>
+              <span class="indicator-badge js-unread-count _positive" style="display: none;">
+              </span>
+            </a>
+          </li>
+          <li class="-item help-button-item" data-remove-order="1">
+            <a href="#" class="-link js-help-button" title="Help Center and other resources">
+              <svg aria-hidden="true" class="svg-icon iconHelp" width="18" height="18" viewbox="0 0 18 18">
+                <path d="M9 1a8 8 0 1 0 0 16A8 8 0 0 0 9 1zm.81 12.13c-.02.71-.55 1.15-1.24 1.13-.66-.02-1.17-.49-1.15-1.2.02-.72.56-1.18 1.22-1.16.7.03 1.2.51 1.17 1.23zM11.77 8a5.8 5.8 0 0 1-1.02.91l-.53.37c-.26.2-.42.43-.5.69a4 4 0 0 0-.09.75c0 .05-.03.16-.18.16H7.88c-.16 0-.18-.1-.18-.15.03-.66.12-1.21.4-1.66a5.29 5.29 0 0 1 1.43-1.22c.16-.12.28-.25.38-.39a1.34 1.34 0 0 0 .02-1.71c-.24-.31-.51-.46-1.03-.46-.51 0-.8.26-1.02.6-.21.33-.18.73-.18 1.1H5.75c0-1.38.35-2.25 1.1-2.76.52-.35 1.17-.5 1.93-.5 1 0 1.79.18 2.49.71.64.5.98 1.18.98 2.12 0 .57-.2 1.05-.48 1.44z"/>
+              </svg>
+            </a>
+          </li>
+          <li class="-item">
+            <a href="https://stackexchange.com" class="-link js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 174 Stack Exchange sites">
+              <svg aria-hidden="true" class="svg-icon iconStackExchange" width="18" height="18" viewbox="0 0 18 18">
+                <path d="M1 13c0 1.1.9 2 2 2h8v3l3-3h1a2 2 0 0 0 2-2v-2H1v2zM15 1H3a2 2 0 0 0-2 2v2h16V3a2 2 0 0 0-2-2zM1 6h16v4H1V6z"/>
+              </svg>
+            </a>
+          </li>
+          <li class="-ctas">
+            <a href="https://stackoverflow.com/users/login?ssrc=head&amp;returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f11156939%2fhow-to-get-key-and-value-of-a-treemap-at-particular-index" class="login-link s-btn btn-topbar-clear py8" rel="nofollow">
+Log In            </a>
+            <a href="https://stackoverflow.com/users/signup?ssrc=head&amp;returnurl=%2fusers%2fstory%2fcurrent" class="login-link s-btn s-btn__primary py8 btn-topbar-primary" rel="nofollow" data-ga="[&quot;sign up&quot;,&quot;Sign Up Navigation&quot;,&quot;Header&quot;,null,null]">
+Sign Up            </a>
+          </li>
+          <li class="-dialog-container js-topbar-dialog-corral">
+            <div class="topbar-dialog siteSwitcher-dialog dno">
+              <div class="header">
+                <h3>
+                  <a href="https://stackoverflow.com">
+                  </a>
+                </h3>
+              </div>
+              <div class="modal-content current-site-container">
+                <ul class="current-site">
+                  <li class="grid">
+                    <div class="fl1">
+                      <a href="https://stackoverflow.com" class="current-site-link site-link js-gps-track grid gs8 gsx" data-id="1" data-gps-track="site_switcher.click({ item_type:3 })">
+                        <div class="favicon favicon-stackoverflow site-icon grid--cell" title="Stack Overflow">
+                        </div>
+                        <span class="grid--cell fl1">
+                        </span>
+                      </a>
+                    </div>
+                    <div class="related-links">
+                      <a href="https://stackoverflow.com/help" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:14 })">
+                      </a>
+                      <a href="https://chat.stackoverflow.com" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">
+                      </a>
+                    </div>
+                  </li>
+                  <li class="related-site grid">
+                    <div class="L-shaped-icon-container">
+                      <span class="L-shaped-icon">
+                      </span>
+                    </div>
+                    <a href="https://meta.stackoverflow.com" class="site-link js-gps-track grid gs8 gsx" data-id="552" data-gps-track="site.switch({ target_site:552, item_type:3 }),site_switcher.click({ item_type:4 })">
+                      <div class="favicon favicon-stackoverflowmeta site-icon grid--cell" title="Meta Stack Overflow">
+                      </div>
+                      <span class="grid--cell fl1">
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="header" id="your-communities-header">
+                <h3>
+                </h3>
+              </div>
+              <div class="modal-content" id="your-communities-section">
+                <div class="call-to-login">
+                  <a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=%2fusers%2fstory%2fcurrent" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">
+                  </a>
+                  <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f11156939%2fhow-to-get-key-and-value-of-a-treemap-at-particular-index" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">
+                  </a>
+                </div>
+              </div>
+              <div class="header">
+                <h3>
+                  <a href="https://stackexchange.com/sites">
+                  </a>
+                </h3>
+                <a href="https://stackoverflow.blog" class="fr">
+                </a>
+              </div>
+              <div class="modal-content">
+                <div class="child-content">
+                </div>
+              </div>
+            </div>
+            <div class="topbar-dialog help-dialog js-help-dialog dno">
+              <div class="modal-content">
+                <ul>
+                  <li>
+                    <a href="/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                      <span class="item-summary">
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                      <span class="item-summary">
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://meta.stackoverflow.com" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                      <span class="item-summary">
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                      <span class="item-summary">
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.stackoverflowbusiness.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                      <span class="item-summary">
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="topbar-dialog leftnav-dialog js-leftnav-dialog dno">
+              <div class="left-sidebar js-unpinned-left-sidebar" data-can-be="left-sidebar" data-is-here-when="sm">
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </header>
+    <div id="js-gdpr-consent-banner" class="p16 bg-black-700 ff-sans fc-white ps-fixed b0 l0 r0 z-banner" role="banner" aria-hidden="false">
+      <div class="wmx8 mx-auto grid jc-center" role="alertdialog" aria-describedby="notice-message">
+        <div class="grid--cell mr12" aria-label="notice-message">
+          <p class="mb0 lh-lg">
+By using our site, you acknowledge that you have read and understand our            <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="https://stackoverflow.com/legal/cookie-policy">
+Cookie Policy            </a>
+,            <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="https://stackoverflow.com/legal/privacy-policy">
+Privacy Policy            </a>
+, and our            <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="https://stackoverflow.com/legal/terms-of-service/public">
+Terms of Service            </a>
+.          </p>
+        </div>
+        <a class="grid--cell fc-white js-notice-close" aria-label="notice-dismiss">
+          <svg aria-hidden="true" class="svg-icon m0 iconClear" width="18" height="18" viewbox="0 0 18 18">
+            <path d="M15 4.41L13.59 3 9 7.59 4.41 3 3 4.41 7.59 9 3 13.59 4.41 15 9 10.41 13.59 15 15 13.59 10.41 9z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="container  ">
+      <div id="left-sidebar" data-is-here-when="md lg" class="left-sidebar js-pinned-left-sidebar">
+        <div class="left-sidebar--sticky-container js-sticky-leftnav">
+          <nav role="navigation">
+            <ol class="nav-links">
+              <li>
+              </li>
+              <li>
+                <a href="/" class="pl8 js-gps-track nav-links--link" data-gps-track="top_nav.click({is_current:false, location:2, destination:8})">
+Home                </a>
+              </li>
+              <li>
+                <ol class="nav-links">
+                  <li class="fs-fine tt-uppercase ml8 mt16 mb4 fc-light">
+Public                  </li>
+                  <li class=" youarehere">
+                    <a id="nav-questions" href="/questions" class="pl8 js-gps-track nav-links--link -link__with-icon" data-gps-track="top_nav.click({is_current:true, location:2, destination:1})">
+                      <svg aria-hidden="true" class="svg-icon iconGlobe" width="18" height="18" viewbox="0 0 18 18">
+                        <path d="M9 1a8 8 0 1 0 0 16A8 8 0 0 0 9 1zM8 15.32a6.4 6.4 0 0 1-5.23-7.75L7 11.68v.8c0 .88.12 1.32 1 1.32v1.52zm5.72-2c-.2-.66-1-1.32-1.72-1.32h-1v-2c0-.44-.56-1-1-1H6V7h1c.44 0 1-.56 1-1V5h2c.88 0 1.4-.72 1.4-1.6v-.33a6.4 6.4 0 0 1 2.32 10.24z"/>
+                      </svg>
+                      <span class="-link--channel-name">
+Stack Overflow                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a id="nav-tags" href="/tags" class=" js-gps-track nav-links--link" data-gps-track="top_nav.click({is_current:false, location:2, destination:2})">
+Tags                    </a>
+                  </li>
+                  <li>
+                    <a id="nav-users" href="/users" class=" js-gps-track nav-links--link" data-gps-track="top_nav.click({is_current:false, location:2, destination:3})">
+Users                    </a>
+                  </li>
+                  <li>
+                    <a id="nav-jobs" href="/jobs?med=site-ui&amp;ref=jobs-tab" class=" js-gps-track nav-links--link" data-gps-track="top_nav.click({is_current:false, location:2, destination:6})">
+Jobs                    </a>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <ol class="nav-links">
+                  <li class="fs-fine tt-uppercase ml8 mt24 mb4 fc-light">
+Teams                  </li>
+                  <li class="ps-relative">
+                    <a href="https://stackoverflow.com/teams" class="pl8 js-gps-track nav-links--link -link__with-icon" title="A private, secure home for your team's questions and answers. Starts at $10/month" data-gps-track="teams.create.left-sidenav.click" data-ga="[&quot;teams traffic&quot;,&quot;left nav cta&quot;,&quot;stackoverflow.com/teams&quot;,null,{&quot;dimension4&quot;:&quot;teams&quot;}]">
+                      <svg aria-hidden="true" class="svg-icon iconPlus" width="18" height="18" viewbox="0 0 18 18">
+                        <path d="M10 2H8v6H2v2h6v6h2v-6h6V8h-6z"/>
+                      </svg>
+                      <span class="js-create-team-btn-with-tooltip -link--channel-name">
+Create Team                      </span>
+                    </a>
+                    <div class="d-none create-team-tooltip js-create-team-tooltip bar-sm bg-blue-500 fc-white l100 md:d-none mln24 new-feature-wrapper p16 pr32 t0 ws2" data-cookie="notice-ctt" data-expire-date="1860063995553">
+                      <svg aria-hidden="true" class="svg-icon ps-absolute r12 c-pointer iconClearSm" width="14" height="14" viewbox="0 0 14 14">
+                        <path d="M12 3.41L10.59 2 7 5.59 3.41 2 2 3.41 5.59 7 2 10.59 3.41 12 7 8.41 10.59 12 12 10.59 8.41 7z"/>
+                      </svg>
+                      <p class="mb0">
+                      </p>
+                    </div>
+                  </li>
+                </ol>
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <div id="content" class="snippet-hidden">
+        <div itemscope="" itemtype="http://schema.org/Question">
+          <link itemprop="image" href="httpsstackoverflow.comquestions11156939how-to-get-key-and-value-of-a-treemap-at-particular-index/apple-touch-icon.png_1.css"/>
+          <div class="inner-content clearfix">
+            <style>
+            </style>
+            <div id="dfp-tlb" class="everyonelovesstackoverflow everyoneloves__top-leaderboard">
+            </div>
+            <div id="question-header" class="grid">
+              <h1 itemprop="name" class="grid--cell fs-headline1 fl1 wb-break-word">
+                <a href="/questions/11156939/how-to-get-key-and-value-of-a-treemap-at-particular-index" class="question-hyperlink">
+How to get key and value of a TreeMap at particular index                </a>
+              </h1>
+              <div class="pl8 aside-cta grid--cell" role="navigation" aria-label="ask new question">
+                <a href="/questions/ask" class="d-inline-flex ai-center ws-nowrap s-btn s-btn__primary">
+Ask Question                </a>
+              </div>
+            </div>
+            <div id="mainbar" role="main" aria-label="question and answers">
+              <div class="question" data-questionid="11156939" id="question">
+                <div class="post-layout">
+                  <div class="votecell post-layout--left">
+                    <div class="vote">
+                      <input type="hidden" name="_id_" value="11156939"/>
+                      <a class="vote-up-off" title="This question shows research effort; it is useful and clear">
+up vote                      </a>
+                      <span itemprop="upvoteCount" class="vote-count-post ">
+16                      </span>
+                      <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">
+down vote                      </a>
+                      <a class="star-off" href="#">
+favorite                      </a>
+                      <div class="favoritecount">
+                        <b>
+3                        </b>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="postcell post-layout--right">
+                    <div class="post-text" itemprop="text">
+                      <p>
+I have a TreeMap with a set of 'Key and Value' pairs. How can I get both Key and Value at a particular Index of the TreeMap?                      </p>
+                      <p>
+EDIT : @TO-ALL : Thanks. But I know how to implement it by using an extra ArrayList. I just thought is there any way to achieve this without using an extra ArrayList.                      </p>
+                    </div>
+                    <div class="post-taglist grid gs4 gsy fd-column">
+                      <div class="grid ps-relative d-block">
+                        <a href="/questions/tagged/java" class="post-tag" title="show questions tagged 'java'" rel="tag">
+java                        </a>
+                        <a href="/questions/tagged/treemap" class="post-tag" title="show questions tagged 'treemap'" rel="tag">
+treemap                        </a>
+                      </div>
+                    </div>
+                    <div class="mb0 ">
+                      <div class="mt16 pt4 grid gs8 gsy fw-wrap jc-end ai-start">
+                        <div class="grid--cell mr16" style="flex: 1 1 100px;">
+                          <div class="post-menu">
+                            <a href="/q/11156939" title="short permalink to this question" class="short-link" id="link-post-11156939">
+share                            </a>
+                            <span class="lsep">
+                            </span>
+                            <a href="/posts/11156939/edit" class="suggest-edit-post" title="">
+improve this question                            </a>
+                          </div>
+                        </div>
+                        <div class="post-signature grid--cell">
+                          <div class="user-info ">
+                            <div class="user-action-time">
+                              <a href="/posts/11156939/revisions" title="show all edits to this post">
+edited                                <span title="2012-06-22 13:36:02Z" class="relativetime">
+Jun 22 '12 at 13:36                                </span>
+                              </a>
+                            </div>
+                            <div class="user-gravatar32">
+                            </div>
+                            <div class="user-details">
+                              <div class="-flair">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="post-signature owner grid--cell">
+                          <div class="user-info ">
+                            <div class="user-action-time">
+asked                              <span title="2012-06-22 13:16:30Z" class="relativetime">
+Jun 22 '12 at 13:16                              </span>
+                            </div>
+                            <div class="user-gravatar32">
+                              <a href="/users/1021326/dileep-perla">
+                                <div class="gravatar-wrapper-32">
+                                  <img alt="" width="32" src="httpsstackoverflow.comquestions11156939how-to-get-key-and-value-of-a-treemap-at-particular-index/1ac911e84672ed8f0c7f57e84b415a.png" height="32"/>
+                                </div>
+                              </a>
+                            </div>
+                            <div class="user-details">
+                              <a href="/users/1021326/dileep-perla">
+Dileep Perla                              </a>
+                              <div class="-flair">
+                                <span class="reputation-score" title="reputation score " dir="ltr">
+750                                </span>
+                                <span title="7 gold badges">
+                                  <span class="badge1">
+                                  </span>
+                                  <span class="badgecount">
+7                                  </span>
+                                </span>
+                                <span title="24 silver badges">
+                                  <span class="badge2">
+                                  </span>
+                                  <span class="badgecount">
+24                                  </span>
+                                </span>
+                                <span title="48 bronze badges">
+                                  <span class="badge3">
+                                  </span>
+                                  <span class="badgecount">
+48                                  </span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="post-layout--right">
+                    <div id="comments-11156939" class="comments js-comments-container ">
+                      <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+                        <li id="comment-14630419" class="comment js-comment " data-comment-id="14630419">
+                          <div class="js-comment-actions comment-actions">
+                            <div class="comment-score">
+                              <span title="number of 'useful comment' votes received" class="cool">
+2                              </span>
+                            </div>
+                          </div>
+                          <div class="comment-text js-comment-text-and-form">
+                            <div class="comment-body" style="display: block;">
+                              <span class="comment-copy">
+Why do you want to do that? Indices are internal to the TreeMap implementation. You shouldn't use them. You should always rely only on                                <code>
+keys()                                </code>
+,                                <code>
+values()                                </code>
+and                                <code>
+get(key)                                </code>
+methods.                              </span>
+?                               <a href="/users/717214/aleks-g" title="41,929 reputation" class="comment-user">
+Aleks G                              </a>
+                              <span class="comment-date" dir="ltr">
+                                <span title="2012-06-22 13:20:34Z" class="relativetime-clean">
+Jun 22 '12 at 13:20                                </span>
+                              </span>
+                            </div>
+                          </div>
+                        </li>
+                        <li id="comment-14630463" class="comment js-comment " data-comment-id="14630463">
+                          <div class="js-comment-actions comment-actions">
+                            <div class="comment-score">
+                              <span title="number of 'useful comment' votes received" class="cool">
+1                              </span>
+                            </div>
+                          </div>
+                          <div class="comment-text js-comment-text-and-form">
+                            <div class="comment-body" style="display: block;">
+                              <span class="comment-copy">
+It's quite deliberate that you cannot do this, except by just iterating through the                                <code>
+entrySet                                </code>
+in linear time.                              </span>
+?                               <a href="/users/869736/louis-wasserman" title="144,304 reputation" class="comment-user">
+Louis Wasserman                              </a>
+                              <span class="comment-date" dir="ltr">
+                                <span title="2012-06-22 13:21:52Z" class="relativetime-clean">
+Jun 22 '12 at 13:21                                </span>
+                              </span>
+                              <span title="this comment was edited 1 time">
+                                <svg aria-hidden="true" class="svg-icon va-text-bottom o50 iconPencilSm" width="14" height="15" viewbox="0 0 14 15">
+                                  <path d="M8.37 4.7L2 11.11V13h1.88l6.37-6.43zM12.23 3.83L11.1 2.71a.5.5 0 0 0-.7 0L9.2 3.86l1.88 1.84 1.14-1.16a.5.5 0 0 0 0-.71z"/>
+                                </svg>
+                              </span>
+                            </div>
+                          </div>
+                        </li>
+                        <li id="comment-14630560" class="comment js-comment " data-comment-id="14630560">
+                          <div class="js-comment-actions comment-actions">
+                            <div class="comment-score">
+                            </div>
+                          </div>
+                          <div class="comment-text js-comment-text-and-form">
+                            <div class="comment-body" style="display: block;">
+                              <span class="comment-copy">
+I am developing a music application and have to store albumname in key and albumid in value. The situation is like that for me to get both key and value. I can achieve my task by using an extra ArrayList, but I want to implement it simply.                              </span>
+?                               <a href="/users/1021326/dileep-perla" title="750 reputation" class="comment-user owner">
+Dileep Perla                              </a>
+                              <span class="comment-date" dir="ltr">
+                                <span title="2012-06-22 13:24:48Z" class="relativetime-clean">
+Jun 22 '12 at 13:24                                </span>
+                              </span>
+                            </div>
+                          </div>
+                        </li>
+                        <li id="comment-14630624" class="comment js-comment " data-comment-id="14630624">
+                          <div class="js-comment-actions comment-actions">
+                            <div class="comment-score">
+                              <span title="number of 'useful comment' votes received" class="cool">
+1                              </span>
+                            </div>
+                          </div>
+                          <div class="comment-text js-comment-text-and-form">
+                            <div class="comment-body" style="display: block;">
+                              <span class="comment-copy">
+You can use method                                <code>
+keySet()                                </code>
+to get the list of keys. Then iterate over them to get to one particular one and use                                <code>
+get                                </code>
+method to retrieve the value                              </span>
+?                               <a href="/users/717214/aleks-g" title="41,929 reputation" class="comment-user">
+Aleks G                              </a>
+                              <span class="comment-date" dir="ltr">
+                                <span title="2012-06-22 13:27:14Z" class="relativetime-clean">
+Jun 22 '12 at 13:27                                </span>
+                              </span>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div id="comments-link-11156939" data-rep="50" data-anon="true">
+                      <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">
+add a comment                      </a>
+                      <span class="js-link-separator dno">
+                      </span>
+                      <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick="">
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="dfp-isb" class="everyonelovesstackoverflow everyoneloves__inline-sidebar">
+              </div>
+              <div id="answers">
+                <a name="tab-top">
+                </a>
+                <div id="answers-header">
+                  <div class="subheader answers-subheader">
+                    <h2 data-answercount="6">
+6 Answers                      <span style="display:none;" itemprop="answerCount">
+                      </span>
+                    </h2>
+                    <div>
+                      <div id="tabs">
+                        <a href="/questions/11156939/how-to-get-key-and-value-of-a-treemap-at-particular-index?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active" data-shortcut="A">
+active                        </a>
+                        <a href="/questions/11156939/how-to-get-key-and-value-of-a-treemap-at-particular-index?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest" data-shortcut="O">
+oldest                        </a>
+                        <a class="youarehere is-selected " href="/questions/11156939/how-to-get-key-and-value-of-a-treemap-at-particular-index?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes" data-shortcut="V">
+votes                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a name="11157161">
+                </a>
+                <div id="answer-11157161" class="answer" data-answerid="11157161" itemscope="" itemtype="http://schema.org/Answer">
+                  <div class="post-layout">
+                    <div class="votecell post-layout--left">
+                      <div class="vote">
+                        <input type="hidden" name="_id_" value="11157161"/>
+                        <a class="vote-up-off" title="This answer is useful">
+up vote                        </a>
+                        <span itemprop="upvoteCount" class="vote-count-post ">
+23                        </span>
+                        <a class="vote-down-off" title="This answer is not useful">
+down vote                        </a>
+                      </div>
+                    </div>
+                    <div class="answercell post-layout--right">
+                      <div class="post-text" itemprop="text">
+                        <p>
+If you really want to use TreeMap and get by position, you can use the following:                        </p>
+                        <pre>
+                          <code>
+key => treemap.keySet().toArray()[0] value => treemap.get(key);                          </code>
+                        </pre>
+                        <p>
+OR (if you just want value)                        </p>
+                        <pre>
+                          <code>
+treemap.values().toArray()[0];                          </code>
+                        </pre>
+                        <p>
+But I would suggest you use iterator, as in the above method, it needs to create array whenever you want to find (so not so efficient) and also you should be careful enough to make sure index don't go out of reach.                        </p>
+                      </div>
+                      <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+                        <div class="grid--cell mr16" style="flex: 1 1 100px;">
+                          <div class="post-menu">
+                            <a href="/a/11157161" title="short permalink to this answer" class="short-link" id="link-post-11157161">
+share                            </a>
+                            <span class="lsep">
+                            </span>
+                            <a href="/posts/11157161/edit" class="suggest-edit-post" title="">
+improve this answer                            </a>
+                          </div>
+                        </div>
+                        <div class="post-signature grid--cell fl0">
+                          <div class="user-info ">
+                            <div class="user-action-time">
+                              <a href="/posts/11157161/revisions" title="show all edits to this post">
+edited                                <span title="2012-06-22 13:39:08Z" class="relativetime">
+Jun 22 '12 at 13:39                                </span>
+                              </a>
+                            </div>
+                            <div class="user-gravatar32">
+                            </div>
+                            <div class="user-details">
+                              <div class="-flair">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="post-signature grid--cell fl0">
+                          <div class="user-info ">
+                            <div class="user-action-time">
+answered                              <span title="2012-06-22 13:30:51Z" class="relativetime">
+Jun 22 '12 at 13:30                              </span>
+                            </div>
+                            <div class="user-gravatar32">
+                              <a href="/users/674446/chandra">
+                                <div class="gravatar-wrapper-32">
+                                  <img alt="" width="32" src="httpsstackoverflow.comquestions11156939how-to-get-key-and-value-of-a-treemap-at-particular-index/ea2e9220d43a7a96d86e9a449c32f0.png" height="32"/>
+                                </div>
+                              </a>
+                            </div>
+                            <div class="user-details">
+                              <a href="/users/674446/chandra">
+Chandra                              </a>
+                              <div class="-flair">
+                                <span class="reputation-score" title="reputation score " dir="ltr">
+1,030                                </span>
+                                <span title="6 silver badges">
+                                  <span class="badge2">
+                                  </span>
+                                  <span class="badgecount">
+6                                  </span>
+                                </span>
+                                <span title="13 bronze badges">
+                                  <span class="badge3">
+                                  </span>
+                                  <span class="badgecount">
+13                                  </span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="post-layout--right">
+                      <div id="comments-11157161" class="comments js-comments-container ">
+                        <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+                          <li id="comment-62306795" class="comment js-comment " data-comment-id="62306795">
+                            <div class="js-comment-actions comment-actions">
+                              <div class="comment-score">
+                              </div>
+                            </div>
+                            <div class="comment-text js-comment-text-and-form">
+                              <div class="comment-body" style="display: block;">
+                                <span class="comment-copy">
+I create this array just once at start-up , and then keep it as a look up table. Also, here's an example for getting a typed array                                  <code>
+myMap.keySet().toArray(new Integer[0]);                                  </code>
+Thanks!                                </span>
+?                                 <a href="/users/2162226/gene-bo" title="5,299 reputation" class="comment-user">
+Gene Bo                                </a>
+                                <span class="comment-date" dir="ltr">
+                                  <span title="2016-05-23 19:37:31Z" class="relativetime-clean">
+May 23 '16 at 19:37                                  </span>
+                                </span>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <div id="comments-link-11157161" data-rep="50" data-anon="true">
+                        <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like ?+1? or ?thanks?.">
+add a comment                        </a>
+                        <span class="js-link-separator dno">
+                        </span>
+                        <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick="">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="dfp-mlb" class="everyonelovesstackoverflow everyoneloves__mid-leaderboard">
+                </div>
+                <a name="19572260">
+                </a>
+                <div id="answer-19572260" class="answer" data-answerid="19572260" itemscope="" itemtype="http://schema.org/Answer">
+                  <div class="post-layout">
+                    <div class="votecell post-layout--left">
+                      <div class="vote">
+                        <input type="hidden" name="_id_" value="19572260"/>
+                        <a class="vote-up-off" title="This answer is useful">
+up vote                        </a>
+                        <span itemprop="upvoteCount" class="vote-count-post ">
+6                        </span>
+                        <a class="vote-down-off" title="This answer is not useful">
+down vote                        </a>
+                      </div>
+                    </div>
+                    <div class="answercell post-layout--right">
+                      <div class="post-text" itemprop="text">
+                        <p>
+First off, I'm not sure why people here so frequently concern themselves about the validity of a question. There are numerous instances where people have seen fit to maintain an ArrayList in sorted order. Maintaining an ArrayList in sorted order is grossly inefficient for large lists.                        </p>
+                        <p>
+The Entry nodes of the standard Java (Oracle) source distribution do not maintain the size of their descendant trees. Because of this, it is not possible to identify an element within the map by index without an inefficient sequential search.                        </p>
+                        <p>
+I find this drawback so severe that I have written my own AVL map that can efficiently get elements by index and compute indexOf(E). Making this possible is as simple as maintaining the sizes each of the left and right branches of an Entry. There is some chance that the Glazedlists library has a searchable tree embedded it in somewhere. You may wish to review that.                        </p>
+                      </div>
+                      <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+                        <div class="grid--cell mr16" style="flex: 1 1 100px;">
+                          <div class="post-menu">
+                            <a href="/a/19572260" title="short permalink to this answer" class="short-link" id="link-post-19572260">
+share                            </a>
+                            <span class="lsep">
+                            </span>
+                            <a href="/posts/19572260/edit" class="suggest-edit-post" title="">
+improve this answer                            </a>
+                          </div>
+                        </div>
+                        <div class="post-signature grid--cell fl0">
+                          <div class="user-info ">
+                            <div class="user-action-time">
+answered                              <span title="2013-10-24 17:08:38Z" class="relativetime">
+Oct 24 '13 at 17:08                              </span>
+                            </div>
+                            <div class="user-gravatar32">
+                              <a href="/users/2916862/booyah-johnson">
+                                <div class="gravatar-wrapper-32">
+                                  <img alt="" width="32" src="httpsstackoverflow.comquestions11156939how-to-get-key-and-value-of-a-treemap-at-particular-index/ff67ca4f7abd1568082102178c2f58.png" height="32"/>
+                                </div>
+                              </a>
+                            </div>
+                            <div class="user-details">
+                              <a href="/users/2916862/booyah-johnson">
+Booyah Johnson                              </a>
+                              <div class="-flair">
+                                <span class="reputation-score" title="reputation score " dir="ltr">
+61                                </span>
+                                <span title="1 silver badge">
+                                  <span class="badge2">
+                                  </span>
+                                  <span class="badgecount">
+1                                  </span>
+                                </span>
+                                <span title="1 bronze badge">
+                                  <span class="badge3">
+                                  </span>
+                                  <span class="badgecount">
+1                                  </span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="post-layout--right">
+                      <div id="comments-19572260" class="comments js-comments-container  dno">
+                        <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+                        </ul>
+                      </div>
+                      <div id="comments-link-19572260" data-rep="50" data-anon="true">
+                        <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like ?+1? or ?thanks?.">
+add a comment                        </a>
+                        <span class="js-link-separator dno">
+                        </span>
+                        <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick="">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a name="11157209">
+                </a>
+                <div id="answer-11157209" class="answer" data-answerid="11157209" itemscope="" itemtype="http://schema.org/Answer">
+                  <div class="post-layout">
+                    <div class="votecell post-layout--left">
+                      <div class="vote">
+                        <input type="hidden" name="_id_" value="11157209"/>
+                        <a class="vote-up-off" title="This answer is useful">
+up vote                        </a>
+                        <span itemprop="upvoteCount" class="vote-count-post ">
+4                        </span>
+                        <a class="vote-down-off" title="This answer is not useful">
+down vote                        </a>
+                      </div>
+                    </div>
+                    <div class="answercell post-layout--right">
+                      <div class="post-text" itemprop="text">
+                        <p>
+You can copy entry set in an array list and then get desired entry by index:                        </p>
+                        <pre>
+                          <code>
+list=new ArrayList<Map.Entry<K,V>>(treeMap.entrySet()); Map.Entry<K,V>=list.get(index);                          </code>
+                        </pre>
+                        <p>
+But a) copying takes O(N) time and b) when treeMap changes, the list become invalid.                        </p>
+                      </div>
+                      <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+                        <div class="grid--cell mr16" style="flex: 1 1 100px;">
+                          <div class="post-menu">
+                            <a href="/a/11157209" title="short permalink to this answer" class="short-link" id="link-post-11157209">
+share                            </a>
+                            <span class="lsep">
+                            </span>
+                            <a href="/posts/11157209/edit" class="suggest-edit-post" title="">
+improve this answer                            </a>
+                          </div>
+                        </div>
+                        <div class="post-signature grid--cell fl0">
+                          <div class="user-info user-hover">
+                            <div class="user-action-time">
+answered                              <span title="2012-06-22 13:33:01Z" class="relativetime">
+Jun 22 '12 at 13:33                              </span>
+                            </div>
+                            <div class="user-gravatar32">
+                              <a href="/users/1206301/alexei-kaigorodov">
+                                <div class="gravatar-wrapper-32">
+                                  <img alt="" width="32" src="httpsstackoverflow.comquestions11156939how-to-get-key-and-value-of-a-treemap-at-particular-index/NMBDq.jpg" height="32"/>
+                                </div>
+                              </a>
+                            </div>
+                            <div class="user-details">
+                              <a href="/users/1206301/alexei-kaigorodov">
+Alexei Kaigorodov                              </a>
+                              <div class="-flair">
+                                <span class="reputation-score" title="reputation score " dir="ltr">
+9,698                                </span>
+                                <span title="1 gold badge">
+                                  <span class="badge1">
+                                  </span>
+                                  <span class="badgecount">
+1                                  </span>
+                                </span>
+                                <span title="10 silver badges">
+                                  <span class="badge2">
+                                  </span>
+                                  <span class="badgecount">
+10                                  </span>
+                                </span>
+                                <span title="28 bronze badges">
+                                  <span class="badge3">
+                                  </span>
+                                  <span class="badgecount">
+28                                  </span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="post-layout--right">
+                      <div id="comments-11157209" class="comments js-comments-container  dno">
+                        <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+                        </ul>
+                      </div>
+                      <div id="comments-link-11157209" data-rep="50" data-anon="true">
+                        <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like ?+1? or ?thanks?.">
+add a comment                        </a>
+                        <span class="js-link-separator dno">
+                        </span>
+                        <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick="">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a name="11157146">
+                </a>
+                <div id="answer-11157146" class="answer" data-answerid="11157146" itemscope="" itemtype="http://schema.org/Answer">
+                  <div class="post-layout">
+                    <div class="votecell post-layout--left">
+                      <div class="vote">
+                        <input type="hidden" name="_id_" value="11157146"/>
+                        <a class="vote-up-off" title="This answer is useful">
+up vote                        </a>
+                        <span itemprop="upvoteCount" class="vote-count-post ">
+2                        </span>
+                        <a class="vote-down-off" title="This answer is not useful">
+down vote                        </a>
+                      </div>
+                    </div>
+                    <div class="answercell post-layout--right">
+                      <div class="post-text" itemprop="text">
+                        <p>
+This might not be the best way but you'll be able to access your key/value at a particular index.                        </p>
+                        <pre>
+                          <code>
+TreeMap<Object, Object> foo = new TreeMap<Object, Object>(); Object key = foo.keySet().toArray(new Object[foo.size()])[YOUR_INDEX]; Object value = foo.get(key);                          </code>
+                        </pre>
+                      </div>
+                      <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+                        <div class="grid--cell mr16" style="flex: 1 1 100px;">
+                          <div class="post-menu">
+                            <a href="/a/11157146" title="short permalink to this answer" class="short-link" id="link-post-11157146">
+share                            </a>
+                            <span class="lsep">
+                            </span>
+                            <a href="/posts/11157146/edit" class="suggest-edit-post" title="">
+improve this answer                            </a>
+                          </div>
+                        </div>
+                        <div class="post-signature grid--cell fl0">
+                          <div class="user-info ">
+                            <div class="user-action-time">
+answered                              <span title="2012-06-22 13:30:17Z" class="relativetime">
+Jun 22 '12 at 13:30                              </span>
+                            </div>
+                            <div class="user-gravatar32">
+                              <a href="/users/311890/jean-christophe-fortin">
+                                <div class="gravatar-wrapper-32">
+                                  <img alt="" width="32" src="httpsstackoverflow.comquestions11156939how-to-get-key-and-value-of-a-treemap-at-particular-index/760d6a36b4ac589fb9b2dd4ea1933b.jpeg" height="32"/>
+                                </div>
+                              </a>
+                            </div>
+                            <div class="user-details">
+                              <a href="/users/311890/jean-christophe-fortin">
+Jean-Christophe Fortin                              </a>
+                              <div class="-flair">
+                                <span class="reputation-score" title="reputation score " dir="ltr">
+618                                </span>
+                                <span title="6 silver badges">
+                                  <span class="badge2">
+                                  </span>
+                                  <span class="badgecount">
+6                                  </span>
+                                </span>
+                                <span title="16 bronze badges">
+                                  <span class="badge3">
+                                  </span>
+                                  <span class="badgecount">
+16                                  </span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="post-layout--right">
+                      <div id="comments-11157146" class="comments js-comments-container  dno">
+                        <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+                        </ul>
+                      </div>
+                      <div id="comments-link-11157146" data-rep="50" data-anon="true">
+                        <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like ?+1? or ?thanks?.">
+add a comment                        </a>
+                        <span class="js-link-separator dno">
+                        </span>
+                        <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick="">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a name="42456868">
+                </a>
+                <div id="answer-42456868" class="answer" data-answerid="42456868" itemscope="" itemtype="http://schema.org/Answer">
+                  <div class="post-layout">
+                    <div class="votecell post-layout--left">
+                      <div class="vote">
+                        <input type="hidden" name="_id_" value="42456868"/>
+                        <a class="vote-up-off" title="This answer is useful">
+up vote                        </a>
+                        <span itemprop="upvoteCount" class="vote-count-post ">
+0                        </span>
+                        <a class="vote-down-off" title="This answer is not useful">
+down vote                        </a>
+                      </div>
+                    </div>
+                    <div class="answercell post-layout--right">
+                      <div class="post-text" itemprop="text">
+                        <p>
+This might be helpful                        </p>
+                        <pre>
+                          <code>
+TreeMap< String,Integer > ht=new TreeMap<>(); ht.put("12",1); ht.put("22",2); ht.put("32",3); ht.put("42",4); for(int i=0;i<ht.size();i++) { System.out.println(new Vector(ht.keySet()).get(i)); System.out.println(new Vector(ht.values()).get(i)); }                          </code>
+                        </pre>
+                      </div>
+                      <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+                        <div class="grid--cell mr16" style="flex: 1 1 100px;">
+                          <div class="post-menu">
+                            <a href="/a/42456868" title="short permalink to this answer" class="short-link" id="link-post-42456868">
+share                            </a>
+                            <span class="lsep">
+                            </span>
+                            <a href="/posts/42456868/edit" class="suggest-edit-post" title="">
+improve this answer                            </a>
+                          </div>
+                        </div>
+                        <div class="post-signature grid--cell fl0">
+                          <div class="user-info ">
+                            <div class="user-action-time">
+                              <a href="/posts/42456868/revisions" title="show all edits to this post">
+edited                                <span title="2017-02-25 15:06:39Z" class="relativetime">
+Feb 25 '17 at 15:06                                </span>
+                              </a>
+                            </div>
+                            <div class="user-gravatar32">
+                              <a href="/users/3932234/stephen-s">
+                                <div class="gravatar-wrapper-32">
+                                  <img alt="" width="32" src="httpsstackoverflow.comquestions11156939how-to-get-key-and-value-of-a-treemap-at-particular-index/xjhvO.jpg" height="32"/>
+                                </div>
+                              </a>
+                            </div>
+                            <div class="user-details">
+                              <a href="/users/3932234/stephen-s">
+Stephen S                              </a>
+                              <div class="-flair">
+                                <span class="reputation-score" title="reputation score " dir="ltr">
+1,833                                </span>
+                                <span title="1 gold badge">
+                                  <span class="badge1">
+                                  </span>
+                                  <span class="badgecount">
+1                                  </span>
+                                </span>
+                                <span title="9 silver badges">
+                                  <span class="badge2">
+                                  </span>
+                                  <span class="badgecount">
+9                                  </span>
+                                </span>
+                                <span title="17 bronze badges">
+                                  <span class="badge3">
+                                  </span>
+                                  <span class="badgecount">
+17                                  </span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="post-signature grid--cell fl0">
+                          <div class="user-info ">
+                            <div class="user-action-time">
+answered                              <span title="2017-02-25 13:47:27Z" class="relativetime">
+Feb 25 '17 at 13:47                              </span>
+                            </div>
+                            <div class="user-gravatar32">
+                              <a href="/users/7621734/vineet-agarwal">
+                                <div class="gravatar-wrapper-32">
+                                  <img alt="" width="32" src="httpsstackoverflow.comquestions11156939how-to-get-key-and-value-of-a-treemap-at-particular-index/photo.jpg" height="32"/>
+                                </div>
+                              </a>
+                            </div>
+                            <div class="user-details">
+                              <a href="/users/7621734/vineet-agarwal">
+Vineet Agarwal                              </a>
+                              <div class="-flair">
+                                <span class="reputation-score" title="reputation score " dir="ltr">
+11                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="post-layout--right">
+                      <div id="comments-42456868" class="comments js-comments-container  dno">
+                        <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+                        </ul>
+                      </div>
+                      <div id="comments-link-42456868" data-rep="50" data-anon="true">
+                        <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like ?+1? or ?thanks?.">
+add a comment                        </a>
+                        <span class="js-link-separator dno">
+                        </span>
+                        <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick="">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a name="22230550">
+                </a>
+                <div id="answer-22230550" class="answer" data-answerid="22230550" itemscope="" itemtype="http://schema.org/Answer">
+                  <div class="post-layout">
+                    <div class="votecell post-layout--left">
+                      <div class="vote">
+                        <input type="hidden" name="_id_" value="22230550"/>
+                        <a class="vote-up-off" title="This answer is useful">
+up vote                        </a>
+                        <span itemprop="upvoteCount" class="vote-count-post ">
+-2                        </span>
+                        <a class="vote-down-off" title="This answer is not useful">
+down vote                        </a>
+                      </div>
+                    </div>
+                    <div class="answercell post-layout--right">
+                      <div class="post-text" itemprop="text">
+                        <p>
+here is an other option to get the key from a value :                        </p>
+                        <pre>
+                          <code>
+Map<String, String> map = new HashMap<String, String>(); map.put("s1", "s1Val"); map.put("s2", "s2Val"); map.put("s3", "s3Val"); // ex: "s2Val" -> return "s2" int index = new ArrayList<String>(map.values()).indexOf("s2Val"); System.out.println(map.keySet().toArray()[index]); // -> return "s2"                          </code>
+                        </pre>
+                      </div>
+                      <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+                        <div class="grid--cell mr16" style="flex: 1 1 100px;">
+                          <div class="post-menu">
+                            <a href="/a/22230550" title="short permalink to this answer" class="short-link" id="link-post-22230550">
+share                            </a>
+                            <span class="lsep">
+                            </span>
+                            <a href="/posts/22230550/edit" class="suggest-edit-post" title="">
+improve this answer                            </a>
+                          </div>
+                        </div>
+                        <div class="post-signature grid--cell fl0">
+                          <div class="user-info ">
+                            <div class="user-action-time">
+answered                              <span title="2014-03-06 16:38:57Z" class="relativetime">
+Mar 6 '14 at 16:38                              </span>
+                            </div>
+                            <div class="user-gravatar32">
+                              <a href="/users/2517413/r%c3%a9da">
+                                <div class="gravatar-wrapper-32">
+                                  <img alt="" width="32" src="httpsstackoverflow.comquestions11156939how-to-get-key-and-value-of-a-treemap-at-particular-index/7cc1ae2a9866372e72342f5c83c72e.png" height="32"/>
+                                </div>
+                              </a>
+                            </div>
+                            <div class="user-details">
+                              <a href="/users/2517413/r%c3%a9da">
+Réda                              </a>
+                              <div class="-flair">
+                                <span class="reputation-score" title="reputation score " dir="ltr">
+161                                </span>
+                                <span title="1 silver badge">
+                                  <span class="badge2">
+                                  </span>
+                                  <span class="badgecount">
+1                                  </span>
+                                </span>
+                                <span title="6 bronze badges">
+                                  <span class="badge3">
+                                  </span>
+                                  <span class="badgecount">
+6                                  </span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="post-layout--right">
+                      <div id="comments-22230550" class="comments js-comments-container ">
+                        <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+                          <li id="comment-74125351" class="comment js-comment " data-comment-id="74125351">
+                            <div class="js-comment-actions comment-actions">
+                              <div class="comment-score">
+                              </div>
+                            </div>
+                            <div class="comment-text js-comment-text-and-form">
+                              <div class="comment-body" style="display: block;">
+                                <span class="comment-copy">
+unrelated to the question OP asked. Also,                                  <code>
+Map                                  </code>
+does not guarantee order                                </span>
+?                                 <a href="/users/4928967/frugalcoder" title="376 reputation" class="comment-user">
+frugalcoder                                </a>
+                                <span class="comment-date" dir="ltr">
+                                  <span title="2017-04-21 07:34:32Z" class="relativetime-clean">
+Apr 21 '17 at 7:34                                  </span>
+                                </span>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <div id="comments-link-22230550" data-rep="50" data-anon="true">
+                        <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like ?+1? or ?thanks?.">
+add a comment                        </a>
+                        <span class="js-link-separator dno">
+                        </span>
+                        <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick="">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a name="new-answer">
+                </a>
+                <form id="post-form" action="/questions/11156939/answer/submit" method="post" class="post-form">
+                  <input type="hidden" id="post-id" value="11156939"/>
+                  <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false"/>
+                  <input type="hidden" name="referrer" value=""/>
+                  <h2 class="space">
+Your Answer                  </h2>
+                  <div id="post-editor" class="post-editor js-post-editor wz-element" data-wz-state="3,4,5,6,7,8">
+                    <div class="ps-relative">
+                      <div class="wmd-container mb8">
+                        <div id="wmd-button-bar" class="wmd-button-bar btr-sm">
+                        </div>
+                        <div class="js-stacks-validation">
+                          <div class="ps-relative">
+                            <textarea id="wmd-input" class="wmd-input wz-element s-input bar0" name="post-text" cols="92" rows="15" tabindex="101" data-wz-state="8" data-min-length="">
+                            </textarea>
+                          </div>
+                          <div class="s-input-message mt4 d-none js-stacks-validation-message">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <aside class="grid ai-start jc-space-between js-answer-help s-notice s-notice__warning pb0 pr4 pt4 mb8 d-none" role="status" aria-hidden="true">
+                      <div class="grid--cell pt8">
+                        <p>
+                        </p>
+                        <ul>
+                          <li>
+                            <em>
+                            </em>
+                          </li>
+                        </ul>
+                        <p>
+                          <em>
+                          </em>
+                        </p>
+                        <ul>
+                          <li>
+                          </li>
+                          <li>
+                          </li>
+                        </ul>
+                        <p>
+                          <a href="/help/how-to-answer">
+                          </a>
+                        </p>
+                      </div>
+                      <button class="grid--cell js-answer-help-close-btn s-btn s-btn__muted fc-dark">
+                        <svg aria-hidden="true" class="svg-icon iconClear" width="18" height="18" viewbox="0 0 18 18">
+                          <path d="M15 4.41L13.59 3 9 7.59 4.41 3 3 4.41 7.59 9 3 13.59 4.41 15 9 10.41 13.59 15 15 13.59 10.41 9z"/>
+                        </svg>
+                      </button>
+                    </aside>
+                    <aside class="grid ai-start jc-space-between js-answer-ban s-notice s-notice__danger pb0 pr4 pt4 mb8 d-none" role="status" aria-hidden="true">
+                      <div class="grid--cell pt8">
+                        <p>
+                          <a href="/help/answer-bans">
+                          </a>
+                        </p>
+                        <p>
+                        </p>
+                        <ul>
+                          <li>
+                            <em>
+                            </em>
+                          </li>
+                        </ul>
+                        <p>
+                          <em>
+                          </em>
+                        </p>
+                        <ul>
+                          <li>
+                          </li>
+                          <li>
+                          </li>
+                        </ul>
+                        <p>
+                          <a href="/help/how-to-answer">
+                          </a>
+                        </p>
+                      </div>
+                      <button class="grid--cell js-answer-ban-close-btn s-btn s-btn__muted fc-dark">
+                        <svg aria-hidden="true" class="svg-icon iconClear" width="18" height="18" viewbox="0 0 18 18">
+                          <path d="M15 4.41L13.59 3 9 7.59 4.41 3 3 4.41 7.59 9 3 13.59 4.41 15 9 10.41 13.59 15 15 13.59 10.41 9z"/>
+                        </svg>
+                      </button>
+                    </aside>
+                    <div id="draft-saved" class="draft-saved community-option fl" style="height:24px; display:none;">
+                    </div>
+                    <div id="draft-discarded" class="draft-discarded community-option fl" style="height:24px; display:none;">
+                    </div>
+                    <div id="wmd-preview" class="wmd-preview">
+                    </div>
+                    <div>
+                    </div>
+                    <div class="edit-block">
+                      <input id="fkey" name="fkey" type="hidden" value="ed78ed68edf4b1bf9978ce1616763f314683e3a3eea42a6574c1ece9ee2b0536"/>
+                      <input id="author" name="author" type="text"/>
+                    </div>
+                  </div>
+                  <div class="ps-relative">
+                    <div class="form-item dno new-post-login p0 my16">
+                      <div class="grid gs16 md:fd-column new-login-form">
+                        <div class="grid fd-column w50 md:w-auto gsy gs8 jc-space-between new-login-left">
+                          <h3 class="grid--cell fs-title">
+                            <a id="login-link" href="/users/login?ssrc=question_page&amp;returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f11156939%2fhow-to-get-key-and-value-of-a-treemap-at-particular-index%23new-answer">
+                            </a>
+                          </h3>
+                          <div class="grid--cell ta-center s-btn s-btn__muted s-btn__outlined s-btn__icon google-login" data-ga="[&quot;sign up&quot;,&quot;Sign Up Started - Google&quot;,&quot;New Post&quot;,null,null]">
+                            <svg aria-hidden="true" class="svg-icon native iconGoogle" width="18" height="18" viewbox="0 0 18 18">
+                              <g>
+                                <path d="M16.51 8H8.98v3h4.3c-.18 1-.74 1.48-1.6 2.04v2.01h2.6a7.8 7.8 0 0 0 2.38-5.88c0-.57-.05-.66-.15-1.18z" fill="#4285F4"/>
+                                <path d="M8.98 17c2.16 0 3.97-.72 5.3-1.94l-2.6-2a4.8 4.8 0 0 1-7.18-2.54H1.83v2.07A8 8 0 0 0 8.98 17z" fill="#34A853"/>
+                                <path d="M4.5 10.52a4.8 4.8 0 0 1 0-3.04V5.41H1.83a8 8 0 0 0 0 7.18l2.67-2.07z" fill="#FBBC05"/>
+                                <path d="M8.98 4.18c1.17 0 2.23.4 3.06 1.2l2.3-2.3A8 8 0 0 0 1.83 5.4L4.5 7.49a4.77 4.77 0 0 1 4.48-3.3z" fill="#EA4335"/>
+                              </g>
+                            </svg>
+                          </div>
+                          <div class="grid--cell ta-center s-btn s-btn__muted s-btn__icon facebook-login" data-ga="[&quot;sign up&quot;,&quot;Sign Up Started - Facebook&quot;,&quot;New Post&quot;,null,null]">
+                            <svg aria-hidden="true" class="svg-icon iconFacebook" width="18" height="18" viewbox="0 0 18 18">
+                              <path d="M1.88 1C1.4 1 1 1.4 1 1.88v14.24c0 .48.4.88.88.88h7.67v-6.2H7.46V8.4h2.09V6.61c0-2.07 1.26-3.2 3.1-3.2.88 0 1.64.07 1.87.1v2.16h-1.29c-1 0-1.19.48-1.19 1.18V8.4h2.39l-.31 2.42h-2.08V17h4.08c.48 0 .88-.4.88-.88V1.88c0-.48-.4-.88-.88-.88H1.88z" fill="#3C5A96"/>
+                            </svg>
+                          </div>
+                          <div class="grid--cell ta-center s-btn s-btn__muted s-btn__outlined s-btn__icon stackexchange-login" data-ga="[&quot;sign up&quot;,&quot;Sign Up Navigation&quot;,&quot;New Post&quot;,null,null]">
+                            <svg aria-hidden="true" class="svg-icon native iconLogoGlyphXSm" width="18" height="18" viewbox="0 0 18 18">
+                              <g>
+                                <path fill="#BCBBBB" d="M14 16v-5h2v7H2v-7h2v5z"/>
+                                <path d="M5 15v-2h8v2H5zM12.09.72l4.5 6.06-1.2.9-4.51-6.06 1.21-.9zM8.34 4.3l.97-1.16 5.8 4.83-.96 1.16-5.8-4.83zm-1.9 3.36l.64-1.37 6.85 3.19-.63 1.37-6.85-3.2zM5.4 11.39l.38-1.67 7.42 1.48-.22 1.46-7.58-1.27z" fill="#F48024"/>
+                              </g>
+                            </svg>
+                          </div>
+                        </div>
+                        <input type="hidden" name="manual-openid" class="manual-openid"/>
+                        <input type="hidden" name="use-facebook" class="use-facebook" value="false"/>
+                        <input type="hidden" name="use-google" class="use-google" value="false"/>
+                        <input type="button" class="submit-openid" value="Submit" style="display:none"/>
+                        <div class="grid gsy gs8 fd-column w50 md:w-auto new-login-right form-item p0">
+                          <h3 class="grid--cell fs-title">
+                          </h3>
+                          <div class="grid--cell">
+                            <div class="grid gs4 gsy fd-column">
+                              <label class="s-label" for="display-name">
+                              </label>
+                              <div class="grid ps-relative">
+                                <input class="s-input" id="display-name" name="display-name" maxlength="30" type="text" value="" tabindex="105" placeholder=""/>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="grid--cell">
+                            <div class="grid gs4 gsy fd-column">
+                              <div class="grid--cell">
+                                <div class="grid gs2 gsy fd-column">
+                                  <label class="grid--cell s-label" for="m-address">
+                                  </label>
+                                  <p class="grid--cell s-description">
+                                  </p>
+                                </div>
+                              </div>
+                              <div class="grid ps-relative">
+                                <input class="s-input" id="m-address" name="m-address" type="text" value="" size="40" tabindex="106" placeholder=""/>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <noscript>
+                      <h3 class="grid--cell fs-title">
+Post as a guest                      </h3>
+                      <div class="grid--cell">
+                        <div class="grid gs4 gsy fd-column">
+                          <label class="s-label" for="display-name">
+Name                          </label>
+                          <div class="grid ps-relative">
+                            <input class="s-input" id="display-name" name="display-name" maxlength="30" type="text" value="" tabindex="105" placeholder=""/>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="grid--cell">
+                        <div class="grid gs4 gsy fd-column">
+                          <div class="grid--cell">
+                            <div class="grid gs2 gsy fd-column">
+                              <label class="grid--cell s-label" for="m-address">
+Email                              </label>
+                              <p class="grid--cell s-description">
+Required, but never shown                              </p>
+                            </div>
+                          </div>
+                          <div class="grid ps-relative">
+                            <input class="s-input" id="m-address" name="m-address" type="text" value="" size="40" tabindex="106" placeholder=""/>
+                          </div>
+                        </div>
+                      </div>
+                    </noscript>
+                  </div>
+                  <div class="form-submit cbt grid gsx gs4">
+                    <button id="submit-button" class="grid--cell s-btn s-btn__primary s-btn__icon" type="submit" tabindex="120" autocomplete="off">
+Post Your Answer                    </button>
+                    <button class="grid--cell s-btn s-btn__danger discard-answer dno">
+                    </button>
+                    <p class="privacy-policy-agreement">
+By clicking "Post Your Answer", you acknowledge that you have read our updated                      <a href="https://stackoverflow.com/legal/terms-of-service/public" name="tos" target="_blank" class="-link">
+terms of service                      </a>
+,                      <a href="https://stackoverflow.com/legal/privacy-policy" name="privacy" target="_blank" class="-link">
+privacy policy                      </a>
+and                      <a href="https://stackoverflow.com/legal/cookie-policy" name="cookie" target="_blank" class="-link">
+cookie policy                      </a>
+, and that your continued use of the website is subject to these policies.                      <input type="hidden" name="legalLinksShown" value="1"/>
+                    </p>
+                  </div>
+                </form>
+                <h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for? Browse other questions tagged                  <a href="/questions/tagged/java" class="post-tag" title="show questions tagged 'java'" rel="tag">
+java                  </a>
+                  <a href="/questions/tagged/treemap" class="post-tag" title="show questions tagged 'treemap'" rel="tag">
+treemap                  </a>
+or                  <a href="/questions/ask">
+ask your own question                  </a>
+.                </h2>
+              </div>
+            </div>
+            <div id="sidebar" class="show-votes" role="complementary" aria-label="sidebar">
+              <div class="module question-stats">
+                <table id="qinfo">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <p class="label-key">
+asked                        </p>
+                      </td>
+                      <td style="padding-left: 10px">
+                        <p class="label-key" title="2012-06-22 13:16:30Z">
+                          <b>
+6 years, 5 months ago                          </b>
+                        </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p class="label-key">
+viewed                        </p>
+                      </td>
+                      <td style="padding-left: 10px">
+                        <p class="label-key">
+                          <b>
+53,867 times                          </b>
+                        </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p class="label-key">
+active                        </p>
+                      </td>
+                      <td style="padding-left: 10px">
+                        <p class="label-key">
+                          <b>
+                            <a href="?lastactivity" class="lastactivity-link" title="2017-02-25 15:06:39Z">
+1 year, 9 months ago                            </a>
+                          </b>
+                        </p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div id="dfp-tsb" class="everyonelovesstackoverflow everyoneloves__top-sidebar">
+              </div>
+              <div id="hireme">
+              </div>
+              <div class="module sidebar-related">
+                <h4 id="h-related">
+Related                </h4>
+                <div class="related js-gps-related-questions" data-tracker="rq=1">
+                  <div class="spacer">
+                    <a href="/q/109383" title="Vote score (upvotes - downvotes)">
+                      <div class="answer-votes extra-large">
+1440                      </div>
+                    </a>
+                    <a href="/questions/109383/sort-a-mapkey-value-by-values" class="question-hyperlink">
+Sort a Map<Key, Value> by values                    </a>
+                  </div>
+                  <div class="spacer">
+                    <a href="/q/295579" title="Vote score (upvotes - downvotes)">
+                      <div class="answer-votes answered-accepted extra-large">
+1285                      </div>
+                    </a>
+                    <a href="/questions/295579/fastest-way-to-determine-if-an-integers-square-root-is-an-integer" class="question-hyperlink">
+Fastest way to determine if an integer's square root is an integer                    </a>
+                  </div>
+                  <div class="spacer">
+                    <a href="/q/687833" title="Vote score (upvotes - downvotes)">
+                      <div class="answer-votes answered-accepted large">
+460                      </div>
+                    </a>
+                    <a href="/questions/687833/how-to-get-the-last-value-of-an-arraylist" class="question-hyperlink">
+How to get the last value of an ArrayList                    </a>
+                  </div>
+                  <div class="spacer">
+                    <a href="/q/1128723" title="Vote score (upvotes - downvotes)">
+                      <div class="answer-votes answered-accepted extra-large">
+1964                      </div>
+                    </a>
+                    <a href="/questions/1128723/how-to-determine-whether-an-array-contains-a-particular-value-in-java" class="question-hyperlink">
+How to determine whether an array contains a particular value in Java?                    </a>
+                  </div>
+                  <div class="spacer">
+                    <a href="/q/1318980" title="Vote score (upvotes - downvotes)">
+                      <div class="answer-votes answered-accepted large">
+117                      </div>
+                    </a>
+                    <a href="/questions/1318980/how-to-iterate-over-a-treemap" class="question-hyperlink">
+How to iterate over a TreeMap?                    </a>
+                  </div>
+                  <div class="spacer">
+                    <a href="/q/1383797" title="Vote score (upvotes - downvotes)">
+                      <div class="answer-votes answered-accepted large">
+385                      </div>
+                    </a>
+                    <a href="/questions/1383797/java-hashmap-how-to-get-key-from-value" class="question-hyperlink">
+Java Hashmap: How to get key from value?                    </a>
+                  </div>
+                  <div class="spacer">
+                    <a href="/q/1678122" title="Vote score (upvotes - downvotes)">
+                      <div class="answer-votes answered-accepted extra-large">
+1155                      </div>
+                    </a>
+                    <a href="/questions/1678122/must-override-a-superclass-method-errors-after-importing-a-project-into-eclips" class="question-hyperlink">
+'Must Override a Superclass Method' Errors after importing a project into Eclipse                    </a>
+                  </div>
+                  <div class="spacer">
+                    <a href="/q/4157972" title="Vote score (upvotes - downvotes)">
+                      <div class="answer-votes answered-accepted large">
+511                      </div>
+                    </a>
+                    <a href="/questions/4157972/how-to-update-a-value-given-a-key-in-a-java-hashmap" class="question-hyperlink">
+How to update a value, given a key in a java hashmap?                    </a>
+                  </div>
+                  <div class="spacer">
+                    <a href="/q/20930118" title="Vote score (upvotes - downvotes)">
+                      <div class="answer-votes default">
+1                      </div>
+                    </a>
+                    <a href="/questions/20930118/index-a-treemap-value-in-java" class="question-hyperlink">
+Index a Treemap value in java                    </a>
+                  </div>
+                  <div class="spacer">
+                    <a href="/q/40576934" title="Vote score (upvotes - downvotes)">
+                      <div class="answer-votes answered-accepted default">
+4                      </div>
+                    </a>
+                    <a href="/questions/40576934/how-to-retrieve-the-key-with-a-maximum-value-in-a-treemap-in-java" class="question-hyperlink">
+How to retrieve the key with a maximum value in a TreeMap in Java?                    </a>
+                  </div>
+                </div>
+              </div>
+              <div id="hot-network-questions" class="module tex2jax_ignore">
+                <h4>
+                  <a href="https://stackexchange.com/questions?tab=hot" class="js-gps-track s-link s-link__inherit" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+Hot Network Questions                  </a>
+                </h4>
+                <ul>
+                  <li>
+                    <div class="favicon favicon-boardgames" title="Board &amp; Card Games Stack Exchange">
+                    </div>
+                    <a href="https://boardgames.stackexchange.com/questions/44328/instant-and-sorcery-lifelink-multiplied-by-targets-or-just-casting" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:147 }); posts_hot_network.click({ item_type:2, location:11 })">
+Instant and sorcery lifelink multiplied by targets or just casting?                    </a>
+                  </li>
+                  <li>
+                    <div class="favicon favicon-ell" title="English Language Learners Stack Exchange">
+                    </div>
+                    <a href="https://ell.stackexchange.com/questions/188040/why-is-on-used-in-these-expressions" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })">
+Why is 'on' used in these expressions?                    </a>
+                  </li>
+                  <li>
+                    <div class="favicon favicon-travel" title="Travel Stack Exchange">
+                    </div>
+                    <a href="https://travel.stackexchange.com/questions/127015/suddenly-its-announced-that-my-train-wont-go-the-my-destination-is-my-sparpre" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+Suddenly it's announced that my train won't go the my destination, is my Sparpreis ticket valid?                    </a>
+                  </li>
+                  <li>
+                    <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange">
+                    </div>
+                    <a href="https://worldbuilding.stackexchange.com/questions/132059/semi-accessible-continent" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+Semi-accessible continent                    </a>
+                  </li>
+                  <li>
+                    <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange">
+                    </div>
+                    <a href="https://codegolf.stackexchange.com/questions/177221/string-rotation-output-string-repeatedly-moving-first-character-to-the-end" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+String rotation - output string repeatedly moving first character to the end                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-askubuntu" title="Ask Ubuntu">
+                    </div>
+                    <a href="https://askubuntu.com/questions/1099511/accidentally-deleted-var-lib-apt" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:89 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-academia" title="Academia Stack Exchange">
+                    </div>
+                    <a href="https://academia.stackexchange.com/questions/121181/my-advisors-new-student-copied-parts-of-my-phd-thesis-advisor-doesnt-care-wh" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-workplace" title="The Workplace Stack Exchange">
+                    </div>
+                    <a href="https://workplace.stackexchange.com/questions/123968/ways-to-respond-when-hr-says-your-market-salary-range-research-isnt-correct" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange">
+                    </div>
+                    <a href="https://scifi.stackexchange.com/questions/199966/why-did-aragorn-call-this-stranger-father" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange">
+                    </div>
+                    <a href="https://rpg.stackexchange.com/questions/137077/would-brute-force-interact-with-abilities-that-affect-weapon-damage-dice" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-cooking" title="Seasoned Advice">
+                    </div>
+                    <a href="https://cooking.stackexchange.com/questions/94603/how-do-i-get-something-sticky-like-honey-or-golden-syrup-off-measuring-spoons-or" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:49 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-academia" title="Academia Stack Exchange">
+                    </div>
+                    <a href="https://academia.stackexchange.com/questions/121262/outsourcing-trivial-authorless-work" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-travel" title="Travel Stack Exchange">
+                    </div>
+                    <a href="https://travel.stackexchange.com/questions/127027/is-it-possible-to-buy-round-trip-tickets-to-jamaica-where-the-return-ticket-is-c" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-chemistry" title="Chemistry Stack Exchange">
+                    </div>
+                    <a href="https://chemistry.stackexchange.com/questions/105503/sugar-solutions-do-not-have-a-ph-in-itself-but-it-makes-your-body-acidic-why" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:431 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-gis" title="Geographic Information Systems Stack Exchange">
+                    </div>
+                    <a href="https://gis.stackexchange.com/questions/305515/finding-distance-between-point-and-polygon-edge-in-eastward-direction-using-pyqg" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:79 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-math" title="Mathematics Stack Exchange">
+                    </div>
+                    <a href="https://math.stackexchange.com/questions/3030191/the-math-behind-warren-buffets-famous-rule-never-lose-money" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-cooking" title="Seasoned Advice">
+                    </div>
+                    <a href="https://cooking.stackexchange.com/questions/94600/what-happens-if-i-add-more-lemon-juice-than-recommended-to-my-lemon-sugar-cookie" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:49 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-stackoverflow" title="Stack Overflow">
+                    </div>
+                    <a href="https://stackoverflow.com/questions/53699012/performant-cartesian-product-cross-join-with-pandas" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange">
+                    </div>
+                    <a href="https://worldbuilding.stackexchange.com/questions/132129/could-you-do-acrobatics-and-long-distance-running-in-an-ankle-length-dress" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-politics" title="Politics Stack Exchange">
+                    </div>
+                    <a href="https://politics.stackexchange.com/questions/35978/could-the-uk-unilaterally-restart-the-clock-on-brexit" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:475 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange">
+                    </div>
+                    <a href="https://rpg.stackexchange.com/questions/137055/how-can-i-convey-and-sustain-a-level-of-realism-in-a-given-horror-campaign" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange">
+                    </div>
+                    <a href="https://tex.stackexchange.com/questions/464045/how-to-use-lua-code-from-external-file-in-lualatex" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-german" title="German Language Stack Exchange">
+                    </div>
+                    <a href="https://german.stackexchange.com/questions/48285/what-does-genau-mean-in-colloquial-language" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:253 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                  <li class="dno js-hidden">
+                    <div class="favicon favicon-space" title="Space Exploration Stack Exchange">
+                    </div>
+                    <a href="https://space.stackexchange.com/questions/32708/what-was-the-colour-of-the-shoes-used-by-the-apollo-astronauts-in-moon-landing" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:508 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    </a>
+                  </li>
+                </ul>
+                <a href="#" class="show-more js-show-more js-gps-track" data-gps-track="posts_hot_network.click({ item_type:3, location:11 })">
+more hot questions                </a>
+              </div>
+              <div id="feed-link">
+                <a href="/feeds/question/11156939" title="feed of this question and its answers">
+                  <svg aria-hidden="true" class="svg-icon fc-orange-400 iconRss" width="18" height="18" viewbox="0 0 18 18">
+                    <path d="M1 3c0-1.1.9-2 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3zm14.5 12C15.5 8.1 9.9 2.5 3 2.5V5a10 10 0 0 1 10 10h2.5zm-5 0A7.5 7.5 0 0 0 3 7.5V10a5 5 0 0 1 5 5h2.5zm-5 0A2.5 2.5 0 0 0 3 12.5V15h2.5z"/>
+                  </svg>
+question feed                </a>
+              </div>
+            </div>
+          </div>
+          <noscript>
+            <div>
+              <img alt="" width="0" src="httpsstackoverflow.comquestions11156939how-to-get-key-and-value-of-a-treemap-at-particular-index/7cb5.txt" class="dno" height="0"/>
+            </div>
+          </noscript>
+          <div style="display:none" id="prettify-lang">
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer id="footer" class="site-footer js-footer" role="contentinfo">
+      <div class="site-footer--container">
+        <div class="site-footer--logo">
+          <a href="https://stackoverflow.com">
+            <svg aria-hidden="true" class="svg-icon native iconLogoGlyphMd" width="32" height="37" viewbox="0 0 32 37">
+              <g>
+                <path fill="#BCBBBB" d="M26 33v-9h4v13H0V24h4v9z"/>
+                <path d="M23.1 25.99l.68-2.95-16.1-3.35L7 23l16.1 2.99zM9.1 15.2l15 7 1.4-3-15-7-1.4 3zm4.2-7.4L26 18.4l2.1-2.5L15.4 5.3l-2.1 2.5zM21.5 0l-2.7 2 9.9 13.3 2.7-2L21.5 0zM7 30h16v-3H7v3z" fill="#F48024"/>
+              </g>
+            </svg>
+          </a>
+        </div>
+        <nav class="site-footer--nav">
+          <div class="site-footer--col site-footer--col__visible js-footer-col" data-name="default">
+            <h5 class="-title">
+              <a href="https://stackoverflow.com" class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 15})">
+Stack Overflow              </a>
+            </h5>
+            <ul class="-list js-primary-footer-links">
+              <li class="-item">
+                <a href="/questions" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 16})">
+Questions                </a>
+              </li>
+              <li class="-item">
+                <a href="https://stackoverflow.com/jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 17})">
+Jobs                </a>
+              </li>
+              <li class="-item">
+                <a href="https://stackoverflow.com/jobs/directory/developer-jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 11})">
+Developer Jobs Directory                </a>
+              </li>
+              <li class="-item">
+                <a href="https://stackoverflow.com/jobs/salary" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 28})">
+Salary Calculator                </a>
+              </li>
+              <li class="-item">
+                <a href="/help" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 3 })">
+Help                </a>
+              </li>
+              <li class="-item">
+                <a onclick="StackExchange.switchMobile(&quot;on&quot;)" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 12 })">
+Mobile                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="site-footer--col site-footer--col__visible js-footer-col" data-name="default">
+            <h5 class="-title">
+              <a href="https://www.stackoverflowbusiness.com" class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 19 })">
+Products              </a>
+            </h5>
+            <ul class="-list">
+              <li class="-item">
+                <a href="https://stackoverflow.com/teams" class="js-gps-track -link" data-ga="[&quot;teams traffic&quot;,&quot;footer - site nav&quot;,&quot;stackoverflow.com/teams&quot;,null,{&quot;dimension4&quot;:&quot;teams&quot;}]" data-gps-track="footer.click({ location: 2, link: 29 })">
+Teams                </a>
+              </li>
+              <li class="-item">
+                <a href="https://www.stackoverflowbusiness.com/talent" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 20 })">
+Talent                </a>
+              </li>
+              <li class="-item">
+                <a href="https://www.stackoverflowbusiness.com/advertise" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 21 })">
+Engagement                </a>
+              </li>
+              <li class="-item">
+                <a href="https://stackoverflow.com/enterprise" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 22 })">
+Enterprise                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="site-footer--col site-footer--col__visible js-footer-col" data-name="default">
+            <h5 class="-title">
+              <a class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">
+Company              </a>
+            </h5>
+            <ul class="-list">
+              <li class="-item">
+                <a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">
+About                </a>
+              </li>
+              <li class="-item">
+                <a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 27 })" href="https://stackoverflow.com/company/press">
+Press                </a>
+              </li>
+              <li class="-item">
+                <a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 9 })" href="https://stackoverflow.com/company/work-here">
+Work Here                </a>
+              </li>
+              <li class="-item">
+                <a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 7 })" href="https://stackoverflow.com/legal">
+Legal                </a>
+              </li>
+              <li class="-item">
+                <a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 8 })" href="https://stackoverflow.com/legal/privacy-policy">
+Privacy Policy                </a>
+              </li>
+              <li class="-item">
+                <a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 13 })" href="https://stackoverflow.com/company/contact">
+Contact Us                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="site-footer--col site-footer--categories-nav site-footer--col__visible">
+            <a href="#" class="site-footer--back js-footer-back">
+              <svg aria-hidden="true" class="svg-icon iconArrowLeftAlt" width="18" height="18" viewbox="0 0 18 18">
+                <path d="M10.58 16L12 14.59 6.4 9 12 3.41 10.57 2l-7 7z"/>
+              </svg>
+            </a>
+            <div>
+              <h5 class="-title">
+                <a href="https://stackexchange.com">
+Stack Exchange                  <br/>
+Network                </a>
+              </h5>
+              <ul class="-list">
+                <li class="-item">
+                  <a href="#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Technology">
+Technology                  </a>
+                </li>
+                <li class="-item">
+                  <a href="#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Life / Arts">
+Life / Arts                  </a>
+                </li>
+                <li class="-item">
+                  <a href="#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Culture / Recreation">
+Culture / Recreation                  </a>
+                </li>
+                <li class="-item">
+                  <a href="#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Science">
+Science                  </a>
+                </li>
+                <li class="-item">
+                  <a href="#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Other">
+Other                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="site-footer--categories">
+            <div class="site-footer--col site-footer--category js-footer-col" data-name="Technology">
+              <ul class="-list">
+                <li class="-item">
+                  <a href="https://stackoverflow.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and enthusiast programmers">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://serverfault.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="system and network administrators">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://superuser.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="computer enthusiasts and power users">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://webapps.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="power users of web applications">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://askubuntu.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Ubuntu users and developers">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://webmasters.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="pro webmasters">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://gamedev.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and independent game developers">
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-footer--col site-footer--category js-footer-col" data-name="Technology">
+              <ul class="-list">
+                <li class="-item">
+                  <a href="https://tex.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://softwareengineering.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professionals, academics, and students working within the systems development life cycle">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://unix.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Linux, FreeBSD and other Un*x-like operating systems">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://apple.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="power users of Apple hardware and software">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://wordpress.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="WordPress developers and administrators">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://gis.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="cartographers, geographers and GIS professionals">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://electronics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="electronics and electrical engineering professionals, students, and enthusiasts">
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-footer--col site-footer--category js-footer-col" data-name="Technology">
+              <ul class="-list">
+                <li class="-item">
+                  <a href="https://android.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="enthusiasts and power users of the Android operating system">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://security.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="information security professionals">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://dba.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="database professionals who wish to improve their database skills and learn from others in the community">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://drupal.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Drupal developers and administrators">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://sharepoint.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="SharePoint enthusiasts">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://ux.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="user experience researchers and experts">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://mathematica.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Wolfram Mathematica">
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-footer--col site-footer--category js-footer-col" data-name="Technology">
+              <ul class="-list">
+                <li class="-item">
+                  <a href="https://salesforce.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Salesforce administrators, implementation experts, developers and anybody in-between">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://expressionengine.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="administrators, end users, developers and designers for ExpressionEngine® CMS">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://pt.stackoverflow.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programadores profissionais e entusiastas">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://blender.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who use Blender to create 3D graphics, animations, or games">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://networkengineering.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="network engineers">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://crypto.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="software developers, mathematicians and others interested in cryptography">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://codereview.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="peer programmer code reviews">
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-footer--col site-footer--category js-footer-col" data-name="Technology">
+              <ul class="-list">
+                <li class="-item">
+                  <a href="https://magento.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of the Magento e-Commerce platform">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://softwarerecs.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people seeking specific software recommendations">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://dsp.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="practitioners of the art and science of signal, image and video processing">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://emacs.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those using, extending or developing Emacs">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://raspberrypi.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users and developers of hardware and software for Raspberry Pi">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://ru.stackoverflow.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="?????????????">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://codegolf.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programming puzzle enthusiasts and code golfers">
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-footer--col site-footer--category js-footer-col" data-name="Technology">
+              <ul class="-list">
+                <li class="-item">
+                  <a href="https://es.stackoverflow.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programadores y profesionales de la informática">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://ethereum.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Ethereum, the decentralized application platform and smart contract enabled blockchain">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://datascience.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Data science professionals, Machine Learning specialists, and those interested in learning more about the field">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://arduino.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="developers of open-source hardware and software that is compatible with Arduino">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://bitcoin.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Bitcoin crypto-currency enthusiasts">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://stackexchange.com/sites#technology" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                    <strong>
+                    </strong>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-footer--col site-footer--category js-footer-col" data-name="Life / Arts">
+              <ul class="-list">
+                <li class="-item">
+                  <a href="https://photo.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional, enthusiast and amateur photographers">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://scifi.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="science fiction and fantasy enthusiasts">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://graphicdesign.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Graphic Design professionals, students, and enthusiasts">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://movies.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="movie and tv enthusiasts">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://music.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="musicians, students, and enthusiasts">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://worldbuilding.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="writers/artists using science, geography and culture to construct imaginary worlds and settings">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://cooking.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and amateur chefs">
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-footer--col site-footer--category js-footer-col" data-name="Life / Arts">
+              <ul class="-list">
+                <li class="-item">
+                  <a href="https://diy.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="contractors and serious DIYers">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://money.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who want to be financially literate">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://academia.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="academics and those enrolled in higher education">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://law.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="legal professionals, students, and others with experience or interest in law">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://stackexchange.com/sites#lifearts" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                    <strong>
+                    </strong>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-footer--col site-footer--category js-footer-col" data-name="Culture / Recreation">
+              <ul class="-list">
+                <li class="-item">
+                  <a href="https://english.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="linguists, etymologists, and serious English language enthusiasts">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://skeptics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="scientific skepticism">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://judaism.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://travel.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="road warriors and seasoned travelers">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://christianity.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="committed Christians, experts in Christianity and those interested in learning more">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://ell.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="speakers of other languages learning English">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://japanese.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, teachers, and linguists wanting to discuss the finer points of the Japanese language">
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-footer--col site-footer--category js-footer-col" data-name="Culture / Recreation">
+              <ul class="-list">
+                <li class="-item">
+                  <a href="https://gaming.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="passionate videogamers on all platforms">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://bicycles.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://rpg.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://anime.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="anime and manga fans">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://puzzling.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those who create, solve, and study puzzles">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://mechanics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="mechanics and DIY enthusiast owners of cars, trucks, and motorcycles">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://stackexchange.com/sites#culturerecreation" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                    <strong>
+                    </strong>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-footer--col site-footer--category js-footer-col" data-name="Science">
+              <ul class="-list">
+                <li class="-item">
+                  <a href="https://mathoverflow.net" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional mathematicians">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://math.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people studying math at any level and professionals in related fields">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://stats.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://cstheory.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="theoretical computer scientists and researchers in related fields">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://physics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="active researchers, academics and students of physics">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://chemistry.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="scientists, academics, teachers, and students in the field of chemistry">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://biology.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="biology researchers, academics, and students">
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-footer--col site-footer--category js-footer-col" data-name="Science">
+              <ul class="-list">
+                <li class="-item">
+                  <a href="https://cs.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, researchers and practitioners of computer science">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://philosophy.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those interested in the study of the fundamental nature of knowledge, reality, and existence">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://stackexchange.com/sites#science" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                    <strong>
+                    </strong>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-footer--col site-footer--category js-footer-col" data-name="Other">
+              <ul class="-list">
+                <li class="-item">
+                  <a href="https://meta.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://stackapps.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="apps, scripts, and development with the Stack Exchange API">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://api.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programmatic interaction with Stack Exchange sites">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://data.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="querying Stack Exchange data using SQL">
+                  </a>
+                </li>
+                <li class="-item">
+                  <a href="https://area51.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="proposing new sites in the Stack Exchange network">
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="site-footer--copyright fs-fine">
+          <ul class="-list">
+            <li class="-item">
+              <a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link:4 })" href="https://stackoverflow.blog?blb=1">
+Blog              </a>
+            </li>
+            <li class="-item">
+              <a href="https://www.facebook.com/officialstackoverflow/" class="-link">
+Facebook              </a>
+            </li>
+            <li class="-item">
+              <a href="https://twitter.com/stackoverflow" class="-link">
+Twitter              </a>
+            </li>
+            <li class="-item">
+              <a href="https://linkedin.com/company/stack-overflow" class="-link">
+LinkedIn              </a>
+            </li>
+          </ul>
+          <p class="mt-auto mb24">
+site design / logo © 2018 Stack Exchange Inc; user contributions licensed under            <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">
+cc by-sa 3.0            </a>
+with            <a href="https://stackoverflow.blog/2009/06/25/attribution-required/" rel="license">
+attribution required            </a>
+.            <span id="svnrev">
+rev 2018.12.7.32344            </span>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <noscript>
+      <div id="noscript-warning">
+Stack Overflow works best with JavaScript enabled        <img alt="" src="httpsstackoverflow.comquestions11156939how-to-get-key-and-value-of-a-treemap-at-particular-index/p-c1rF4kxgLUzNc.gif" class="dno"/>
+      </div>
+    </noscript>
+  </body>
+</html>

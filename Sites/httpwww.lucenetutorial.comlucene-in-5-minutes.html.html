@@ -1,0 +1,1549 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>
+Lucene in 5 minutes - Lucene Tutorial.com    </title>
+<!-- Bootstrap core CSS -->    <link rel="stylesheet" href="httpwww.lucenetutorial.comlucene-in-5-minutes.html/bootstrap.min.css"/>
+    <link rel="stylesheet" href="httpwww.lucenetutorial.comlucene-in-5-minutes.html/navmenu.css"/>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries --><!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->    <link rel="stylesheet" href="httpwww.lucenetutorial.comlucene-in-5-minutes.html/style.css" media="screen" type="text/css"/>
+<!--[if IE]><link rel="stylesheet" href="http://www.lucenetutorial.com/css/ie.css" type="text/css" media="screen" /><![endif]-->    <link rel="stylesheet" href="httpwww.lucenetutorial.comlucene-in-5-minutes.html/geshi.css" media="screen" type="text/css"/>
+  </head>
+  <body>
+    <div class="row-offcanvas wrapper">
+      <div class="navbar navbar-static-top navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button id="toggle" type="button" class="navbar-toggle">
+              <span class="sr-only">
+              </span>
+              <span class="icon-bar">
+              </span>
+              <span class="icon-bar">
+              </span>
+              <span class="icon-bar">
+              </span>
+            </button>
+            <div id="logo">
+              <a href="http://www.lucenetutorial.com/index.html">
+LuceneTutorial.com              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-9">
+              <div id="body">
+                <h1>
+Lucene in 5 minutes                </h1>
+                <p>
+                  <font color="red">
+Now updated for Lucene 5.x!                  </font>
+                </p>
+                <p>
+Lucene makes it easy to add full-text search capability to your application. In fact, its so easy, I'm going to show you how in 5 minutes!                </p>
+                <h2>
+1. Index                </h2>
+                <p>
+For this simple case, we're going to create an in-memory index from some strings.                </p>
+                <div class="java dean_ch">
+StandardAnalyzer analyzer                  <span class="sy0">
+=                  </span>
+                  <span class="kw1">
+new                  </span>
+StandardAnalyzer                  <span class="br0">
+(                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+Directory index                  <span class="sy0">
+=                  </span>
+                  <span class="kw1">
+new                  </span>
+RAMDirectory                  <span class="br0">
+(                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                  <br/>
+IndexWriterConfig config                  <span class="sy0">
+=                  </span>
+                  <span class="kw1">
+new                  </span>
+IndexWriterConfig                  <span class="br0">
+(                  </span>
+analyzer                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                  <br/>
+IndexWriter w                  <span class="sy0">
+=                  </span>
+                  <span class="kw1">
+new                  </span>
+IndexWriter                  <span class="br0">
+(                  </span>
+index, config                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+addDoc                  <span class="br0">
+(                  </span>
+w,                  <span class="st0">
+"Lucene in Action"                  </span>
+,                  <span class="st0">
+"193398817"                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+addDoc                  <span class="br0">
+(                  </span>
+w,                  <span class="st0">
+"Lucene for Dummies"                  </span>
+,                  <span class="st0">
+"55320055Z"                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+addDoc                  <span class="br0">
+(                  </span>
+w,                  <span class="st0">
+"Managing Gigabytes"                  </span>
+,                  <span class="st0">
+"55063554A"                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+addDoc                  <span class="br0">
+(                  </span>
+w,                  <span class="st0">
+"The Art of Computer Science"                  </span>
+,                  <span class="st0">
+"9900333X"                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+w.                  <span class="me1">
+close                  </span>
+                  <span class="br0">
+(                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                 </div>
+                <p>
+addDoc() is what actually adds documents to the index:                </p>
+                <div class="java dean_ch">
+                  <span class="kw1">
+private                  </span>
+                  <span class="kw1">
+static                  </span>
+                  <span class="kw4">
+void                  </span>
+addDoc                  <span class="br0">
+(                  </span>
+IndexWriter w,                  <span class="kw3">
+String                  </span>
+title,                  <span class="kw3">
+String                  </span>
+isbn                  <span class="br0">
+)                  </span>
+                  <span class="kw1">
+throws                  </span>
+                  <span class="kw3">
+IOException                  </span>
+                  <span class="br0">
+{                  </span>
+                  <br/>
+                   <span class="kw3">
+Document                  </span>
+doc                  <span class="sy0">
+=                  </span>
+                  <span class="kw1">
+new                  </span>
+                  <span class="kw3">
+Document                  </span>
+                  <span class="br0">
+(                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+  doc.                  <span class="me1">
+add                  </span>
+                  <span class="br0">
+(                  </span>
+                  <span class="kw1">
+new                  </span>
+                  <span class="kw3">
+TextField                  </span>
+                  <span class="br0">
+(                  </span>
+                  <span class="st0">
+"title"                  </span>
+, title,                  <span class="kw3">
+Field                  </span>
+.                  <span class="me1">
+Store                  </span>
+.                  <span class="me1">
+YES                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+  doc.                  <span class="me1">
+add                  </span>
+                  <span class="br0">
+(                  </span>
+                  <span class="kw1">
+new                  </span>
+StringField                  <span class="br0">
+(                  </span>
+                  <span class="st0">
+"isbn"                  </span>
+, isbn,                  <span class="kw3">
+Field                  </span>
+.                  <span class="me1">
+Store                  </span>
+.                  <span class="me1">
+YES                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+  w.                  <span class="me1">
+addDocument                  </span>
+                  <span class="br0">
+(                  </span>
+doc                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                  <span class="br0">
+}                  </span>
+                  <br/>
+                 </div>
+                <p>
+Note the use of TextField for content we want tokenized, and StringField for id fields and the like, which we don't want tokenized.                </p>
+                <p>
+                </p>
+                <h2>
+2. Query                </h2>
+                <p>
+We read the query from stdin, parse it and build a lucene Query out of it.                </p>
+                <div class="java dean_ch">
+                  <span class="kw3">
+String                  </span>
+querystr                  <span class="sy0">
+=                  </span>
+args.                  <span class="me1">
+length                  </span>
+                  <span class="sy0">
+>                  </span>
+                  <span class="nu0">
+0                  </span>
+                  <span class="sy0">
+?                  </span>
+args                  <span class="br0">
+[                  </span>
+                  <span class="nu0">
+0                  </span>
+                  <span class="br0">
+]                  </span>
+                  <span class="sy0">
+:                  </span>
+                  <span class="st0">
+"lucene"                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+Query q                  <span class="sy0">
+=                  </span>
+                  <span class="kw1">
+new                  </span>
+QueryParser                  <span class="br0">
+(                  </span>
+                  <span class="st0">
+"title"                  </span>
+, analyzer                  <span class="br0">
+)                  </span>
+.                  <span class="me1">
+parse                  </span>
+                  <span class="br0">
+(                  </span>
+querystr                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                 </div>
+                <p>
+                 </p>
+                <h2>
+3. Search                </h2>
+                <p>
+Using the Query we create a Searcher to search the index. Then a TopScoreDocCollector is instantiated to collect the top 10 scoring hits.                </p>
+                <div class="java dean_ch">
+                  <span class="kw4">
+int                  </span>
+hitsPerPage                  <span class="sy0">
+=                  </span>
+                  <span class="nu0">
+10                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+IndexReader reader                  <span class="sy0">
+=                  </span>
+DirectoryReader.                  <span class="me1">
+open                  </span>
+                  <span class="br0">
+(                  </span>
+index                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+IndexSearcher searcher                  <span class="sy0">
+=                  </span>
+                  <span class="kw1">
+new                  </span>
+IndexSearcher                  <span class="br0">
+(                  </span>
+reader                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+TopDocs docs                  <span class="sy0">
+=                  </span>
+searcher.                  <span class="me1">
+search                  </span>
+                  <span class="br0">
+(                  </span>
+q, hitsPerPage                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+ScoreDoc                  <span class="br0">
+[                  </span>
+                  <span class="br0">
+]                  </span>
+hits                  <span class="sy0">
+=                  </span>
+docs.                  <span class="me1">
+scoreDocs                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                 </div>
+                <p>
+                 </p>
+                <h2>
+4. Display                </h2>
+                <p>
+Now that we have results from our search, we display the results to the user.                </p>
+                <div class="java dean_ch">
+                  <span class="kw3">
+System                  </span>
+.                  <span class="me1">
+out                  </span>
+.                  <span class="me1">
+println                  </span>
+                  <span class="br0">
+(                  </span>
+                  <span class="st0">
+"Found "                  </span>
+                  <span class="sy0">
++                  </span>
+hits.                  <span class="me1">
+length                  </span>
+                  <span class="sy0">
++                  </span>
+                  <span class="st0">
+" hits."                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                  <span class="kw1">
+for                  </span>
+                  <span class="br0">
+(                  </span>
+                  <span class="kw4">
+int                  </span>
+i                  <span class="sy0">
+=                  </span>
+                  <span class="nu0">
+0                  </span>
+                  <span class="sy0">
+;                  </span>
+i                  <span class="sy0">
+<                  </span>
+hits.                  <span class="me1">
+length                  </span>
+                  <span class="sy0">
+;++                  </span>
+i                  <span class="br0">
+)                  </span>
+                  <span class="br0">
+{                  </span>
+                  <br/>
+                     <span class="kw4">
+int                  </span>
+docId                  <span class="sy0">
+=                  </span>
+hits                  <span class="br0">
+[                  </span>
+i                  <span class="br0">
+]                  </span>
+.                  <span class="me1">
+doc                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                     <span class="kw3">
+Document                  </span>
+d                  <span class="sy0">
+=                  </span>
+searcher.                  <span class="me1">
+doc                  </span>
+                  <span class="br0">
+(                  </span>
+docId                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                     <span class="kw3">
+System                  </span>
+.                  <span class="me1">
+out                  </span>
+.                  <span class="me1">
+println                  </span>
+                  <span class="br0">
+(                  </span>
+                  <span class="br0">
+(                  </span>
+i                  <span class="sy0">
++                  </span>
+                  <span class="nu0">
+1                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
++                  </span>
+                  <span class="st0">
+". "                  </span>
+                  <span class="sy0">
++                  </span>
+d.                  <span class="me1">
+get                  </span>
+                  <span class="br0">
+(                  </span>
+                  <span class="st0">
+"isbn"                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
++                  </span>
+                  <span class="st0">
+"                    <span class="es0">
+\t                    </span>
+"                  </span>
+                  <span class="sy0">
++                  </span>
+d.                  <span class="me1">
+get                  </span>
+                  <span class="br0">
+(                  </span>
+                  <span class="st0">
+"title"                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                  <span class="br0">
+}                  </span>
+                  <br/>
+                 </div>
+                <p>
+                  <br/>
+                  <br/>
+Here's the app in its entirety.                  <a href="code/HelloLucene.java">
+Download HelloLucene.java                  </a>
+                </p>
+                <p>
+                 </p>
+                <div class="java dean_ch">
+                  <span class="kw1">
+import                  </span>
+                  <span class="co2">
+java.io.IOException                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                  <br/>
+                  <span class="kw1">
+import                  </span>
+                  <span class="co2">
+org.apache.lucene.analysis.standard.StandardAnalyzer                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                  <span class="kw1">
+import                  </span>
+                  <span class="co2">
+org.apache.lucene.document.Document                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                  <span class="kw1">
+import                  </span>
+                  <span class="co2">
+org.apache.lucene.document.Field                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                  <span class="kw1">
+import                  </span>
+                  <span class="co2">
+org.apache.lucene.document.StringField                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                  <span class="kw1">
+import                  </span>
+                  <span class="co2">
+org.apache.lucene.document.TextField                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                  <span class="kw1">
+import                  </span>
+                  <span class="co2">
+org.apache.lucene.index.DirectoryReader                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                  <span class="kw1">
+import                  </span>
+                  <span class="co2">
+org.apache.lucene.index.IndexReader                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                  <span class="kw1">
+import                  </span>
+                  <span class="co2">
+org.apache.lucene.index.IndexWriter                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                  <span class="kw1">
+import                  </span>
+                  <span class="co2">
+org.apache.lucene.index.IndexWriterConfig                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                  <span class="kw1">
+import                  </span>
+                  <span class="co2">
+org.apache.lucene.queryparser.classic.ParseException                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                  <span class="kw1">
+import                  </span>
+                  <span class="co2">
+org.apache.lucene.queryparser.classic.QueryParser                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                  <span class="kw1">
+import                  </span>
+                  <span class="co2">
+org.apache.lucene.search.IndexSearcher                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                  <span class="kw1">
+import                  </span>
+                  <span class="co2">
+org.apache.lucene.search.Query                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                  <span class="kw1">
+import                  </span>
+                  <span class="co2">
+org.apache.lucene.search.ScoreDoc                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                  <span class="kw1">
+import                  </span>
+                  <span class="co2">
+org.apache.lucene.search.TopDocs                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                  <span class="kw1">
+import                  </span>
+                  <span class="co2">
+org.apache.lucene.store.Directory                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                  <span class="kw1">
+import                  </span>
+                  <span class="co2">
+org.apache.lucene.store.RAMDirectory                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                  <br/>
+                  <span class="kw1">
+public                  </span>
+                  <span class="kw1">
+class                  </span>
+HelloLucene                  <span class="br0">
+{                  </span>
+                  <br/>
+                     <span class="kw1">
+public                  </span>
+                  <span class="kw1">
+static                  </span>
+                  <span class="kw4">
+void                  </span>
+main                  <span class="br0">
+(                  </span>
+                  <span class="kw3">
+String                  </span>
+                  <span class="br0">
+[                  </span>
+                  <span class="br0">
+]                  </span>
+args                  <span class="br0">
+)                  </span>
+                  <span class="kw1">
+throws                  </span>
+                  <span class="kw3">
+IOException                  </span>
+,                  <span class="kw3">
+ParseException                  </span>
+                  <span class="br0">
+{                  </span>
+                  <br/>
+                         <span class="co1">
+// 0. Specify the analyzer for tokenizing text.                  </span>
+                  <br/>
+                         <span class="co1">
+//    The same analyzer should be used for indexing and searching                  </span>
+                  <br/>
+        StandardAnalyzer analyzer                  <span class="sy0">
+=                  </span>
+                  <span class="kw1">
+new                  </span>
+StandardAnalyzer                  <span class="br0">
+(                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                  <br/>
+                         <span class="co1">
+// 1. create the index                  </span>
+                  <br/>
+        Directory index                  <span class="sy0">
+=                  </span>
+                  <span class="kw1">
+new                  </span>
+RAMDirectory                  <span class="br0">
+(                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                  <br/>
+        IndexWriterConfig config                  <span class="sy0">
+=                  </span>
+                  <span class="kw1">
+new                  </span>
+IndexWriterConfig                  <span class="br0">
+(                  </span>
+analyzer                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                  <br/>
+        IndexWriter w                  <span class="sy0">
+=                  </span>
+                  <span class="kw1">
+new                  </span>
+IndexWriter                  <span class="br0">
+(                  </span>
+index, config                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+        addDoc                  <span class="br0">
+(                  </span>
+w,                  <span class="st0">
+"Lucene in Action"                  </span>
+,                  <span class="st0">
+"193398817"                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+        addDoc                  <span class="br0">
+(                  </span>
+w,                  <span class="st0">
+"Lucene for Dummies"                  </span>
+,                  <span class="st0">
+"55320055Z"                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+        addDoc                  <span class="br0">
+(                  </span>
+w,                  <span class="st0">
+"Managing Gigabytes"                  </span>
+,                  <span class="st0">
+"55063554A"                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+        addDoc                  <span class="br0">
+(                  </span>
+w,                  <span class="st0">
+"The Art of Computer Science"                  </span>
+,                  <span class="st0">
+"9900333X"                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+        w.                  <span class="me1">
+close                  </span>
+                  <span class="br0">
+(                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                  <br/>
+                         <span class="co1">
+// 2. query                  </span>
+                  <br/>
+                         <span class="kw3">
+String                  </span>
+querystr                  <span class="sy0">
+=                  </span>
+args.                  <span class="me1">
+length                  </span>
+                  <span class="sy0">
+>                  </span>
+                  <span class="nu0">
+0                  </span>
+                  <span class="sy0">
+?                  </span>
+args                  <span class="br0">
+[                  </span>
+                  <span class="nu0">
+0                  </span>
+                  <span class="br0">
+]                  </span>
+                  <span class="sy0">
+:                  </span>
+                  <span class="st0">
+"lucene"                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                  <br/>
+                         <span class="co1">
+// the "title" arg specifies the default field to use                  </span>
+                  <br/>
+                         <span class="co1">
+// when no field is explicitly specified in the query.                  </span>
+                  <br/>
+        Query q                  <span class="sy0">
+=                  </span>
+                  <span class="kw1">
+new                  </span>
+QueryParser                  <span class="br0">
+(                  </span>
+                  <span class="st0">
+"title"                  </span>
+, analyzer                  <span class="br0">
+)                  </span>
+.                  <span class="me1">
+parse                  </span>
+                  <span class="br0">
+(                  </span>
+querystr                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                  <br/>
+                         <span class="co1">
+// 3. search                  </span>
+                  <br/>
+                         <span class="kw4">
+int                  </span>
+hitsPerPage                  <span class="sy0">
+=                  </span>
+                  <span class="nu0">
+10                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+        IndexReader reader                  <span class="sy0">
+=                  </span>
+DirectoryReader.                  <span class="me1">
+open                  </span>
+                  <span class="br0">
+(                  </span>
+index                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+        IndexSearcher searcher                  <span class="sy0">
+=                  </span>
+                  <span class="kw1">
+new                  </span>
+IndexSearcher                  <span class="br0">
+(                  </span>
+reader                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+        TopDocs docs                  <span class="sy0">
+=                  </span>
+searcher.                  <span class="me1">
+search                  </span>
+                  <span class="br0">
+(                  </span>
+q, hitsPerPage                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+        ScoreDoc                  <span class="br0">
+[                  </span>
+                  <span class="br0">
+]                  </span>
+hits                  <span class="sy0">
+=                  </span>
+docs.                  <span class="me1">
+scoreDocs                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                  <br/>
+                         <span class="co1">
+// 4. display results                  </span>
+                  <br/>
+                         <span class="kw3">
+System                  </span>
+.                  <span class="me1">
+out                  </span>
+.                  <span class="me1">
+println                  </span>
+                  <span class="br0">
+(                  </span>
+                  <span class="st0">
+"Found "                  </span>
+                  <span class="sy0">
++                  </span>
+hits.                  <span class="me1">
+length                  </span>
+                  <span class="sy0">
++                  </span>
+                  <span class="st0">
+" hits."                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                         <span class="kw1">
+for                  </span>
+                  <span class="br0">
+(                  </span>
+                  <span class="kw4">
+int                  </span>
+i                  <span class="sy0">
+=                  </span>
+                  <span class="nu0">
+0                  </span>
+                  <span class="sy0">
+;                  </span>
+i                  <span class="sy0">
+<                  </span>
+hits.                  <span class="me1">
+length                  </span>
+                  <span class="sy0">
+;++                  </span>
+i                  <span class="br0">
+)                  </span>
+                  <span class="br0">
+{                  </span>
+                  <br/>
+                             <span class="kw4">
+int                  </span>
+docId                  <span class="sy0">
+=                  </span>
+hits                  <span class="br0">
+[                  </span>
+i                  <span class="br0">
+]                  </span>
+.                  <span class="me1">
+doc                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                             <span class="kw3">
+Document                  </span>
+d                  <span class="sy0">
+=                  </span>
+searcher.                  <span class="me1">
+doc                  </span>
+                  <span class="br0">
+(                  </span>
+docId                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                             <span class="kw3">
+System                  </span>
+.                  <span class="me1">
+out                  </span>
+.                  <span class="me1">
+println                  </span>
+                  <span class="br0">
+(                  </span>
+                  <span class="br0">
+(                  </span>
+i                  <span class="sy0">
++                  </span>
+                  <span class="nu0">
+1                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
++                  </span>
+                  <span class="st0">
+". "                  </span>
+                  <span class="sy0">
++                  </span>
+d.                  <span class="me1">
+get                  </span>
+                  <span class="br0">
+(                  </span>
+                  <span class="st0">
+"isbn"                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
++                  </span>
+                  <span class="st0">
+"                    <span class="es0">
+\t                    </span>
+"                  </span>
+                  <span class="sy0">
++                  </span>
+d.                  <span class="me1">
+get                  </span>
+                  <span class="br0">
+(                  </span>
+                  <span class="st0">
+"title"                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                         <span class="br0">
+}                  </span>
+                  <br/>
+                  <br/>
+                         <span class="co1">
+// reader can only be closed when there                  </span>
+                  <br/>
+                         <span class="co1">
+// is no need to access the documents any more.                  </span>
+                  <br/>
+        reader.                  <span class="me1">
+close                  </span>
+                  <span class="br0">
+(                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                     <span class="br0">
+}                  </span>
+                  <br/>
+                  <br/>
+                     <span class="kw1">
+private                  </span>
+                  <span class="kw1">
+static                  </span>
+                  <span class="kw4">
+void                  </span>
+addDoc                  <span class="br0">
+(                  </span>
+IndexWriter w,                  <span class="kw3">
+String                  </span>
+title,                  <span class="kw3">
+String                  </span>
+isbn                  <span class="br0">
+)                  </span>
+                  <span class="kw1">
+throws                  </span>
+                  <span class="kw3">
+IOException                  </span>
+                  <span class="br0">
+{                  </span>
+                  <br/>
+                         <span class="kw3">
+Document                  </span>
+doc                  <span class="sy0">
+=                  </span>
+                  <span class="kw1">
+new                  </span>
+                  <span class="kw3">
+Document                  </span>
+                  <span class="br0">
+(                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+        doc.                  <span class="me1">
+add                  </span>
+                  <span class="br0">
+(                  </span>
+                  <span class="kw1">
+new                  </span>
+                  <span class="kw3">
+TextField                  </span>
+                  <span class="br0">
+(                  </span>
+                  <span class="st0">
+"title"                  </span>
+, title,                  <span class="kw3">
+Field                  </span>
+.                  <span class="me1">
+Store                  </span>
+.                  <span class="me1">
+YES                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                  <br/>
+                         <span class="co1">
+// use a string field for isbn because we don't want it tokenized                  </span>
+                  <br/>
+        doc.                  <span class="me1">
+add                  </span>
+                  <span class="br0">
+(                  </span>
+                  <span class="kw1">
+new                  </span>
+StringField                  <span class="br0">
+(                  </span>
+                  <span class="st0">
+"isbn"                  </span>
+, isbn,                  <span class="kw3">
+Field                  </span>
+.                  <span class="me1">
+Store                  </span>
+.                  <span class="me1">
+YES                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+        w.                  <span class="me1">
+addDocument                  </span>
+                  <span class="br0">
+(                  </span>
+doc                  <span class="br0">
+)                  </span>
+                  <span class="sy0">
+;                  </span>
+                  <br/>
+                     <span class="br0">
+}                  </span>
+                  <br/>
+                  <span class="br0">
+}                  </span>
+                </div>
+To use this app from the command line, type                <strong>
+java HelloLucene <query>                </strong>
+                <hr/>
+                <h2>
+Where to from here?                </h2>
+                <ol>
+                  <li>
+Check out one of the books about Lucene below.                  </li>
+                  <li>
+Should you                    <a href="lucene-vs-solr.html">
+consider using Apache Solr instead of Apache Lucene?                    </a>
+                  </li>
+                  <li>
+Learn more about                    <a href="basic-concepts.html">
+basic Lucene concepts                    </a>
+                  </li>
+                </ol>
+                <hr/>
+                <h2>
+Popular books related to Lucene and search                </h2>
+                <center>
+                  <table border="0" cellpadding="10">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <a href="http://www.amazon.com/gp/product/1933988177?ie=UTF8&amp;&amp;tag=adamantite-20&amp;&amp;linkCode=as2&amp;&amp;camp=1789&amp;&amp;creative=9325&amp;&amp;creativeASIN=1933988177">
+                            <img border="0" src="httpwww.lucenetutorial.comlucene-in-5-minutes.html/41GceIHrd4L._SL160_.jpg"/>
+                          </a>
+                          <img border="0" src="httpwww.lucenetutorial.comlucene-in-5-minutes.html/ir.gif" width="1" alt="" style="border:none !important; margin:0px !important;" height="1"/>
+                          <div style="width:150px">
+                           </div>
+                        </td>
+                        <td>
+                          <a href="http://www.amazon.com/Scaling-Apache-Hrishikesh-Vijay-Karambelkar/dp/1783981741/ref=sr_1_11?ie=UTF8&amp;qid=1449969311&amp;sr=8-11&amp;keywords=solr&amp;tag=adamantite-20&amp;&amp;linkCode=as2&amp;&amp;camp=1789&amp;&amp;creative=9325&amp;&amp;creativeASIN=1847195881">
+                            <img border="0" src="httpwww.lucenetutorial.comlucene-in-5-minutes.html/51RuA9AveeL._AA160_.jpg"/>
+                          </a>
+                          <img border="0" src="httpwww.lucenetutorial.comlucene-in-5-minutes.html/ir_1.gif" width="1" alt="" style="border:none !important; margin:0px !important;" height="1"/>
+                          <div style="width:170px">
+                           </div>
+                        </td>
+                        <td>
+                          <a href="http://www.amazon.com/o/ASIN/1617291021?tag=adamantite-20">
+                            <img border="0" src="httpwww.lucenetutorial.comlucene-in-5-minutes.html/41N8mM8QqwL._SL160.jpg"/>
+                          </a>
+                          <div style="width:150px">
+                           </div>
+                        </td>
+                        <td>
+                          <a href="http://www.amazon.com/gp/product/0521865719?ie=UTF8&amp;&amp;tag=adamantite-20&amp;&amp;linkCode=as2&amp;&amp;camp=1789&amp;&amp;creative=9325&amp;&amp;creativeASIN=0521865719">
+                            <img border="0" src="httpwww.lucenetutorial.comlucene-in-5-minutes.html/41xVx99-4yL._SL160_.jpg"/>
+                          </a>
+                          <img border="0" src="httpwww.lucenetutorial.comlucene-in-5-minutes.html/ir_2.gif" width="1" alt="" style="border:none !important; margin:0px !important;" height="1"/>
+                          <div style="width:150px">
+                           </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <a href="http://amazon.com/o/ASIN/1849518440?tag=adamantite-20">
+                            <img border="0" src="httpwww.lucenetutorial.comlucene-in-5-minutes.html/51Xbc1lKTWL._SL160.jpg"/>
+                          </a>
+                          <div style="width:150px">
+                           </div>
+                        </td>
+                        <td>
+                          <a href="http://amazon.com/o/ASIN/1449358543?tag=adamantite-20">
+                            <img border="0" src="httpwww.lucenetutorial.comlucene-in-5-minutes.html/51V-yC0+Y2L._AA160_.jpg"/>
+                          </a>
+                          <div style="width:170px">
+                           </div>
+                        </td>
+                        <td>
+                          <a href="http://amazon.com/o/ASIN/1782166629?tag=adamantite-20">
+                            <img border="0" src="httpwww.lucenetutorial.comlucene-in-5-minutes.html/41DaZvQzqrL._SL160.jpg"/>
+                          </a>
+                          <div style="width:150px">
+                           </div>
+                        </td>
+                        <td>
+                          <a href="http://amazon.com/o/ASIN/193398838X?tag=adamantite-20">
+                            <img border="0" src="httpwww.lucenetutorial.comlucene-in-5-minutes.html/51sYBlJMyrL._SL160.jpg"/>
+                          </a>
+                          <div style="width:150px">
+                           </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top">
+                          <a href="http://www.amazon.com/gp/product/1933988665?ie=UTF8&amp;&amp;tag=adamantite-20&amp;&amp;linkCode=as2&amp;&amp;camp=1789&amp;&amp;creative=9325&amp;&amp;creativeASIN=1933988665">
+                            <img border="0" src="httpwww.lucenetutorial.comlucene-in-5-minutes.html/51EEz05N2HL._SL160_.jpg"/>
+                          </a>
+                          <img border="0" src="httpwww.lucenetutorial.comlucene-in-5-minutes.html/ir_3.gif" width="1" alt="" style="border:none !important; margin:0px !important;" height="1"/>
+                        </td>
+                        <td valign="top">
+                          <a href="http://www.amazon.com/gp/product/0615204252?ie=UTF8&amp;&amp;tag=adamantite-20&amp;&amp;linkCode=as2&amp;&amp;camp=1789&amp;&amp;creative=9325&amp;&amp;creativeASIN=0615204252">
+                            <img border="0" src="httpwww.lucenetutorial.comlucene-in-5-minutes.html/41XoWcMPd6L._SL160_.jpg"/>
+                          </a>
+                          <img border="0" src="httpwww.lucenetutorial.comlucene-in-5-minutes.html/ir_4.gif" width="1" alt="" style="border:none !important; margin:0px !important;" height="1"/>
+                        </td>
+                        <td valign="top">
+                          <a href="http://www.amazon.com/gp/product/1449388345/ref=as_li_tf_il?ie=UTF8&amp;tag=adamantite-20&amp;linkCode=as2&amp;camp=217145&amp;creative=399369&amp;creativeASIN=1449388345">
+                            <img border="0" src="httpwww.lucenetutorial.comlucene-in-5-minutes.html/51jLcpv9N5L._SL160_.jpg"/>
+                          </a>
+                          <img border="0" src="httpwww.lucenetutorial.comlucene-in-5-minutes.html/ir_5.gif" width="1" alt="" style="border:none !important; margin:0px !important;" height="1"/>
+                        </td>
+<!--
+<td valign="top"><a href="http://www.amazon.com/gp/product/0521113792/ref=as_li_tf_il?ie=UTF8&tag=adamantite-20&linkCode=as2&camp=217145&creative=399369&creativeASIN=0521113792"><img border="0" src="http://www.lucenetutorial.com/images/41B3NWzzgDL._SL160_.jpg" ></a><img src="http://www.assoc-amazon.com/e/ir?t=adamantite-20&l=as2&o=1&a=0521113792&camp=217145&creative=399369" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+</td>
+-->                        <td>
+                          <a href="http://www.amazon.com/gp/product/0596529325?ie=UTF8&amp;&amp;tag=adamantite-20&amp;&amp;linkCode=as2&amp;&amp;camp=1789&amp;&amp;creative=9325&amp;&amp;creativeASIN=0596529325">
+                            <img border="0" src="httpwww.lucenetutorial.comlucene-in-5-minutes.html/51pZYWZFkZL._SL160_.jpg"/>
+                          </a>
+                          <img border="0" src="httpwww.lucenetutorial.comlucene-in-5-minutes.html/ir_6.gif" width="1" alt="" style="border:none !important; margin:0px !important;" height="1"/>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </center>
+                <hr/>
+                <h2>
+Mavenized GitHub repo                </h2>
+                <p>
+Courtesy of Mac Luq, a GitHub repo with Mavenized source is available here:                  <a href="https://github.com/macluq/helloLucene">
+https://github.com/macluq/helloLucene                  </a>
+.                </p>
+                <p>
+Get it with:                </p>
+                <div class="bash dean_ch">
+                  <span class="kw2">
+git clone                  </span>
+https:                  <span class="sy0">
+//                  </span>
+github.com                  <span class="sy0">
+/                  </span>
+macluq                  <span class="sy0">
+/                  </span>
+helloLucene.git                </div>
+                <hr/>
+                <h2>
+PS: If you're new to Java...                </h2>
+                <p>
+Try this:                </p>
+                <div class="bash dean_ch">
+                  <span class="kw2">
+wget                  </span>
+http:                  <span class="sy0">
+//                  </span>
+repo1.maven.org                  <span class="sy0">
+/                  </span>
+maven2                  <span class="sy0">
+/                  </span>
+org                  <span class="sy0">
+/                  </span>
+apache                  <span class="sy0">
+/                  </span>
+lucene                  <span class="sy0">
+/                  </span>
+lucene-core                  <span class="sy0">
+/                  </span>
+4.0.0                  <span class="sy0">
+/                  </span>
+lucene-core-4.0.0.jar                  <br/>
+                  <span class="kw2">
+wget                  </span>
+http:                  <span class="sy0">
+//                  </span>
+repo1.maven.org                  <span class="sy0">
+/                  </span>
+maven2                  <span class="sy0">
+/                  </span>
+org                  <span class="sy0">
+/                  </span>
+apache                  <span class="sy0">
+/                  </span>
+lucene                  <span class="sy0">
+/                  </span>
+lucene-analyzers-common                  <span class="sy0">
+/                  </span>
+4.0.0                  <span class="sy0">
+/                  </span>
+lucene-analyzers-common-4.0.0.jar                  <br/>
+                  <span class="kw2">
+wget                  </span>
+http:                  <span class="sy0">
+//                  </span>
+repo1.maven.org                  <span class="sy0">
+/                  </span>
+maven2                  <span class="sy0">
+/                  </span>
+org                  <span class="sy0">
+/                  </span>
+apache                  <span class="sy0">
+/                  </span>
+lucene                  <span class="sy0">
+/                  </span>
+lucene-queryparser                  <span class="sy0">
+/                  </span>
+4.0.0                  <span class="sy0">
+/                  </span>
+lucene-queryparser-4.0.0.jar                  <br/>
+                  <span class="kw2">
+wget                  </span>
+http:                  <span class="sy0">
+//                  </span>
+www.lucenetutorial.com                  <span class="sy0">
+/                  </span>
+code                  <span class="sy0">
+/                  </span>
+HelloLucene.java                  <br/>
+javac                  <span class="re5">
+-classpath                  </span>
+.:lucene-core-4.0.0.jar:lucene-analyzers-common-4.0.0.jar:lucene-queryparser-4.0.0.jar HelloLucene.java                  <br/>
+java                  <span class="re5">
+-classpath                  </span>
+.:lucene-core-4.0.0.jar:lucene-analyzers-common-4.0.0.jar:lucene-queryparser-4.0.0.jar HelloLucene                </div>
+                <p>
+This should give you:                </p>
+                <div class="bash dean_ch">
+Found                  <span class="nu0">
+2                  </span>
+hits.                  <br/>
+                  <span class="nu0">
+1                  </span>
+. Lucene                  <span class="kw1">
+in                  </span>
+Action                  <br/>
+                  <span class="nu0">
+2                  </span>
+. Lucene                  <span class="kw1">
+for                  </span>
+Dummies                </div>
+                <p>
+Erik, a helpful reader explains:                </p>
+                <blockquote>
+The compilation went smoothly. However I did not manage to run the code. After some online searching and experimenting I found out that...including both . and the Lucene jarfile in the class path was crucial to get things working. This could be a useful tip for other beginners who, like me, do not have much experience with setting the Java class path.                </blockquote>
+                <hr/>
+                <h2>
+Installing Lucene                </h2>
+                <p>
+PS: Its come to my attention that some visitors have difficulty installing Lucene in the first place.                </p>
+You should first                <a href="http://www.apache.org/dyn/closer.cgi/lucene/java/">
+download                </a>
+Lucene and extract it to a directory you use for java or programming.                <p>
+If you're using Netbeans you can either:                </p>
+                <p>
+- Follow the directions                  <a href="http://www.jguru.com/forums/view.jsp?EID=1303995">
+here                  </a>
+                </p>
+                <p>
+- Use these steps:                </p>
+                <ol>
+                  <li>
+Add the jar file to Netbeans as an external library by choosing 'Tools' on the menu bar and then selecting 'Library Manager'.                  </li>
+                  <li>
+Go to the project. Right click on the project you need to use Lucene for. Select 'Properties'.                  </li>
+                  <li>
+In the dialogue box, select 'Libraries' and then select the 'Add Jar/Folder' option.                  </li>
+                  <li>
+Navigate to the directory which was created from lucene-[version].tar.gz. Select lucene-core-[version].jar.                  </li>
+                  <li>
+Click 'OK' in the dialogue box. The jar file has now been added to your project.                  </li>
+                </ol>
+                <hr/>
+                <div id="disqus_thread">
+                </div>
+                <noscript>
+Please enable JavaScript to view the                  <a href="http://disqus.com/?ref_noscript">
+comments powered by Disqus.                  </a>
+                </noscript>
+                <a href="http://disqus.com" class="dsq-brlink">
+blog comments powered by                  <span class="logo-disqus">
+Disqus                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-3 sidebar-offcanvas">
+              <h4>
+Getting Started              </h4>
+              <ul class="nav navmenu-nav">
+                <li>
+                  <a href="http://www.lucenetutorial.com/index.html">
+Home                  </a>
+                </li>
+                <li>
+                  <a href="http://www.lucenetutorial.com/lucene-in-5-minutes.html">
+Lucene in 5 Minutes                  </a>
+                </li>
+                <li>
+                  <a href="http://www.lucenetutorial.com/lucene-nrt-hello-world.html">
+Lucene NRT Example                  </a>
+                </li>
+                <li>
+                  <a href="http://www.lucenetutorial.com/basic-concepts.html">
+Basic Concepts                  </a>
+                </li>
+                <li>
+                  <a href="http://www.lucenetutorial.com/lucene-vs-solr.html">
+Lucene vs Solr                  </a>
+                </li>
+                <li>
+                  <a href="http://www.lucenetutorial.com/lucene-query-syntax.html">
+Lucene Query Syntax                  </a>
+                </li>
+                <li>
+                  <a href="http://www.lucenetutorial.com/lucene-query-builder.html">
+Lucene Query Builder                  </a>
+                </li>
+                <li>
+                  <a href="http://www.lucenetutorial.com/your-first-project.html">
+Your First Project                  </a>
+                </li>
+              </ul>
+              <h4>
+Techniques              </h4>
+              <ul class="nav navmenu-nav">
+                <li>
+                  <a href="#">
+Sample Apps                  </a>
+                  <ul class="acitem">
+                    <li>
+                      <a href="http://www.lucenetutorial.com/sample-apps/textfileindexer-java.html">
+- TextFileIndexer.java                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">
+Techniques                  </a>
+                  <ul class="acitem">
+                    <li>
+                      <a href="http://www.lucenetutorial.com/techniques/permission-filtering.html">
+- Permission Filtering                      </a>
+                    </li>
+                    <li>
+                      <a href="http://www.lucenetutorial.com/techniques/lucene-php.html">
+- Lucene+PHP                      </a>
+                    </li>
+                    <li>
+                      <a href="http://www.lucenetutorial.com/techniques/indexing-databases.html">
+- Indexing Databases                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">
+Advanced Topics                  </a>
+                  <ul class="acitem">
+                    <li>
+                      <a href="http://www.lucenetutorial.com/advanced-topics/scoring.html">
+- Scoring                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <h4>
+Misc              </h4>
+              <ul class="nav navmenu-nav">
+                <li>
+                  <a href="http://www.lucenetutorial.com/consulting.html">
+Need help with Lucene?                  </a>
+                </li>
+                <li>
+                  <a href="http://www.supermind.org/bio.html">
+About Me                  </a>
+                </li>
+              </ul>
+              <h4>
+Siblings              </h4>
+              <ul class="nav navmenu-nav">
+                <li>
+                  <a href="http://www.solrtutorial.com">
+SolrTutorial.com                  </a>
+                </li>
+                <li>
+                  <a href="http://www.elasticsearchtutorial.com">
+ElasticSearchTutorial.com                  </a>
+                </li>
+                <li>
+                  <a href="http://solr-vs-elasticsearch.com">
+Solr vs ElasticSearch                  </a>
+                </li>
+              </ul>
+            </div>
+            <div id="footer">
+              <p>
+© Copyright 2018 Kelvin Tan -                <a href="http://www.supermind.org/">
+Lucene and Solr consultant                </a>
+                <br/>
+              </p>
+            </div>
+          </div>
+          <noscript>
+            <img alt="" src="httpwww.lucenetutorial.comlucene-in-5-minutes.html/noscript.gif"/>
+          </noscript>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'MonoidBold';
+        src: url('/assets/fonts/monoid/947acd9837f03a6025c9eb1febfdc379/ce725152950c8f78d507f811414ee7d5/MonoidBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+      }
+
+@font-face {
+    font-family: 'MonoidItalic';
+        src: url('/assets/fonts/monoid/947acd9837f03a6025c9eb1febfdc379/e8c295fc0319d55935942768f54241a7/MonoidItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+      }
+
+@font-face {
+    font-family: 'MonoidRegular';
+        src: url('/assets/fonts/monoid/947acd9837f03a6025c9eb1febfdc379/5f422b8da1ef522b98f21fdca3caa909/MonoidRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+      }
+
+@font-face {
+    font-family: 'MonoidRetina';
+        src: url('/assets/fonts/monoid/947acd9837f03a6025c9eb1febfdc379/2dcdb639623d3694668c2e7495bbc590/MonoidRetina.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+      }
+
+ /* The following rules are deprecated. */ 
+
+@font-face {
+    font-family: 'Monoid';
+        src: url('/assets/fonts/monoid/947acd9837f03a6025c9eb1febfdc379/ce725152950c8f78d507f811414ee7d5/MonoidBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+      }
+
+
+
+@font-face {
+    font-family: 'Monoid';
+        src: url('/assets/fonts/monoid/947acd9837f03a6025c9eb1febfdc379/e8c295fc0319d55935942768f54241a7/MonoidItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+      }
+
+
+
+@font-face {
+    font-family: 'Monoid';
+        src: url('/assets/fonts/monoid/947acd9837f03a6025c9eb1febfdc379/5f422b8da1ef522b98f21fdca3caa909/MonoidRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+      }
+
+
+
+@font-face {
+    font-family: 'Monoid';
+        src: url('/assets/fonts/monoid/947acd9837f03a6025c9eb1febfdc379/2dcdb639623d3694668c2e7495bbc590/MonoidRetina.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+      }
+

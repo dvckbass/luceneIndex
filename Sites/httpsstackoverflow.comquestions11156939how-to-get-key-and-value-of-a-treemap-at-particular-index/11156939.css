@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule" xmlns:re="http://purl.org/atompub/rank/1.0">
+    <title type="text">How to get key and value of a TreeMap at particular index - Stack Overflow</title>
+    <link rel="self" href="https://stackoverflow.com/feeds/question/11156939" type="application/atom+xml" />
+    <link rel="alternate" href="https://stackoverflow.com/q/11156939" type="text/html" />
+    <subtitle>most recent 30 from stackoverflow.com</subtitle>
+    <updated>2018-12-10T12:26:37Z</updated>
+    <id>https://stackoverflow.com/feeds/question/11156939</id>
+    <creativeCommons:license>http://www.creativecommons.org/licenses/by-sa/3.0/rdf</creativeCommons:license> 
+    <entry>
+        <id>https://stackoverflow.com/q/11156939</id>
+        <re:rank scheme="https://stackoverflow.com">16</re:rank>
+        <title type="text">How to get key and value of a TreeMap at particular index</title>
+            <category scheme="https://stackoverflow.com/tags" term="java" />
+            <category scheme="https://stackoverflow.com/tags" term="treemap" />
+        <author>
+            <name>Dileep Perla</name>
+            <uri>https://stackoverflow.com/users/1021326</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/11156939/how-to-get-key-and-value-of-a-treemap-at-particular-index" />
+        <published>2012-06-22T13:16:30Z</published>
+        <updated>2017-02-25T15:06:39Z</updated>
+        <summary type="html">
+            
+
+            &lt;p&gt;I have a TreeMap with a set of &#39;Key and Value&#39; pairs. How can I get both Key and Value at a particular Index of the TreeMap?&lt;/p&gt;
+
+&lt;p&gt;EDIT : @TO-ALL : Thanks. But I know how to implement it by using an extra ArrayList. I just thought is there any way to achieve this without using an extra ArrayList.&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/questions/11156939/-/11157146#11157146</id>
+        <re:rank scheme="https://stackoverflow.com">2</re:rank>
+        <title type="text">Answer by Jean-Christophe Fortin for How to get key and value of a TreeMap at particular index</title>
+        <author>
+            <name>Jean-Christophe Fortin</name>
+            <uri>https://stackoverflow.com/users/311890</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/11156939/how-to-get-key-and-value-of-a-treemap-at-particular-index/11157146#11157146" />
+        <published>2012-06-22T13:30:17Z</published>
+        <updated>2012-06-22T13:30:17Z</updated>
+        <summary type="html">&lt;p&gt;This might not be the best way but you&#39;ll be able to access your key/value at a particular index.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;TreeMap&amp;lt;Object, Object&amp;gt; foo = new TreeMap&amp;lt;Object, Object&amp;gt;();
+Object key = foo.keySet().toArray(new Object[foo.size()])[YOUR_INDEX];
+Object value = foo.get(key);
+&lt;/code&gt;&lt;/pre&gt;
+</summary>
+    </entry>    <entry>
+        <id>https://stackoverflow.com/questions/11156939/-/11157161#11157161</id>
+        <re:rank scheme="https://stackoverflow.com">23</re:rank>
+        <title type="text">Answer by Chandra for How to get key and value of a TreeMap at particular index</title>
+        <author>
+            <name>Chandra</name>
+            <uri>https://stackoverflow.com/users/674446</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/11156939/how-to-get-key-and-value-of-a-treemap-at-particular-index/11157161#11157161" />
+        <published>2012-06-22T13:30:51Z</published>
+        <updated>2012-06-22T13:39:08Z</updated>
+        <summary type="html">&lt;p&gt;If you really want to use TreeMap and get by position, you can use the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;key =&amp;gt; treemap.keySet().toArray()[0]
+value =&amp;gt; treemap.get(key); 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;OR (if you just want value) &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;treemap.values().toArray()[0]; 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But I would suggest you use iterator, as in the above method, it needs to create array whenever you want to find (so not so efficient) and also you should be careful enough to make sure index don&#39;t go out of reach.&lt;/p&gt;
+</summary>
+    </entry>    <entry>
+        <id>https://stackoverflow.com/questions/11156939/-/11157209#11157209</id>
+        <re:rank scheme="https://stackoverflow.com">4</re:rank>
+        <title type="text">Answer by Alexei Kaigorodov for How to get key and value of a TreeMap at particular index</title>
+        <author>
+            <name>Alexei Kaigorodov</name>
+            <uri>https://stackoverflow.com/users/1206301</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/11156939/how-to-get-key-and-value-of-a-treemap-at-particular-index/11157209#11157209" />
+        <published>2012-06-22T13:33:01Z</published>
+        <updated>2012-06-22T13:33:01Z</updated>
+        <summary type="html">&lt;p&gt;You can copy entry set in an array list and then get desired entry by index:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;list=new ArrayList&amp;lt;Map.Entry&amp;lt;K,V&amp;gt;&amp;gt;(treeMap.entrySet());
+Map.Entry&amp;lt;K,V&amp;gt;=list.get(index);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But a) copying takes O(N) time and b) when treeMap changes, the list  become invalid.&lt;/p&gt;
+</summary>
+    </entry>    <entry>
+        <id>https://stackoverflow.com/questions/11156939/-/19572260#19572260</id>
+        <re:rank scheme="https://stackoverflow.com">6</re:rank>
+        <title type="text">Answer by Booyah Johnson for How to get key and value of a TreeMap at particular index</title>
+        <author>
+            <name>Booyah Johnson</name>
+            <uri>https://stackoverflow.com/users/2916862</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/11156939/how-to-get-key-and-value-of-a-treemap-at-particular-index/19572260#19572260" />
+        <published>2013-10-24T17:08:38Z</published>
+        <updated>2013-10-24T17:08:38Z</updated>
+        <summary type="html">&lt;p&gt;First off, I&#39;m not sure why people here so frequently concern themselves about the validity of a question.  There are numerous instances where people have seen fit to maintain an ArrayList in sorted order.  Maintaining an ArrayList in sorted order is grossly inefficient for large lists.&lt;/p&gt;
+
+&lt;p&gt;The Entry nodes of the standard Java (Oracle) source distribution do not maintain the size of their descendant trees.  Because of this, it is not possible to identify an element within the map by index without an inefficient sequential search.&lt;/p&gt;
+
+&lt;p&gt;I find this drawback so severe that I have written my own AVL map that can efficiently get elements by index and compute indexOf(E).  Making this possible is as simple as maintaining the sizes each of the left and right branches of an Entry.  There is some chance that the Glazedlists library has a searchable tree embedded it in somewhere.  You may wish to review that.&lt;/p&gt;
+</summary>
+    </entry>    <entry>
+        <id>https://stackoverflow.com/questions/11156939/-/22230550#22230550</id>
+        <re:rank scheme="https://stackoverflow.com">-2</re:rank>
+        <title type="text">Answer by R&#233;da for How to get key and value of a TreeMap at particular index</title>
+        <author>
+            <name>R&#233;da</name>
+            <uri>https://stackoverflow.com/users/2517413</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/11156939/how-to-get-key-and-value-of-a-treemap-at-particular-index/22230550#22230550" />
+        <published>2014-03-06T16:38:57Z</published>
+        <updated>2014-03-06T16:38:57Z</updated>
+        <summary type="html">&lt;p&gt;here is an other option to get the key from a value :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Map&amp;lt;String, String&amp;gt; map = new HashMap&amp;lt;String, String&amp;gt;();
+map.put(&quot;s1&quot;, &quot;s1Val&quot;);
+map.put(&quot;s2&quot;, &quot;s2Val&quot;);
+map.put(&quot;s3&quot;, &quot;s3Val&quot;);
+
+    // ex: &quot;s2Val&quot; -&amp;gt; return &quot;s2&quot;
+
+int index = new ArrayList&amp;lt;String&amp;gt;(map.values()).indexOf(&quot;s2Val&quot;);
+System.out.println(map.keySet().toArray()[index]); // -&amp;gt; return &quot;s2&quot;
+&lt;/code&gt;&lt;/pre&gt;
+</summary>
+    </entry>    <entry>
+        <id>https://stackoverflow.com/questions/11156939/-/42456868#42456868</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">Answer by Vineet Agarwal for How to get key and value of a TreeMap at particular index</title>
+        <author>
+            <name>Vineet Agarwal</name>
+            <uri>https://stackoverflow.com/users/7621734</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/11156939/how-to-get-key-and-value-of-a-treemap-at-particular-index/42456868#42456868" />
+        <published>2017-02-25T13:47:27Z</published>
+        <updated>2017-02-25T15:06:39Z</updated>
+        <summary type="html">&lt;p&gt;This might be helpful &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;TreeMap&amp;lt; String,Integer &amp;gt; ht=new TreeMap&amp;lt;&amp;gt;();
+
+ht.put(&quot;12&quot;,1);
+ht.put(&quot;22&quot;,2);
+ht.put(&quot;32&quot;,3);
+ht.put(&quot;42&quot;,4);
+for(int i=0;i&amp;lt;ht.size();i++)
+{
+   System.out.println(new Vector(ht.keySet()).get(i));
+   System.out.println(new Vector(ht.values()).get(i));
+}
+&lt;/code&gt;&lt;/pre&gt;
+</summary>
+    </entry></feed>

@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- Manifest added by SuperPWA - Progressive Web Apps Plugin For WordPress -->
+<link rel="manifest" href="/superpwa-manifest.json">
+<meta name="theme-color" content="#D5E0EB">
+<link rel="apple-touch-icon" sizes="192x192" href="https://cdn.journaldev.com/wp-content/uploads/2018/12/192x192-transparent.png">
+<link rel="apple-touch-icon" sizes="512x512" href="https://cdn.journaldev.com/wp-content/uploads/2018/12/512x512-transparent.png">
+<!-- / SuperPWA.com -->
+<title>How to Get File Extension in Java - JournalDev</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v9.2.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Sometimes while working with files, we need to process differently based on it&#039;s type. java.io.File doesn&#039;t have any method to get the file extension,"/>
+<link rel="canonical" href="https://www.journaldev.com/842/how-to-get-file-extension-in-java" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="How to Get File Extension in Java - JournalDev" />
+<meta property="og:description" content="Sometimes while working with files, we need to process differently based on it&#039;s type. java.io.File doesn&#039;t have any method to get the file extension," />
+<meta property="og:url" content="https://www.journaldev.com/842/how-to-get-file-extension-in-java" />
+<meta property="og:site_name" content="JournalDev" />
+<meta property="article:author" content="https://www.facebook.com/PankajKumarJaiswal" />
+<meta property="article:section" content="Java" />
+<meta property="article:published_time" content="2012-12-02T21:34:04+00:00" />
+<meta property="article:modified_time" content="2016-07-27T18:06:50+00:00" />
+<meta property="og:updated_time" content="2016-07-27T18:06:50+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Sometimes while working with files, we need to process differently based on it&#039;s type. java.io.File doesn&#039;t have any method to get the file extension," />
+<meta name="twitter:title" content="How to Get File Extension in Java - JournalDev" />
+<meta name="twitter:creator" content="@JournalDev" />
+<script type='application/ld+json'>{"@context":"https:\/\/schema.org","@type":"Person","url":"https:\/\/www.journaldev.com\/","sameAs":[],"@id":"#person","name":"Pankaj Kumar"}</script>
+<script type='application/ld+json'>{"@context":"https:\/\/schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/www.journaldev.com\/","name":"Home"}},{"@type":"ListItem","position":2,"item":{"@id":"https:\/\/www.journaldev.com\/java","name":"Java"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/www.journaldev.com\/842\/how-to-get-file-extension-in-java","name":"How to Get File Extension in Java"}}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel="amphtml" href="https://www.journaldev.com/842/how-to-get-file-extension-in-java/amp" /><link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="JournalDev &raquo; Feed" href="https://www.journaldev.com/feed" />
+<link rel="alternate" type="application/rss+xml" title="JournalDev &raquo; Comments Feed" href="https://www.journaldev.com/comments/feed" />
+<link rel="alternate" type="application/rss+xml" title="JournalDev &raquo; How to Get File Extension in Java Comments Feed" href="https://www.journaldev.com/842/how-to-get-file-extension-in-java/feed" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/cdn.journaldev.com\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='news-pro-theme-css'  href='https://cdn.journaldev.com/wp-content/themes/news-pro/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='toc-screen-css'  href='https://cdn.journaldev.com/wp-content/plugins/table-of-contents-plus/screen.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='https://cdn.journaldev.com/wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='//fonts.googleapis.com/css?family=Raleway%3A400%2C700%7CPathway+Gothic+One&#038;ver=3.0.2' type='text/css' media='all' />
+<link rel='stylesheet' id='wpdreams-asl-basic-css'  href='https://cdn.journaldev.com/wp-content/plugins/ajax-search-lite/css/style.basic.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wpdreams-ajaxsearchlite-css'  href='https://cdn.journaldev.com/wp-content/plugins/ajax-search-lite/css/style-simple-red.css' type='text/css' media='all' />
+<script type='text/javascript' src='https://cdn.journaldev.com/wp-includes/js/jquery/jquery.js'></script>
+<script type='text/javascript' src='https://cdn.journaldev.com/wp-includes/js/jquery/jquery-migrate.min.js'></script>
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://cdn.journaldev.com/wp-content/themes/genesis/lib/js/html5shiv.min.js'></script>
+<![endif]-->
+<script type='text/javascript' src='https://cdn.journaldev.com/wp-content/themes/news-pro/js/responsive-menu.js'></script>
+<link rel='https://api.w.org/' href='https://www.journaldev.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.journaldev.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.journaldev.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.8" />
+<link rel='shortlink' href='https://www.journaldev.com/?p=842' />
+<link rel="alternate" type="application/json+oembed" href="https://www.journaldev.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.journaldev.com%2F842%2Fhow-to-get-file-extension-in-java" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.journaldev.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.journaldev.com%2F842%2Fhow-to-get-file-extension-in-java&#038;format=xml" />
+<head profile="https://www.w3.org/2005/10/profile">
+<script type="text/javascript" src="//cdn.thisiswaldo.com/static/js/2273.js"></script>
+
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/8491498/journaldev_video', [[300, 291], [630, 430]], 'div-gpt-ad-1539114023134-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.pubads().collapseEmptyDivs();
+    googletag.enableServices();
+  });
+</script><style type="text/css">.site-title a { background: url(https://cdn.journaldev.com/wp-content/uploads/2018/07/logo1.svg) no-repeat !important; }</style>
+                <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+                      <meta name="onesignal" content="wordpress-plugin"/>
+          <link rel="manifest"
+            href="https://www.journaldev.com/superpwa-manifest.json"/>
+          <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>    <script>
+
+      window.OneSignal = window.OneSignal || [];
+
+      OneSignal.push( function() {
+        OneSignal.SERVICE_WORKER_UPDATER_PATH = "OneSignalSDKUpdaterWorker.js.php";
+        OneSignal.SERVICE_WORKER_PATH = "OneSignalSDKWorker.js.php";
+        OneSignal.SERVICE_WORKER_PARAM = { scope: '/' };
+
+        OneSignal.setDefaultNotificationUrl("https://www.journaldev.com");
+        var oneSignal_options = {};
+        window._oneSignalInitOptions = oneSignal_options;
+
+        oneSignal_options['wordpress'] = true;
+oneSignal_options['appId'] = 'bab8c5d5-918b-46f8-8634-2efa6c23e327';
+oneSignal_options['autoRegister'] = true;
+oneSignal_options['welcomeNotification'] = { };
+oneSignal_options['welcomeNotification']['title'] = "";
+oneSignal_options['welcomeNotification']['message'] = "";
+oneSignal_options['path'] = "https://www.journaldev.com/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/";
+oneSignal_options['safari_web_id'] = "web.onesignal.auto.0818a4e7-118f-4fc1-b0e2-07892e811a2a";
+oneSignal_options['promptOptions'] = { };
+oneSignal_options['notifyButton'] = { };
+oneSignal_options['notifyButton']['enable'] = true;
+oneSignal_options['notifyButton']['position'] = 'bottom-left';
+oneSignal_options['notifyButton']['theme'] = 'default';
+oneSignal_options['notifyButton']['size'] = 'medium';
+oneSignal_options['notifyButton']['prenotify'] = true;
+oneSignal_options['notifyButton']['displayPredicate'] = function() {
+              return OneSignal.isPushNotificationsEnabled()
+                      .then(function(isPushEnabled) {
+                          return !isPushEnabled;
+                      });
+            };
+oneSignal_options['notifyButton']['showCredit'] = false;
+oneSignal_options['notifyButton']['text'] = {};
+oneSignal_options['notifyButton']['text']['message.prenotify'] = 'Stay Updated with us! Subscribe to our free notifications.';
+oneSignal_options['notifyButton']['text']['tip.state.subscribed'] = 'Thanks for subscribing!';
+oneSignal_options['notifyButton']['text']['message.action.subscribed'] = 'Thanks for subscribing!';
+              OneSignal.init(window._oneSignalInitOptions);
+                    });
+
+      function documentInitOneSignal() {
+        var oneSignal_elements = document.getElementsByClassName("OneSignal-prompt");
+
+        var oneSignalLinkClickHandler = function(event) { OneSignal.push(['registerForPushNotifications']); event.preventDefault(); };        for(var i = 0; i < oneSignal_elements.length; i++)
+          oneSignal_elements[i].addEventListener('click', oneSignalLinkClickHandler, false);
+      }
+
+      if (document.readyState === 'complete') {
+           documentInitOneSignal();
+      }
+      else {
+           window.addEventListener("load", function(event){
+               documentInitOneSignal();
+          });
+      }
+    </script>
+
+                <style type="text/css">
+                    <!--
+                    
+            @font-face {
+                font-family: 'aslsicons2';
+                src: url('https://cdn.journaldev.com/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot');
+                src: url('https://cdn.journaldev.com/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot?#iefix') format('embedded-opentype'),
+                     url('https://cdn.journaldev.com/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff2') format('woff2'),
+                     url('https://cdn.journaldev.com/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff') format('woff'),
+                     url('https://cdn.journaldev.com/wp-content/plugins/ajax-search-lite/css/fonts/icons2.ttf') format('truetype'),
+                     url('https://cdn.journaldev.com/wp-content/plugins/ajax-search-lite/css/fonts/icons2.svg#icons') format('svg');
+                font-weight: normal;
+                font-style: normal;
+            }
+            div[id*='ajaxsearchlitesettings'].searchsettings .asl_option_inner label {
+                font-size: 0px !important;
+                color: rgba(0, 0, 0, 0);
+            }
+            div[id*='ajaxsearchlitesettings'].searchsettings .asl_option_inner label:after {
+                font-size: 11px !important;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+            div[id*='ajaxsearchlite'].wpdreams_asl_container {
+                width: 100%;
+                margin: 0px 0px 0px 0px;
+            }
+            div[id*='ajaxsearchliteres'].wpdreams_asl_results div.resdrg span.highlighted {
+                font-weight: bold;
+                color: rgba(217, 49, 43, 1);
+                background-color: rgba(238, 238, 238, 1);
+            }
+            div[id*='ajaxsearchliteres'].wpdreams_asl_results .results div.asl_image {
+                width: 70px;
+                height: 70px;
+            }
+            div.asl_r .results {
+                max-height: none;
+            }
+                                -->
+                </style>
+                            <script type="text/javascript">
+                if ( typeof _ASL !== "undefined" && _ASL !== null && typeof _ASL.initialize !== "undefined" )
+                    _ASL.initialize();
+            </script>
+            <link rel="icon" href="https://cdn.journaldev.com/wp-content/uploads/2018/12/cropped-512x512-transparent-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://cdn.journaldev.com/wp-content/uploads/2018/12/cropped-512x512-transparent-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://cdn.journaldev.com/wp-content/uploads/2018/12/cropped-512x512-transparent-180x180.png" />
+<meta name="msapplication-TileImage" content="https://cdn.journaldev.com/wp-content/uploads/2018/12/cropped-512x512-transparent-270x270.png" />
+		<style type="text/css" id="wp-custom-css">
+			.scriptlesssocialsharing{box-sizing:border-box;margin:18px auto}
+.scriptlesssocialsharing-buttons{border-collapse:separate;border-spacing:3px;display:table;table-layout:fixed;width:100%}
+.scriptlesssocialsharing-buttons a.button{border:none;border-radius:0;color:white;display:table-cell;text-align:center;text-decoration:none;padding:9px}
+.scriptlesssocialsharing-buttons a.button:hover{color:#fff}
+.scriptlesssocialsharing-buttons .sss-name{position:inherit;clip:rect(1px, 1px, 1px, 1px);height:1px;width:1px;border:0;overflow:hidden;word-wrap:break-word}
+.scriptlesssocialsharing-buttons .button.email{background-color:#333;background-color:rgba(51,51,51,0.8)}.scriptlesssocialsharing-buttons .button.email:hover{background-color:#333}
+.scriptlesssocialsharing-buttons .button.twitter{background-color:#55acee;background-color:rgba(85,172,238,0.8)}.scriptlesssocialsharing-buttons .button.twitter:hover{background-color:#55acee}
+.scriptlesssocialsharing-buttons .button.facebook{background-color:#3b5998;background-color:rgba(59,89,152,0.8)}.scriptlesssocialsharing-buttons .button.facebook:hover{background-color:#3b5998}
+.scriptlesssocialsharing-buttons .button.linkedin{background-color:#0077b5;background-color:rgba(0,119,181,0.8)}.scriptlesssocialsharing-buttons .button.linkedin:hover{background-color:#0077b5}
+.scriptlesssocialsharing-buttons .button.google{background-color:#dc4e41;background-color:rgba(220,78,65,0.8)}.scriptlesssocialsharing-buttons .button.google:hover{background-color:#dc4e41}
+.scriptlesssocialsharing-buttons .button.pinterest {background-color: #bd081c;background-color: rgba(189, 8, 28, .8)}
+.scriptlesssocialsharing-buttons .button.pinterest:hover {background-color: #bd081c}  
+.scriptlesssocialsharing-buttons .button.reddit {background-color: #ff4500;background-color: rgba(255, 69, 0, .8)}
+.scriptlesssocialsharing-buttons .button.reddit:hover {background-color: #ff4500}
+@media print {.scriptlesssocialsharing {display: none}}		</style>
+	</head>
+<body class="post-template-default single single-post postid-842 single-format-standard dwpb-push-page dwpb_responsive_extra_small custom-header header-image content-sidebar" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"><div class="title-area"><p class="site-title" itemprop="headline"><a href="https://www.journaldev.com/">JournalDev</a></p><p class="site-description" itemprop="description">Java, Java EE, Android, Python, Web Development Tutorials</p></div><div class="widget-area header-widget-area">
+<!-- Quick Adsense Wordpress Plugin: http://quickadsense.com/ -->
+<section id="adswidget8-quick-adsense-3" class="widget widget_adswidget8-quick-adsense"><div class="widget-wrap"><!-- 728x90/320x50 -->
+<div id="waldo-tag-2280"></div></div></section>
+</div></div></header><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-new-headermenu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-17036" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17036"><a href="https://www.journaldev.com/java-tutorial-java-ee-tutorials" itemprop="url"><span itemprop="name">Java Tutorial</span></a></li>
+<li id="menu-item-7611" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7611"><a href="#" itemprop="url"><span itemprop="name">#Index Posts</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-7612" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7612"><a href="https://www.journaldev.com/7153/core-java-tutorial" itemprop="url"><span itemprop="name">Core Java Tutorial</span></a></li>
+	<li id="menu-item-7613" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7613"><a href="https://www.journaldev.com/1827/java-design-patterns-example-tutorial" itemprop="url"><span itemprop="name">Java Design Patterns</span></a></li>
+	<li id="menu-item-7614" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7614"><a href="https://www.journaldev.com/2114/servlet-jsp-tutorial" itemprop="url"><span itemprop="name">Servlet JSP Tutorial</span></a></li>
+	<li id="menu-item-7615" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7615"><a href="https://www.journaldev.com/2310/struts2-tutorial-with-example-projects" itemprop="url"><span itemprop="name">Struts 2 Tutorial</span></a></li>
+	<li id="menu-item-7616" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7616"><a href="https://www.journaldev.com/2888/spring-tutorial-spring-core-tutorial" itemprop="url"><span itemprop="name">Spring Tutorial</span></a></li>
+	<li id="menu-item-7638" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7638"><a href="https://www.journaldev.com/7635/jsf-tutorial" itemprop="url"><span itemprop="name">JSF Tutorial</span></a></li>
+	<li id="menu-item-7620" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7620"><a href="https://www.journaldev.com/5516/primefaces-tutorial-with-example-projects" itemprop="url"><span itemprop="name">Primefaces Tutorial</span></a></li>
+	<li id="menu-item-7619" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7619"><a href="https://www.journaldev.com/2681/jdbc-tutorial" itemprop="url"><span itemprop="name">JDBC Tutorial</span></a></li>
+	<li id="menu-item-7617" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7617"><a href="https://www.journaldev.com/3793/hibernate-tutorial" itemprop="url"><span itemprop="name">Hibernate Tutorial</span></a></li>
+	<li id="menu-item-7618" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7618"><a href="https://www.journaldev.com/6672/mongodb-tutorial-installation-example-projects-integration-with-servlet-spring-jsf" itemprop="url"><span itemprop="name">MongoDB Tutorial</span></a></li>
+</ul>
+</li>
+<li id="menu-item-7621" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7621"><a href="#" itemprop="url"><span itemprop="name">#Interview Questions</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-7622" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7622"><a href="https://www.journaldev.com/java-interview-questions" itemprop="url"><span itemprop="name">Java Interview Questions</span></a></li>
+	<li id="menu-item-23747" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-23747"><a href="https://www.journaldev.com/2366/core-java-interview-questions-and-answers" itemprop="url"><span itemprop="name">Core Java Interview Questions</span></a></li>
+	<li id="menu-item-7623" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7623"><a href="https://www.journaldev.com/2529/jdbc-interview-questions-and-answers" itemprop="url"><span itemprop="name">JDBC Interview Questions</span></a></li>
+	<li id="menu-item-7624" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7624"><a href="https://www.journaldev.com/2015/servlet-interview-questions-and-answers" itemprop="url"><span itemprop="name">Servlet Interview Questions</span></a></li>
+	<li id="menu-item-7625" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7625"><a href="https://www.journaldev.com/2110/jsp-interview-questions-and-answers" itemprop="url"><span itemprop="name">JSP Interview Questions</span></a></li>
+	<li id="menu-item-7626" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7626"><a href="https://www.journaldev.com/2354/struts2-interview-questions-and-answers" itemprop="url"><span itemprop="name">Struts2 Interview Questions</span></a></li>
+	<li id="menu-item-7627" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7627"><a href="https://www.journaldev.com/2696/spring-interview-questions-and-answers" itemprop="url"><span itemprop="name">Spring Interview Questions</span></a></li>
+	<li id="menu-item-7628" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7628"><a href="https://www.journaldev.com/3633/hibernate-interview-questions-and-answers" itemprop="url"><span itemprop="name">Hibernate Interview Questions</span></a></li>
+	<li id="menu-item-7629" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7629"><a href="https://www.journaldev.com/7261/jsf-interview-questions-and-answers" itemprop="url"><span itemprop="name">JSF Interview Questions</span></a></li>
+</ul>
+</li>
+<li id="menu-item-17037" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17037"><a href="https://www.journaldev.com/resources" itemprop="url"><span itemprop="name">Resources</span></a></li>
+</ul></div></nav>	
+	<div class="wrapper mailchimp">
+        <div class="box"> 
+            <form action="//journaldev.us8.list-manage.com/subscribe/post-json?u=612f3d966c86000f37699d8cf&amp;id=c64db63284&SIGNUP=TOP_HEADER&c=?"
+                method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate">
+				<span>
+					Subscribe to Download Java Design Patterns eBook
+				</span>
+				<div class="main_inputs">	
+				<input type="text" value="" name="FNAME" class="name" id="mce-name" placeholder="Full name" required>
+				
+				<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="name@example.com" required>
+				
+                <input type="submit" value="Download Now" name="subscribe" id="mc-embedded-subscribe" class="mc-button">
+				</div>
+				
+				 <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_612f3d966c86000f37699d8cf_c64db63284" tabindex="-1" value=""></div>
+    <div class="clear"></div>
+				
+            </form>
+                <div id="subscribe-result" style="display: none">
+					<p>Thank you for subscribing. Please check your email to confirm subscription.</p>
+                </div>
+        </div>
+    </div>
+	
+
+	<script>
+		var $ = jQuery;
+		$(document).ready(function () {
+  var $form = $('#mc-embedded-subscribe-form');
+  if ($form.length > 0) {
+    $('#mc-embedded-subscribe-form input[type="submit"]').bind('click', function (event) {
+      if (event) event.preventDefault();
+      mailchimp_email_register($form);
+    })
+  }
+})
+		
+function mc_validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
+function mailchimp_email_register($form) {
+	if(mc_validateEmail($("#mce-EMAIL").val() )) {
+		$('#mc-embedded-subscribe').val('Sending...');
+		$.ajax({
+			type: $form.attr('method'),
+			url: $form.attr('action'),
+			data: $form.serialize(),
+			cache: false,
+			dataType: 'json',
+			contentType: 'application/json; charset=utf-8',
+			error: function (err) { alert('Could not connect to the registration server. Please try again later.') },
+			success: function (data) {
+				$('#mc-embedded-subscribe').val('subscribe');
+				if (data.result === 'success') {
+					console.log(data.msg);
+					$('#mce-EMAIL').css('borderColor', '#ffffff');
+					$('#subscribe-result').css('color', 'rgb(53, 114, 210)');
+					$('#mc-embedded-subscribe-form').fadeOut(300);
+					$('#subscribe-result').fadeIn(300);
+					document.cookie = "subscribed=true; expires=Thu, 18 Dec 2050 12:00:00 UTC;domain=;path=/";
+					$('#mce-EMAIL').val('');
+					$('#mce-name').val('');
+				} else {
+					console.log(data.msg)
+					alert("You have already subscribed! Please try with different email.");
+				}
+			}
+		});
+	} else {
+		alert("Please enter a valid email");
+	}
+};
+	</script>
+
+<div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><div class="breadcrumb" itemtype="https://schema.org/BreadcrumbList">	You are here:
+<span><span><a href="https://www.journaldev.com/" >Home</a> » <span><a href="https://www.journaldev.com/java" >Java</a> » <span class="breadcrumb_last">How to Get File Extension in Java</span></span></span></span></div><article class="post-842 post type-post status-publish format-standard category-java entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">How to Get File Extension in Java</h1>
+<p class="entry-meta"><span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><a href="https://www.journaldev.com/author/pankaj" class="entry-author-link" itemprop="url" rel="author"><span class="entry-author-name" itemprop="name">Pankaj</span></a></span> <span class="entry-comments-link"><a href="https://www.journaldev.com/842/how-to-get-file-extension-in-java#comments">4 Comments</a></span> </p></header><div class="entry-content" itemprop="text"><!-- Quick Adsense WordPress Plugin: http://quickadsense.com/ -->
+<div style="float: none; margin:10px 0 10px 0; text-align:center;">
+<div data-type="ad" data-publisher="journaldev.com" data-zone="jd_after_entry_728x90" data-format="728x90"> </div>
+</div>
+<p>Sometimes while working with files, we need to process differently based on it&#8217;s type. <code>java.io.File</code> doesn&#8217;t have any method to get the file extension, here I am providing a utility method to get the file extension in java.</p>
+<p><code>GetFileExtension.java</code></p>
+<!-- Quick Adsense WordPress Plugin: http://quickadsense.com/ -->
+<div style="float: none; margin:10px 0 10px 0; text-align:center;">
+<div data-type="ad" data-publisher="journaldev.com" data-zone="jd_leaderboard_728x90" data-format="728x90"> </div>
+</div>
+
+<pre><code><div class='re_clip-board'>Copy</div>
+package com.journaldev.files;
+
+import java.io.File;
+
+public class GetFileExtension {
+
+    /**
+     * Get File extension in java
+     * @param args
+     */
+    public static void main(String[] args) {
+        File file = new File("/Users/pankaj/java.txt");
+        System.out.println("File extension is: "+getFileExtension(file));
+        //file name without extension
+        file = new File("/Users/pankaj/temp");
+        System.out.println("File extension is: "+getFileExtension(file));
+        //file name with dot
+        file = new File("/Users/pankaj/java.util.txt");
+        System.out.println("File extension is: "+getFileExtension(file));
+        //hidden files without extension
+        file = new File("/Users/pankaj/.htaccess");
+        System.out.println("File extension is: "+getFileExtension(file));
+    }
+
+    private static String getFileExtension(File file) {
+        String fileName = file.getName();
+        if(fileName.lastIndexOf(".") != -1 && fileName.lastIndexOf(".") != 0)
+        return fileName.substring(fileName.lastIndexOf(".")+1);
+        else return "";
+    }
+
+}
+</code></pre>
+<p>Output of the above program is:</p>
+<pre><code><div class='re_clip-board'>Copy</div>
+File extension is: txt
+File extension is: 
+File extension is: txt
+File extension is: 
+</code></pre>
+<p>Note that here I am not checking if file exists or not, but in real programming scenarios you should check that file exists or not before processing further.</p>
+
+<!-- Quick Adsense WordPress Plugin: http://quickadsense.com/ -->
+<div style="float: none; margin:10px 0 10px 0; text-align:center;">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-6459403732537629"
+     data-ad-slot="7381719979"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+<!-- Quick Adsense WordPress Plugin: http://quickadsense.com/ -->
+<div style="float: none; margin:10px 0 10px 0; text-align:center;">
+<div data-type="ad" data-publisher="journaldev.com" data-format="300x250" data-zone="jd_post_mid_300x250" ></div>
+</div>
+
+<div style="font-size: 0px; height: 0px; line-height: 0px; margin: 0; padding: 0; clear: both;"></div><div class="scriptlesssocialsharing"><div class="scriptlesssocialsharing-buttons"><a class="button twitter" target="_blank" href="https://twitter.com/intent/tweet?text=How%20to%20Get%20File%20Extension%20in%20Java&#038;url=https%3A%2F%2Fwww.journaldev.com%2F842%2Fhow-to-get-file-extension-in-java&#038;via=JournalDev&#038;related=JournalDev" rel="noopener"><span class="sss-name">Twitter</span></a><a class="button facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.journaldev.com%2F842%2Fhow-to-get-file-extension-in-java" rel="noopener"><span class="sss-name">Facebook</span></a><a class="button linkedin" target="_blank" href="https://www.linkedin.com/shareArticle?mini=1&#038;url=https%3A%2F%2Fwww.journaldev.com%2F842%2Fhow-to-get-file-extension-in-java&#038;title=How%20to%20Get%20File%20Extension%20in%20Java&#038;source=https://www.journaldev.com" rel="noopener"><span class="sss-name">Linkedin</span></a><a class="button email" href="mailto:?body=I%20read%20this%20post%20and%20wanted%20to%20share%20it%20with%20you.%20Here&#039;s%20the%20link:%20https%3A%2F%2Fwww.journaldev.com%2F842%2Fhow-to-get-file-extension-in-java&#038;subject=A%20post%20worth%20sharing:%20How%20to%20Get%20File%20Extension%20in%20Java" rel="noopener"><span class="sss-name">Email</span></a></div></div><div class="prev-next-navigation"><a href="https://www.journaldev.com/839/java-get-file-size" rel="prev"><div class="previous"><span class="prev_icon">&nbsp;Previous </span><br/> <span class="pagi_content">Java get file size</span></div></a><a href="https://www.journaldev.com/845/java-filenamefilter-example" rel="next"><div class="next"><span class="next_icon">Next&nbsp;</span><br/> <span class="pagi_content">Java FileNameFilter Example</span></div></a></div>
+		<!-- .prev-next-navigation --><section class="author-box" itemprop="author" itemscope itemtype="https://schema.org/Person"><img alt='' src='https://secure.gravatar.com/avatar/8087ef00af2610b870ada12392286695?s=120&#038;d=blank&#038;r=g' srcset='https://secure.gravatar.com/avatar/8087ef00af2610b870ada12392286695?s=240&#038;d=blank&#038;r=g 2x' class='avatar avatar-120 photo' height='120' width='120' /><h4 class="author-box-title">About <span itemprop="name">Pankaj</span></h4><div class="author-box-content" itemprop="description"><p>If you have come this far, it means that you liked what you are reading. Why not reach little more and connect with me directly on <a href="https://plus.google.com/118104420597648001532/posts?rel=author"><strong>Google Plus</strong></a>, <a href="https://www.facebook.com/journaldev"><strong>Facebook</strong></a> or <a href="https://twitter.com/JournalDev"><strong>Twitter</strong></a>. I would love to hear your thoughts and opinions on my articles directly.</p>
+<p>Recently I started creating video tutorials too, so do check out my videos on <a href="https://www.youtube.com/user/JournalDev"><strong>Youtube</strong></a>.</p>
+</div></section></div><footer class="entry-footer"><p class="entry-meta"><span class="entry-categories">Filed Under: <a href="https://www.journaldev.com/java" rel="category tag">Java</a></span> </p></footer></article><div class="after-entry" class="widget-area">
+<!-- Quick Adsense Wordpress Plugin: http://quickadsense.com/ -->
+<section id="adswidget7-quick-adsense-3" class="widget widget_adswidget7-quick-adsense"><div class="widget-wrap"><!-- 728x90/970x90/970x250/320x50 -->
+<div id="waldo-tag-2281"></div></div></section>
+</div><div class="adjacent-entry-pagination pagination"><div class="pagination-previous alignleft"><a href="https://www.journaldev.com/839/java-get-file-size" rel="prev"><span class="adjacent-post-link">&#xAB; Java get file size</span></a></div><div class="pagination-next alignright"><a href="https://www.journaldev.com/845/java-filenamefilter-example" rel="next"><span class="adjacent-post-link">Java FileNameFilter Example &#xBB;</span></a></div></div><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-43217">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<span itemprop="name">CM</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-04-29T14:37:59+00:00" itemprop="datePublished"><a href="https://www.journaldev.com/842/how-to-get-file-extension-in-java#comment-43217" class="comment-time-link" itemprop="url">April 29, 2018 at 2:37 pm</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Suberb, thanks very much. Your solution didnot just get the extension, but you took care of extesion-less file and hidden ones. Good Work&#8230;</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-43217' onclick='return addComment.moveForm( "comment-43217", "43217", "respond", "842" )' aria-label='Reply to CM'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-37367">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<span itemprop="name">navin</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-01-30T22:01:43+00:00" itemprop="datePublished"><a href="https://www.journaldev.com/842/how-to-get-file-extension-in-java#comment-37367" class="comment-time-link" itemprop="url">January 30, 2017 at 10:01 pm</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Super g..</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-37367' onclick='return addComment.moveForm( "comment-37367", "37367", "respond", "842" )' aria-label='Reply to navin'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-33080">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<span itemprop="name">abhayRSingh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-09-01T08:12:02+00:00" itemprop="datePublished"><a href="https://www.journaldev.com/842/how-to-get-file-extension-in-java#comment-33080" class="comment-time-link" itemprop="url">September 1, 2015 at 8:12 am</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thanks alot Sir for the much needed help at a crucial point of time.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-33080' onclick='return addComment.moveForm( "comment-33080", "33080", "respond", "842" )' aria-label='Reply to abhayRSingh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-31236">
+	<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<span itemprop="name">Daniele</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2014-12-23T03:40:16+00:00" itemprop="datePublished"><a href="https://www.journaldev.com/842/how-to-get-file-extension-in-java#comment-31236" class="comment-time-link" itemprop="url">December 23, 2014 at 3:40 am</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Works great! Thank you !</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-31236' onclick='return addComment.moveForm( "comment-31236", "31236", "respond", "842" )' aria-label='Reply to Daniele'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ol></div>	<div class="comment-policy-box">
+		<p class="comment-policy"><small><strong>Comment Policy:</strong>Please submit comments to add value to the post. Comments like "Thank You" and "Awesome Post" will be not published. If you want to post code then wrap them inside &lt;pre&gt; tags. For example <strong>&lt;pre&gt;class Foo { }&lt;/pre&gt;</strong>.<br>If you want to post XML content, then please escape &lt; with &amp;lt; and > with &amp;gt; otherwise they will not be shown properly.</small></p>
+	</div>
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/842/how-to-get-file-extension-in-java#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://www.journaldev.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='842' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p>
+<!-- Anti-spam plugin v.5.2 wordpress.org/plugins/anti-spam/ -->
+		<p class="antispam-group antispam-group-q" style="clear: both;">
+			<label>Current ye@r <span class="required">*</span></label>
+			<input type="hidden" name="antspm-a" class="antispam-control antispam-control-a" value="2018" />
+			<input type="text" name="antspm-q" class="antispam-control antispam-control-q" value="5.2" autocomplete="off" />
+		</p>
+		<p class="antispam-group antispam-group-e" style="display: none;">
+			<label>Leave this field empty</label>
+			<input type="text" name="antspm-e-email-url-website" class="antispam-control antispam-control-e" value="" autocomplete="off" />
+		</p>
+			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="https://schema.org/WPSideBar"><section id="search-3" class="widget widget_search"><div class="widget-wrap"><div id='ajaxsearchlite1' class="wpdreams_asl_container asl_w asl_m asl_m_1">
+<div class="probox">
+
+    
+    <div class='promagnifier'>
+                <div class='innericon'>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+                <path id="magnifier-2-icon" d="M460.355,421.59L353.844,315.078c20.041-27.553,31.885-61.437,31.885-98.037
+                    C385.729,124.934,310.793,50,218.686,50C126.58,50,51.645,124.934,51.645,217.041c0,92.106,74.936,167.041,167.041,167.041
+                    c34.912,0,67.352-10.773,94.184-29.158L419.945,462L460.355,421.59z M100.631,217.041c0-65.096,52.959-118.056,118.055-118.056
+                    c65.098,0,118.057,52.959,118.057,118.056c0,65.096-52.959,118.056-118.057,118.056C153.59,335.097,100.631,282.137,100.631,217.041
+                    z"/>
+            </svg>
+        </div>
+    </div>
+
+    
+    
+    <div class='prosettings' style='display:none;' data-opened=0>
+                <div class='innericon'>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+                <polygon id="arrow-25-icon" transform = "rotate(90 256 256)" points="142.332,104.886 197.48,50 402.5,256 197.48,462 142.332,407.113 292.727,256 "/>
+            </svg>
+        </div>
+    </div>
+
+    
+    
+    <div class='proinput'>
+        <form autocomplete="off" aria-label='Ajax search form'>
+            <input aria-label='Search input' type='search' class='orig' name='phrase' placeholder='Instantly Search Tutorials...' value='' autocomplete="off"/>
+            <input aria-label='Autocomplete input, do not use this' type='text' class='autocomplete' name='phrase' value='' autocomplete="off"/>
+            <span class='loading'></span>
+            <input type='submit' value="Start search" style='width:0; height: 0; visibility: hidden;'>
+        </form>
+    </div>
+
+    
+    
+    <div class='proloading'>
+
+        <div class="asl_loader"><div class="asl_loader-inner asl_simple-circle"></div></div>
+
+            </div>
+
+            <div class='proclose'>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                 y="0px"
+                 width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512"
+                 xml:space="preserve">
+            <polygon id="x-mark-icon"
+                     points="438.393,374.595 319.757,255.977 438.378,137.348 374.595,73.607 255.995,192.225 137.375,73.622 73.607,137.352 192.246,255.983 73.622,374.625 137.352,438.393 256.002,319.734 374.652,438.378 "/>
+        </svg>
+        </div>
+    
+    
+</div>
+</div>
+
+
+<div id='ajaxsearchlitesettings1' class="searchsettings wpdreams_asl_settings asl_w asl_s asl_s_1">
+    <form name='options' autocomplete='off'>
+
+        
+                <fieldset class="asl_sett_scroll">
+            <legend style="display: none;">Generic selectors</legend>
+            <div class="asl_option_inner hiddend">
+                <input type='hidden' name='qtranslate_lang' id='qtranslate_lang'
+                       value='0'/>
+            </div>
+
+	        
+            
+            <div class="asl_option">
+                <div class="asl_option_inner">
+                    <input type="checkbox" value="checked" id="set_exactonly1"
+                           title="Exact matches only"
+                           name="set_exactonly" />
+                    <label for="set_exactonly1">Exact matches only</label>
+                </div>
+                <div class="asl_option_label">
+                    Exact matches only                </div>
+            </div>
+            <div class="asl_option">
+                <div class="asl_option_inner">
+                    <input type="checkbox" value="None" id="set_intitle1"
+                           title="Search in title"
+                           name="set_intitle"  checked="checked"/>
+                    <label for="set_intitle1">Search in title</label>
+                </div>
+                <div class="asl_option_label">
+                    Search in title                </div>
+            </div>
+            <div class="asl_option">
+                <div class="asl_option_inner">
+                    <input type="checkbox" value="None" id="set_incontent1"
+                           title="Search in content"
+                           name="set_incontent"  checked="checked"/>
+                    <label for="set_incontent1">Search in content</label>
+                </div>
+                <div class="asl_option_label">
+                    Search in content                </div>
+            </div>
+            <div class="asl_option_inner hiddend">
+                <input type="checkbox" value="None" id="set_inexcerpt1"
+                       title="Search in excerpt"
+                       name="set_inexcerpt"  checked="checked"/>
+                <label for="set_inexcerpt1">Search in excerpt</label>
+            </div>
+
+            <div class="asl_option">
+                <div class="asl_option_inner">
+                    <input type="checkbox" value="None" id="set_inposts1"
+                           title="Search in posts"
+                           name="set_inposts"  checked="checked"/>
+                    <label for="set_inposts1">Search in posts</label>
+                </div>
+                <div class="asl_option_label">
+                    Search in posts                </div>
+            </div>
+            <div class="asl_option">
+                <div class="asl_option_inner">
+                    <input type="checkbox" value="None" id="set_inpages1"
+                           title="Search in pages"
+                           name="set_inpages"  checked="checked"/>
+                    <label for="set_inpages1">Search in pages</label>
+                </div>
+                <div class="asl_option_label">
+                    Search in pages                </div>
+            </div>
+                    </fieldset>
+                    </form>
+</div>
+
+<div id='ajaxsearchliteres1' class='vertical wpdreams_asl_results asl_w asl_r asl_r_1'>
+
+    
+    <div class="results">
+
+        
+            <div class="resdrg">
+            </div>
+
+        
+    </div>
+
+    
+    
+</div>
+
+    <div id="asl_hidden_data">
+        <svg style="position:absolute" height="0" width="0">
+            <filter id="aslblur">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="4"/>
+            </filter>
+        </svg>
+        <svg style="position:absolute" height="0" width="0">
+            <filter id="no_aslblur"></filter>
+        </svg>
+
+    </div>
+
+<div class="asl_init_data wpdreams_asl_data_ct" style="display:none !important;" id="asl_init_id_1" data-asldata="ew0KICAgICJob21ldXJsIjogImh0dHBzOi8vd3d3LmpvdXJuYWxkZXYuY29tLyIsDQogICAgInJlc3VsdHN0eXBlIjogInZlcnRpY2FsIiwNCiAgICAicmVzdWx0c3Bvc2l0aW9uIjogImhvdmVyIiwNCiAgICAiaXRlbXNjb3VudCI6IDQsDQogICAgImltYWdld2lkdGgiOiA3MCwNCiAgICAiaW1hZ2VoZWlnaHQiOiA3MCwNCiAgICAicmVzdWx0aXRlbWhlaWdodCI6ICI3MHB4IiwNCiAgICAic2hvd2F1dGhvciI6IDAsDQogICAgInNob3dkYXRlIjogMCwNCiAgICAic2hvd2Rlc2NyaXB0aW9uIjogMCwNCiAgICAiY2hhcmNvdW50IjogIDMsDQogICAgImRlZmF1bHRJbWFnZSI6ICJodHRwczovL3d3dy5qb3VybmFsZGV2LmNvbS93cC1jb250ZW50L3VwbG9hZHMvMjAxOC8xMC83MHg3MC5wbmciLA0KICAgICJoaWdobGlnaHQiOiAwLA0KICAgICJoaWdobGlnaHR3aG9sZXdvcmRzIjogMSwNCiAgICAic2Nyb2xsVG9SZXN1bHRzIjogMCwNCiAgICAicmVzdWx0YXJlYWNsaWNrYWJsZSI6IDEsDQogICAgImF1dG9jb21wbGV0ZSI6IHsNCiAgICAgICAgImVuYWJsZWQiIDogMSwNCiAgICAgICAgImxhbmciIDogImVuIg0KICAgIH0sDQogICAgInRyaWdnZXJvbnR5cGUiOiAxLA0KICAgICJ0cmlnZ2VyX29uX2NsaWNrIjogMCwNCiAgICAidHJpZ2dlcl9vbl9mYWNldF9jaGFuZ2UiOiAxLA0KICAgICJzZXR0aW5nc2ltYWdlcG9zIjogInJpZ2h0IiwNCiAgICAiaHJlc3VsdGFuaW1hdGlvbiI6ICJmeC1ub25lIiwNCiAgICAidnJlc3VsdGFuaW1hdGlvbiI6ICJmeC1ub25lIiwNCiAgICAiaHJlc3VsdGhpZGVkZXNjIjogIjEiLA0KICAgICJwcmVzY29udGFpbmVyaGVpZ2h0IjogIjQwMHB4IiwNCiAgICAicHNob3dzdWJ0aXRsZSI6ICIwIiwNCiAgICAicHNob3dkZXNjIjogIjEiLA0KICAgICJjbG9zZU9uRG9jQ2xpY2siOiAxLA0KICAgICJpaWZOb0ltYWdlIjogImRlc2NyaXB0aW9uIiwNCiAgICAiaWlSb3dzIjogMiwNCiAgICAiaWl0ZW1zV2lkdGgiOiAyMDAsDQogICAgImlpdGVtc0hlaWdodCI6IDIwMCwNCiAgICAiaWlzaG93T3ZlcmxheSI6IDEsDQogICAgImlpYmx1ck92ZXJsYXkiOiAxLA0KICAgICJpaWhpZGVDb250ZW50IjogMSwNCiAgICAiaWlhbmltYXRpb24iOiAiMSIsDQogICAgImFuYWx5dGljcyI6IDAsDQogICAgImFuYWx5dGljc1N0cmluZyI6ICIiLA0KICAgICJyZWRpcmVjdG9uY2xpY2siOiAxLA0KICAgICJyZWRpcmVjdENsaWNrVG8iOiAicmVzdWx0c19wYWdlIiwNCiAgICAicmVkaXJlY3RDbGlja0xvYyI6ICJzYW1lIiwNCiAgICAicmVkaXJlY3Rfb25fZW50ZXIiOiAxLA0KICAgICJyZWRpcmVjdEVudGVyVG8iOiAicmVzdWx0c19wYWdlIiwNCiAgICAicmVkaXJlY3RFbnRlckxvYyI6ICJzYW1lIiwNCiAgICAicmVkaXJlY3RfdXJsIjogIj9zPXtwaHJhc2V9IiwNCiAgICAib3ZlcnJpZGV3cGRlZmF1bHQiOiAwLA0KICAgICJvdmVycmlkZV9tZXRob2QiOiAiZ2V0Ig0KfQ0K"></div>
+</div></section>
+
+<!-- Quick Adsense Wordpress Plugin: http://quickadsense.com/ -->
+<section id="adswidget6-quick-adsense-2" class="widget widget_adswidget6-quick-adsense"><div class="widget-wrap"><!-- /8491498/journaldev_video -->
+<div id='div-gpt-ad-1539114023134-0'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1539114023134-0'); });
+</script>
+</div></div></section>
+
+<!-- Quick Adsense Wordpress Plugin: http://quickadsense.com/ -->
+<section id="adswidget9-quick-adsense-3" class="widget widget_adswidget9-quick-adsense"><div class="widget-wrap"><!-- 300x250/300x600/160x600 -->
+<div id="waldo-tag-2282"></div></div></section>
+<section id="text-8" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Core Java Tutorial</h4>
+			<div class="textwidget"><div id="expand_widget">
+<div class="expand_widget_title"><span class="widget_plus_icon"></span>Java 10 Tutorials</div>
+<ul>
+<li><a href="https://www.journaldev.com/20395/java-10-features" target="_blank" rel="noopener">Java 10 Features</a></li>
+<li><a href="https://www.journaldev.com/19871/java-10-local-variable-type-inference" target="_blank" rel="noopener">Java 10 Local Variable Type Inference</a></li>
+</ul>
+</div>
+<div id="expand_widget">
+<div class="expand_widget_title"><span class="widget_plus_icon"></span>Java 9 Tutorials</div>
+<ul>
+<li><a href="https://www.journaldev.com/13121/java-9-features-with-examples" target="_blank" rel="noopener">Java 9 Features</a></li>
+<li><a href="https://www.journaldev.com/12850/java-9-private-methods-interfaces" target="_blank" rel="noopener">Java 9 private method in interfaces</a></li>
+<li><a href="https://www.journaldev.com/12940/javase9-try-with-resources-improvements" target="_blank" rel="noopener">Java 9 try-with-resources improvements</a></li>
+<li><a href="https://www.journaldev.com/13108/javase9-optional-class-improvements" target="_blank" rel="noopener">Java 9 Optional class improvements</a></li>
+<li><a href="https://www.journaldev.com/13204/javase9-stream-api-improvements" target="_blank" rel="noopener">Java 9 Stream API improvements</a></li>
+<li><a href="https://www.journaldev.com/12849/javase9-var-for-local-variables" target="_blank" rel="noopener">Java 9 &#8220;var&#8221; for local variables</a></li>
+<li><a href="https://www.journaldev.com/13563/javase9-underscore-changes" target="_blank" rel="noopener">Java 9 &#8220;_&#8221; (underscore) changes</a></li>
+<li><a href="https://www.journaldev.com/12942/javase9-factory-methods-immutable-list" target="_blank" rel="noopener">Java 9 Factory Methods for Immutable List</a></li>
+<li><a href="https://www.journaldev.com/12984/javase9-factories-for-immutable-set" target="_blank" rel="noopener">Java 9 Factory Methods for Immutable Set</a></li>
+<li><a href="https://www.journaldev.com/13057/javase9-factory-methods-immutable-map" target="_blank" rel="noopener">Java 9 Factory Methods for Immutable Map</a></li>
+<li><a href="https://www.journaldev.com/13106/java-9-modules" target="_blank" rel="noopener"> Java 9 Modules</a></li>
+<li><a href="https://www.journaldev.com/13596/javase9-module-basics-part2" target="_blank" rel="noopener">Java 9 Module Basics Part 2</a></li>
+<li><a href="https://www.journaldev.com/13543/javase9-simple-module-cmd-prompt-part3" target="_blank" rel="noopener">Develop Java Module using Command Prompt</a></li>
+<li><a href="https://www.journaldev.com/13630/javase9-helloworld-module-ides-part4" target="_blank" rel="noopener">Develop Java Module using Eclipse</a></li>
+<li><a href="https://www.journaldev.com/13632/javase9-implied-readability-part5" target="_blank" rel="noopener">Develop Java Module using IntelliJ IDEA</a></li>
+</ul>
+</div>
+<div id="expand_widget">
+<div class="expand_widget_title"><span class="widget_plus_icon"></span>Java 8 Tutorials</div>
+<ul>
+<li><a href="https://www.journaldev.com/2389/java-8-features-with-examples" target="_blank" rel="noopener">Java 8 Features</a></li>
+<li><a href="https://www.journaldev.com/2752/java-8-interface-changes-static-method-default-method" target="_blank" rel="noopener">Java 8 interface changes</a></li>
+<li><a href="https://www.journaldev.com/2763/java-8-functional-interfaces" target="_blank" rel="noopener">Lambda Expressions in Java</a></li>
+<li><a href="https://www.journaldev.com/2774/java-8-stream" target="_blank" rel="noopener">Stream API in Java</a></li>
+<li><a href="https://www.journaldev.com/2800/java-8-date-localdate-localdatetime-instant" target="_blank" rel="noopener">Java Date Time API Example Tutorial</a></li>
+<li><a href="https://www.journaldev.com/13521/java-spliterator" target="_blank" rel="noopener">Java Spliterator</a></li>
+</ul>
+</div>
+<div id="expand_widget">
+<div class="expand_widget_title"><span class="widget_plus_icon"></span>Java 7 Tutorials</div>
+<ul>
+<li><a href="https://www.journaldev.com/588/java-switch-case-string" target="_blank" rel="noopener">String in switch case</a></li>
+<li><a href="https://www.journaldev.com/592/java-try-with-resources" target="_blank" rel="noopener">Try with Resources &#8211; Java ARM</a></li>
+<li><a href="https://www.journaldev.com/603/binary-literals-in-java-java-7-feature" target="_blank" rel="noopener">Binary Literals in Java</a></li>
+<li><a href="https://www.journaldev.com/607/underscores-in-numeric-literals-java-7-feature" target="_blank" rel="noopener">Underscores in Numeric Literals</a></li>
+<li><a href="https://www.journaldev.com/629/java-catch-multiple-exceptions-rethrow-exception" target="_blank" rel="noopener">Catching Multiple Exceptions in a single catch block</a></li>
+<li><a href="https://www.journaldev.com/855/how-to-set-file-permissions-in-java-easily-using-java-7-posixfilepermission" target="_blank" rel="noopener">Java PosixFilePermission example to set File Permissions</a></li>
+</ul>
+</div>
+<div id="expand_widget">
+<div class="expand_widget_title"><span class="widget_plus_icon"></span>Core Java Basics</div>
+<ul>
+<li><a href="https://www.journaldev.com/476/java-windows-10-download-install" target="_blank" rel="noopener">Java Windows 10 Download Install</a></li>
+<li><a href="https://www.journaldev.com/481/java-hello-world-program" target="_blank" rel="noopener">Writing your First Java Program</a></li>
+<li><a href="https://www.journaldev.com/2345/java-access-modifiers" target="_blank" rel="noopener">Java Access Modifiers &#8211; public, protected, private and default</a></li>
+<li><a href="https://www.journaldev.com/16450/java-for-loop" target="_blank" rel="noopener">Java for loop</a></li>
+<li><a href="https://www.journaldev.com/16510/java-while-loop" target="_blank" rel="noopener">Java while loop</a></li>
+<li><a href="https://www.journaldev.com/16536/java-do-while-loop" target="_blank" rel="noopener">Java do while loop</a></li>
+<li><a href="https://www.journaldev.com/1365/static-keyword-in-java" target="_blank" rel="noopener">Java static keyword</a></li>
+<li><a href="https://www.journaldev.com/980/java-break-statement-label" target="_blank" rel="noopener">Java break keyword</a></li>
+<li><a href="https://www.journaldev.com/983/java-continue-statement-example-with-for-loop-and-labels" target="_blank" rel="noopener">Java continue keyword</a></li>
+<li><a href="https://www.journaldev.com/1582/abstract-class-in-java" target="_blank" rel="noopener">Abstract Class in Java</a></li>
+<li><a href="https://www.journaldev.com/1601/interface-in-java" target="_blank" rel="noopener">Interface in Java</a></li>
+<li><a href="https://www.journaldev.com/1607/difference-between-abstract-class-and-interface-in-java" target="_blank" rel="noopener">Difference between Abstract Class and Interface in Java</a></li>
+</ul>
+</div>
+<div id="expand_widget">
+<div class="expand_widget_title"><span class="widget_plus_icon"></span>OOPS Concepts</div>
+<ul>
+<li><a href="https://www.journaldev.com/1325/composition-in-java-example" target="_blank" rel="noopener">Composition in Java</a></li>
+<li><a href="https://www.journaldev.com/644/inheritance-java-example" target="_blank" rel="noopener">Inheritance in Java</a></li>
+<li><a href="https://www.journaldev.com/1775/multiple-inheritance-in-java" target="_blank" rel="noopener">Composition vs Inheritance in Java</a></li>
+<li><a href="https://www.journaldev.com/996/java-inner-class" target="_blank" rel="noopener">Java Nested Classes</a></li>
+</ul>
+</div>
+<div id="expand_widget">
+<div class="expand_widget_title"><span class="widget_plus_icon"></span>Data Types and Operators</div>
+<ul>
+<li><a href="https://www.journaldev.com/6431/java-data-types-primitives-and-binary-literals" target="_blank" rel="noopener">Java Data Types, Primitives and Binary Literals</a></li>
+<li><a href="https://www.journaldev.com/1005/autoboxing-java" target="_blank" rel="noopener">Java Autoboxing and Unboxing</a></li>
+<li><a href="https://www.journaldev.com/1002/wrapper-class-in-java" target="_blank" rel="noopener">Java Wrapper Classes</a></li>
+<li><a href="https://www.journaldev.com/963/java-ternary-operator" target="_blank" rel="noopener">Java Ternary Operator</a></li>
+</ul>
+</div>
+<div id="expand_widget">
+<div class="expand_widget_title"><span class="widget_plus_icon"></span>String Manipulation</div>
+<ul>
+<li><a href="https://www.journaldev.com/802/string-immutable-final-java" target="_blank" rel="noopener">Why String is immutable and final?</a></li>
+<li><a href="https://www.journaldev.com/797/what-is-java-string-pool" target="_blank" rel="noopener">Understanding Java String Pool</a></li>
+<li><a href="https://www.journaldev.com/813/java-string-subsequence-example" target="_blank" rel="noopener">Java String subsequence example</a></li>
+<li><a href="https://www.journaldev.com/810/java-string-compareto-examples" target="_blank" rel="noopener">Java String compareTo example</a></li>
+<li><a href="https://www.journaldev.com/807/java-string-substring" target="_blank" rel="noopener">Java String substring example</a></li>
+<li><a href="https://www.journaldev.com/794/string-char-array-java" target="_blank" rel="noopener">Converting String to char and vice versa</a></li>
+<li><a href="https://www.journaldev.com/791/java-string-split" target="_blank" rel="noopener">Java Split String example</a></li>
+<li><a href="https://www.journaldev.com/770/string-byte-array-java" target="_blank" rel="noopener">String to byte array and vice versa</a></li>
+<li><a href="https://www.journaldev.com/766/string-to-char-array-to-string-java" target="_blank" rel="noopener">String to char array</a></li>
+<li><a href="https://www.journaldev.com/542/string-concatenation-in-java" target="_blank" rel="noopener">Java String concatenation</a></li>
+<li><a href="https://www.journaldev.com/538/string-vs-stringbuffer-vs-stringbuilder" target="_blank" rel="noopener">String, StringBuffer and StringBuilder in Java</a></li>
+</ul>
+</div>
+<div id="expand_widget">
+<div class="expand_widget_title"><span class="widget_plus_icon"></span>Java Arrays</div>
+<ul>
+<li><a href="https://www.journaldev.com/750/initialize-array-java" target="_blank" rel="noopener">Initializing an Array in Java</a></li>
+<li><a href="https://www.journaldev.com/747/two-dimensional-array-java" target="_blank" rel="noopener">Two dimensional array in java</a></li>
+<li><a href="https://www.journaldev.com/744/java-array-of-arraylist-of-array" target="_blank" rel="noopener">Java Array of ArrayList</a></li>
+<li><a href="https://www.journaldev.com/776/java-string-to-string-array-example" target="_blank" rel="noopener">String to String Array Example</a></li>
+<li><a href="https://www.journaldev.com/1257/java-varargs" target="_blank" rel="noopener">Java Variable Arguments Explained</a></li>
+<li><a href="https://www.journaldev.com/763/java-array-add-elements" target="_blank" rel="noopener">Java Array add elements</a></li>
+<li><a href="https://www.journaldev.com/784/how-to-sort-an-array-in-java" target="_blank" rel="noopener">Sorting an Array in Java</a></li>
+<li><a href="https://www.journaldev.com/773/java-string-array-to-string" target="_blank" rel="noopener">Java String Array to String</a></li>
+<li><a href="https://www.journaldev.com/760/java-arraylist-to-array" target="_blank" rel="noopener">Java ArrayList to Array</a></li>
+<li><a href="https://www.journaldev.com/756/how-to-convert-array-to-arraylist-in-java" target="_blank" rel="noopener">Converting Array to ArrayList in Java</a></li>
+<li><a href="https://www.journaldev.com/753/java-copy-array-array-copy-java" target="_blank" rel="noopener">How to copy arrays in Java</a></li>
+</ul>
+</div>
+<div id="expand_widget">
+<div class="expand_widget_title"><span class="widget_plus_icon"></span>Annotation and Enum</div>
+<ul>
+<li><a href="https://www.journaldev.com/721/java-annotations" target="_blank" rel="noopener">Java Annotations Tutorial</a></li>
+<li><a href="https://www.journaldev.com/817/java-override-annotation" target="_blank" rel="noopener">Java @Override Annotation</a></li>
+<li><a href="https://www.journaldev.com/716/java-enum" target="_blank" rel="noopener">Java Enum Example Tutorial</a></li>
+</ul>
+</div>
+<div id="expand_widget">
+<div class="expand_widget_title"><span class="widget_plus_icon"></span>Java Collections</div>
+<ul>
+<li><a href="https://www.journaldev.com/1260/collections-in-java-tutorial" target="_blank" rel="noopener">Collections in Java</a></li>
+<li><a href="https://www.journaldev.com/11444/java-list" target="_blank" rel="noopener">Java List</a></li>
+<li><a href="https://www.journaldev.com/11404/java-arraylist" target="_blank" rel="noopener">Java ArrayList</a></li>
+<li><a href="https://www.journaldev.com/13386/java-linkedlist-linkedlist-java" target="_blank" rel="noopener">Java LinkedList</a></li>
+<li><a href="https://www.journaldev.com/13242/java-set" target="_blank" rel="noopener">Java Set</a></li>
+<li><a href="https://www.journaldev.com/11627/java-hashset" target="_blank" rel="noopener">Java HashSet</a></li>
+<li><a href="https://www.journaldev.com/16182/java-treeset" target="_blank" rel="noopener">Java TreeSet</a></li>
+<li><a href="https://www.journaldev.com/11641/java-map" target="_blank" rel="noopener">Java Map</a></li>
+<li><a href="https://www.journaldev.com/11560/java-hashmap" target="_blank" rel="noopener">Java HashMap</a></li>
+<li><a href="https://www.journaldev.com/16209/java-sortedmap-sorted-map-java" target="_blank" rel="noopener">Java SortedMap</a></li>
+<li><a href="https://www.journaldev.com/14512/java-treemap-treemap-in-java" target="_blank" rel="noopener">Java TreeMap</a></li>
+<li><a href="https://www.journaldev.com/13244/java-queue" target="_blank" rel="noopener">Java Queue</a></li>
+<li><a href="https://www.journaldev.com/13401/java-stack" target="_blank" rel="noopener">Java Stack</a></li>
+<li><a href="https://www.journaldev.com/13460/java-iterator" target="_blank" rel="noopener">Java Iterator</a></li>
+<li><a href="https://www.journaldev.com/13457/java-listiterator" target="_blank" rel="noopener">Java ListIterator</a></li>
+<li><a href="https://www.journaldev.com/1642/java-priority-queue-priorityqueue-example" target="_blank" rel="noopener">Java PriorityQueue Example</a></li>
+<li><a href="https://www.journaldev.com/16254/priority-queue-java" target="_blank" rel="noopener">Priority Queue Java</a></li>
+<li><a href="https://www.journaldev.com/1289/copyonwritearraylist-java" target="_blank" rel="noopener">ArrayList vs CopyOnWriteArrayList</a></li>
+<li><a href="https://www.journaldev.com/378/java-util-concurrentmodificationexception" target="_blank" rel="noopener">How to avoid ConcurrentModificationException when using an Iterator</a></li>
+<li><a href="https://www.journaldev.com/1663/java-generics-example-method-class-interface" target="_blank" rel="noopener">Java Generics Example Tutorial</a></li>
+</ul>
+</div>
+<div id="expand_widget">
+<div class="expand_widget_title"><span class="widget_plus_icon"></span>Java IO Operations</div>
+<ul>
+<li><a href="https://www.journaldev.com/825/java-create-new-file" target="_blank" rel="noopener">Create a New File in Java</a></li>
+<li><a href="https://www.journaldev.com/830/java-delete-file-directory" target="_blank" rel="noopener">Java Delete File</a></li>
+<li><a href="https://www.journaldev.com/851/java-file-separator-separatorchar-pathseparator-pathseparatorchar" target="_blank" rel="noopener">File separators in Java</a></li>
+<li><a href="https://www.journaldev.com/833/how-to-delete-a-directoryfolder-in-java-recursion" target="_blank" rel="noopener">Delete a Directory Recursively in Java</a></li>
+<li><a href="https://www.journaldev.com/836/java-rename-file-jave-move-file" target="_blank" rel="noopener">Rename and Move a File in Java</a></li>
+<li><a href="https://www.journaldev.com/839/java-get-file-size" target="_blank" rel="noopener">Getting File Size in Java</a></li>
+<li><a href="https://www.journaldev.com/842/how-to-get-file-extension-in-java" target="_blank" rel="noopener">Get File Extension in Java</a></li>
+<li><a href="https://www.journaldev.com/912/how-to-check-if-file-exists-in-java" target="_blank" rel="noopener">How to check if File exists in Java</a></li>
+<li><a href="https://www.journaldev.com/909/check-file-directory-file-java" target="_blank" rel="noopener">How to check if File is a Directory in Java</a></li>
+<li><a href="https://www.journaldev.com/915/get-file-last-modified-date-time-java" target="_blank" rel="noopener">How to get File last modified date in Java</a></li>
+<li><a href="https://www.journaldev.com/845/java-filenamefilter-example" target="_blank" rel="noopener">Java FileNameFilter example to list specific files</a></li>
+<li><a href="https://www.journaldev.com/848/java-file-path-absolute-canonical" target="_blank" rel="noopener">Java File Path, Absolute Path and Canonical Path Explained</a></li>
+<li><a href="https://www.journaldev.com/858/java-file-permissions" target="_blank" rel="noopener">How to set File Permissions in Java</a></li>
+<li><a href="https://www.journaldev.com/861/java-copy-file" target="_blank" rel="noopener">4 ways to copy File in Java</a></li>
+<li><a href="https://www.journaldev.com/867/java-read-text-file" target="_blank" rel="noopener">Reading File in Java using BufferedReader, Scanner, Files</a></li>
+<li><a href="https://www.journaldev.com/872/java-scanner-class-java-util-scanner" target="_blank" rel="noopener">Java Scanner Class</a></li>
+<li><a href="https://www.journaldev.com/864/java-open-file" target="_blank" rel="noopener">Open a File in Java</a></li>
+<li><a href="https://www.journaldev.com/875/java-read-file-to-string" target="_blank" rel="noopener">Read a File to String in Java</a></li>
+<li><a href="https://www.journaldev.com/709/java-read-file-line-by-line" target="_blank" rel="noopener">Java Read file line by line</a></li>
+<li><a href="https://www.journaldev.com/878/java-write-to-file" target="_blank" rel="noopener">How to write a File in Java</a></li>
+<li><a href="https://www.journaldev.com/881/java-append-to-file" target="_blank" rel="noopener">How to append data to a File in Java</a></li>
+<li><a href="https://www.journaldev.com/918/java-inputstream-to-file-example" target="_blank" rel="noopener">Converting InputStream to File</a></li>
+<li><a href="https://www.journaldev.com/921/java-randomaccessfile-example" target="_blank" rel="noopener">Java Random Access File Example</a></li>
+<li><a href="https://www.journaldev.com/924/java-download-file-url" target="_blank" rel="noopener">Download File from URL Example</a></li>
+<li><a href="https://www.journaldev.com/966/java-gzip-example-compress-decompress-file" target="_blank" rel="noopener">Java GZip Example</a></li>
+<li><a href="https://www.journaldev.com/971/java-temp-file" target="_blank" rel="noopener">Temp Files in Java</a></li>
+<li><a href="https://www.journaldev.com/2335/read-csv-file-java-scanner" target="_blank" rel="noopener">Reading a CSV File using Java Scanner Class</a></li>
+<li><a href="https://www.journaldev.com/712/java-properties-file-java-util-properties" target="_blank" rel="noopener">Java Property File Example</a></li>
+</ul>
+</div>
+<div id="expand_widget">
+<div class="expand_widget_title"><span class="widget_plus_icon"></span>Java Exception Handling</div>
+<ul>
+<li><a href="https://www.journaldev.com/1696/exception-handling-in-java" target="_blank" rel="noopener">Exception Handling in Java</a></li>
+<li><a href="https://www.journaldev.com/14538/java-lang-nosuchmethoderror" target="_blank" rel="noopener">java.lang.NoSuchMethodError</a></li>
+<li><a href="https://www.journaldev.com/14544/java-lang-nullpointerexception" target="_blank" rel="noopener">java.lang.NullPointerException</a></li>
+</ul>
+</div>
+<div id="expand_widget">
+<div class="expand_widget_title"><span class="widget_plus_icon"></span>MultiThreading and Concurrency</div>
+<ul>
+<li><a href="https://www.journaldev.com/1016/java-thread-example" target="_blank" rel="noopener">Threads in Java</a></li>
+<li><a href="https://www.journaldev.com/1044/thread-life-cycle-in-java-thread-states-in-java" target="_blank" rel="noopener">Thread Life Cycle</a></li>
+<li><a href="https://www.journaldev.com/1020/thread-sleep-java" target="_blank" rel="noopener">Thread Sleep Example</a></li>
+<li><a href="https://www.journaldev.com/1024/java-thread-join-example" target="_blank" rel="noopener">Thread join Example</a></li>
+<li><a href="https://www.journaldev.com/1037/java-thread-wait-notify-and-notifyall-example" target="_blank" rel="noopener">Thread wait, notify, notifyAll Example</a></li>
+<li><a href="https://www.journaldev.com/1061/thread-safety-in-java" target="_blank" rel="noopener">Thread Safety in Java &#8211; Synchronization</a></li>
+<li><a href="https://www.journaldev.com/1076/java-threadlocal-example" target="_blank" rel="noopener">Java ThreadLocal Example</a></li>
+<li><a href="https://www.journaldev.com/1050/java-timer-timertask-example" target="_blank" rel="noopener">Java Timer and TimerTask Example</a></li>
+<li><a href="https://www.journaldev.com/1069/threadpoolexecutor-java-thread-pool-example-executorservice" target="_blank" rel="noopener">Java Thread Pool Example</a></li>
+<li><a href="https://www.journaldev.com/1090/java-callable-future-example" target="_blank" rel="noopener">Java Callable Future Example</a></li>
+<li><a href="https://www.journaldev.com/1650/java-futuretask-example-program" target="_blank" rel="noopener">Java FutureTask Example</a></li>
+<li><a href="https://www.journaldev.com/2340/java-scheduler-scheduledexecutorservice-scheduledthreadpoolexecutor-example" target="_blank" rel="noopener">Java ScheduledThreadPoolExecutor Example</a></li>
+<li><a href="https://www.journaldev.com/2377/java-lock-example-reentrantlock" target="_blank" rel="noopener">Java Lock Example</a></li>
+</ul>
+</div>
+<div id="expand_widget">
+<div class="expand_widget_title"><span class="widget_plus_icon"></span>Regular Expressions</div>
+<ul>
+<li><a href="https://www.journaldev.com/634/regular-expression-in-java-regex-example" target="_blank" rel="noopener">Regular Expressions in Java Example Tutorial</a></li>
+<li><a href="https://www.journaldev.com/638/java-email-validation-regex" target="_blank" rel="noopener">Validating Email Address using Regular Expression in Java</a></li>
+<li><a href="https://www.journaldev.com/641/regular-expression-phone-number-validation-in-java" target="_blank" rel="noopener">Validating Phone Number using Regex in Java</a></li>
+</ul>
+</div>
+<div id="expand_widget">
+<div class="expand_widget_title"><span class="widget_plus_icon"></span>Advanced Java Concepts</div>
+<ul>
+<li><a href="https://www.journaldev.com/4098/java-heap-space-vs-stack-memory" target="_blank" rel="noopener">Java Heap Memory and Stack Memory</a></li>
+<li><a href="https://www.journaldev.com/3884/java-is-pass-by-value-and-not-pass-by-reference" target="_blank" rel="noopener">Java is Pass by Value and not Pass by Reference</a></li>
+<li><a href="https://www.journaldev.com/2856/java-jvm-memory-model-memory-management-in-java" target="_blank" rel="noopener">JVM Memory Model and Garbage Collection</a></li>
+<li><a href="https://www.journaldev.com/1789/java-reflection-example-tutorial" target="_blank" rel="noopener">Java Reflection API Tutorial</a></li>
+<li><a href="https://www.journaldev.com/2452/serialization-in-java" target="_blank" rel="noopener">Serialization in Java</a></li>
+<li><a href="https://www.journaldev.com/1847/system-class-java-properties-out-println" target="_blank" rel="noopener">Java System Class</a></li>
+<li><a href="https://www.journaldev.com/1370/java-i18n-internationalization-in-java" target="_blank" rel="noopener">Internationalization (i18n) in Java</a></li>
+<li><a href="https://www.journaldev.com/1095/atomicinteger-java" target="_blank" rel="noopener">Atomic Operations in Java</a></li>
+<li><a href="https://www.journaldev.com/1053/java-thread-dump-visualvm-jstack-kill-3-jcmd" target="_blank" rel="noopener">Thread Dump in Java</a></li>
+<li><a href="https://www.journaldev.com/1058/deadlock-in-java-example" target="_blank" rel="noopener">Deadlocks in Java</a></li>
+<li><a href="https://www.journaldev.com/780/comparable-and-comparator-in-java-example" target="_blank" rel="noopener">Sorting Objects in Java</a></li>
+<li><a href="https://www.journaldev.com/546/difference-jdk-vs-jre-vs-jvm" target="_blank" rel="noopener">Understanding JDK, JRE and JVM</a></li>
+<li><a href="https://www.journaldev.com/349/java-classloader" target="_blank" rel="noopener">Java Classloader Example Tutorial</a></li>
+<li><a href="https://www.journaldev.com/60/java-clone-object-cloning-java" target="_blank" rel="noopener">Java clone object</a></li>
+</ul>
+</div>
+</div>
+		</div></section>
+<section id="text-11" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Recommended Tutorials</h4>
+			<div class="textwidget"><h4>Java Tutorials</h4>
+<ul>
+<li><a href="https://www.journaldev.com/942/java-io-tutorial" target="_blank">Java IO</a></li>
+<li><a href="https://www.journaldev.com/634/regular-expression-in-java-regex-example" target="_blank">Java Regular Expressions</a></li>
+<li><a href="https://www.journaldev.com/1079/multithreading-in-java" target="_blank">Multithreading in Java</a></li>
+<li><a href="https://www.journaldev.com/977/java-logging-api-tutorial-examples-logger-levels-handlers-formatters-filters" target="_blank">Java Logging</a></li>
+<li><a href="https://www.journaldev.com/721/java-annotations-example-tutorial" target="_blank">Java Annotations</a></li>
+<li><a href="https://www.journaldev.com/1240/java-xml-tutorial" target="_blank">Java XML</a></li>
+<li><a href="https://www.journaldev.com/1260/collections-in-java-tutorial" target="_blank">Collections in Java</a></li>
+<li><a href="https://www.journaldev.com/1663/java-generics-example-method-class-interface" target="_blank">Java Generics</a></li>
+<li><a href="https://www.journaldev.com/1696/exception-handling-in-java" target="_blank">Exception Handling in Java</a></li>
+<li><a href="https://www.journaldev.com/1789/java-reflection-example-tutorial" target="_blank">Java Reflection</a></li>
+<li><a href="https://www.journaldev.com/1827/java-design-patterns-example-tutorial" target="_blank">Java Design Patterns</a></li>
+<li><a href="https://www.journaldev.com/2681/jdbc-tutorial-with-example-projects-datasource-jndi-and-spring-integration" target="_blank">JDBC Tutorial</a></li>
+<h4>Java EE Tutorials</h4>
+<li><a href="https://www.journaldev.com/2114/servlet-jsp-tutorial" target="_blank">Servlet JSP Tutorial</a></li>
+<li><a href="https://www.journaldev.com/2310/struts2-tutorial-with-example-projects" target="_blank">Struts2 Tutorial</a></li>
+<li><a href="https://www.journaldev.com/2888/spring-tutorial-spring-core-tutorial" target="_blank">Spring Tutorial</a></li>
+<li><a href="https://www.journaldev.com/3793/hibernate-tutorial" target="_blank">Hibernate Tutorial</a></li>
+<li><a href="https://www.journaldev.com/5516/primefaces-tutorial-with-example-projects" target="_blank">Primefaces Tutorial</a></li>
+<li><a href="https://www.journaldev.com/255/axis2-web-services-tutorial" target="_blank">Apache Axis 2</a></li>
+<li><a href="https://www.journaldev.com/498/jax-rs-restful-web-service-using-jersey-example-tutorial" target="_blank">JAX-RS</a></li>
+<li><a href="https://www.journaldev.com/1117/memcached-tutorial" target="_blank">Memcached Tutorial</a></li>
+</ul>
+</div>
+		</div></section>
+
+<!-- Quick Adsense Wordpress Plugin: http://quickadsense.com/ -->
+<section id="adswidget10-quick-adsense-2" class="widget widget_adswidget10-quick-adsense"><div class="widget-wrap"><!-- 300x250/300x600/160x600 -->
+<div id="waldo-tag-2283"></div></div></section>
+</aside></div></div><footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><p>&#x000A9;&nbsp;2018 &middot; <a href="https://www.journaldev.com/privacy-policy">Privacy Policy</a> &middot; Powered by <a href="https://wordpress.org/" title="WordPress">WordPress</a></p></div></footer></div></script>
+<script type='text/javascript'>
+    function _dmBootstrap(file) {
+        var _dma = document.createElement('script');
+        _dma.type = 'text/javascript';
+        _dma.async = true;
+        _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+    }
+    function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.js'); }
+    (function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.js'); setTimeout(_dmFollowup, 2000); })();
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-12171637-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-12171637-4', { 'anonymize_ip': true });
+</script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+	<script>
+		jQuery(document).ready(function() {
+		  jQuery('pre code').each(function(i, block) {
+			hljs.highlightBlock(block);
+			$(".entry-content pre").show();
+		  });
+		  	
+			jQuery('.entry-content pre code').mouseenter(function(e){
+				var t = jQuery(this);
+					t.children(".re_clip-board").slideDown(100);
+				jQuery(e.target).mouseleave(function(){
+					t.children(".re_clip-board").slideUp(100);
+					
+					setTimeout(function() {
+						t.children(".re_clip-board").text("Copy");
+					}, 100);
+					
+				});
+			});
+			
+			jQuery('.entry-content pre code .re_clip-board').click(function(e){
+				re_copyToClipboard(jQuery(this));
+				$(this).text("Copied!");
+				$(this).css("width", "85px");
+			});
+		});
+		
+function re_copyToClipboard(element) {
+	var elements = element.parent();
+  	var $temp = $("<textarea>");
+  	$("body").append($temp);
+	var text = $(elements).text().replace(/Copy/g, "");
+  	$temp.val(text).select();
+  	document.execCommand("copy");
+  	$temp.remove();
+}
+
+/*Starting expand widget jquery codes */
+var rotation = 0;
+jQuery.fn.plus_rotate = function(degrees) {
+    $(this).css({"-webkit-transform" : "rotate("+ degrees +"deg)",
+                 "-moz-transform" : "rotate("+ degrees +"deg)",
+                 "-ms-transform" : "rotate("+ degrees +"deg)",
+                 "transform" : "rotate("+ degrees +"deg)"});
+    return $(this);
+};
+
+$(document).ready(function(){
+  $(".expand_widget_title").click(function(){
+    if ( !$(this).parent().children("ul").is(":visible") ) {
+      rotation += 360;
+	  $(this).children(".widget_plus_icon").removeClass("zero_six_rotate");
+      $(this).children(".widget_plus_icon").addClass("tree_six_rotate");
+     $(this).parent().children("ul").slideDown(390);
+	 
+	 var t = $(this);
+	 setTimeout(function() {
+	 	t.children(".widget_plus_icon").removeClass("plus_icon");
+		t.children(".widget_plus_icon").addClass("minus_icon");
+	 }, 400);
+  } else {
+    rotation -= 360;
+     	$(this).children(".widget_plus_icon").removeClass("tree_six_rotate");
+		$(this).children(".widget_plus_icon").addClass("zero_six_rotate");
+    $(this).parent().children("ul").slideUp(390);
+	
+	var t = $(this);
+	 setTimeout(function() {
+	 	t.children(".widget_plus_icon").removeClass("minus_icon");
+		t.children(".widget_plus_icon").addClass("plus_icon");
+	 }, 400);
+  }
+  });
+ });
+
+/*Ending expand widget jquery codes */
+
+</script>
+	<script type='text/javascript' src='https://cdn.journaldev.com/wp-content/plugins/anti-spam/js/anti-spam-5.2.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var superpwa_sw = {"url":"\/OneSignalSDKWorker.js.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://cdn.journaldev.com/wp-content/plugins/super-progressive-web-apps/public/js/register-sw.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var tocplus = {"smooth_scroll":"1","visibility_show":"show","visibility_hide":"hide","width":"Auto","smooth_scroll_offset":"60"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://cdn.journaldev.com/wp-content/plugins/table-of-contents-plus/front.min.js'></script>
+<script type='text/javascript' src='https://cdn.journaldev.com/wp-includes/js/comment-reply.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var ajaxsearchlite = {"ajaxurl":"https:\/\/www.journaldev.com\/wp-admin\/admin-ajax.php","backend_ajaxurl":"https:\/\/www.journaldev.com\/wp-admin\/admin-ajax.php","js_scope":"jQuery"};
+var ASL = {"ajaxurl":"https:\/\/www.journaldev.com\/wp-admin\/admin-ajax.php","backend_ajaxurl":"https:\/\/www.journaldev.com\/wp-admin\/admin-ajax.php","js_scope":"jQuery","detect_ajax":"0","scrollbar":"1","js_retain_popstate":"0","version":"4730"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://cdn.journaldev.com/wp-content/plugins/ajax-search-lite/js/min/jquery.ajaxsearchlite.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var q2w3_sidebar_options = [{"sidebar":"sidebar","margin_top":10,"margin_bottom":0,"stop_id":"","screen_max_width":1024,"screen_max_height":120,"width_inherit":false,"refresh_interval":1500,"window_load_hook":false,"disable_mo_api":false,"widgets":["adswidget10-quick-adsense-2"]}];
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://cdn.journaldev.com/wp-content/plugins/q2w3-fixed-widget/js/q2w3-fixed-widget.min.js'></script>
+<script type='text/javascript' src='https://cdn.journaldev.com/wp-includes/js/wp-embed.min.js'></script>
+<script src="https://cdn.journaldev.com/wp-content/plugins/litespeed-cache/js/lazyload.min.js"></script></body></html>
+
+<!-- Page generated by LiteSpeed Cache 2.8.1 on 2018-12-08 02:55:17 -->

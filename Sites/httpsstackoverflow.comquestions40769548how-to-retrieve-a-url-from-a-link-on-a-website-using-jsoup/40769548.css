@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule" xmlns:re="http://purl.org/atompub/rank/1.0">
+    <title type="text">how to retrieve a url from a link on a website using Jsoup? - Stack Overflow</title>
+    <link rel="self" href="https://stackoverflow.com/feeds/question/40769548" type="application/atom+xml" />
+    <link rel="alternate" href="https://stackoverflow.com/q/40769548" type="text/html" />
+    <subtitle>most recent 30 from stackoverflow.com</subtitle>
+    <updated>2018-12-10T11:36:04Z</updated>
+    <id>https://stackoverflow.com/feeds/question/40769548</id>
+    <creativeCommons:license>http://www.creativecommons.org/licenses/by-sa/3.0/rdf</creativeCommons:license> 
+    <entry>
+        <id>https://stackoverflow.com/q/40769548</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">how to retrieve a url from a link on a website using Jsoup?</title>
+            <category scheme="https://stackoverflow.com/tags" term="java" />
+            <category scheme="https://stackoverflow.com/tags" term="html" />
+            <category scheme="https://stackoverflow.com/tags" term="url" />
+            <category scheme="https://stackoverflow.com/tags" term="jsoup" />
+            <category scheme="https://stackoverflow.com/tags" term="yelp" />
+        <author>
+            <name>Brandon Woodruff</name>
+            <uri>https://stackoverflow.com/users/7195902</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/40769548/how-to-retrieve-a-url-from-a-link-on-a-website-using-jsoup" />
+        <published>2016-11-23T16:26:05Z</published>
+        <updated>2016-11-23T16:47:50Z</updated>
+        <summary type="html">
+            
+
+            &lt;p&gt;Alright so I finished my Yelp scanner, and everything is running great. What I want to do now is have the program retrieve the url for each link to each business, go to that page, and scan for whether it contains:&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&quot;snippet&quot; data-lang=&quot;js&quot; data-hide=&quot;false&quot; data-console=&quot;true&quot; data-babel=&quot;false&quot;&gt;
+&lt;div class=&quot;snippet-code&quot;&gt;
+&lt;pre class=&quot;snippet-code-html lang-html prettyprint-override&quot;&gt;&lt;code&gt;xlink:href=&quot;#30x30_bullhorn&quot;&amp;gt;&amp;lt;/use&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;I pretty much have a good idea of how I&#39;m going to go about doing that, however, I can&#39;t seem to find a jSoup method that would retrieve a link&#39;s url. Is there somewhere in the page&#39;s HTML that would have the url? I&#39;m not very proficient with HTML at all, so 90% of what I&#39;m looking at is gibbering. Here&#39;s an example link if you want to check out what I&#39;m referring to.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.yelp.com/search?find_loc=nj&amp;amp;start=10&quot; rel=&quot;nofollow noreferrer&quot;&gt;https://www.yelp.com/search?find_loc=nj&amp;amp;start=10&lt;/a&gt; is the main page, that I need to obtain the url for the page &lt;a href=&quot;https://www.yelp.com/biz/la-cocina-newark&quot; rel=&quot;nofollow noreferrer&quot;&gt;https://www.yelp.com/biz/la-cocina-newark&lt;/a&gt;. The orange bullhorn is what I am trying to get it to retrieve. Here&#39;s my code btw:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import java.util.ArrayList;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class YelpScrapper
+{
+    public static void main(String[] args) throws IOException, Exception
+    {        
+        //Variables
+        String description;
+        String location;
+        int pages;
+        int parseCount = 0;
+        Document document;
+
+        Scanner keyboard = new Scanner(System.in);
+
+        //Perform a Search
+        System.out.print(&quot;Enter a description: &quot;);
+        description = keyboard.nextLine();
+
+        System.out.print(&quot;Enter a state: &quot;);
+        location = keyboard.nextLine();
+
+        System.out.print(&quot;How many pages should we scan? &quot;);
+        pages = keyboard.nextInt();
+
+        String descString = &quot;find_desc=&quot; + description.replace(&#39; &#39;, &#39;+&#39;) + &quot;&amp;amp;&quot;;
+        String locString = &quot;find_loc=&quot; + location.replace(&#39; &#39;, &#39;+&#39;) + &quot;&amp;amp;&quot;;
+        int number = 0;
+
+        String url = &quot;https://www.yelp.com/search?&quot; + descString + locString + &quot;start=&quot; + number;
+        ArrayList&amp;lt;String&amp;gt; names = new ArrayList&amp;lt;String&amp;gt;();
+        ArrayList&amp;lt;String&amp;gt; address = new ArrayList&amp;lt;String&amp;gt;();
+        ArrayList&amp;lt;String&amp;gt; phone = new ArrayList&amp;lt;String&amp;gt;();
+
+        //Fetch Data From Yelp
+        for (int i = 0 ; i &amp;lt;= pages ; i++)
+        {
+
+            document = Jsoup.connect(url).get();
+
+            Elements nameElements = document.select(&quot;.indexed-biz-name span&quot;);
+            Elements addressElements = document.select(&quot;.secondary-attributes address&quot;);
+            Elements phoneElements = document.select(&quot;.biz-phone&quot;);
+
+            for (Element element : nameElements)
+            {
+                names.add(element.text());
+            }
+
+            for (Element element : addressElements)
+            {
+                address.add(element.text());
+            }
+
+            for (Element element : phoneElements)
+            {
+                phone.add(element.text());
+            }
+
+            for (int index = 0 ; index &amp;lt; 10 ; index++)
+            {
+                System.out.println(&quot;\nLead &quot; + parseCount);
+                System.out.println(&quot;Company Name: &quot; + names.get(parseCount));
+                System.out.println(&quot;Address: &quot; + address.get(parseCount));
+                System.out.println(&quot;Phone Number: &quot; + phone.get(parseCount));
+
+                parseCount = parseCount + 1;
+            }
+
+            number = number + 10;
+
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/questions/40769548/-/40770024#40770024</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">Answer by Trevor Bye for how to retrieve a url from a link on a website using Jsoup?</title>
+        <author>
+            <name>Trevor Bye</name>
+            <uri>https://stackoverflow.com/users/6610036</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/40769548/how-to-retrieve-a-url-from-a-link-on-a-website-using-jsoup/40770024#40770024" />
+        <published>2016-11-23T16:47:50Z</published>
+        <updated>2016-11-23T16:47:50Z</updated>
+        <summary type="html">&lt;p&gt;Learn how to use the Inspect element of Chrome Developer tools, as it makes it incredibly easy to locate elements in the DOM (you said you aren&#39;t comfortable with HTML, well you certainly will be after this and using Inspect is a great learning tool). Focusing the inspector on the &quot;View Now&quot; button, you&#39;ll get to this: &lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;a href=&quot;https://www.yelp.com/biz_redir?cachebuster=1479918865&amp;amp;amp;s=1c73b4bdc9110f6e6dc72fff48cd6379d6eaac0cd6d15794a9414e546ad5a927&amp;amp;amp;src_bizid=U2eO8yFSc9YTf_SPnog8cw&amp;amp;amp;url=http%3A%2F%2Fwww.lacocinanewark.com%2F%23%21menu%2Fcl69&amp;amp;amp;website_link_type=cta&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; class=&quot;ybtn ybtn--primary ybtn--small ybtn-cta&quot; data-component-bound=&quot;true&quot;&amp;gt;View Now&amp;lt;/a&amp;gt;&lt;/code&gt;. &lt;/p&gt;
+
+&lt;p&gt;You&#39;ll have to figure out how to traverse down to this, and &lt;code&gt;childNodes()&lt;/code&gt; will be helpful in traversing down. Then you can use &lt;code&gt;getElementsByClass(&quot;ybtn ybtn--primary ybtn--small ybtn-cta&quot;)&lt;/code&gt; to get to that specific class where the link is, and then use the &lt;code&gt;.attr()&lt;/code&gt; method of the &lt;code&gt;Element&lt;/code&gt; class to get the href: &lt;code&gt;.attr(&quot;href&quot;);&lt;/code&gt;.&lt;/p&gt;
+</summary>
+    </entry></feed>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments for JournalDev</title>
+	<atom:link href="https://www.journaldev.com/comments/feed" rel="self" type="application/rss+xml" />
+	<link>https://www.journaldev.com</link>
+	<description>Java, Java EE, Android, Python, Web Development Tutorials</description>
+	<lastBuildDate>Mon, 10 Dec 2018 06:28:32 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.8</generator>
+	<item>
+		<title>Comment on Android RecyclerView Example &#8211; Multiple ViewTypes by ASHWINI VASUDEVA</title>
+		<link>https://www.journaldev.com/12372/android-recyclerview-example#comment-45319</link>
+		<dc:creator><![CDATA[ASHWINI VASUDEVA]]></dc:creator>
+		<pubDate>Mon, 10 Dec 2018 06:28:32 +0000</pubDate>
+		<guid isPermaLink="false">https://www.journaldev.com/?p=12372#comment-45319</guid>
+		<description><![CDATA[Hi, can you please let me know where to add the onclicklistner in tis code for Image_type ? Thanks you]]></description>
+		<content:encoded><![CDATA[<p>Hi, can you please let me know where to add the onclicklistner in tis code for Image_type ? Thanks you</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Comment on Android RecyclerView Example &#8211; Multiple ViewTypes by ASHWINI VASUDEVA</title>
+		<link>https://www.journaldev.com/12372/android-recyclerview-example#comment-45318</link>
+		<dc:creator><![CDATA[ASHWINI VASUDEVA]]></dc:creator>
+		<pubDate>Mon, 10 Dec 2018 06:26:29 +0000</pubDate>
+		<guid isPermaLink="false">https://www.journaldev.com/?p=12372#comment-45318</guid>
+		<description><![CDATA[Hello, this was really a very good code and more clear in terms of understanding. Can you please help me one more thing, i want to add  onclicklistner for image type. where should i add and what will be code for that? I&#039;m new to android and still in learning process. Thanks a lot for the code :)]]></description>
+		<content:encoded><![CDATA[<p>Hello, this was really a very good code and more clear in terms of understanding. Can you please help me one more thing, i want to add  onclicklistner for image type. where should i add and what will be code for that? I&#8217;m new to android and still in learning process. Thanks a lot for the code ?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Comment on Python System Command &#8211; os.system(), subprocess.call() by divya</title>
+		<link>https://www.journaldev.com/16140/python-system-command-os-subprocess-call#comment-45317</link>
+		<dc:creator><![CDATA[divya]]></dc:creator>
+		<pubDate>Mon, 10 Dec 2018 00:59:41 +0000</pubDate>
+		<guid isPermaLink="false">https://www.journaldev.com/?p=16140#comment-45317</guid>
+		<description><![CDATA[I&#039;m pretty new to python scripting, I&#039;m trying to achieve the python equivalent of shell cmd = &quot;echo -e  &quot;abc\ncde&quot; &#062;file1&quot;
+
+The contents of file1 then looks like this:
+
+abc
+cde
+
+My python script has:
+
+cmd = &quot;echo -e \&quot;abc\ncde\&quot; &#062;file&quot;
+os.system(cmd)
+
+However, when executing this my file looks like this:
+
+-e abc
+cde
+
+-e is an option for echo to recognise \n as new line character and should not be written to the file. Is there a way around this?]]></description>
+		<content:encoded><![CDATA[<p>I&#8217;m pretty new to python scripting, I&#8217;m trying to achieve the python equivalent of shell cmd = &#8220;echo -e  &#8220;abc\ncde&#8221; &gt;file1&#8243;</p>
+<p>The contents of file1 then looks like this:</p>
+<p>abc<br />
+cde</p>
+<p>My python script has:</p>
+<p>cmd = &#8220;echo -e \&#8221;abc\ncde\&#8221; &gt;file&#8221;<br />
+os.system(cmd)</p>
+<p>However, when executing this my file looks like this:</p>
+<p>-e abc<br />
+cde</p>
+<p>-e is an option for echo to recognise \n as new line character and should not be written to the file. Is there a way around this?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Comment on Adapter Design Pattern in Java by Ana</title>
+		<link>https://www.journaldev.com/1487/adapter-design-pattern-java#comment-45316</link>
+		<dc:creator><![CDATA[Ana]]></dc:creator>
+		<pubDate>Sun, 09 Dec 2018 22:55:41 +0000</pubDate>
+		<guid isPermaLink="false">https://www.journaldev.com/?p=1487#comment-45316</guid>
+		<description><![CDATA[Kindly Update Your Page With  These Unrelated Interfaces.So We Wont require to imagine.It Willl Be Easy To Understand.]]></description>
+		<content:encoded><![CDATA[<p>Kindly Update Your Page With  These Unrelated Interfaces.So We Wont require to imagine.It Willl Be Easy To Understand.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Comment on Java Stack &#8211; Stack In Java by denny</title>
+		<link>https://www.journaldev.com/13401/java-stack#comment-45315</link>
+		<dc:creator><![CDATA[denny]]></dc:creator>
+		<pubDate>Sun, 09 Dec 2018 13:51:39 +0000</pubDate>
+		<guid isPermaLink="false">https://www.journaldev.com/?p=13401#comment-45315</guid>
+		<description><![CDATA[that could be you jdk not include stack library you can try to update your jdk]]></description>
+		<content:encoded><![CDATA[<p>that could be you jdk not include stack library you can try to update your jdk</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Comment on CopyOnWriteArrayList in Java by Dillip</title>
+		<link>https://www.journaldev.com/1289/copyonwritearraylist-java#comment-45313</link>
+		<dc:creator><![CDATA[Dillip]]></dc:creator>
+		<pubDate>Sun, 09 Dec 2018 11:53:51 +0000</pubDate>
+		<guid isPermaLink="false">https://www.journaldev.com/?p=1289#comment-45313</guid>
+		<description><![CDATA[if you try l.remove(i) then it will throw java.lang.IndexOutOfBoundsException]]></description>
+		<content:encoded><![CDATA[<p>if you try l.remove(i) then it will throw java.lang.IndexOutOfBoundsException</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Comment on Android ExpandableListView Example Tutorial by Anupam Chugh</title>
+		<link>https://www.journaldev.com/9942/android-expandablelistview-example-tutorial#comment-45312</link>
+		<dc:creator><![CDATA[Anupam Chugh]]></dc:creator>
+		<pubDate>Sun, 09 Dec 2018 07:52:48 +0000</pubDate>
+		<guid isPermaLink="false">https://www.journaldev.com/?p=9942#comment-45312</guid>
+		<description><![CDATA[Do this on the ExpandableListView instance:
+&lt;pre&gt;
+expandableListView.setOnGroupExpandListener(new OnGroupExpandListener() {
+
+    @Override
+    public void onGroupExpand(int groupPosition) {
+            if (lastExpandedPosition != -1
+                    &amp;&amp; groupPosition != lastExpandedPosition) {
+                lv.collapseGroup(lastExpandedPosition);
+            }
+            lastExpandedPosition = groupPosition;
+    }
+});
+&lt;/pre&gt;]]></description>
+		<content:encoded><![CDATA[<p>Do this on the ExpandableListView instance:</p>
+<pre>
+expandableListView.setOnGroupExpandListener(new OnGroupExpandListener() {
+
+    @Override
+    public void onGroupExpand(int groupPosition) {
+            if (lastExpandedPosition != -1
+                    &#038;& groupPosition != lastExpandedPosition) {
+                lv.collapseGroup(lastExpandedPosition);
+            }
+            lastExpandedPosition = groupPosition;
+    }
+});
+</pre>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Comment on Java Multithreading Concurrency Interview Questions and Answers by Explorer</title>
+		<link>https://www.journaldev.com/1162/java-multithreading-concurrency-interview-questions-answers#comment-45310</link>
+		<dc:creator><![CDATA[Explorer]]></dc:creator>
+		<pubDate>Sat, 08 Dec 2018 20:35:37 +0000</pubDate>
+		<guid isPermaLink="false">https://www.journaldev.com/?p=1162#comment-45310</guid>
+		<description><![CDATA[Hi sir,
+Interview question
+How can 1 instance can be shared to 100 users when we have only 1 db for the instance .
+I am not able to get clear answers .
+Please share your knowledge on it.
+Thanks]]></description>
+		<content:encoded><![CDATA[<p>Hi sir,<br />
+Interview question<br />
+How can 1 instance can be shared to 100 users when we have only 1 db for the instance .<br />
+I am not able to get clear answers .<br />
+Please share your knowledge on it.<br />
+Thanks</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Comment on JSP Implicit Objects by Vishal Patil</title>
+		<link>https://www.journaldev.com/2038/jsp-implicit-objects#comment-45309</link>
+		<dc:creator><![CDATA[Vishal Patil]]></dc:creator>
+		<pubDate>Sat, 08 Dec 2018 17:52:57 +0000</pubDate>
+		<guid isPermaLink="false">https://www.journaldev.com/?p=2038#comment-45309</guid>
+		<description><![CDATA[why there is no need to create object of implicit objects in jsp but in servlet we need to create object?]]></description>
+		<content:encoded><![CDATA[<p>why there is no need to create object of implicit objects in jsp but in servlet we need to create object?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Comment on Eclipse OutOfMemory Error Fix by increasing Heap Memory/Permgen Space by Pankaj</title>
+		<link>https://www.journaldev.com/10904/eclipse-out-of-memory-error-increasing-heap-memory-permgen-space#comment-45308</link>
+		<dc:creator><![CDATA[Pankaj]]></dc:creator>
+		<pubDate>Sat, 08 Dec 2018 16:46:46 +0000</pubDate>
+		<guid isPermaLink="false">https://www.journaldev.com/?p=10904#comment-45308</guid>
+		<description><![CDATA[I have already mentioned that in Windows eclipse.ini file is at the same location as the eclipse.exe file. I have also added an image now for more clarity.]]></description>
+		<content:encoded><![CDATA[<p>I have already mentioned that in Windows eclipse.ini file is at the same location as the eclipse.exe file. I have also added an image now for more clarity.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

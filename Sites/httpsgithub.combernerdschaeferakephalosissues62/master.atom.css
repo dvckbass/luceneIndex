@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en-US">
+  <id>tag:github.com,2008:/bernerdschaefer/akephalos/commits/master</id>
+  <link type="text/html" rel="alternate" href="https://github.com/bernerdschaefer/akephalos/commits/master"/>
+  <link type="application/atom+xml" rel="self" href="https://github.com/bernerdschaefer/akephalos/commits/master.atom"/>
+  <title>Recent Commits to akephalos:master</title>
+  <updated>2011-02-08T11:06:04Z</updated>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/80103301ebe1609b90de04a8e4f6092def818585</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bernerdschaefer/akephalos/commit/80103301ebe1609b90de04a8e4f6092def818585"/>
+    <title>
+        Use new registration name in bin/akephalos
+    </title>
+    <updated>2011-02-08T11:06:04Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars1.githubusercontent.com/u/193?s=30&amp;v=4"/>
+    <author>
+      <name>bernerdschaefer</name>
+      <uri>https://github.com/bernerdschaefer</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Use new registration name in bin/akephalos&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/dd79cf33318d70ee2852a5e632d8efc5cf4becb7</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bernerdschaefer/akephalos/commit/dd79cf33318d70ee2852a5e632d8efc5cf4becb7"/>
+    <title>
+        VERSION 0.2.5
+    </title>
+    <updated>2011-02-04T11:28:51Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars1.githubusercontent.com/u/193?s=30&amp;v=4"/>
+    <author>
+      <name>bernerdschaefer</name>
+      <uri>https://github.com/bernerdschaefer</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;VERSION 0.2.5&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/48f018cb85cace5774dc7ec5f0979bce581b3976</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bernerdschaefer/akephalos/commit/48f018cb85cace5774dc7ec5f0979bce581b3976"/>
+    <title>
+        Add configuration section to documentation
+    </title>
+    <updated>2011-02-04T11:27:36Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars1.githubusercontent.com/u/193?s=30&amp;v=4"/>
+    <author>
+      <name>bernerdschaefer</name>
+      <uri>https://github.com/bernerdschaefer</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Add configuration section to documentation&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/4229011ef7ec3b525b53ab2dd3ebf4301d5b677e</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bernerdschaefer/akephalos/commit/4229011ef7ec3b525b53ab2dd3ebf4301d5b677e"/>
+    <title>
+        Lock capybara dependency to 0.4 series
+    </title>
+    <updated>2011-02-04T10:56:46Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars1.githubusercontent.com/u/193?s=30&amp;v=4"/>
+    <author>
+      <name>bernerdschaefer</name>
+      <uri>https://github.com/bernerdschaefer</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Lock capybara dependency to 0.4 series&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/44073fcfece030424418981038c6e3085cc2c5ba</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bernerdschaefer/akephalos/commit/44073fcfece030424418981038c6e3085cc2c5ba"/>
+    <title>
+        Flag failing capybara specs as pending
+    </title>
+    <updated>2011-02-04T10:35:57Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars1.githubusercontent.com/u/193?s=30&amp;v=4"/>
+    <author>
+      <name>bernerdschaefer</name>
+      <uri>https://github.com/bernerdschaefer</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Flag failing capybara specs as pending
+
+There are three failures in capybara&amp;#39;s spec suite:
+
+  1. Two failures related to drag and drop, which also fail for Celerity
+     (and have probably always failed but wasn&amp;#39;t revealed in 0.3)
+
+  2. One failure in the javascript suite. The intent of this spec
+     (lib/capybara/spec/session/javascript.rb:80) does in fact pass,
+     namely that selecting an option from the drop-down fires the
+     javascript events. It fails because we implicitly wait for
+     javascript events after clicking an element, so
+     `@session.select(&amp;#39;My Waiting Option&amp;#39;, :from =&amp;gt; &amp;#39;waiter&amp;#39;)` does not
+     return until after the setTimeout() call has already completed.&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/0fbcbbf160b7f1eccae38bc4b05cf28240a97835</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bernerdschaefer/akephalos/commit/0fbcbbf160b7f1eccae38bc4b05cf28240a97835"/>
+    <title>
+        Configure browser version and javascript errors
+    </title>
+    <updated>2011-02-03T14:04:15Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars1.githubusercontent.com/u/193?s=30&amp;v=4"/>
+    <author>
+      <name>bernerdschaefer</name>
+      <uri>https://github.com/bernerdschaefer</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Configure browser version and javascript errors
+
+The Akephalos Capybara driver and Client classes now accept
+configuration options (like the Selenium driver). The only two options
+at present are:
+
+  :browser, which defaults to :firefox_3_6, but accepts
+    :ie6, :ie7, :ie8, :firefox_3, and :firefox_3_6
+
+  :validate_scripts, which determines whether javascript errors should
+  produce ruby exceptions. It defaults to true.&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/4ed46eadaf1299d6a4d6dfe5c442ddd078674562</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bernerdschaefer/akephalos/commit/4ed46eadaf1299d6a4d6dfe5c442ddd078674562"/>
+    <title>
+        Add Akephalos::ClientManager for DRb Server
+    </title>
+    <updated>2011-02-03T12:53:18Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars1.githubusercontent.com/u/193?s=30&amp;v=4"/>
+    <author>
+      <name>bernerdschaefer</name>
+      <uri>https://github.com/bernerdschaefer</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Add Akephalos::ClientManager for DRb Server
+
+This is a refactoring of the internal communication structure between
+the MRI ruby process and the JRuby DRb server. This sets the path for
+allowing per-instance configurations and eventually supporting a single
+long-running akephalos instance.&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/044ae841bea6d62fb139e94fb96ba82bd5d8f158</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bernerdschaefer/akephalos/commit/044ae841bea6d62fb139e94fb96ba82bd5d8f158"/>
+    <title>
+        Update to the latest Capybara
+    </title>
+    <updated>2011-02-03T12:48:31Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars1.githubusercontent.com/u/193?s=30&amp;v=4"/>
+    <author>
+      <name>bernerdschaefer</name>
+      <uri>https://github.com/bernerdschaefer</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Update to the latest Capybara
+
+Thanks goes out to Nerian, mcmire, sorentwo, fidothe, pboling, and
+everyone else who has been keeping Akephalos going through their forks
+and patches.&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/c06d869879ce38a7dc8c35a48933fb2589195506</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bernerdschaefer/akephalos/commit/c06d869879ce38a7dc8c35a48933fb2589195506"/>
+    <title>
+        Whitespace fix
+    </title>
+    <updated>2011-02-03T12:41:07Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars1.githubusercontent.com/u/193?s=30&amp;v=4"/>
+    <author>
+      <name>bernerdschaefer</name>
+      <uri>https://github.com/bernerdschaefer</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Whitespace fix&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/b8453dca07f9700cf2bad304fbfac553ceba47b0</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bernerdschaefer/akephalos/commit/b8453dca07f9700cf2bad304fbfac553ceba47b0"/>
+    <title>
+        See  https://github.com/bernerdschaefer/akephalos/issues#issue/7
+    </title>
+    <updated>2011-01-29T15:24:58Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/259568?s=30&amp;v=4"/>
+    <author>
+      <name>Nerian</name>
+      <uri>https://github.com/Nerian</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;See  https://github.com/bernerdschaefer/akephalos/issues#issue/7&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/b3e20d7abe417c6f655199209511f5099838817c</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bernerdschaefer/akephalos/commit/b3e20d7abe417c6f655199209511f5099838817c"/>
+    <title>
+        Remove Gemfile.lock from the repo and git-ignore it
+    </title>
+    <updated>2011-01-29T14:37:59Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/259568?s=30&amp;v=4"/>
+    <author>
+      <name>Nerian</name>
+      <uri>https://github.com/Nerian</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Remove Gemfile.lock from the repo and git-ignore it&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/0936eeae59b89df15c914cbb33c1a4b633bda3cd</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bernerdschaefer/akephalos/commit/0936eeae59b89df15c914cbb33c1a4b633bda3cd"/>
+    <title>
+        certain elements do not respond to isChecked or isSelected so look at?
+    </title>
+    <updated>2011-01-29T14:07:59Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars3.githubusercontent.com/u/32672?s=30&amp;v=4"/>
+    <author>
+      <name>asceth</name>
+      <uri>https://github.com/asceth</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;certain elements do not respond to isChecked or isSelected so look at their attributes&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/1a5e59ec28b3db94e26562d532dc73825b8d7bd3</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bernerdschaefer/akephalos/commit/1a5e59ec28b3db94e26562d532dc73825b8d7bd3"/>
+    <title>
+        fix conversion issue with html entities in ruby 1.9
+    </title>
+    <updated>2011-01-29T14:07:17Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars3.githubusercontent.com/u/32672?s=30&amp;v=4"/>
+    <author>
+      <name>asceth</name>
+      <uri>https://github.com/asceth</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;fix conversion issue with html entities in ruby 1.9&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/8e6c87095a0fdd5d5968ed15961f1bf52823039f</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bernerdschaefer/akephalos/commit/8e6c87095a0fdd5d5968ed15961f1bf52823039f"/>
+    <title>
+        add selected? method
+    </title>
+    <updated>2011-01-29T14:07:16Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars3.githubusercontent.com/u/32672?s=30&amp;v=4"/>
+    <author>
+      <name>asceth</name>
+      <uri>https://github.com/asceth</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;add selected? method&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/2b580dcbc13eb17b7ee1667f009b6c33383d4b07</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bernerdschaefer/akephalos/commit/2b580dcbc13eb17b7ee1667f009b6c33383d4b07"/>
+    <title>
+        Remove Gemfile.lock from gitignore
+    </title>
+    <updated>2011-01-26T18:50:03Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/259568?s=30&amp;v=4"/>
+    <author>
+      <name>Nerian</name>
+      <uri>https://github.com/Nerian</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Remove Gemfile.lock from gitignore&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/ab4c11a996efde2907642063411ab07ab76955dd</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bernerdschaefer/akephalos/commit/ab4c11a996efde2907642063411ab07ab76955dd"/>
+    <title>
+        Merge branch &#39;add_xpath_to_node&#39; of https://github.com/mcmire/akephalos
+    </title>
+    <updated>2011-01-26T12:39:42Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/259568?s=30&amp;v=4"/>
+    <author>
+      <name>Nerian</name>
+      <uri>https://github.com/Nerian</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Merge branch &amp;#39;add_xpath_to_node&amp;#39; of https://github.com/mcmire/akephalos&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/66d3b596166f3ad9eb2f8ba00f634cc6f89b6093</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bernerdschaefer/akephalos/commit/66d3b596166f3ad9eb2f8ba00f634cc6f89b6093"/>
+    <title>
+        Add an #xpath method to Akephalos::Node so that calling #path on Akep?
+    </title>
+    <updated>2011-01-20T17:49:10Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars1.githubusercontent.com/u/7371?s=30&amp;v=4"/>
+    <author>
+      <name>mcmire</name>
+      <uri>https://github.com/mcmire</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Add an #xpath method to Akephalos::Node so that calling #path on Akephalos::Capybara::Node doesn&amp;#39;t blow up&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/ee250afef5a8be413365b5552521ed6b87e7c20e</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bernerdschaefer/akephalos/commit/ee250afef5a8be413365b5552521ed6b87e7c20e"/>
+    <title>
+        Bumping RSpec and Capybara versions
+    </title>
+    <updated>2011-01-10T22:32:57Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/160941?s=30&amp;v=4"/>
+    <author>
+      <name>guilleiguaran</name>
+      <uri>https://github.com/guilleiguaran</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Bumping RSpec and Capybara versions&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/51ddd3813348188e86c94b836aa946c31946f6e7</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bernerdschaefer/akephalos/commit/51ddd3813348188e86c94b836aa946c31946f6e7"/>
+    <title>
+        Add &#39;ku&#39; to JRuby options. This make JRuby works in UTF-8 mode
+    </title>
+    <updated>2011-01-01T20:20:25Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/259568?s=30&amp;v=4"/>
+    <author>
+      <name>Nerian</name>
+      <uri>https://github.com/Nerian</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Add &amp;#39;ku&amp;#39; to JRuby options. This make JRuby works in UTF-8 mode&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/e61ec54cbd1b3c8b3aa081a86d9f919f25b4b608</id>
+    <link type="text/html" rel="alternate" href="https://github.com/bernerdschaefer/akephalos/commit/e61ec54cbd1b3c8b3aa081a86d9f919f25b4b608"/>
+    <title>
+        Remove automatic cucumber loading, force manual require.
+    </title>
+    <updated>2010-12-16T16:19:10Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars3.githubusercontent.com/u/270831?s=30&amp;v=4"/>
+    <author>
+      <name>sorentwo</name>
+      <uri>https://github.com/sorentwo</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Remove automatic cucumber loading, force manual require.&lt;/pre&gt;
+    </content>
+  </entry>
+</feed>
