@@ -37,6 +37,8 @@ import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 import org.jsoup.Jsoup;
 
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+
 /**
  * Dient als Klasse für Web Indexierung, die Konfiguration benötigt
  * 
@@ -251,11 +253,25 @@ public class Lucene {
 	// Validierung von Strings, ob die nicht mit Zahlen anfangen
 	static private String validate(String string) throws IOException {
 		String tmp = "";
+		
 		String[] splitString = (string.split("\\s+"));
 		for (String s : splitString) {
+			boolean found = false;
 			if (s.matches("^[a-zA-Z]+.*[a-zA-Z0-9]$")) {
+				if(s.contains(":") && !(s.matches("^http+.*")) ) {
+					found = true;
+					System.out.println("String: " + s);
+					String parts[] = s.split("\\:");
+					for(int i=0; i<parts.length;i++) {
+						System.out.println("parts[" + i + "]: " + parts[i]);
+						tmp += parts[i] + " ";
+					}
+				}
+				if(found != true) {
 				tmp += s + " ";
+				}
 			}
+			
 		}
 		return tmp;
 	}
